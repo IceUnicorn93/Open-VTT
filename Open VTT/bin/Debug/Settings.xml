@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PlayerScreenSize>0</PlayerScreenSize>
+  <PlayerScreenWidthInches>0</PlayerScreenWidthInches>
+  <PlayerScreenHeightInces>0</PlayerScreenHeightInces>
+  <Screens>
+    <ScreenInformation>
+      <Display>Player</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayPlayer</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayDM</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+  </Screens>
+  <AutoSaveAction>true</AutoSaveAction>
+  <DisplayChangesInstantly>false</DisplayChangesInstantly>
+</Settings>

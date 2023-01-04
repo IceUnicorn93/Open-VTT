@@ -1,0 +1,24 @@
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Release\Open VTT.exe.config
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Release\Open VTT.exe
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Release\Open VTT.pdb
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.DrawingPictureBox.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.MapControl.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.ScreenSelector.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.TreeViewDisplay.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Start.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Properties.Resources.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.exe
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.pdb
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.AssemblyReference.cache
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.Editor.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedControl.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedRow.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Config.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.DisplayItemGenerator.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Displayer.InformationDisplayPlayer.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.NewScene.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Displayer.MapPlayer.resources
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.SceneControl.resources
