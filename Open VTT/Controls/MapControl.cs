@@ -208,9 +208,6 @@ namespace Open_VTT.Controls
             dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
             playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
 
-            //fog.RemoveFogOfWar(dmImage, Session.GetLayer(Session.Values.ActiveLayer).ImagePath);
-            //fog.RemoveFogOfWar(playerImage, Session.GetLayer(Session.Values.ActiveLayer).ImagePath);
-
             ShowImages(false);
 
             PlayerPictureBox.SetPingPoint(new Point(-1, -1));
