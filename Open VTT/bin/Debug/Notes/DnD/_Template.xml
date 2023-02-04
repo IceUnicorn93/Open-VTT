@@ -2,12 +2,12 @@
 <ArrayOfCustomControlData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CustomControlData>
     <Location>
-      <X>19</X>
-      <Y>11</Y>
+      <X>15</X>
+      <Y>10</Y>
     </Location>
     <Size>
-      <Width>200</Width>
-      <Height>200</Height>
+      <Width>214</Width>
+      <Height>127</Height>
     </Size>
     <Text />
     <Name>picturebox</Name>

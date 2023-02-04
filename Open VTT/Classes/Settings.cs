@@ -23,6 +23,7 @@ namespace Open_VTT.Classes
         static Settings()
         {
             Values = new Settings();
+            Values.Screens = new List<ScreenInformation>();
 
             Load();
         }

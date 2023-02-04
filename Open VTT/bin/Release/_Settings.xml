@@ -11,6 +11,20 @@
       <Height>1440</Height>
       <Width>2560</Width>
     </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayPlayer</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayDM</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
   </Screens>
   <AutoSaveAction>true</AutoSaveAction>
   <DisplayChangesInstantly>false</DisplayChangesInstantly>

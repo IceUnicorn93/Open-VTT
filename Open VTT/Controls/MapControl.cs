@@ -76,15 +76,16 @@ namespace Open_VTT.Controls
             {
                 var action = new Action<Image, Color>((Image img, Color color) =>
                 {
+                    if (layer.FogOfWar.Count == 0) return;
+
                     if(img == dmImage)
-                        dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, color);
+                        dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
                     else
-                        playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, color);
+                        playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
                 });
 
                 action(dmImage, Color.FromArgb(150, 0, 0, 0));
-                if (Settings.Values.DisplayChangesInstantly)
-                    action(playerImage, Color.FromArgb(255, 0, 0, 0));
+                action(playerImage, Color.FromArgb(255, 0, 0, 0));
             }
 
             GC.Collect();
@@ -172,9 +173,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Add(fog);
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-            if (Settings.Values.DisplayChangesInstantly)
-                playerImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -205,8 +205,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Clear();
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-            playerImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
 
             //fog.RemoveFogOfWar(dmImage, Session.GetLayer(Session.Values.ActiveLayer).ImagePath);
             //fog.RemoveFogOfWar(playerImage, Session.GetLayer(Session.Values.ActiveLayer).ImagePath);
@@ -242,7 +242,7 @@ namespace Open_VTT.Controls
             if (layer != null)
                 LoadScene(Session.Values.ActiveScene, Session.Values.ActiveLayer + 1);
             else // layer doesn't exist
-            {
+            {  
                 var cLayer = Session.GetLayer(Session.Values.ActiveLayer);
                 if (cLayer.ImagePath != string.Empty && cLayer.RootPath != string.Empty) // Only create new Layer if Image is loaded to active layer
                 {

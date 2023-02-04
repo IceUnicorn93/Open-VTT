@@ -105,11 +105,8 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-                    if (Settings.Values.DisplayChangesInstantly)
-                        mapControl1.playerImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
-                    //fog.RemoveFogOfWar(mapControl1.dmImage, Session.UpdatePath());
-                    //fog.RemoveFogOfWar(mapControl1.playerImage, Session.UpdatePath());
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
 
                     Thread.Sleep(100);
 
@@ -193,12 +190,8 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-                    if (Settings.Values.DisplayChangesInstantly)
-                        mapControl1.playerImage = fog.DrawFogOfWarComplete(layer.ImagePath, layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
-
-                    //fog.RemoveFogOfWarPoligon(mapControl1.dmImage, Session.UpdatePath());
-                    //fog.RemoveFogOfWarPoligon(mapControl1.playerImage, Session.UpdatePath());
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
 
                     Thread.Sleep(100);
 
