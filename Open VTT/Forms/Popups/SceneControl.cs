@@ -18,6 +18,9 @@ namespace Open_VTT.Forms.Popups
         public SceneControl()
         {
             InitializeComponent();
+            var mainScreen = Screen.AllScreens.Single(n => n.Primary);
+            this.Location = new Point(mainScreen.Bounds.X, mainScreen.Bounds.Y);
+            this.WindowState = FormWindowState.Maximized;
 
             var drawPbArtwork = WindowInstaces.InformationDisplayDM.GetPictureBox();
             drawPbArtwork.DrawMode = PictureBoxMode.Ping;

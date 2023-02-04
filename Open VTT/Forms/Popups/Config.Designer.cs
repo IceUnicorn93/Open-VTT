@@ -86,8 +86,8 @@ namespace Open_VTT.Forms.Popups
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.screenSelector1);
             this.groupBox2.Location = new System.Drawing.Point(12, 77);
@@ -157,6 +157,7 @@ namespace Open_VTT.Forms.Popups
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Config";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Config";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

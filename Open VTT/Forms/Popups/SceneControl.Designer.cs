@@ -199,6 +199,7 @@ namespace Open_VTT.Forms.Popups
             this.ClientSize = new System.Drawing.Size(786, 504);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SceneControl";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Scene Control";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

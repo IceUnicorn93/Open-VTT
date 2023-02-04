@@ -1,5 +1,7 @@
 ﻿using Open_VTT.Classes;
 using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Open_VTT.Forms.Popups
@@ -9,6 +11,10 @@ namespace Open_VTT.Forms.Popups
         public Config()
         {
             InitializeComponent();
+
+            var mainScreen = Screen.AllScreens.Single(n => n.Primary);
+            this.Location = new Point(mainScreen.Bounds.X, mainScreen.Bounds.Y);
+            //this.Location = new Point(mainScreen.Bounds.Width / 2 - this.Size.Width / 2, mainScreen.Bounds.Height / 2 - this.Size.Height / 2);
 
             nudPlayerSize.Value = Settings.Values.PlayerScreenSize;
             cbAutoSaveAction.Checked = Settings.Values.AutoSaveAction;

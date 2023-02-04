@@ -11,10 +11,7 @@
 
         // Bugs:
         /*
-         * Sometimes Pictures are still in use;
-         *      Discard Image, Load fresh Image, redraw every Fog, then Display
-         * FIXED -> Cover and Reveal All shows/cover Fog instantly, even though they shouldn't;
-         *      Only do fog removal, on set active or if setting is enabled
+         * On Linux Set Active displays a blank Screen
          */
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)

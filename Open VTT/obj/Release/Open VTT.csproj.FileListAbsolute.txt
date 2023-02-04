@@ -11,7 +11,6 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.Gener
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.exe
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.pdb
-C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open VTT.csproj.AssemblyReference.cache
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.Editor.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedControl.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedRow.resources

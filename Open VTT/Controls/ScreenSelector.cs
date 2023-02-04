@@ -45,20 +45,43 @@ namespace Open_VTT.Controls
                     $"{screen.Bounds.Width} * {screen.Bounds.Height}"
                 };
 
+                //btn.MouseEnter += (object sender, EventArgs e) =>
+                //{
+                //    MessageBox.Show(
+                //        $"X: {screen.Bounds.X}{Environment.NewLine}" +
+                //        $"Y: {screen.Bounds.Y}{Environment.NewLine}" +
+                //        $"W: {screen.Bounds.Width}{Environment.NewLine}" +
+                //        $"H: {screen.Bounds.Height}{Environment.NewLine}" +
+                //        $"L: {screen.Bounds.Left}{Environment.NewLine}" +
+                //        $"R: {screen.Bounds.Right}{Environment.NewLine}" +
+                //        $"T: {screen.Bounds.Top}{Environment.NewLine}" +
+                //        $"B: {screen.Bounds.Bottom}{Environment.NewLine}" +
+                //        $"LX: {screen.Bounds.Location.X}{Environment.NewLine}" +
+                //        $"LY: {screen.Bounds.Location.Y}{Environment.NewLine}" +
+                //        $"SW: {screen.Bounds.Size.Width}{Environment.NewLine}" +
+                //        $"SH: {screen.Bounds.Size.Height}{Environment.NewLine}");
+                //};
+
+                var si = new ScreenInformation()
+                {
+                    PositionX = screen.Bounds.X,
+                    PositionY = screen.Bounds.Y,
+                    Height = screen.Bounds.Height,
+                    Width = screen.Bounds.Width,
+                };
+
+                btn.Tag = si;
+
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     try
-                    { 
-                        var selectedType = (DisplayType)Enum.Parse(typeof(DisplayType), cbType.Text);
+                    {
+                        var clickedButton = (Button)sender;
+                        var screenInfo = (ScreenInformation)clickedButton.Tag;
 
-                        var screenInfo = new ScreenInformation()
-                        {
-                            Display = selectedType,
-                            PositionX = screen.Bounds.X,
-                            PositionY = screen.Bounds.Y,
-                            Height = screen.Bounds.Height,
-                            Width = screen.Bounds.Width,
-                        };
+                        var selectedType = (DisplayType)Enum.Parse(typeof(DisplayType), cbType.Text);
+                        screenInfo.Display = selectedType;
+
 
                         var s = Settings.Values.Screens.SingleOrDefault(n => n.Display == selectedType);
                         if (s == null)
