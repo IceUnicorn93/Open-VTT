@@ -14,7 +14,7 @@ namespace Open_VTT.Forms.Popups
 {
     internal partial class SceneControl : Form
     {
-        Image InformationArtwork;
+        
 
         public SceneControl()
         {
@@ -190,7 +190,14 @@ namespace Open_VTT.Forms.Popups
                     Session.Save(true);
             };
 
+            FormClosed += FormClosedEvent;
+
             Init();
+        }
+
+        private void FormClosedEvent(object sender, FormClosedEventArgs e)
+        {
+            StreamDeckStatics.Dispose();
         }
 
         void Init()
@@ -215,6 +222,9 @@ namespace Open_VTT.Forms.Popups
                 Session.Values.ActiveScene = Session.Values.Scenes.First();
             }
 
+            try { StreamDeckStatics.InitStreamDeck(); } // If a StreamDeck isn't connected, don't crash
+            catch { }
+
             mapControl1.DmPictureBox = drawPbMap;
             mapControl1.Init();
 
@@ -223,6 +233,7 @@ namespace Open_VTT.Forms.Popups
 
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
         }
+        
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
@@ -236,5 +247,7 @@ namespace Open_VTT.Forms.Popups
                 config.ShowDialog();
             }
         }
+
+        
     }
 }

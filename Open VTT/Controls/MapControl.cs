@@ -38,6 +38,19 @@ namespace Open_VTT.Controls
                 throw new ArgumentNullException(nameof(DmPictureBox));
             if (PlayerPictureBox == null)
                 throw new ArgumentNullException(nameof(PlayerPictureBox));
+
+            if (StreamDeckStatics.IsInitialized)
+            {
+                StreamDeckStatics.SetAction((0, 0), new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null)))));
+                StreamDeckStatics.SetAction((0, 1), new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null)))));
+
+                StreamDeckStatics.SetAction((1, 0), new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null)))));
+                StreamDeckStatics.SetAction((1, 1), new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null)))));
+                StreamDeckStatics.SetAction((1, 2), new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null)))));
+
+                StreamDeckStatics.LoadScene = new Action<Scene, int>((s, i) => Invoke(new Action(() => LoadScene(s, i))));
+                StreamDeckStatics.SetMaps(); 
+            }
         }
 
         public void LoadScene(Scene SceneToLoad, int LayerToLoad)
@@ -48,7 +61,25 @@ namespace Open_VTT.Controls
             if (Session.Values.SessionFolder == string.Empty)
                 return;
 
-            SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
+            try
+            {
+                Invoke(new Action(
+                        () =>
+                        {
+                            SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
+
+                            // Re-Add Scenes
+                            cbxScenes.Items.Clear();
+                            cbxScenes.Items.AddRange(Session.Values.Scenes.ToArray());
+                        }
+                    )
+                    );
+            }
+            catch {
+                SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
+            }
+
+            //SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
 
             // Load new Background-Image
             if (SceneToLoad.Layers.Count > 0 && Session.GetLayer(Session.Values.ActiveLayer).ImagePath != string.Empty)
@@ -67,9 +98,7 @@ namespace Open_VTT.Controls
                 DmPictureBox.Image = null;
             }
 
-            // Re-Add Scenes
-            cbxScenes.Items.Clear();
-            cbxScenes.Items.AddRange(Session.Values.Scenes.ToArray());
+            
             // Add Fog of War
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
             if (layer != null)

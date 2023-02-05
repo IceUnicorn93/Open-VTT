@@ -9,11 +9,12 @@
         // Active ToDos
         //--------------------------------------------------------------------
 
-        // Fully working on Linux!
+        // Working on Linux with StreamDeck!
 
         // Bugs:
         /*
-         * nothing!
+         * Pressing Buttons like Crazy on the StreamDeck can cause a crash
+         * Specially, {Random Buttons} layer switching, Cover all
          */
 
         // Needs Testing:
@@ -21,15 +22,11 @@
          * Nothing!
          */
 
-        // Currently Implementing:
-        //Idea: {H0} StreamDeck Support
-        /* [Layer Up] [Reveal All] [Scene 1] [Scene 2] [Scene 3]
-         * [Layer Dn] [Cover All ] [Scene 4] [Scene 5] [Scene 6]
-         * [Nothing ] [Set Active] [Prev Pg] [Curr Pg] [Next Pg]
-         */
+        // Currently Implementing: Nothing
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
         //--------> Include Editor for Layout
+        //Idea: {M0} Pre-Place Fog of War Sections and make it toggleble
 
         //--------------------------------------------------------------------
         // Planned ToDos
@@ -43,8 +40,6 @@
             Process currentProc = Process.GetCurrentProcess();
             long memoryUsed = currentProc.PrivateMemorySize64;
          */
-
-        //Idea: {M0} Pre-Place Fog of War Sections and make it toggleble
 
         //--------------------------------------------------------------------
         // Future ToDos
