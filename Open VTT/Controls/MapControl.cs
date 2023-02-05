@@ -66,7 +66,7 @@ namespace Open_VTT.Controls
                 Invoke(new Action(
                         () =>
                         {
-                            SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
+                            SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
 
                             // Re-Add Scenes
                             cbxScenes.Items.Clear();
@@ -76,7 +76,7 @@ namespace Open_VTT.Controls
                     );
             }
             catch {
-                SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
+                SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
             }
 
             //SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");

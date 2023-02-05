@@ -21,7 +21,6 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.S
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedControl.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedRow.resources
-C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\HidSharp.dll
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.dll
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\StreamDeckSharp.dll
@@ -34,3 +33,4 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\StreamDeckSharp.xml
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\System.Drawing.Common.xml
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.CopyComplete
+C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
