@@ -23,11 +23,12 @@ namespace Open_VTT.Forms.Popups
             this.Location = new Point(mainScreen.Bounds.X, mainScreen.Bounds.Y);
             this.WindowState = FormWindowState.Maximized;
 
-            var drawPbArtwork = WindowInstaces.InformationDisplayDM.GetPictureBox();
-            drawPbArtwork.DrawMode = PictureBoxMode.Ping;
+            var drawPbArtworkDM = WindowInstaces.InformationDisplayDM.GetPictureBox();
+            var drawPbArtworkPlayer = WindowInstaces.InformationDisplayPlayer.GetPictureBox();
+            drawPbArtworkDM.DrawMode = PictureBoxMode.Ping;
 
             bool canPingArtwork = true;
-            drawPbArtwork.PointComplete += (Point p) =>
+            drawPbArtworkDM.PointComplete += (Point p) =>
             {
                 if (p.X > -1 && p.Y > -1)
                 {
@@ -37,7 +38,7 @@ namespace Open_VTT.Forms.Popups
                     var pbPoint = new FogOfWar
                     {
                         Position = new Point(p.X, p.Y),
-                        BoxSize = new Size(drawPbArtwork.Width, drawPbArtwork.Height),
+                        BoxSize = new Size(drawPbArtworkDM.Width, drawPbArtworkDM.Height),
                         DrawSize = new Size(100, 100),
                         state = FogState.Add
                     };
@@ -46,23 +47,9 @@ namespace Open_VTT.Forms.Popups
                     var path = Path.Combine(treeViewDisplay1.currentInformationItem.GetLocation(".png").ToArray());
                     if (File.Exists(path))
                     {
-                        InformationArtwork?.Dispose();
-                        InformationArtwork = null;
-                        InformationArtwork = Image.FromFile(path);
-
-                        pbPoint.DrawCircle(InformationArtwork);
-                        drawPbArtwork.Image?.Dispose();
-                        drawPbArtwork.Image = null;
-                        drawPbArtwork.Image = InformationArtwork;
-
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image?.Dispose();
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = null;
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = InformationArtwork;
-
-                        //pbPoint.DrawCircle(drawPbMap.Image);
-                        //pbPoint.DrawCircle(WindowInstaces.Player.GetPictureBox().Image);
-
-                        //mapControl1.ShowImages(drawPbMap.Image, WindowInstaces.Player.GetPictureBox().Image, true);
+                        pbPoint.DrawCircle(drawPbArtworkDM.Image);
+                        pbPoint.DrawCircle(drawPbArtworkPlayer.Image);
+                        drawPbArtworkPlayer.Image = drawPbArtworkPlayer.Image;
                     }
                 }
                 else
@@ -71,57 +58,28 @@ namespace Open_VTT.Forms.Popups
                     var path = Path.Combine(treeViewDisplay1.currentInformationItem.GetLocation(".png").ToArray());
                     if (File.Exists(path))
                     {
-                        InformationArtwork?.Dispose();
-                        InformationArtwork = null;
-                        
+                        drawPbArtworkDM.BackgroundImageLayout = ImageLayout.Zoom;
+                        drawPbArtworkPlayer.BackgroundImageLayout = ImageLayout.Zoom;
 
-                        drawPbArtwork.Image.Dispose();
-                        drawPbArtwork.Image = null;
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image?.Dispose();
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = null;
+                        drawPbArtworkDM.BackgroundImage = (Image)drawPbMap.Image.Clone();
+                        //drawPbArtworkPlayer.BackgroundImage = (Image)drawPbArtworkPlayer.Image.Clone();
 
-                        InformationArtwork = Image.FromFile(path);
+                        drawPbArtworkDM.Image = null;
+                        drawPbArtworkPlayer.Image = null;
 
-                        drawPbArtwork.Image = InformationArtwork;
-                        WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = InformationArtwork;
+                        drawPbArtworkDM.Image = Image.FromFile(path);
+                        drawPbArtworkPlayer.Image = Image.FromFile(path);
+
+                        drawPbArtworkDM.BackgroundImage = null;
+                        drawPbArtworkPlayer.BackgroundImage = null;
+
+                        GC.Collect();
                     }
 
                     canPingArtwork = true;
                 }
             };
 
-            drawPbMap.RectangleComplete += (Rectangle r) =>
-            {
-                if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
-                    return;
-
-                var fog = new FogOfWar()
-                {
-                    Position = new Point(r.X, r.Y),
-                    BoxSize = new Size(drawPbMap.Width, drawPbMap.Height),
-                    DrawSize = new Size(r.Width, r.Height),
-                    state = FogState.Remove
-                };
-
-                var layer = Session.GetLayer(Session.Values.ActiveLayer);
-                layer.FogOfWar.Add(fog);
-
-                new Task(() =>
-                {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
-
-                    Thread.Sleep(100);
-
-                    mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
-                }).Start();
-
-                if (Settings.Values.AutoSaveAction)
-                    Session.Save(true);
-            };
-
-            Image backupImageForMapDM = null;
-            Image backupImageForMapPlayer = null;
             bool canPing = true;
             drawPbMap.PointComplete += (Point p) =>
             {
@@ -168,6 +126,36 @@ namespace Open_VTT.Forms.Popups
 
                     canPing = true;
                 }
+            };
+
+            drawPbMap.RectangleComplete += (Rectangle r) =>
+            {
+                if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
+                    return;
+
+                var fog = new FogOfWar()
+                {
+                    Position = new Point(r.X, r.Y),
+                    BoxSize = new Size(drawPbMap.Width, drawPbMap.Height),
+                    DrawSize = new Size(r.Width, r.Height),
+                    state = FogState.Remove
+                };
+
+                var layer = Session.GetLayer(Session.Values.ActiveLayer);
+                layer.FogOfWar.Add(fog);
+
+                new Task(() =>
+                {
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
+
+                    Thread.Sleep(100);
+
+                    mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
+                }).Start();
+
+                if (Settings.Values.AutoSaveAction)
+                    Session.Save(true);
             };
 
             drawPbMap.PoligonComplete += (Point[] p) =>

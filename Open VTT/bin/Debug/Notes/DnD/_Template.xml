@@ -2,15 +2,28 @@
 <ArrayOfCustomControlData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CustomControlData>
     <Location>
-      <X>15</X>
-      <Y>10</Y>
+      <X>135</X>
+      <Y>13</Y>
     </Location>
     <Size>
-      <Width>214</Width>
-      <Height>127</Height>
+      <Width>392</Width>
+      <Height>289</Height>
     </Size>
     <Text />
     <Name>picturebox</Name>
     <ControlType>Picturebox</ControlType>
+  </CustomControlData>
+  <CustomControlData>
+    <Location>
+      <X>36</X>
+      <Y>30</Y>
+    </Location>
+    <Size>
+      <Width>43</Width>
+      <Height>13</Height>
+    </Size>
+    <Text>Jo Stuff</Text>
+    <Name>c2</Name>
+    <ControlType>Label</ControlType>
   </CustomControlData>
 </ArrayOfCustomControlData>

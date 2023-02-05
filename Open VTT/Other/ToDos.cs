@@ -9,7 +9,7 @@
         // Active ToDos
         //--------------------------------------------------------------------
 
-        // Main Map Control fully working on Linux!
+        // Fully working on Linux!
 
         // Bugs:
         /*
@@ -18,10 +18,14 @@
 
         // Needs Testing:
         /*
-         * - Library (Add, Remove)
-         * - Custom Layout
-         * - Artwork Display with Ping
-         * 
+         * Nothing!
+         */
+
+        // Currently Implementing:
+        //Idea: {H0} StreamDeck Support
+        /* [Layer Up] [Reveal All] [Scene 1] [Scene 2] [Scene 3]
+         * [Layer Dn] [Cover All ] [Scene 4] [Scene 5] [Scene 6]
+         * [Nothing ] [Set Active] [Prev Pg] [Curr Pg] [Next Pg]
          */
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
@@ -38,12 +42,6 @@
          *  using System.Diagnostics;
             Process currentProc = Process.GetCurrentProcess();
             long memoryUsed = currentProc.PrivateMemorySize64;
-         */
-
-        //Idea: {H0} StreamDeck Support
-        /* [Layer Up] [Reveal All] [Scene 1] [Scene 2] [Scene 3]
-         * [Layer Dn] [Cover All ] [Scene 4] [Scene 5] [Scene 6]
-         * [Nothing ] [Set Active] [Prev Pg] [Curr Pg] [Next Pg]
          */
 
         //Idea: {M0} Pre-Place Fog of War Sections and make it toggleble
