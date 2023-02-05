@@ -1,6 +1,7 @@
 ﻿using Open_VTT.Classes;
 using Open_VTT.Classes.Scenes;
 using Open_VTT.Other;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -30,14 +31,8 @@ namespace Open_VTT.Forms.Popups
             {
                 if (p.X > -1 && p.Y > -1)
                 {
-                    if (canPingArtwork)
-                    {
-                        canPingArtwork = false;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    if (canPingArtwork) canPingArtwork = false;
+                    else return;
 
                     var pbPoint = new FogOfWar
                     {
@@ -63,6 +58,11 @@ namespace Open_VTT.Forms.Popups
                         WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image?.Dispose();
                         WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = null;
                         WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = InformationArtwork;
+
+                        //pbPoint.DrawCircle(drawPbMap.Image);
+                        //pbPoint.DrawCircle(WindowInstaces.Player.GetPictureBox().Image);
+
+                        //mapControl1.ShowImages(drawPbMap.Image, WindowInstaces.Player.GetPictureBox().Image, true);
                     }
                 }
                 else
@@ -108,8 +108,8 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
 
                     Thread.Sleep(100);
 
@@ -127,14 +127,8 @@ namespace Open_VTT.Forms.Popups
             {
                 if (p.X > -1 && p.Y > -1)
                 {
-                    if (canPing)
-                    {
-                        canPing = false;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    if (canPing) canPing = false;
+                    else return;
 
                     var pbPoint = new FogOfWar
                     {
@@ -143,32 +137,34 @@ namespace Open_VTT.Forms.Popups
                         DrawSize = new Size(100, 100),
                         state = FogState.Add
                     };
-                    drawPbMap.Image.Save(Path.Combine(Application.StartupPath,"dm.png"));
-                    WindowInstaces.Player.GetPictureBox().Image?.Save(Path.Combine(Application.StartupPath, "player.png"));
 
-                    backupImageForMapDM?.Dispose();
-                    backupImageForMapDM = null;
-                    backupImageForMapDM = Image.FromFile(Path.Combine(Application.StartupPath, "dm.png"));
-                    backupImageForMapPlayer?.Dispose();
-                    backupImageForMapPlayer = null;
-                    backupImageForMapPlayer = Image.FromFile(Path.Combine(Application.StartupPath, "player.png"));
+                    pbPoint.DrawCircle(drawPbMap.Image);
+                    pbPoint.DrawCircle(WindowInstaces.Player.GetPictureBox().Image);
 
-                    pbPoint.DrawCircle(backupImageForMapDM);
-                    pbPoint.DrawCircle(backupImageForMapPlayer);
-
-                    mapControl1.ShowImages(backupImageForMapDM, backupImageForMapPlayer, true);
+                    mapControl1.ShowImages(drawPbMap.Image, WindowInstaces.Player.GetPictureBox().Image, true);
                 }
                 else
                 {
-                    mapControl1.ShowImages(true);
+                    var f = new FogOfWar();
 
-                    backupImageForMapDM?.Dispose();
-                    backupImageForMapDM = null;
-                    backupImageForMapPlayer?.Dispose();
-                    backupImageForMapPlayer = null;
+                    drawPbMap.BackgroundImageLayout = ImageLayout.Zoom;
+                    WindowInstaces.Player.GetPictureBox().BackgroundImageLayout = ImageLayout.Zoom;
 
-                    if(File.Exists(Path.Combine(Application.StartupPath, "dm.png"))) File.Delete(Path.Combine(Application.StartupPath, "dm.png"));
-                    if (File.Exists(Path.Combine(Application.StartupPath, "player.png"))) File.Delete(Path.Combine(Application.StartupPath, "player.png"));
+                    drawPbMap.BackgroundImage = (Image)drawPbMap.Image.Clone();
+                    WindowInstaces.Player.GetPictureBox().BackgroundImage = (Image)WindowInstaces.Player.GetPictureBox().Image.Clone();
+
+                    drawPbMap.Image = null;
+                    WindowInstaces.Player.GetPictureBox().Image = null;
+
+                    mapControl1.ShowImages(
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor),
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.PlayerColor),
+                    true);
+
+                    drawPbMap.BackgroundImage = null;
+                    WindowInstaces.Player.GetPictureBox().BackgroundImage = null;
+
+                    GC.Collect();
 
                     canPing = true;
                 }

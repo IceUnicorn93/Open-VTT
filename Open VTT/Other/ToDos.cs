@@ -9,9 +9,19 @@
         // Active ToDos
         //--------------------------------------------------------------------
 
+        // Main Map Control fully working on Linux!
+
         // Bugs:
         /*
-         * On Linux Set Active displays a blank Screen
+         * nothing!
+         */
+
+        // Needs Testing:
+        /*
+         * - Library (Add, Remove)
+         * - Custom Layout
+         * - Artwork Display with Ping
+         * 
          */
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)

@@ -11,9 +11,14 @@ namespace Open_VTT.Classes
 
         static WindowInstaces()
         {
-            InformationDisplayDM = InformationDisplayDM.GetOrCreate();
-            InformationDisplayPlayer = InformationDisplayPlayer.GetOrCreate();
-            Player = MapPlayer.GetOrCreate();
+            Init();
+        }
+
+        internal static void Init()
+        {
+            InformationDisplayDM = new InformationDisplayDM();
+            InformationDisplayPlayer = new InformationDisplayPlayer();
+            Player = new MapPlayer();
         }
     }
 }

@@ -90,6 +90,8 @@ namespace Open_VTT.Forms
             // Close Information Display for DM Window and Dispose it 
             if (!WindowInstaces.InformationDisplayDM.IsDisposed)
                 WindowInstaces.InformationDisplayDM.Close();
+
+            WindowInstaces.Init();
         }
 
         private void LoadWithHide(string path)

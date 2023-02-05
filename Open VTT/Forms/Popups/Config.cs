@@ -14,7 +14,9 @@ namespace Open_VTT.Forms.Popups
 
             var mainScreen = Screen.AllScreens.Single(n => n.Primary);
             this.Location = new Point(mainScreen.Bounds.X, mainScreen.Bounds.Y);
-            //this.Location = new Point(mainScreen.Bounds.Width / 2 - this.Size.Width / 2, mainScreen.Bounds.Height / 2 - this.Size.Height / 2);
+            this.Location = new Point(
+                mainScreen.Bounds.X + mainScreen.Bounds.Width / 2 - this.Size.Width / 2,
+                mainScreen.Bounds.Y + mainScreen.Bounds.Height / 2 - this.Size.Height / 2);
 
             nudPlayerSize.Value = Settings.Values.PlayerScreenSize;
             cbAutoSaveAction.Checked = Settings.Values.AutoSaveAction;

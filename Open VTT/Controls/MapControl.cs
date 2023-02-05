@@ -5,6 +5,7 @@ using Open_VTT.Forms.Popups.Displayer;
 using Open_VTT.Other;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,7 +42,6 @@ namespace Open_VTT.Controls
 
         public void LoadScene(Scene SceneToLoad, int LayerToLoad)
         {
-            //imageLoaded = false;
             Session.SetLayer(LayerToLoad);
             Session.SetScene(SceneToLoad);
 
@@ -78,7 +78,7 @@ namespace Open_VTT.Controls
                 {
                     if (layer.FogOfWar.Count == 0) return;
 
-                    if(img == dmImage)
+                    if (img == dmImage)
                         dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
                     else
                         playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
@@ -107,18 +107,21 @@ namespace Open_VTT.Controls
             playerImage = Image.FromFile(Path);
         }
 
+        public void ShowImages(bool showPlayer)
+        {
+            ShowImages(dmImage, playerImage, showPlayer);
+        }
+
         public void ShowImages(Image dm, Image player, bool showPlayer)
         {
             DmPictureBox.Image = dm;
 
             if(showPlayer || Settings.Values.DisplayChangesInstantly)
+            {
                 PlayerPictureBox.Image = player;
+            }
         }
 
-        public void ShowImages(bool showPlayer)
-        {
-            ShowImages(dmImage, playerImage, showPlayer);
-        }
 
         private void btnImportImage_Click(object sender, EventArgs e)
         {
@@ -149,9 +152,14 @@ namespace Open_VTT.Controls
 
         private void btnSetActive_Click(object sender, EventArgs e)
         {
+            WindowInstaces.Player.Show();
             ShowImages(true);
 
-            WindowInstaces.Player.Show();
+            WindowInstaces.Player.Size = new Size(this.ParentForm.Size.Width, this.ParentForm.Size.Height);
+
+            //MessageBox.Show(
+            //    $"{WindowInstaces.Player.Size.Width} - {WindowInstaces.Player.Size.Height}{Environment.NewLine}" +
+            //    $"{this.ParentForm.Size.Width} - {this.ParentForm.Size.Height}");
         }
 
         private void btnCoverAll_Click(object sender, EventArgs e)

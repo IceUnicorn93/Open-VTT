@@ -21,4 +21,3 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.S
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedControl.resources
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedRow.resources
-C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache

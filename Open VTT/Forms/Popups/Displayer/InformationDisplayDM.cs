@@ -8,10 +8,7 @@ namespace Open_VTT.Forms.Popups.Displayer
 {
     public partial class InformationDisplayDM : Form
     {
-        // Singleton instance
-        private static InformationDisplayDM currentPlayerWindow = null;
-
-        private InformationDisplayDM()
+        internal InformationDisplayDM()
         {
             InitializeComponent();
 
@@ -21,14 +18,6 @@ namespace Open_VTT.Forms.Popups.Displayer
             this.Size = new Size(screen.Width, screen.Height);
 
             displayImagePictureBox.DrawMode = Other.PictureBoxMode.Ping;
-        }
-
-        public static InformationDisplayDM GetOrCreate()
-        {
-            if (currentPlayerWindow == null || currentPlayerWindow.IsDisposed)
-                currentPlayerWindow = new InformationDisplayDM();
-
-            return currentPlayerWindow;
         }
 
         internal DrawingPictureBox GetPictureBox()
