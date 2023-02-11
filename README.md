@@ -17,6 +17,7 @@ Open VTT is currently working on windows and Linux with a few known bugs.
 2) the ping function isn't working on Linux (needs closer inspection)
 3) the save button in artwork and information isn't moving to the correct location 
 4) resizing the image in a node is t saving if you don't click the save button
+5) loading an image in artwork and information if an image already exists for the child causes a crash
 
 About using Open VTT
 1) go to configure and configure your screens, at least the player
