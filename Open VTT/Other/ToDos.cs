@@ -14,7 +14,7 @@
         // Bugs:
         /*
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
-         * Specially: {Random Buttons} layer switching, Cover all
+         *  Specially: {Random Buttons} layer switching, Cover all
          * New Story on Windows, Import same Story on Linux
          * Ping on big Images is not visible
          */
@@ -25,6 +25,10 @@
          */
 
         // Currently Implementing: Nothing
+        // Pre-Place Fog of War Selection
+        // Initiative Tracker
+        // Memory Activity
+        // Digital Monster Library
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
         //--------> Include Editor for Layout
