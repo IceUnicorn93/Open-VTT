@@ -21,7 +21,7 @@
 
         // Needs Testing:
         /*
-         * Nothing!
+         * Creating Storys so they are compatible for every Platform
          */
 
         // Currently Implementing: Nothing
