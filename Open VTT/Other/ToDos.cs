@@ -14,7 +14,9 @@
         // Bugs:
         /*
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
-         * Specially, {Random Buttons} layer switching, Cover all
+         * Specially: {Random Buttons} layer switching, Cover all
+         * New Story on Windows, Import same Story on Linux
+         * Ping on big Images is not visible
          */
 
         // Needs Testing:
