@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\Open VTT.csproj": {}
+  },
+  "projects": {
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\Open VTT.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\Open VTT.csproj",
+        "projectName": "Open VTT",
+        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\Open VTT.csproj",
+        "packagesPath": "C:\\Users\\jopla\\.nuget\\packages\\",
+        "outputPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\jopla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "StreamDeckSharp": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

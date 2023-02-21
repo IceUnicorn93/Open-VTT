@@ -34,3 +34,36 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\StreamDeckSharp.xml
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\bin\Debug\System.Drawing.Common.xml
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.CopyComplete
 C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.SuggestedBindingRedirects.cache
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.DrawingPictureBox.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.Editor.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.MapControl.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedControl.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedRow.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.ScreenSelector.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.TreeViewDisplay.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Config.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.DisplayItemGenerator.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayPlayer.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.NewScene.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.MapPlayer.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.SceneControl.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Start.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Properties.Resources.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.GenerateResource.cache
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.exe.config
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.exe
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.exe
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.pdb
