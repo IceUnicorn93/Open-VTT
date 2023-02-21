@@ -23,6 +23,8 @@ namespace Open_VTT.Controls
         public DrawingPictureBox DmPictureBox;
         DrawingPictureBox PlayerPictureBox;
 
+        internal bool PrePlaceFogOfWar = false;
+
         public MapControl()
         {
             InitializeComponent();
@@ -77,6 +79,9 @@ namespace Open_VTT.Controls
             }
             catch {
                 SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
+                // Re-Add Scenes
+                cbxScenes.Items.Clear();
+                cbxScenes.Items.AddRange(Session.Values.Scenes.ToArray());
             }
 
             //SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
@@ -196,10 +201,11 @@ namespace Open_VTT.Controls
             if (dmImage == null)
                 return;
 
-            var fog = new FogOfWar()
+            var fog = new FogOfWar
             {
                 BoxSize = new Size(DmPictureBox.Width, DmPictureBox.Height),
-                state = FogState.Add
+                state = FogState.Add,
+                IsToggleFog= false,
             };
 
             (int pictureWidth, int pictureHeight, int offsetLeftRight, int offsetTopBottom, _) = PictureBoxHelper.GetPictureDimensions(fog, new Size(dmImage.Width, dmImage.Height));
@@ -210,8 +216,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Add(fog);
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -232,7 +238,8 @@ namespace Open_VTT.Controls
             var fog = new FogOfWar
             {
                 BoxSize = new Size(DmPictureBox.Width, DmPictureBox.Height),
-                state = FogState.Add
+                state = FogState.Add,
+                IsToggleFog = false,
             };
 
             (int pictureWidth, int pictureHeight, int offsetLeftRight, int offsetTopBottom, _) = PictureBoxHelper.GetPictureDimensions(fog, new Size(dmImage.Width, dmImage.Height));
@@ -242,8 +249,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Clear();
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
 
             ShowImages(false);
 
@@ -341,6 +348,24 @@ namespace Open_VTT.Controls
         private void cbxScenes_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadScene((Scene)cbxScenes.SelectedItem, 0);
+        }
+
+        private void btnImidiateFogOfWar_Click(object sender, EventArgs e)
+        {
+            PrePlaceFogOfWar = false;
+
+            btnReSetFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnReSetFogOfWar.UseVisualStyleBackColor = true;
+            btnImidiateFogOfWar.BackColor = Color.GreenYellow;
+        }
+
+        private void btnReSetFogOfWar_Click(object sender, EventArgs e)
+        {
+            PrePlaceFogOfWar = true;
+
+            btnImidiateFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnImidiateFogOfWar.UseVisualStyleBackColor = true;
+            btnReSetFogOfWar.BackColor = Color.GreenYellow;
         }
     }
 }

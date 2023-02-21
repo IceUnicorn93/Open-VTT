@@ -15,17 +15,16 @@
         /*
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
          *  Specially: {Random Buttons} layer switching, Cover all
-         * New Story on Windows, Import same Story on Linux
-         * Ping on big Images is not visible
          */
 
         // Needs Testing:
         /*
          * Creating Storys so they are compatible for every Platform
+         * Ping on big Images
+         * Importing an ArtworkImage if ArtworkImage is already set
          */
 
-        // Currently Implementing: Nothing
-        // Pre-Place Fog of War Selection
+        // Currently Implementing: Pre-Place Fog of War Selection
         // Initiative Tracker
         // Memory Activity
         // Digital Monster Library

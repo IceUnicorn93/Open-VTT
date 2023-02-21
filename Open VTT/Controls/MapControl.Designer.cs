@@ -40,6 +40,8 @@ namespace Open_VTT.Controls
             this.btnCoverAll = new System.Windows.Forms.Button();
             this.btnSetActive = new System.Windows.Forms.Button();
             this.btnImportImage = new System.Windows.Forms.Button();
+            this.btnImidiateFogOfWar = new System.Windows.Forms.Button();
+            this.btnReSetFogOfWar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLayer
@@ -96,7 +98,7 @@ namespace Open_VTT.Controls
             this.btnPoligonFogOfWar.Name = "btnPoligonFogOfWar";
             this.btnPoligonFogOfWar.Size = new System.Drawing.Size(87, 20);
             this.btnPoligonFogOfWar.TabIndex = 18;
-            this.btnPoligonFogOfWar.Text = "[F] Poligon";
+            this.btnPoligonFogOfWar.Text = "Poligon";
             this.btnPoligonFogOfWar.UseVisualStyleBackColor = true;
             this.btnPoligonFogOfWar.Click += new System.EventHandler(this.btnPoligonFogOfWar_Click);
             // 
@@ -117,7 +119,7 @@ namespace Open_VTT.Controls
             this.btnRectangleFogOfWar.Name = "btnRectangleFogOfWar";
             this.btnRectangleFogOfWar.Size = new System.Drawing.Size(87, 20);
             this.btnRectangleFogOfWar.TabIndex = 16;
-            this.btnRectangleFogOfWar.Text = "[F] Rectangle";
+            this.btnRectangleFogOfWar.Text = "Rectangle";
             this.btnRectangleFogOfWar.UseVisualStyleBackColor = false;
             this.btnRectangleFogOfWar.Click += new System.EventHandler(this.btnRectangleFogOfWar_Click);
             // 
@@ -151,10 +153,33 @@ namespace Open_VTT.Controls
             this.btnImportImage.UseVisualStyleBackColor = true;
             this.btnImportImage.Click += new System.EventHandler(this.btnImportImage_Click);
             // 
+            // btnImidiateFogOfWar
+            // 
+            this.btnImidiateFogOfWar.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnImidiateFogOfWar.Location = new System.Drawing.Point(136, 50);
+            this.btnImidiateFogOfWar.Name = "btnImidiateFogOfWar";
+            this.btnImidiateFogOfWar.Size = new System.Drawing.Size(87, 20);
+            this.btnImidiateFogOfWar.TabIndex = 24;
+            this.btnImidiateFogOfWar.Text = "Imidiate";
+            this.btnImidiateFogOfWar.UseVisualStyleBackColor = false;
+            this.btnImidiateFogOfWar.Click += new System.EventHandler(this.btnImidiateFogOfWar_Click);
+            // 
+            // btnReSetFogOfWar
+            // 
+            this.btnReSetFogOfWar.Location = new System.Drawing.Point(229, 50);
+            this.btnReSetFogOfWar.Name = "btnReSetFogOfWar";
+            this.btnReSetFogOfWar.Size = new System.Drawing.Size(87, 20);
+            this.btnReSetFogOfWar.TabIndex = 25;
+            this.btnReSetFogOfWar.Text = "Pre-Place";
+            this.btnReSetFogOfWar.UseVisualStyleBackColor = true;
+            this.btnReSetFogOfWar.Click += new System.EventHandler(this.btnReSetFogOfWar_Click);
+            // 
             // MapControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReSetFogOfWar);
+            this.Controls.Add(this.btnImidiateFogOfWar);
             this.Controls.Add(this.lblLayer);
             this.Controls.Add(this.cbxScenes);
             this.Controls.Add(this.btnNewScene);
@@ -186,5 +211,7 @@ namespace Open_VTT.Controls
         private System.Windows.Forms.Button btnCoverAll;
         private System.Windows.Forms.Button btnSetActive;
         private System.Windows.Forms.Button btnImportImage;
+        private System.Windows.Forms.Button btnImidiateFogOfWar;
+        private System.Windows.Forms.Button btnReSetFogOfWar;
     }
 }

@@ -41,6 +41,8 @@ namespace Open_VTT.Forms.Popups
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.editor1 = new Open_VTT.Controls.Editor();
             this.treeViewDisplay1 = new Open_VTT.Controls.TreeViewDisplay();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -48,6 +50,7 @@ namespace Open_VTT.Forms.Popups
             ((System.ComponentModel.ISupportInitialize)(this.drawPbMap)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -124,7 +127,7 @@ namespace Open_VTT.Forms.Popups
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.drawPbMap);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
@@ -137,9 +140,10 @@ namespace Open_VTT.Forms.Popups
             // 
             this.drawPbMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.drawPbMap.DrawMode = Open_VTT.Other.PictureBoxMode.Ping;
-            this.drawPbMap.Location = new System.Drawing.Point(3, 3);
+            this.drawPbMap.Location = new System.Drawing.Point(50, 0);
+            this.drawPbMap.Margin = new System.Windows.Forms.Padding(0);
             this.drawPbMap.Name = "drawPbMap";
-            this.drawPbMap.Size = new System.Drawing.Size(772, 385);
+            this.drawPbMap.Size = new System.Drawing.Size(722, 385);
             this.drawPbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.drawPbMap.TabIndex = 0;
             this.drawPbMap.TabStop = false;
@@ -192,6 +196,32 @@ namespace Open_VTT.Forms.Popups
             this.treeViewDisplay1.Size = new System.Drawing.Size(161, 385);
             this.treeViewDisplay1.TabIndex = 3;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.drawPbMap, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(772, 385);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(50, 385);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
             // SceneControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +238,7 @@ namespace Open_VTT.Forms.Popups
             ((System.ComponentModel.ISupportInitialize)(this.drawPbMap)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,6 +257,8 @@ namespace Open_VTT.Forms.Popups
         private Controls.MapControl mapControl1;
         private Controls.Editor editor1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

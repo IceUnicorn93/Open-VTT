@@ -37,10 +37,10 @@ namespace Open_VTT.Other
 
             // Set Static Text
             SetDeckKeyText(0, 0, $"Layer{Environment.NewLine}  Up");
-            SetDeckKeyText(0, 1, $"Layer{Environment.NewLine} Down");
+            SetDeckKeyText(0, 1, $"Layer{Environment.NewLine}Down");
 
-            SetDeckKeyText(1, 0, $"Reveal{Environment.NewLine}  all");
-            SetDeckKeyText(1, 1, $"Cover{Environment.NewLine}  all");
+            SetDeckKeyText(1, 0, $"Reveal{Environment.NewLine}    all");
+            SetDeckKeyText(1, 1, $"Cover{Environment.NewLine}   all");
             SetDeckKeyText(1, 2, $" Set {Environment.NewLine}Active");
 
             SetDeckKeyText(2, deck.Keys.KeyCountY - 1, "<-");

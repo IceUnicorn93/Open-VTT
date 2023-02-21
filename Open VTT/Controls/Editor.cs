@@ -214,6 +214,8 @@ namespace Open_VTT.Controls
                             using (var ofd = new OpenFileDialog())
                                 if (ofd.ShowDialog() == DialogResult.OK)
                                 {
+                                    ((ResizablePictureBox)c).Image = null;
+
                                     var newPath = Path.Combine(currentItem.GetLocation(".png").ToArray());
                                     File.Copy(ofd.FileName, newPath, true);
                                     ((ResizablePictureBox)c).Image = Image.FromFile(newPath);

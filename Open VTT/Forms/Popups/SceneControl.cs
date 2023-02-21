@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -126,6 +127,7 @@ namespace Open_VTT.Forms.Popups
 
                     canPing = true;
                 }
+
             };
 
             drawPbMap.RectangleComplete += (Rectangle r) =>
@@ -133,12 +135,13 @@ namespace Open_VTT.Forms.Popups
                 if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
                     return;
 
-                var fog = new FogOfWar()
+                var fog = new FogOfWar
                 {
                     Position = new Point(r.X, r.Y),
                     BoxSize = new Size(drawPbMap.Width, drawPbMap.Height),
                     DrawSize = new Size(r.Width, r.Height),
-                    state = FogState.Remove
+                    state = FogState.Remove,
+                    IsToggleFog = mapControl1.PrePlaceFogOfWar,
                 };
 
                 var layer = Session.GetLayer(Session.Values.ActiveLayer);
@@ -154,6 +157,8 @@ namespace Open_VTT.Forms.Popups
                     mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
                 }).Start();
 
+                UpdatePrePlaceFogOfWarList();
+
                 if (Settings.Values.AutoSaveAction)
                     Session.Save(true);
             };
@@ -163,13 +168,14 @@ namespace Open_VTT.Forms.Popups
                 if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
                     return;
 
-                var fog = new FogOfWar()
+                var fog = new FogOfWar
                 {
                     Position = new Point(0, 0),
                     BoxSize = new Size(drawPbMap.Width, drawPbMap.Height),
                     DrawSize = new Size(1, 1),
                     state = FogState.Remove,
-                    PoligonData = p.ToList()
+                    PoligonData = p.ToList(),
+                    IsToggleFog = mapControl1.PrePlaceFogOfWar,
                 };
 
                 var layer = Session.GetLayer(Session.Values.ActiveLayer);
@@ -177,14 +183,16 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(150, 0, 0, 0));
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Color.FromArgb(255, 0, 0, 0));
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
 
                     Thread.Sleep(100);
 
                     mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
 
                 }).Start();
+
+                UpdatePrePlaceFogOfWarList();
 
                 if (Settings.Values.AutoSaveAction)
                     Session.Save(true);
@@ -232,6 +240,45 @@ namespace Open_VTT.Forms.Popups
             treeViewDisplay1.Init();
 
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
+
+            UpdatePrePlaceFogOfWarList();
+        }
+
+        void UpdatePrePlaceFogOfWarList()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog == true).ToList();
+
+            for (int i = 0; i < fogs.Count; i++)
+            {
+                var btn = new Button
+                {
+                    Text = (i + 1).ToString("00"),
+                    Size = new Size(50, 50),
+                    Margin = new Padding(0, 0, 0, 0),
+                    Tag = fogs[i],
+                };
+
+                btn.Click += (sender, args) =>
+                {
+                    var fog = ((Button)sender).Tag as FogOfWar;
+                    fog.IsToggleFog = false;
+
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor);
+
+                    Thread.Sleep(100);
+
+                    mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
+
+                    if (Settings.Values.AutoSaveAction)
+                        Session.Save(true);
+
+                    UpdatePrePlaceFogOfWarList();
+                };
+
+                flowLayoutPanel1.Controls.Add(btn);
+            }
         }
         
 
