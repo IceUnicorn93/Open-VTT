@@ -12,7 +12,18 @@ namespace OpenVTT.Server
     {
         static void Main(string[] args)
         {
-            var config = ServerConfiguration.LoadFromXMLString(File.ReadAllText(".\\config.xml"));
+            ServerConfiguration config;
+            if (File.Exists(".\\config.xml"))
+                config = ServerConfiguration.LoadFromXMLString(File.ReadAllText(".\\config.xml"));
+            else
+            {
+                config = new ServerConfiguration()
+                {
+                    SERVER_IP = "127.0.0.1",
+                    PORT_NO = 5000
+                };
+                File.WriteAllText(".\\config.xml", config.ToXML());
+            }
             
             //---listen at the specified IP and port no.---
             Server s = new Server(config.SERVER_IP, config.PORT_NO);

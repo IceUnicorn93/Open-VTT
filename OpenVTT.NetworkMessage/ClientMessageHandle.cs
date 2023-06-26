@@ -91,6 +91,10 @@ namespace OpenVTT.NetworkMessage
         internal List<(string Name, string Type, DateTime LastWriteTime)> GetDefinition()
         {
             var startupPath = Application.StartupPath;
+
+            if (!Directory.Exists(Path.Combine(startupPath, "Notes")))
+                Directory.CreateDirectory(Path.Combine(startupPath, "Notes"));
+
             var files = Directory.GetFileSystemEntries(Path.Combine(startupPath, "Notes"), "*", SearchOption.AllDirectories).ToList();
             var Definition = new List<(string Name, string Type, DateTime LastWriteTime)>();
             foreach (var entry in files)
@@ -152,6 +156,8 @@ namespace OpenVTT.NetworkMessage
                 if (SetCommandLabel != null) SetCommandLabel("It's synced up");
 
                 if(SetQueueLabel != null) SetQueueLabel(0);
+
+                if(SyncComplete != null) SyncComplete();
             }
         }
 

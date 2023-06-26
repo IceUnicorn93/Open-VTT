@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <PlayerScreenSize>27</PlayerScreenSize>
-  <PlayerScreenWidthInches>23.53253950236283</PlayerScreenWidthInches>
-  <PlayerScreenHeightInces>13.237053470079092</PlayerScreenHeightInces>
+  <PlayerScreenSize>0</PlayerScreenSize>
+  <PlayerScreenWidthInches>0</PlayerScreenWidthInches>
+  <PlayerScreenHeightInces>0</PlayerScreenHeightInces>
   <Screens>
-    <ScreenInformation>
-      <Display>InformationDisplayPlayer</Display>
-      <PositionX>0</PositionX>
-      <PositionY>720</PositionY>
-      <Height>720</Height>
-      <Width>1280</Width>
-    </ScreenInformation>
-    <ScreenInformation>
-      <Display>InformationDisplayDM</Display>
-      <PositionX>1280</PositionX>
-      <PositionY>720</PositionY>
-      <Height>720</Height>
-      <Width>1280</Width>
-    </ScreenInformation>
     <ScreenInformation>
       <Display>Player</Display>
       <PositionX>-2560</PositionX>
@@ -27,9 +13,9 @@
     </ScreenInformation>
   </Screens>
   <AutoSaveAction>true</AutoSaveAction>
-  <DisplayChangesInstantly>true</DisplayChangesInstantly>
+  <DisplayChangesInstantly>false</DisplayChangesInstantly>
   <DisplayGrid>false</DisplayGrid>
-  <NoteServerIP>202.61.229.93</NoteServerIP>
+  <NoteServerIP>127.0.0.1</NoteServerIP>
   <NoteServerPort>5000</NoteServerPort>
   <XmlDmColor>
     <Alpha>150</Alpha>

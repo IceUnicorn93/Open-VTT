@@ -1,6 +1,4 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Release\OpenVTT.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Release\OpenVTT.Common.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Release\OpenVTT.Common.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Release\OpenVTT.Common.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Release\OpenVTT.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Release\OpenVTT.Common.pdb

@@ -1,11 +1,8 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Release\OpenVTT.Client.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Release\OpenVTT.Client.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Release\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Release\OpenVTT.NetworkMessage.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.NetworkSync.resources
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.csproj.GenerateResource.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Release\OpenVTT.Client.pdb
