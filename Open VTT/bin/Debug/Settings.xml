@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <PlayerScreenSize>0</PlayerScreenSize>
-  <PlayerScreenWidthInches>0</PlayerScreenWidthInches>
-  <PlayerScreenHeightInces>0</PlayerScreenHeightInces>
+  <PlayerScreenSize>27</PlayerScreenSize>
+  <PlayerScreenWidthInches>23.53253950236283</PlayerScreenWidthInches>
+  <PlayerScreenHeightInces>13.237053470079092</PlayerScreenHeightInces>
   <Screens>
     <ScreenInformation>
       <Display>InformationDisplayPlayer</Display>
@@ -28,6 +28,7 @@
   </Screens>
   <AutoSaveAction>true</AutoSaveAction>
   <DisplayChangesInstantly>true</DisplayChangesInstantly>
+  <DisplayGrid>false</DisplayGrid>
   <NoteServerIP>202.61.229.93</NoteServerIP>
   <NoteServerPort>5000</NoteServerPort>
 </Settings>

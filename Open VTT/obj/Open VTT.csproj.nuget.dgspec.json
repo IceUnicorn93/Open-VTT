@@ -163,6 +163,28 @@
             "projectReferences": {
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj",
+        "projectName": "OpenVTT.Grid",
+        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
               }
             }
           }

@@ -85,3 +85,5 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.exe
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.pdb

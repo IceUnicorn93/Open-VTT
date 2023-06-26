@@ -103,13 +103,26 @@
       "OpenVTT.FogOfWar/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Grid": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Grid/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
       "OpenVTT.NetworkMessage/1.0.0": {
@@ -264,13 +277,26 @@
       "OpenVTT.FogOfWar/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Grid": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Grid/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
       "OpenVTT.NetworkMessage/1.0.0": {
@@ -425,13 +451,26 @@
       "OpenVTT.FogOfWar/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Grid": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Grid/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
       "OpenVTT.NetworkMessage/1.0.0": {
@@ -586,13 +625,26 @@
       "OpenVTT.FogOfWar/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Grid": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Grid/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
       "OpenVTT.NetworkMessage/1.0.0": {
@@ -741,6 +793,11 @@
       "type": "project",
       "path": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj",
       "msbuildProject": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj"
+    },
+    "OpenVTT.Grid/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Grid/OpenVTT.Grid.csproj",
+      "msbuildProject": "../OpenVTT.Grid/OpenVTT.Grid.csproj"
     },
     "OpenVTT.NetworkMessage/1.0.0": {
       "type": "project",

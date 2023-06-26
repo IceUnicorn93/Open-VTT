@@ -26,3 +26,7 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.cs
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.pdb

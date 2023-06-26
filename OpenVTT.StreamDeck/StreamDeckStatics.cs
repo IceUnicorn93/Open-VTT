@@ -272,6 +272,7 @@ namespace OpenVTT.StreamDeck
             var fogNames =
                 Session.Session.Values.ActiveScene.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar
                 .Where(n => n.Name != "")
+                .OrderBy(n => n.Name)
                 .Skip((Page - 1) * maxMapCount)
                 .Take(maxMapCount)
                 .Select(n => n.Name)

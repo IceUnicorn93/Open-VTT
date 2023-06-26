@@ -93,6 +93,8 @@ namespace OpenVTT.FogOfWar
                 }
             }
 
+            img = Grid.Grid.DrawGrid(img, IsPlayer);
+
             return img;
         }
 

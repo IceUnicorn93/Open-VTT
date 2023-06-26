@@ -13,3 +13,7 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Debug\OpenVTT.Session.csproj.C
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Debug\OpenVTT.Session.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Debug\OpenVTT.Session.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Debug\OpenVTT.Session.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug\OpenVTT.Grid.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug\OpenVTT.Grid.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug\OpenVTT.Settings.pdb

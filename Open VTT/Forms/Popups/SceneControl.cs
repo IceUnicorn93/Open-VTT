@@ -285,7 +285,7 @@ namespace Open_VTT.Forms.Popups
         {
             flowLayoutPanel1.Controls.Clear();
 
-            var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog == true).ToList();
+            var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog == true).OrderBy(n => n.Name).ToList();
 
             for (int i = 0; i < fogs.Count; i++)
             {

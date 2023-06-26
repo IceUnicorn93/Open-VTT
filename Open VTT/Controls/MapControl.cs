@@ -200,6 +200,8 @@ namespace Open_VTT.Controls
             if (dmImage == null)
                 return;
 
+            Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Clear();
+
             var fog = new FogOfWar
             {
                 BoxSize = new Size(DmPictureBox.Width, DmPictureBox.Height),

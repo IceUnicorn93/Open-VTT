@@ -15,7 +15,6 @@
         //-> An Initiative Tracker
         //-> Display Memory Usage
         //-> Scene Templates for Scenes the Players visit frequently
-        //-> Possible grid overlay?
 
 
         //--------------------------------------------------------------------
