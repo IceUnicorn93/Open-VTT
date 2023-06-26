@@ -1,6 +1,9 @@
 ﻿using Open_VTT.Classes;
-using Open_VTT.Classes.Scenes;
-using Open_VTT.Other;
+using OpenVTT.Common;
+using OpenVTT.FogOfWar;
+using OpenVTT.Session;
+using OpenVTT.Settings;
+using OpenVTT.StreamDeck;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,7 +18,7 @@ namespace Open_VTT.Forms.Popups
 {
     internal partial class SceneControl : Form
     {
-        
+
 
         public SceneControl()
         {
@@ -98,7 +101,8 @@ namespace Open_VTT.Forms.Popups
                     };
 
                     pbPoint.DrawCircle(drawPbMap.Image);
-                    pbPoint.DrawCircle(WindowInstaces.Player.GetPictureBox().Image);
+                    if(WindowInstaces.Player.GetPictureBox().Image != null)
+                        pbPoint.DrawCircle(WindowInstaces.Player.GetPictureBox().Image);
 
                     mapControl1.ShowImages(drawPbMap.Image, WindowInstaces.Player.GetPictureBox().Image, true);
                 }
@@ -110,14 +114,15 @@ namespace Open_VTT.Forms.Popups
                     WindowInstaces.Player.GetPictureBox().BackgroundImageLayout = ImageLayout.Zoom;
 
                     drawPbMap.BackgroundImage = (Image)drawPbMap.Image.Clone();
-                    WindowInstaces.Player.GetPictureBox().BackgroundImage = (Image)WindowInstaces.Player.GetPictureBox().Image.Clone();
+                    if(WindowInstaces.Player.GetPictureBox().Image != null)
+                        WindowInstaces.Player.GetPictureBox().BackgroundImage = (Image)WindowInstaces.Player.GetPictureBox().Image.Clone();
 
                     drawPbMap.Image = null;
                     WindowInstaces.Player.GetPictureBox().Image = null;
 
                     mapControl1.ShowImages(
-                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor),
-                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.PlayerColor),
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor, false),
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.PlayerColor, true),
                     true);
 
                     drawPbMap.BackgroundImage = null;
@@ -134,6 +139,14 @@ namespace Open_VTT.Forms.Popups
             {
                 if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
                     return;
+                
+                var fogName = "";
+                if (mapControl1.PrePlaceFogOfWar == true)
+                {
+                    var fogForm = new PrePlaceFogOfWar();
+                    fogForm.ShowDialog();
+                    fogName = fogForm.FogName;
+                }
 
                 var fog = new FogOfWar
                 {
@@ -142,6 +155,7 @@ namespace Open_VTT.Forms.Popups
                     DrawSize = new Size(r.Width, r.Height),
                     state = FogState.Remove,
                     IsToggleFog = mapControl1.PrePlaceFogOfWar,
+                    Name = fogName,
                 };
 
                 var layer = Session.GetLayer(Session.Values.ActiveLayer);
@@ -149,8 +163,8 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
 
                     Thread.Sleep(100);
 
@@ -168,6 +182,14 @@ namespace Open_VTT.Forms.Popups
                 if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
                     return;
 
+                var fogName = "";
+                if (mapControl1.PrePlaceFogOfWar == true)
+                {
+                    var fogForm = new PrePlaceFogOfWar();
+                    fogForm.ShowDialog();
+                    fogName = fogForm.FogName;
+                }
+
                 var fog = new FogOfWar
                 {
                     Position = new Point(0, 0),
@@ -176,6 +198,7 @@ namespace Open_VTT.Forms.Popups
                     state = FogState.Remove,
                     PoligonData = p.ToList(),
                     IsToggleFog = mapControl1.PrePlaceFogOfWar,
+                    Name = fogName,
                 };
 
                 var layer = Session.GetLayer(Session.Values.ActiveLayer);
@@ -183,8 +206,8 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
 
                     Thread.Sleep(100);
 
@@ -241,6 +264,20 @@ namespace Open_VTT.Forms.Popups
 
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
 
+            StreamDeckStatics.LoadFog += new Action<FogOfWar>(f =>
+            {
+                f.IsHidden = !f.IsHidden;
+
+                var layer = Session.GetLayer(Session.Values.ActiveLayer);
+
+                mapControl1.dmImage = f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
+                mapControl1.playerImage = f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
+
+                Thread.Sleep(100);
+
+                mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
+            });
+
             UpdatePrePlaceFogOfWarList();
         }
 
@@ -254,7 +291,7 @@ namespace Open_VTT.Forms.Popups
             {
                 var btn = new Button
                 {
-                    Text = (i + 1).ToString("00"),
+                    Text = fogs[i].Name,
                     Size = new Size(50, 50),
                     Margin = new Padding(0, 0, 0, 0),
                     Tag = fogs[i],
@@ -263,9 +300,10 @@ namespace Open_VTT.Forms.Popups
                 btn.Click += (sender, args) =>
                 {
                     var fog = ((Button)sender).Tag as FogOfWar;
-                    fog.IsToggleFog = false;
+                    fog.IsHidden = !fog.IsHidden;
 
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor);
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.DmColor, false);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Session.Values.PlayerColor, true);
 
                     Thread.Sleep(100);
 
@@ -280,14 +318,14 @@ namespace Open_VTT.Forms.Popups
                 flowLayoutPanel1.Controls.Add(btn);
             }
         }
-        
 
-        private void btnSave_Click(object sender, System.EventArgs e)
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             Session.Save(true);
         }
 
-        private void btnConfig_Click(object sender, System.EventArgs e)
+        private void btnConfig_Click(object sender, EventArgs e)
         {
             using (var config = new Config())
             {
@@ -295,6 +333,6 @@ namespace Open_VTT.Forms.Popups
             }
         }
 
-        
+
     }
 }

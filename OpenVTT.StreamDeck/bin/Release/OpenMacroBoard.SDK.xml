@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenMacroBoard.SDK</name>
+    </assembly>
+    <members>
+        <member name="T:OpenMacroBoard.SDK.ButtonPressEffectAdapter">
+            <summary>
+            Macro board adapter that implements a software button press effect.
+            </summary>
+            <remarks>
+            This vaguely mimics the perspective of a real button beeing pushed
+            and provides better feedback to the user that a button push was registered.
+            </remarks>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.ButtonPressEffectAdapter.#ctor(OpenMacroBoard.SDK.IMacroBoard)">
+            <summary>
+            Creates a new instance of <see cref="T:OpenMacroBoard.SDK.ButtonPressEffectAdapter"/> with default configuration.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.ButtonPressEffectAdapter.#ctor(OpenMacroBoard.SDK.IMacroBoard,OpenMacroBoard.SDK.ButtonPressEffectConfig)">
+            <summary>
+            Creates a new instance of <see cref="T:OpenMacroBoard.SDK.ButtonPressEffectAdapter"/> with a given configuration.
+            </summary>
+            <param name="macroBoard">The board that is wrapped with the button press effect.</param>
+            <param name="config">The configuration that should be used. If null the default configuration will be used.</param>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ButtonPressEffectAdapter.Config">
+            <summary>
+            The configuration that controls the behaviour of the button press effect feature.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.ButtonPressEffectAdapter.SetKeyBitmap(System.Int32,OpenMacroBoard.SDK.KeyBitmap)">
+            <inheritdoc/>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.ButtonPressEffectConfig">
+            <summary>
+            Configuration for <see cref="T:OpenMacroBoard.SDK.ButtonPressEffectAdapter"/>
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ButtonPressEffectConfig.Scale">
+            <summary>
+            Gets or sets a factor that determines how much the images gets smaller or even bigger when pressed.
+            </summary>
+            <remarks>
+            It's basically a scale factor, if you want the image to be half the size use 0.5. One means no change
+            and values larger than one make the image bigger when pressed.
+            </remarks>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ButtonPressEffectConfig.OriginX">
+            <summary>
+            Gets or sets the relative x coordinate of the origin.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ButtonPressEffectConfig.OriginY">
+            <summary>
+            Gets or sets the relative y coordinate of the origin.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ButtonPressEffectConfig.BackgroundColor">
+            <summary>
+            The background color that is used when the button is shrunk.
+            </summary>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.ConnectionEventArgs">
+            <summary>
+            Is used for events that communicate connection changes.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.ConnectionEventArgs.NewConnectionState">
+            <summary>
+            The new connection state.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.ConnectionEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Instantiates a new <see cref="T:OpenMacroBoard.SDK.ConnectionEventArgs"/> object.
+            </summary>
+            <param name="newConnectionState"></param>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.DisconnectReplayAdapter">
+            <summary>
+            A <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> adapter that replays brightness and keybitmaps if a device is disconnected.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.DisconnectReplayAdapter.#ctor(OpenMacroBoard.SDK.IMacroBoard)">
+            <summary>
+            Creates a new instance of <see cref="T:OpenMacroBoard.SDK.DisconnectReplayAdapter"/>.
+            </summary>
+            <param name="macroBoard"></param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.DisconnectReplayAdapter.SetBrightness(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.DisconnectReplayAdapter.SetKeyBitmap(System.Int32,OpenMacroBoard.SDK.KeyBitmap)">
+            <inheritdoc/>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.GridKeyPositionCollection">
+            <summary>
+            Represents a grid-like keyboard layout for macro boards.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyCountX">
+            <summary>
+            Number of keys horizontal
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyCountY">
+            <summary>
+            Number of keys vertical
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyWidth">
+            <summary>
+            Width of a single key (in px)
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyHeight">
+            <summary>
+            Height of a single key (in px)
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyDistanceX">
+            <summary>
+            The distance (in px) between columns
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.GridKeyPositionCollection.KeyDistanceY">
+            <summary>
+            The distance (in px) between rows
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.GridKeyPositionCollection.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a <see cref="T:OpenMacroBoard.SDK.GridKeyPositionCollection"/> based on a rectangular grid layout.
+            </summary>
+            <param name="xCount">Number of keys in the x-coordinate (horizontal)</param>
+            <param name="yCount">Number of keys in the y-coordinate (vertical)</param>
+            <param name="width">Key width (px)</param>
+            <param name="height">Key height (px)</param>
+            <param name="dx">Distance between keys in x-coordinate (px)</param>
+            <param name="dy">Distance between keys in y-coordinate (px)</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.GridKeyPositionCollection.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a <see cref="T:OpenMacroBoard.SDK.GridKeyPositionCollection"/> based on a rectangular grid layout.
+            </summary>
+            <param name="xCount">Number of keys in the x-coordinate (horizontal)</param>
+            <param name="yCount">Number of keys in the y-coordinate (vertical)</param>
+            <param name="keySize">Square key size (px)</param>
+            <param name="keyDistance">Distance between keys (px)</param>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.IDeviceReferenceHandle">
+            <summary>
+            A handle that can be used to open an <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> instance.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IDeviceReferenceHandle.Open">
+            <summary>
+            Opens a live <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.IKeyBitmapDataAccess">
+            <summary>
+            An interface that allows you to access the underlying data of <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/>s
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyBitmapDataAccess.IsNull">
+            <summary>
+            Gets a value indicating wheter the underlying byte array is null
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyBitmapDataAccess.Stride">
+            <summary>
+            Gets the stride for the bitmap data
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyBitmapDataAccess.DataLength">
+            <summary>
+            Gets the length of the bitmap data array
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IKeyBitmapDataAccess.CopyData(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Copies <paramref name="length"/> number of bytes from the bitmap data array to a given array.
+            </summary>
+            <param name="targetArray">Target array</param>
+            <param name="targetIndex">Index of first byte in <paramref name="targetArray"/></param>
+            <param name="startIndex">Index of first byte in bitmap data array</param>
+            <param name="length">Number of bytes to copy</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IKeyBitmapDataAccess.CopyData(System.Byte[],System.Int32)">
+            <summary>
+            Copies the bitmap data array to a given array.
+            </summary>
+            <param name="targetArray">Target array</param>
+            <param name="targetIndex">Index of first byte in <paramref name="targetArray"/></param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IKeyBitmapDataAccess.CopyData">
+            <summary>
+            Creates a copy if the internal bitmap data array
+            </summary>
+            <returns>raw bgr24 bitmap array</returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IKeyBitmapDataAccess.GetBitmap">
+            <summary>
+            Creates a new bitmap based on the internal raw pixeldata.
+            </summary>
+            <returns>Returns the generated bitmap.</returns>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.IKeyBitmapFactory">
+            <summary>
+            Interface for factory extensions
+            </summary>
+            <remarks>
+            This interface is intentionally empty
+            It is used to implement factory extensions
+            <see cref="P:OpenMacroBoard.SDK.KeyBitmap.Create"/>
+            </remarks>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.IKeyPositionCollection">
+            <summary>
+            Contains information about how the keys are layed out.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyPositionCollection.Count">
+            <summary>
+            Gets the number of keys for this layout.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyPositionCollection.Item(System.Int32)">
+            <summary>
+            Gets the exact position of the key.
+            </summary>
+            <param name="keyIndex">Index of the key.</param>
+            <returns>The position rectangle.</returns>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IKeyPositionCollection.Area">
+            <summary>
+            A shortcut to get the total key layout area.
+            The smallest rectangle that fits all keys.
+            </summary>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.IMacroBoard">
+            <summary>
+            An interface that allows you to interact with (LCD) macro boards
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IMacroBoard.Keys">
+            <summary>
+            Informations about the keys and their position
+            </summary>
+        </member>
+        <member name="E:OpenMacroBoard.SDK.IMacroBoard.KeyStateChanged">
+            <summary>
+            Is raised when a key is pressed
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.IMacroBoard.IsConnected">
+            <summary>
+            Gets a value indicating whether the MarcoBoard is connected.
+            </summary>
+        </member>
+        <member name="E:OpenMacroBoard.SDK.IMacroBoard.ConnectionStateChanged">
+            <summary>
+            Is raised when the MarcoBoard is beeing disconnected or connected
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IMacroBoard.SetBrightness(System.Byte)">
+             <summary>
+             Sets the brightness for this <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/>
+             </summary>
+             <param name="percent">Brightness in percent (0 - 100)</param>
+             <remarks>
+             The brightness on the device is controlled with PWM (https://en.wikipedia.org/wiki/Pulse-width_modulation).
+             This results in a non-linear correlation between set percentage and perceived brightness.
+            
+             In a nutshell: changing from 10 - 30 results in a bigger change than 80 - 100 (barely visible change)
+             This effect should be compensated outside this library
+             </remarks>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IMacroBoard.SetKeyBitmap(System.Int32,OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            Sets a background image for a given key
+            </summary>
+            <param name="keyId">Specifies which key the image will be applied on</param>
+            <param name="bitmapData">Bitmap. The key will be painted black if this value is null.</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.IMacroBoard.ShowLogo">
+            <summary>
+            Shows the standby logo (Fullscreen)
+            </summary>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.KeyBitmap">
+            <summary>
+            Represents a bitmap that can be used as key images
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyBitmap.Create">
+            <summary>
+            This property can be used to create new KeyBitmaps
+            </summary>
+            <remarks>
+            This property just serves as an anchor point for extension methods
+            to create new <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> objects
+            </remarks>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyBitmap.Black">
+            <summary>
+            Solid black bitmap
+            </summary>
+            <remarks>
+            If you need a black bitmap (for example to clear keys) use this property for better performance (in theory ^^)
+            </remarks>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyBitmap.Width">
+            <summary>
+            Gets the width of the bitmap.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyBitmap.Height">
+            <summary>
+            Gets the height of the bitmap.
+            </summary>
+        </member>
+        <member name="F:OpenMacroBoard.SDK.KeyBitmap.rawBitmapData">
+            <remarks>
+            Byte order is B-G-R, and pixels are stored left-to-right and top-to-bottom
+            </remarks>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.#ctor(System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Creates a new <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> object.
+            </summary>
+            <param name="width">width of the bitmap</param>
+            <param name="height">height of the bitmap</param>
+            <param name="bitmapData">raw bitmap data (Bgr24)</param>
+            <remarks>
+            Make sure you don't use or change the <paramref name="bitmapData"/> after constructing the object.
+            This array is not copied for performance reasons and used by different threads.
+            </remarks>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.Equals(OpenMacroBoard.SDK.KeyBitmap,OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            Compares the content of two given <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/>s
+            </summary>
+            <param name="a">KeyBitmap a</param>
+            <param name="b">KeyBitmap b</param>
+            <returns>Returns true of the <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/>s are equal and false otherwise.</returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.op_Equality(OpenMacroBoard.SDK.KeyBitmap,OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            The == operator
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.op_Inequality(OpenMacroBoard.SDK.KeyBitmap,OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            The != operator
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.Equals(OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            Compares the content of this <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> to another KeyBitmap
+            </summary>
+            <param name="other">The other <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/></param>
+            <returns>True if both bitmaps are equals and false otherwise.</returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.Equals(System.Object)">
+            <summary>
+            Compares the content of this <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> to another object
+            </summary>
+            <param name="obj">The other object</param>
+            <returns>Return true if the other object is a <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> and equal to this one. Returns false otherwise.</returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmap.GetHashCode">
+            <summary>
+            Get the hash code for this object.
+            </summary>
+            <returns>The hash code</returns>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.KeyBitmapBasicExtensions">
+            <summary>
+            A basic factory extension to create <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/>s
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmapBasicExtensions.FromRgb(OpenMacroBoard.SDK.IKeyBitmapFactory,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a single color (single pixel) <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> with a given color.
+            </summary>
+            <param name="keyFactory">The builder that is used to create the <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/></param>
+            <param name="r">Red channel.</param>
+            <param name="g">Green channel.</param>
+            <param name="b">Blue channel.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.KeyBitmapDrawingExtensions">
+            <summary>
+            KeyBitmap factory extensions based on System.Drawing
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmapDrawingExtensions.FromStream(OpenMacroBoard.SDK.IKeyBitmapFactory,System.IO.Stream)">
+            <summary>
+            Create a bitmap from encoded image stream
+            </summary>
+            <param name="builder"></param>
+            <param name="bitmapStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmapDrawingExtensions.FromFile(OpenMacroBoard.SDK.IKeyBitmapFactory,System.String)">
+            <summary>
+            Create a bitmap from encoded image
+            </summary>
+            <param name="builder"></param>
+            <param name="bitmapFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmapDrawingExtensions.FromGraphics(OpenMacroBoard.SDK.IKeyBitmapFactory,System.Int32,System.Int32,System.Action{System.Drawing.Graphics})">
+            <summary>
+            Create key bitmap from graphics commands (for example with lambda expression)
+            </summary>
+            <param name="builder"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="graphicsAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyBitmapDrawingExtensions.FromBitmap(OpenMacroBoard.SDK.IKeyBitmapFactory,System.Drawing.Bitmap)">
+            <summary>
+            Creates a <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> from a given <see cref="T:System.Drawing.Bitmap"/>
+            </summary>
+            <param name="keyFactory"></param>
+            <param name="bitmap"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.KeyEventArgs">
+            <summary>
+            An event argument that is used to communicate key state changes.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyEventArgs.Key">
+            <summary>
+            The index of the key that was pressed or released.
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyEventArgs.IsDown">
+            <summary>
+            A flag that determines if the key was pressed or released.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyEventArgs.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Constructs a new <see cref="T:OpenMacroBoard.SDK.KeyEventArgs"/> object.
+            </summary>
+            <param name="key">The index of the key that was pressed or released.</param>
+            <param name="isDown">A flag that determines if the key was pressed or released.</param>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.KeyPositionCollection">
+            <summary>
+            Represents a keyboard layout for macro boards by representing all LCD keys
+            as a collection of rectangles with their position on the board
+            </summary>
+            <remarks>
+            This structure allows OpenMacroBoard to support complex layouts (eq. optimus maximus).
+            </remarks>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyPositionCollection.#ctor(System.Collections.Generic.IEnumerable{System.Drawing.Rectangle})">
+            <summary>
+            Creates a <see cref="T:OpenMacroBoard.SDK.KeyPositionCollection"/>.
+            </summary>
+            <param name="keyPositions"></param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.KeyPositionCollection.GetEnumerator">
+            <summary>
+            Enumerates all keys
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyPositionCollection.Item(System.Int32)">
+            <summary>
+            Gets a key position with a given index.
+            </summary>
+            <param name="keyIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyPositionCollection.Count">
+            <summary>
+            The number of keys
+            </summary>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.KeyPositionCollection.Area">
+            <summary>
+            The smallest area that contains all keys
+            </summary>
+            <remarks>
+            This can be used for example to create full screen images that span over all keys
+            </remarks>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.MacroBoardAdapter">
+            <summary>
+            Wraps an <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> and allows for hooks implement features.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.#ctor(OpenMacroBoard.SDK.IMacroBoard)">
+            <summary>
+            Creates a new instance of <see cref="T:OpenMacroBoard.SDK.MacroBoardAdapter"/>.
+            </summary>
+            <remarks>
+            When this instance is disposed, the underlying board is disposed aswell.
+            </remarks>
+            <param name="macroBoard">The macroBoard that is wrapped.</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.#ctor(OpenMacroBoard.SDK.IMacroBoard,System.Boolean)">
+            <summary>
+            Creates a new instance of <see cref="T:OpenMacroBoard.SDK.MacroBoardAdapter"/>.
+            </summary>
+            <param name="macroBoard">The macroBoard that is wrapped.</param>
+            <param name="leaveOpen">When true, the underlying macroBoard will not be disposed with this instance.</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.OnKeyStateChanged(System.Object,OpenMacroBoard.SDK.KeyEventArgs)">
+            <summary>
+            Virtual KeyStateChanged event handler.
+            </summary>
+            <param name="sender">The sender of the original event.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.OnConnectionStateChanged(System.Object,OpenMacroBoard.SDK.ConnectionEventArgs)">
+            <summary>
+            Virtual ConnectionStateChanged event handler.
+            </summary>
+            <param name="sender">The sender of the original event.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.MacroBoardAdapter.Keys">
+            <inheritdoc/>
+        </member>
+        <member name="P:OpenMacroBoard.SDK.MacroBoardAdapter.IsConnected">
+            <inheritdoc/>
+        </member>
+        <member name="E:OpenMacroBoard.SDK.MacroBoardAdapter.KeyStateChanged">
+            <inheritdoc/>
+        </member>
+        <member name="E:OpenMacroBoard.SDK.MacroBoardAdapter.ConnectionStateChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.Finalize">
+            <summary>
+            Finalizer.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.SetBrightness(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.SetKeyBitmap(System.Int32,OpenMacroBoard.SDK.KeyBitmap)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.ShowLogo">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardAdapter.Dispose(System.Boolean)">
+            <summary>
+            Protected implementation of Dispose pattern.
+            </summary>
+            <param name="disposing">True when called from <see cref="M:OpenMacroBoard.SDK.MacroBoardAdapter.Dispose"/> and false when called from the finalizer.</param>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.MacroBoardFeatureExtensions">
+            <summary>
+            Extensions for <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> enrichment ;-)
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardFeatureExtensions.WithButtonPressEffect(OpenMacroBoard.SDK.IMacroBoard,OpenMacroBoard.SDK.ButtonPressEffectConfig)">
+            <summary>
+            Wraps an <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> with an button press effect adapter.
+            </summary>
+            <param name="macroBoard">The board that should be wrapped.</param>
+            <param name="config">The configuration that should be used. Changes to the configuration later also takes effect.</param>
+            <returns>Returns a new board that implements the button press effect.</returns>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.MacroBoardFeatureExtensions.WithDisconnectReplay(OpenMacroBoard.SDK.IMacroBoard)">
+            <summary>
+            Wraps an <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> with a disconnect replay adapter.
+            </summary>
+            <param name="macroBoard">The board that should be wrapped.</param>
+            <returns>Returns a new board that implements the replay feature.</returns>
+            <remarks>
+            This adapter makes sure, that if a device is disconnected that previously set properties like
+            images and brightness are replayed if the device is connected again.
+            </remarks>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.SetKeyExtensions">
+            <summary>
+            A bunch of extensions to clear all keys, or set a single <see cref="T:OpenMacroBoard.SDK.KeyBitmap"/> to all keys.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.SetKeyExtensions.SetKeyBitmap(OpenMacroBoard.SDK.IMacroBoard,OpenMacroBoard.SDK.KeyBitmap)">
+            <summary>
+            Sets a background image for all keys
+            </summary>
+            <param name="board"></param>
+            <param name="bitmap"></param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.SetKeyExtensions.ClearKey(OpenMacroBoard.SDK.IMacroBoard,System.Int32)">
+            <summary>
+            Sets background to black for a given key
+            </summary>
+            <param name="board"></param>
+            <param name="keyId"></param>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.SetKeyExtensions.ClearKeys(OpenMacroBoard.SDK.IMacroBoard)">
+            <summary>
+            Sets background to black for all given keys
+            </summary>
+            <param name="board"></param>
+        </member>
+        <member name="T:OpenMacroBoard.SDK.DrawFullScreenExtension">
+            <summary>
+            Extension method to generate fullscreen images on <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/>s.
+            </summary>
+        </member>
+        <member name="M:OpenMacroBoard.SDK.DrawFullScreenExtension.DrawFullScreenBitmap(OpenMacroBoard.SDK.IMacroBoard,System.Drawing.Bitmap)">
+            <summary>
+            Draw a given image as fullscreen (spanning over all keys)
+            </summary>
+            <param name="board"></param>
+            <param name="b"></param>
+        </member>
+    </members>
+</doc>

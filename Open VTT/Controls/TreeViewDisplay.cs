@@ -1,8 +1,10 @@
 ﻿using Open_VTT.Classes;
-using Open_VTT.Classes.UI;
-using Open_VTT.Controls.Custom;
 using Open_VTT.Forms.Popups;
-using Open_VTT.Other;
+using OpenVTT.Common;
+using OpenVTT.Session;
+using OpenVTT.Editor;
+using OpenVTT.Editor.Controls;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +12,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using OpenVTT.Settings;
 
 namespace Open_VTT.Controls
 {
@@ -28,6 +31,10 @@ namespace Open_VTT.Controls
         public TreeViewDisplay()
         {
             InitializeComponent();
+
+            networkSync1.SyncComplete += Init;
+            networkSync1.SERVER_PORT = Settings.Values.NoteServerPort;
+            networkSync1.SERVER_IP = Settings.Values.NoteServerIP;
         }
 
         public void Init()

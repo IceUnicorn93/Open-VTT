@@ -1,4 +1,4 @@
-﻿using Open_VTT.Classes;
+﻿using OpenVTT.Settings;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -21,12 +21,15 @@ namespace Open_VTT.Forms.Popups
             nudPlayerSize.Value = Settings.Values.PlayerScreenSize;
             cbAutoSaveAction.Checked = Settings.Values.AutoSaveAction;
             cbDisplayChangesInstantly.Checked = Settings.Values.DisplayChangesInstantly;
+            cbDisplayGrid.Checked = Settings.Values.DisplayGrid;
+
+            tbServerIP.Text = Settings.Values.NoteServerIP;
+            nudServerPort.Value = Settings.Values.NoteServerPort;
         }
 
         public void nudPlayerSize_ValueChanged(object sender, EventArgs e)
         {
             Settings.Values.PlayerScreenSize = (int)nudPlayerSize.Value;
-            
             Settings.Save();
         }
 
@@ -39,6 +42,24 @@ namespace Open_VTT.Forms.Popups
         public void cbDisplayChangesInstantly_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Values.DisplayChangesInstantly = cbDisplayChangesInstantly.Checked;
+            Settings.Save();
+        }
+
+        private void tbServerIP_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Values.NoteServerIP = tbServerIP.Text;
+            Settings.Save();
+        }
+
+        private void nudServerPort_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Values.NoteServerPort = (int)nudServerPort.Value;
+            Settings.Save();
+        }
+
+        private void cbDisplayGrid_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Values.DisplayGrid = cbDisplayGrid.Checked;
             Settings.Save();
         }
     }

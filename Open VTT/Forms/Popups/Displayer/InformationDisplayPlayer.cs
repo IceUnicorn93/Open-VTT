@@ -1,5 +1,7 @@
 ﻿using Open_VTT.Classes;
 using Open_VTT.Controls;
+using OpenVTT.Common;
+using OpenVTT.Settings;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
@@ -16,12 +18,12 @@ namespace Open_VTT.Forms.Popups.Displayer
         {
             InitializeComponent();
 
-            var screen = Settings.Values.Screens.SingleOrDefault(n => n.Display == Other.DisplayType.InformationDisplayPlayer);
+            var screen = Settings.Values.Screens.SingleOrDefault(n => n.Display == DisplayType.InformationDisplayPlayer);
             if (screen == null) return;
             this.Location = new Point(screen.PositionX, screen.PositionY);
             this.Size = new Size(screen.Width, screen.Height);
 
-            displayImagePictureBox.DrawMode = Other.PictureBoxMode.Ping;
+            displayImagePictureBox.DrawMode = PictureBoxMode.Ping;
         }
 
         internal DrawingPictureBox GetPictureBox()

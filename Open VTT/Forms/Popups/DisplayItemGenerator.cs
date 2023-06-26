@@ -1,8 +1,7 @@
-﻿using Open_VTT.Classes;
-using Open_VTT.Classes.UI;
-using Open_VTT.Other;
+﻿using OpenVTT.Common;
+using OpenVTT.Editor;
+using OpenVTT.Session;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;

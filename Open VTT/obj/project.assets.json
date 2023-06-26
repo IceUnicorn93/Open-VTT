@@ -56,6 +56,110 @@
         "build": {
           "buildTransitive/net462/_._": {}
         }
+      },
+      "OpenVTT.Client/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.NetworkMessage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        }
+      },
+      "OpenVTT.Common/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Editor/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        }
+      },
+      "OpenVTT.Editor.Controls/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        }
+      },
+      "OpenVTT.FogOfWar/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.NetworkMessage/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Session/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        }
+      },
+      "OpenVTT.Settings/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        }
+      },
+      "OpenVTT.StreamDeck/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Session": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
@@ -112,6 +216,110 @@
         },
         "build": {
           "buildTransitive/net462/_._": {}
+        }
+      },
+      "OpenVTT.Client/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.NetworkMessage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        }
+      },
+      "OpenVTT.Common/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Editor/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        }
+      },
+      "OpenVTT.Editor.Controls/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        }
+      },
+      "OpenVTT.FogOfWar/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.NetworkMessage/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Session/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        }
+      },
+      "OpenVTT.Settings/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        }
+      },
+      "OpenVTT.StreamDeck/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Session": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         }
       }
     },
@@ -170,6 +378,110 @@
         "build": {
           "buildTransitive/net462/_._": {}
         }
+      },
+      "OpenVTT.Client/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.NetworkMessage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        }
+      },
+      "OpenVTT.Common/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Editor/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        }
+      },
+      "OpenVTT.Editor.Controls/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        }
+      },
+      "OpenVTT.FogOfWar/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.NetworkMessage/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Session/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        }
+      },
+      "OpenVTT.Settings/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        }
+      },
+      "OpenVTT.StreamDeck/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Session": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
@@ -226,6 +538,110 @@
         },
         "build": {
           "buildTransitive/net462/_._": {}
+        }
+      },
+      "OpenVTT.Client/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.NetworkMessage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        }
+      },
+      "OpenVTT.Common/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Editor/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        }
+      },
+      "OpenVTT.Editor.Controls/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        }
+      },
+      "OpenVTT.FogOfWar/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.NetworkMessage/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Session/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        }
+      },
+      "OpenVTT.Settings/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        }
+      },
+      "OpenVTT.StreamDeck/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Session": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         }
       }
     }
@@ -300,10 +716,63 @@
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "OpenVTT.Client/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Client/OpenVTT.Client.csproj",
+      "msbuildProject": "../OpenVTT.Client/OpenVTT.Client.csproj"
+    },
+    "OpenVTT.Common/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Common/OpenVTT.Common.csproj",
+      "msbuildProject": "../OpenVTT.Common/OpenVTT.Common.csproj"
+    },
+    "OpenVTT.Editor/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Editor/OpenVTT.Editor.csproj",
+      "msbuildProject": "../OpenVTT.Editor/OpenVTT.Editor.csproj"
+    },
+    "OpenVTT.Editor.Controls/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Editor.Controls/OpenVTT.Editor.Controls.csproj",
+      "msbuildProject": "../OpenVTT.Editor.Controls/OpenVTT.Editor.Controls.csproj"
+    },
+    "OpenVTT.FogOfWar/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj",
+      "msbuildProject": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj"
+    },
+    "OpenVTT.NetworkMessage/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.NetworkMessage/OpenVTT.NetworkMessage.csproj",
+      "msbuildProject": "../OpenVTT.NetworkMessage/OpenVTT.NetworkMessage.csproj"
+    },
+    "OpenVTT.Session/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Session/OpenVTT.Session.csproj",
+      "msbuildProject": "../OpenVTT.Session/OpenVTT.Session.csproj"
+    },
+    "OpenVTT.Settings/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Settings/OpenVTT.Settings.csproj",
+      "msbuildProject": "../OpenVTT.Settings/OpenVTT.Settings.csproj"
+    },
+    "OpenVTT.StreamDeck/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.StreamDeck/OpenVTT.StreamDeck.csproj",
+      "msbuildProject": "../OpenVTT.StreamDeck/OpenVTT.StreamDeck.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "OpenVTT.Client >= 1.0.0",
+      "OpenVTT.Common >= 1.0.0",
+      "OpenVTT.Editor >= 1.0.0",
+      "OpenVTT.Editor.Controls >= 1.0.0",
+      "OpenVTT.FogOfWar >= 1.0.0",
+      "OpenVTT.Session >= 1.0.0",
+      "OpenVTT.Settings >= 1.0.0",
+      "OpenVTT.StreamDeck >= 1.0.0",
       "StreamDeckSharp >= 3.2.0",
       "System.Drawing.Common >= 7.0.0"
     ]
@@ -334,7 +803,32 @@
       },
       "frameworks": {
         "net472": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Client\\OpenVTT.Client.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Client\\OpenVTT.Client.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj"
+            }
+          }
         }
       }
     },

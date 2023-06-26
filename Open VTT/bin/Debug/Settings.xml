@@ -5,13 +5,6 @@
   <PlayerScreenHeightInces>0</PlayerScreenHeightInces>
   <Screens>
     <ScreenInformation>
-      <Display>Player</Display>
-      <PositionX>0</PositionX>
-      <PositionY>0</PositionY>
-      <Height>1440</Height>
-      <Width>2560</Width>
-    </ScreenInformation>
-    <ScreenInformation>
       <Display>InformationDisplayPlayer</Display>
       <PositionX>0</PositionX>
       <PositionY>720</PositionY>
@@ -25,7 +18,16 @@
       <Height>720</Height>
       <Width>1280</Width>
     </ScreenInformation>
+    <ScreenInformation>
+      <Display>Player</Display>
+      <PositionX>-2560</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
   </Screens>
   <AutoSaveAction>true</AutoSaveAction>
-  <DisplayChangesInstantly>false</DisplayChangesInstantly>
+  <DisplayChangesInstantly>true</DisplayChangesInstantly>
+  <NoteServerIP>202.61.229.93</NoteServerIP>
+  <NoteServerPort>5000</NoteServerPort>
 </Settings>

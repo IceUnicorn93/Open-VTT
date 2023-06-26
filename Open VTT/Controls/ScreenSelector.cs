@@ -1,5 +1,6 @@
 ﻿using Open_VTT.Classes;
-using Open_VTT.Other;
+using OpenVTT.Common;
+using OpenVTT.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +88,10 @@ namespace Open_VTT.Controls
                         if (s == null)
                             Settings.Values.Screens.Add(screenInfo);
                         else
-                            s = screenInfo;
+                        { 
+                            Settings.Values.Screens.RemoveAll(n => n.Display == selectedType);
+                            Settings.Values.Screens.Add(screenInfo);
+                        }
 
                         Settings.Save();
 

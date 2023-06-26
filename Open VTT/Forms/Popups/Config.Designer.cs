@@ -39,11 +39,19 @@ namespace Open_VTT.Forms.Popups
             this.cbAutoSaveAction = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbDisplayChangesInstantly = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudServerPort = new System.Windows.Forms.NumericUpDown();
+            this.tbServerIP = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbDisplayGrid = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServerPort)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,9 +77,9 @@ namespace Open_VTT.Forms.Popups
             // 
             // nudPlayerSize
             // 
-            this.nudPlayerSize.Location = new System.Drawing.Point(108, 19);
+            this.nudPlayerSize.Location = new System.Drawing.Point(113, 19);
             this.nudPlayerSize.Name = "nudPlayerSize";
-            this.nudPlayerSize.Size = new System.Drawing.Size(59, 20);
+            this.nudPlayerSize.Size = new System.Drawing.Size(54, 20);
             this.nudPlayerSize.TabIndex = 1;
             this.nudPlayerSize.ValueChanged += new System.EventHandler(this.nudPlayerSize_ValueChanged);
             // 
@@ -80,9 +88,9 @@ namespace Open_VTT.Forms.Popups
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Player Window Sie";
+            this.label1.Text = "Player Window Size";
             // 
             // groupBox2
             // 
@@ -110,7 +118,7 @@ namespace Open_VTT.Forms.Popups
             this.groupBox3.Controls.Add(this.cbAutoSaveAction);
             this.groupBox3.Location = new System.Drawing.Point(216, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 59);
+            this.groupBox3.Size = new System.Drawing.Size(159, 59);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Autosave";
@@ -128,13 +136,14 @@ namespace Open_VTT.Forms.Popups
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cbDisplayGrid);
             this.groupBox4.Controls.Add(this.cbDisplayChangesInstantly);
-            this.groupBox4.Location = new System.Drawing.Point(422, 12);
+            this.groupBox4.Location = new System.Drawing.Point(381, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(219, 59);
+            this.groupBox4.Size = new System.Drawing.Size(171, 59);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Fog of War";
+            this.groupBox4.Text = "Fog of War and Grid";
             // 
             // cbDisplayChangesInstantly
             // 
@@ -147,11 +156,81 @@ namespace Open_VTT.Forms.Popups
             this.cbDisplayChangesInstantly.UseVisualStyleBackColor = true;
             this.cbDisplayChangesInstantly.CheckedChanged += new System.EventHandler(this.cbDisplayChangesInstantly_CheckedChanged);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.nudServerPort);
+            this.groupBox5.Controls.Add(this.tbServerIP);
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Location = new System.Drawing.Point(558, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(218, 59);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Notes  Server";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(109, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Port";
+            // 
+            // nudServerPort
+            // 
+            this.nudServerPort.Location = new System.Drawing.Point(112, 33);
+            this.nudServerPort.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudServerPort.Name = "nudServerPort";
+            this.nudServerPort.Size = new System.Drawing.Size(52, 20);
+            this.nudServerPort.TabIndex = 2;
+            this.nudServerPort.Value = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudServerPort.ValueChanged += new System.EventHandler(this.nudServerPort_ValueChanged);
+            // 
+            // tbServerIP
+            // 
+            this.tbServerIP.Location = new System.Drawing.Point(6, 32);
+            this.tbServerIP.Name = "tbServerIP";
+            this.tbServerIP.Size = new System.Drawing.Size(100, 20);
+            this.tbServerIP.TabIndex = 1;
+            this.tbServerIP.Text = "255.255.255.255";
+            this.tbServerIP.TextChanged += new System.EventHandler(this.tbServerIP_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "IP-Adress";
+            // 
+            // cbDisplayGrid
+            // 
+            this.cbDisplayGrid.AutoSize = true;
+            this.cbDisplayGrid.Location = new System.Drawing.Point(19, 36);
+            this.cbDisplayGrid.Name = "cbDisplayGrid";
+            this.cbDisplayGrid.Size = new System.Drawing.Size(82, 17);
+            this.cbDisplayGrid.TabIndex = 1;
+            this.cbDisplayGrid.Text = "Display Grid";
+            this.cbDisplayGrid.UseVisualStyleBackColor = true;
+            this.cbDisplayGrid.CheckedChanged += new System.EventHandler(this.cbDisplayGrid_CheckedChanged);
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 485);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -167,6 +246,9 @@ namespace Open_VTT.Forms.Popups
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServerPort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,5 +265,11 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.CheckBox cbAutoSaveAction;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox cbDisplayChangesInstantly;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tbServerIP;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudServerPort;
+        private System.Windows.Forms.CheckBox cbDisplayGrid;
     }
 }

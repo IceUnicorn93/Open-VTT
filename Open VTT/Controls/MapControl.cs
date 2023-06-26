@@ -1,14 +1,15 @@
 ﻿using Open_VTT.Classes;
-using Open_VTT.Classes.Scenes;
 using Open_VTT.Forms.Popups;
 using Open_VTT.Forms.Popups.Displayer;
-using Open_VTT.Other;
+using OpenVTT.Common;
+using OpenVTT.FogOfWar;
+using OpenVTT.Session;
+using OpenVTT.Settings;
+using OpenVTT.StreamDeck;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Open_VTT.Controls
@@ -51,7 +52,6 @@ namespace Open_VTT.Controls
                 StreamDeckStatics.SetAction((1, 2), new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null)))));
 
                 StreamDeckStatics.LoadScene = new Action<Scene, int>((s, i) => Invoke(new Action(() => LoadScene(s, i))));
-                StreamDeckStatics.SetMaps(); 
             }
         }
 
@@ -77,14 +77,13 @@ namespace Open_VTT.Controls
                     )
                     );
             }
-            catch {
+            catch
+            {
                 SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
                 // Re-Add Scenes
                 cbxScenes.Items.Clear();
                 cbxScenes.Items.AddRange(Session.Values.Scenes.ToArray());
             }
-
-            //SetLayerDisplay($"Layer: {Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}]");
 
             // Load new Background-Image
             if (SceneToLoad.Layers.Count > 0 && Session.GetLayer(Session.Values.ActiveLayer).ImagePath != string.Empty)
@@ -103,7 +102,7 @@ namespace Open_VTT.Controls
                 DmPictureBox.Image = null;
             }
 
-            
+
             // Add Fog of War
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
             if (layer != null)
@@ -113,9 +112,9 @@ namespace Open_VTT.Controls
                     if (layer.FogOfWar.Count == 0) return;
 
                     if (img == dmImage)
-                        dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
+                        dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color, false);
                     else
-                        playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color);
+                        playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, color, true);
                 });
 
                 action(dmImage, Color.FromArgb(150, 0, 0, 0));
@@ -150,7 +149,7 @@ namespace Open_VTT.Controls
         {
             DmPictureBox.Image = dm;
 
-            if(showPlayer || Settings.Values.DisplayChangesInstantly)
+            if (showPlayer || Settings.Values.DisplayChangesInstantly)
             {
                 PlayerPictureBox.Image = player;
             }
@@ -165,7 +164,7 @@ namespace Open_VTT.Controls
                 {
 
                     var newFileName = Session.GetSubDirectoryPathForFile("Images", Path.GetFileName(openFileDialog.FileName));
-                    
+
                     if (!Directory.Exists(Session.GetSubDirectoryPath("Images")))
                         Directory.CreateDirectory(Session.GetSubDirectoryPath("Images"));
 
@@ -205,7 +204,7 @@ namespace Open_VTT.Controls
             {
                 BoxSize = new Size(DmPictureBox.Width, DmPictureBox.Height),
                 state = FogState.Add,
-                IsToggleFog= false,
+                IsToggleFog = false,
             };
 
             (int pictureWidth, int pictureHeight, int offsetLeftRight, int offsetTopBottom, _) = PictureBoxHelper.GetPictureDimensions(fog, new Size(dmImage.Width, dmImage.Height));
@@ -216,8 +215,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Add(fog);
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -249,8 +248,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Clear();
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor);
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor);
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
 
             ShowImages(false);
 
@@ -283,11 +282,11 @@ namespace Open_VTT.Controls
             if (layer != null)
                 LoadScene(Session.Values.ActiveScene, Session.Values.ActiveLayer + 1);
             else // layer doesn't exist
-            {  
+            {
                 var cLayer = Session.GetLayer(Session.Values.ActiveLayer);
                 if (cLayer.ImagePath != string.Empty && cLayer.RootPath != string.Empty) // Only create new Layer if Image is loaded to active layer
                 {
-                    Session.Values.ActiveScene.Layers.Add(new Layer { LayerNumber = Session.Values.ActiveLayer + 1, DirectorySeperator = Path.DirectorySeparatorChar});
+                    Session.Values.ActiveScene.Layers.Add(new Layer { LayerNumber = Session.Values.ActiveLayer + 1, DirectorySeperator = Path.DirectorySeparatorChar });
 
                     if (Settings.Values.AutoSaveAction)
                         Session.Save(false);

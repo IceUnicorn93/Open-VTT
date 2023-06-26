@@ -1,5 +1,7 @@
 ﻿using Open_VTT.Classes;
 using Open_VTT.Forms.Popups;
+using OpenVTT.Session;
+using OpenVTT.Settings;
 using System;
 using System.IO;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿using Open_VTT.Other;
+﻿using OpenVTT.Common;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;

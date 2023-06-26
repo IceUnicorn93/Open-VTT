@@ -35,6 +35,7 @@ namespace Open_VTT.Controls
             this.tvItems = new System.Windows.Forms.TreeView();
             this.btnDisplay = new System.Windows.Forms.Button();
             this.tbSearchItem = new System.Windows.Forms.ComboBox();
+            this.networkSync1 = new OpenVTT.Client.NetworkSync();
             this.SuspendLayout();
             // 
             // btnOpenViewer
@@ -49,23 +50,22 @@ namespace Open_VTT.Controls
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Location = new System.Drawing.Point(3, 29);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(37, 20);
+            this.btnAdd.Size = new System.Drawing.Size(87, 20);
             this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Add Item";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.Location = new System.Drawing.Point(46, 29);
+            this.btnRemove.Location = new System.Drawing.Point(143, 29);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(62, 20);
+            this.btnRemove.Size = new System.Drawing.Size(87, 20);
             this.btnRemove.TabIndex = 2;
-            this.btnRemove.Text = "Remove";
+            this.btnRemove.Text = "Remove Item";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -76,18 +76,18 @@ namespace Open_VTT.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tvItems.Location = new System.Drawing.Point(3, 82);
             this.tvItems.Name = "tvItems";
-            this.tvItems.Size = new System.Drawing.Size(157, 186);
+            this.tvItems.Size = new System.Drawing.Size(231, 91);
             this.tvItems.TabIndex = 3;
             this.tvItems.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvItems_NodeMouseClick);
             // 
             // btnDisplay
             // 
             this.btnDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDisplay.Location = new System.Drawing.Point(96, 3);
+            this.btnDisplay.Location = new System.Drawing.Point(143, 3);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(62, 20);
+            this.btnDisplay.Size = new System.Drawing.Size(87, 20);
             this.btnDisplay.TabIndex = 5;
-            this.btnDisplay.Text = "Display";
+            this.btnDisplay.Text = "Display Current";
             this.btnDisplay.UseVisualStyleBackColor = true;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
@@ -98,15 +98,27 @@ namespace Open_VTT.Controls
             this.tbSearchItem.FormattingEnabled = true;
             this.tbSearchItem.Location = new System.Drawing.Point(3, 55);
             this.tbSearchItem.Name = "tbSearchItem";
-            this.tbSearchItem.Size = new System.Drawing.Size(155, 21);
+            this.tbSearchItem.Size = new System.Drawing.Size(229, 21);
             this.tbSearchItem.TabIndex = 6;
             this.tbSearchItem.TextUpdate += new System.EventHandler(this.tbSearchItem_TextUpdate);
             this.tbSearchItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchItem_KeyDown);
+            // 
+            // networkSync1
+            // 
+            this.networkSync1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.networkSync1.Location = new System.Drawing.Point(3, 179);
+            this.networkSync1.Name = "networkSync1";
+            this.networkSync1.SERVER_PORT = 5000;
+            this.networkSync1.SERVER_IP = "127.0.0.1";
+            this.networkSync1.Size = new System.Drawing.Size(227, 88);
+            this.networkSync1.TabIndex = 7;
             // 
             // TreeViewDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.networkSync1);
             this.Controls.Add(this.tbSearchItem);
             this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.tvItems);
@@ -114,12 +126,12 @@ namespace Open_VTT.Controls
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnOpenViewer);
             this.Name = "TreeViewDisplay";
-            this.Size = new System.Drawing.Size(161, 270);
+            this.Size = new System.Drawing.Size(235, 270);
             this.ResumeLayout(false);
 
         }
 
-        #endregion
+#endregion
 
         private System.Windows.Forms.Button btnOpenViewer;
         private System.Windows.Forms.Button btnAdd;
@@ -127,5 +139,6 @@ namespace Open_VTT.Controls
         private System.Windows.Forms.TreeView tvItems;
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.ComboBox tbSearchItem;
+        private OpenVTT.Client.NetworkSync networkSync1;
     }
 }

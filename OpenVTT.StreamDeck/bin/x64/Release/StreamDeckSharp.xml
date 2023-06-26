@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StreamDeckSharp</name>
+    </assembly>
+    <members>
+        <member name="T:StreamDeckSharp.DeviceReferenceHandle">
+            <summary>
+            Device information about Stream Deck
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.DeviceReferenceHandle.DevicePath">
+            <summary>
+            Unique identifier for human interface device
+            </summary>
+        </member>
+        <member name="M:StreamDeckSharp.DeviceReferenceHandle.Open">
+            <summary>
+            Opens the StreamDeck handle
+            </summary>
+            <returns>Returns an <see cref="T:OpenMacroBoard.SDK.IMacroBoard"/> reference</returns>
+        </member>
+        <member name="T:StreamDeckSharp.Exceptions.StreamDeckException">
+            <summary>
+            Base class for all StreamDeckSharp Exceptions
+            </summary>
+        </member>
+        <member name="T:StreamDeckSharp.Exceptions.StreamDeckNotFoundException">
+            <summary>
+            Is thrown if no device could be found
+            </summary>
+        </member>
+        <member name="T:StreamDeckSharp.Hardware">
+            <summary>
+            Details about different StreamDeck Hardware
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.Hardware.StreamDeck">
+            <summary>
+            Details about the classic Stream Deck
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.Hardware.StreamDeckMK2">
+            <summary>
+            Details about the updated Stream Deck MK.2
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.Hardware.StreamDeckRev2">
+            <summary>
+            Details about the classic Stream Deck Rev 2
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.Hardware.StreamDeckXL">
+            <summary>
+            Details about the Stream Deck XL
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.Hardware.StreamDeckMini">
+            <summary>
+            Details about the Stream Deck Mini
+            </summary>
+        </member>
+        <member name="T:StreamDeckSharp.IHardware">
+            <summary>
+            A compact collection of hardware specific information about a device.
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IHardware.Keys">
+            <summary>
+            Key layout information
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IHardware.DeviceName">
+            <summary>
+            Name of the device
+            </summary>
+        </member>
+        <member name="M:StreamDeckSharp.Internals.IHardwareInternalInfos.ExtKeyIdToHardwareKeyId(System.Int32)">
+            <summary>
+            This is used to convert between keyId conventions
+            </summary>
+            <param name="extKeyId"></param>
+            <returns></returns>
+            <remarks>
+            The original stream deck has a pretty weird way of enumerating keys.
+            Index 0 starts right top and they are enumerated right to left,
+            and top to bottom. Most developers would expect it to be left-to-right
+            instead of right-to-left, so we change that ;-)
+            </remarks>
+        </member>
+        <member name="M:StreamDeckSharp.Internals.IHardwareInternalInfos.HardwareKeyIdToExtKeyId(System.Int32)">
+            <summary>
+            This is used to convert between keyId conventions
+            </summary>
+            <param name="hardwareKeyId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StreamDeckSharp.IStreamDeckBoard">
+            <inheritdoc />
+        </member>
+        <member name="P:StreamDeckSharp.IStreamDeckBoard.Keys">
+            <inheritdoc />
+        </member>
+        <member name="M:StreamDeckSharp.IStreamDeckBoard.GetFirmwareVersion">
+            <summary>
+            Gets the firmware version
+            </summary>
+            <returns>Returns the firmware version as string</returns>
+        </member>
+        <member name="M:StreamDeckSharp.IStreamDeckBoard.GetSerialNumber">
+            <summary>
+            Gets the serial number
+            </summary>
+            <returns>Returns the serial number as string</returns>
+        </member>
+        <member name="T:StreamDeckSharp.IStreamDeckListener">
+            <summary>
+            A listener and cache for known devices.
+            </summary>
+        </member>
+        <member name="E:StreamDeckSharp.IStreamDeckListener.NewDeviceConnected">
+            <summary>
+            Fires when a recently connected device is seen for the first time.
+            </summary>
+            <remarks>
+            This event is never raised for disconnects because a detected disconnet
+            implies that the device was already known and only unknown devices are reported.
+            </remarks>
+        </member>
+        <member name="E:StreamDeckSharp.IStreamDeckListener.ConnectionChanged">
+            <summary>
+            Fires when a stream deck connects or disconnects regardless if known or not.
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IStreamDeckListener.KnownStreamDecks">
+            <summary>
+            A list of known devices.
+            </summary>
+            <remarks>
+            The order of the list is consistant and new devices are always added at the end.
+            </remarks>
+        </member>
+        <member name="T:StreamDeckSharp.IStreamDeckRefHandle">
+            <inheritdoc />
+        </member>
+        <member name="P:StreamDeckSharp.IStreamDeckRefHandle.DevicePath">
+            <summary>
+            The device path of the HID
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IStreamDeckRefHandle.DeviceName">
+            <summary>
+            A friendly display name
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IStreamDeckRefHandle.UseWriteCache">
+            <summary>
+            Determines if display write caching should be applied
+            (true is default and recommended)
+            </summary>
+        </member>
+        <member name="M:StreamDeckSharp.IStreamDeckRefHandle.Open">
+            <inheritdoc />
+        </member>
+        <member name="T:StreamDeckSharp.IUsbHidHardware">
+            <summary>
+            USB HID specific hardware information
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IUsbHidHardware.UsbVendorId">
+            <summary>
+            USB vendor id
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.IUsbHidHardware.UsbProductId">
+            <summary>
+            USB product id
+            </summary>
+        </member>
+        <member name="T:StreamDeckSharp.StreamDeck">
+            <summary>
+            This is a factorioy class to create IStreamDeck References
+            </summary>
+        </member>
+        <member name="M:StreamDeckSharp.StreamDeck.CreateDeviceListener(StreamDeckSharp.IUsbHidHardware[])">
+            <summary>
+            Creates a listener and cache of devices that updates while devices connect or disconnet.
+            </summary>
+            <param name="hardwareFilter">A set of devices the listener uses as a whitelist filter.</param>
+            <remarks>
+            Make sure to properly dispose the listener. Not disposing can lead to memory leaks.
+            </remarks>
+            <returns>Returns the listener.</returns>
+        </member>
+        <member name="M:StreamDeckSharp.StreamDeck.OpenDevice(StreamDeckSharp.IUsbHidHardware[])">
+            <summary>
+            Enumerates connected Stream Decks and returns the first one.
+            </summary>
+            <param name="hardware"></param>
+            <returns>The default <see cref="T:StreamDeckSharp.IStreamDeckBoard"/> HID</returns>
+            <exception cref="T:StreamDeckSharp.Exceptions.StreamDeckNotFoundException">Thrown if no Stream Deck is found</exception>
+        </member>
+        <member name="M:StreamDeckSharp.StreamDeck.OpenDevice(System.String,System.Boolean)">
+            <summary>
+            Get <see cref="T:StreamDeckSharp.IStreamDeckBoard"/> with given <paramref name="devicePath"/>
+            </summary>
+            <param name="devicePath"></param>
+            <param name="useWriteCache"></param>
+            <returns><see cref="T:StreamDeckSharp.IStreamDeckBoard"/> specified by <paramref name="devicePath"/></returns>
+            <exception cref="T:StreamDeckSharp.Exceptions.StreamDeckNotFoundException">Thrown if no Stream Deck is found</exception>
+        </member>
+        <member name="M:StreamDeckSharp.StreamDeck.EnumerateDevices(StreamDeckSharp.IUsbHidHardware[])">
+            <summary>
+            Enumerate Elgato Stream Deck Devices that match a given type.
+            </summary>
+            <param name="hardware">If no types or null is passed passed as argument, all known types are found</param>
+            <returns></returns>
+        </member>
+        <member name="T:StreamDeckSharp.StreamDeckConnectionChangedEventArgs">
+            <summary>
+            An event argument that reports a connection status change for a particular device.
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.StreamDeckConnectionChangedEventArgs.DeckHandle">
+            <summary>
+            Gets a handle to the device that changed.
+            </summary>
+        </member>
+        <member name="P:StreamDeckSharp.StreamDeckConnectionChangedEventArgs.Connected">
+            <summary>
+            Gets a value that indicates the connection state change. True if the device got connected,
+            false if the device got disconnected.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,5 +1,6 @@
 ﻿
 using Open_VTT.Controls;
+using OpenVTT.Common;
 
 namespace Open_VTT.Forms.Popups.Displayer
 {
@@ -38,7 +39,7 @@ namespace Open_VTT.Forms.Popups.Displayer
             // displayImagePictureBox
             // 
             this.displayImagePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.displayImagePictureBox.DrawMode = Open_VTT.Other.PictureBoxMode.Rectangle;
+            this.displayImagePictureBox.DrawMode = PictureBoxMode.Rectangle;
             this.displayImagePictureBox.Location = new System.Drawing.Point(0, 0);
             this.displayImagePictureBox.Name = "displayImagePictureBox";
             this.displayImagePictureBox.Size = new System.Drawing.Size(800, 450);
