@@ -103,6 +103,12 @@
     <Compile Include="Controls\TreeViewDisplay.Designer.cs">
       <DependentUpon>TreeViewDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Popups\ColorSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\ColorSelector.Designer.cs">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Popups\Config.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TreeViewDisplay.resx">
       <DependentUpon>TreeViewDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\ColorSelector.resx">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Popups\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>

@@ -23,16 +23,14 @@ namespace OpenVTT.Grid
                 for (int i = 0; i < countHowManyLinesLeftToRight; i++)
                 {
                     var posX = spacingLeftRight + (i * spacingBetweenTopBottomLine);
-                    graphics.DrawLine(new Pen(new SolidBrush(Color.Gray)), new Point(posX, 0), new Point(posX, img.Height - 1));
+                    graphics.DrawLine(new Pen(new SolidBrush(Settings.Settings.Values.GridColor)), new Point(posX, 0), new Point(posX, img.Height - 1));
                 }
 
                 for (int i = 0; i < countHowManyLinesTopToBottom; i++)
                 {
                     var posY = spacingTopBottom + (i * spacingBetweenLeftRightLine);
-                    graphics.DrawLine(new Pen(new SolidBrush(Color.Gray)), new Point(0, posY), new Point(img.Width - 1, posY));
+                    graphics.DrawLine(new Pen(new SolidBrush(Settings.Settings.Values.GridColor)), new Point(0, posY), new Point(img.Width - 1, posY));
                 }
-
-                graphics.DrawLine(new Pen(new SolidBrush(Color.Gray)), new Point(0, 0), new Point(0, 0));
             }
 
             return img;

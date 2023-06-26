@@ -217,8 +217,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Add(fog);
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -250,8 +250,8 @@ namespace Open_VTT.Controls
             Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Clear();
             var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.DmColor, false);
-            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Session.Values.PlayerColor, true);
+            dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+            playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
 
             ShowImages(false);
 

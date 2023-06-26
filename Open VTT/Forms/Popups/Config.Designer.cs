@@ -38,13 +38,19 @@ namespace Open_VTT.Forms.Popups
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbAutoSaveAction = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pnlDmColor = new System.Windows.Forms.Panel();
+            this.pnlPlayerColor = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbDisplayGrid = new System.Windows.Forms.CheckBox();
             this.cbDisplayChangesInstantly = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nudServerPort = new System.Windows.Forms.NumericUpDown();
             this.tbServerIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbDisplayGrid = new System.Windows.Forms.CheckBox();
+            this.pnlGridColor = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -98,9 +104,9 @@ namespace Open_VTT.Forms.Popups
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.screenSelector1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 77);
+            this.groupBox2.Location = new System.Drawing.Point(12, 148);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(764, 396);
+            this.groupBox2.Size = new System.Drawing.Size(764, 325);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Screen Selector";
@@ -110,7 +116,7 @@ namespace Open_VTT.Forms.Popups
             this.screenSelector1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.screenSelector1.Location = new System.Drawing.Point(3, 16);
             this.screenSelector1.Name = "screenSelector1";
-            this.screenSelector1.Size = new System.Drawing.Size(758, 377);
+            this.screenSelector1.Size = new System.Drawing.Size(758, 306);
             this.screenSelector1.TabIndex = 0;
             // 
             // groupBox3
@@ -136,14 +142,67 @@ namespace Open_VTT.Forms.Popups
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.pnlGridColor);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.pnlDmColor);
+            this.groupBox4.Controls.Add(this.pnlPlayerColor);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.cbDisplayGrid);
             this.groupBox4.Controls.Add(this.cbDisplayChangesInstantly);
-            this.groupBox4.Location = new System.Drawing.Point(381, 12);
+            this.groupBox4.Location = new System.Drawing.Point(15, 77);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(171, 59);
+            this.groupBox4.Size = new System.Drawing.Size(397, 65);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Fog of War and Grid";
+            // 
+            // pnlDmColor
+            // 
+            this.pnlDmColor.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlDmColor.Location = new System.Drawing.Point(273, 17);
+            this.pnlDmColor.Name = "pnlDmColor";
+            this.pnlDmColor.Size = new System.Drawing.Size(17, 17);
+            this.pnlDmColor.TabIndex = 5;
+            this.pnlDmColor.Click += new System.EventHandler(this.pnlDmColor_Click);
+            // 
+            // pnlPlayerColor
+            // 
+            this.pnlPlayerColor.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlPlayerColor.Location = new System.Drawing.Point(273, 43);
+            this.pnlPlayerColor.Name = "pnlPlayerColor";
+            this.pnlPlayerColor.Size = new System.Drawing.Size(17, 17);
+            this.pnlPlayerColor.TabIndex = 4;
+            this.pnlPlayerColor.Click += new System.EventHandler(this.pnlPlayerColor_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(204, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Player Color";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(204, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "DM Color";
+            // 
+            // cbDisplayGrid
+            // 
+            this.cbDisplayGrid.AutoSize = true;
+            this.cbDisplayGrid.Location = new System.Drawing.Point(20, 43);
+            this.cbDisplayGrid.Name = "cbDisplayGrid";
+            this.cbDisplayGrid.Size = new System.Drawing.Size(82, 17);
+            this.cbDisplayGrid.TabIndex = 1;
+            this.cbDisplayGrid.Text = "Display Grid";
+            this.cbDisplayGrid.UseVisualStyleBackColor = true;
+            this.cbDisplayGrid.CheckedChanged += new System.EventHandler(this.cbDisplayGrid_CheckedChanged);
             // 
             // cbDisplayChangesInstantly
             // 
@@ -214,16 +273,23 @@ namespace Open_VTT.Forms.Popups
             this.label3.TabIndex = 0;
             this.label3.Text = "IP-Adress";
             // 
-            // cbDisplayGrid
+            // pnlGridColor
             // 
-            this.cbDisplayGrid.AutoSize = true;
-            this.cbDisplayGrid.Location = new System.Drawing.Point(19, 36);
-            this.cbDisplayGrid.Name = "cbDisplayGrid";
-            this.cbDisplayGrid.Size = new System.Drawing.Size(82, 17);
-            this.cbDisplayGrid.TabIndex = 1;
-            this.cbDisplayGrid.Text = "Display Grid";
-            this.cbDisplayGrid.UseVisualStyleBackColor = true;
-            this.cbDisplayGrid.CheckedChanged += new System.EventHandler(this.cbDisplayGrid_CheckedChanged);
+            this.pnlGridColor.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlGridColor.Location = new System.Drawing.Point(365, 17);
+            this.pnlGridColor.Name = "pnlGridColor";
+            this.pnlGridColor.Size = new System.Drawing.Size(17, 17);
+            this.pnlGridColor.TabIndex = 7;
+            this.pnlGridColor.Click += new System.EventHandler(this.pnlGridColor_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(296, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Grid Color";
             // 
             // Config
             // 
@@ -271,5 +337,11 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudServerPort;
         private System.Windows.Forms.CheckBox cbDisplayGrid;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlDmColor;
+        private System.Windows.Forms.Panel pnlPlayerColor;
+        private System.Windows.Forms.Panel pnlGridColor;
+        private System.Windows.Forms.Label label7;
     }
 }

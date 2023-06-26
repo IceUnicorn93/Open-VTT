@@ -31,4 +31,22 @@
   <DisplayGrid>false</DisplayGrid>
   <NoteServerIP>202.61.229.93</NoteServerIP>
   <NoteServerPort>5000</NoteServerPort>
+  <XmlDmColor>
+    <Alpha>150</Alpha>
+    <Red>0</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlDmColor>
+  <XmlPlayerColor>
+    <Alpha>255</Alpha>
+    <Red>0</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlPlayerColor>
+  <XmlGridColor>
+    <Alpha>255</Alpha>
+    <Red>128</Red>
+    <Green>128</Green>
+    <Blue>128</Blue>
+  </XmlGridColor>
 </Settings>

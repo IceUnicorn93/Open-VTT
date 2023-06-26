@@ -23,6 +23,9 @@ namespace Open_VTT.Forms.Popups
             cbDisplayChangesInstantly.Checked = Settings.Values.DisplayChangesInstantly;
             cbDisplayGrid.Checked = Settings.Values.DisplayGrid;
 
+            pnlDmColor.BackColor = Settings.Values.DmColor;
+            pnlPlayerColor.BackColor = Settings.Values.PlayerColor;
+
             tbServerIP.Text = Settings.Values.NoteServerIP;
             nudServerPort.Value = Settings.Values.NoteServerPort;
         }
@@ -61,6 +64,29 @@ namespace Open_VTT.Forms.Popups
         {
             Settings.Values.DisplayGrid = cbDisplayGrid.Checked;
             Settings.Save();
+        }
+
+        private void pnlDmColor_Click(object sender, EventArgs e)
+        {
+            var clr = new ColorSelector(pnlDmColor.BackColor);
+            clr.ShowDialog();
+            pnlDmColor.BackColor = clr.SelectedColor;
+            Settings.Values.DmColor = clr.SelectedColor;
+            Settings.Save();
+        }
+
+        private void pnlPlayerColor_Click(object sender, EventArgs e)
+        {
+            var clr = new ColorSelector(pnlPlayerColor.BackColor);
+            clr.ShowDialog();
+            pnlPlayerColor.BackColor = clr.SelectedColor;
+            Settings.Values.PlayerColor = clr.SelectedColor;
+            Settings.Save();
+        }
+
+        private void pnlGridColor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

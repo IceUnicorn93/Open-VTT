@@ -9,7 +9,7 @@
         //-> Rework of the Notes Section(it works but te code is ugly)
         //-> bring a copy of the 5e tools monster libary to my Notes Section
         //-> Rework the "Centroid" finding for the PrePlaced Fog of War(yes it works, but there are cases where it just breaks xD)
-        //-> Make the Editor fully usable on Linux
+        //-> Make OpenVTT fully usable on Linux
 
         //Maybe:
         //-> An Initiative Tracker

@@ -18,9 +18,6 @@ namespace OpenVTT.Session
         [XmlIgnore]
         internal List<TreeViewDisplayItem> DisplayItems;
 
-        internal Color DmColor = Color.FromArgb(150, 0, 0, 0);
-        internal Color PlayerColor = Color.FromArgb(255, 0, 0, 0);
-
         public string SessionFolder;
         public List<Scene> Scenes;
 
