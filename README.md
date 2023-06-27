@@ -1,6 +1,6 @@
 # Open-VTT
 
-Open VTT is an alternative product to dynamic dungeon editor.
+Open VTT is an VTT like dynamic dungeon editor or foundry VTT.
 The dynamic dungeon editor didn't work for many users so I started working on my own implementation of an VTT.
 
 Open VTT has the goal of low memory use and fast loading times.
@@ -19,7 +19,7 @@ Open VTT is currently working on windows and Linux with a few known bugs.
 4) resizing the image in a node is t saving if you don't click the save button
 5) loading an image in artwork and information if an image already exists for the child causes a crash
 
-About using Open VTT
+# About using Open VTT (Just the VTT Part)
 1) go to configure and configure your screens, at least the player
 2) save everything, i personally recommend to reload the software
 3) click create to create a new project.
@@ -33,14 +33,21 @@ About using Open VTT
 9) click set active to activate the player and update the fog of war on player side
 9.1) while in rectangle mode, right click on the map causes a ping. While in poligon mode there is no ping function
 
+# Information System (Advanced Stuff)
 10) in information and artwork you can setup a note system and configure artworks for your notes
 11) click + to create a new node or new child
 11.1) node = folder, child = file
-12) the notes system works on a layout system. The layout is defined by the nide and gets applyed to every child
+12) the notes system works on a layout system. The layout is defined by the node and gets applyed to every child
 13) add label and textboxes as you like by using the buttons in the top right corner
 14) click Open viewer to open the GM Artwork display as well as the player artwork display
 14.1) click on D to display the artwork of the currently selected child
 15) double click on the GM Artwork display causes a ping that's also shown on player side
 16) click on - to remove the node or child, removing a node opens a popup asking you to confirm the deletion of the node
+17) as a new addition, a File Transfer for the Notes-System got implemented!
+18) In the Settings configure the IP and Port of your Notes Server (Server Exe is also aviavable)
+19) Click Connect to connect to the Server
+20) Click Get Server (PULL) to get the File Structure of the Server, if your file System is never, the Pull will not override the notes
+21) Click Set Server (PUSH) to send your File Structure to the Server, if the Server File System is never, the Push will not override the notes
 
-17) you own an elgato stream deck? Awesome! Open VTT will recognize it and will give you quick access to switching maps, cover and revealing the the fog of war, updating the player (set active)
+# Elgato StreamDeck Support
+22) you own an elgato stream deck? Awesome! Open VTT will recognize it and will give you quick access to switching maps, cover and revealing the the fog of war, updating the player (set active)
