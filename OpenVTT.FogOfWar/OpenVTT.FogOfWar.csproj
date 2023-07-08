@@ -75,6 +75,10 @@
       <Project>{e5f76952-9047-4b64-a3f4-009aeb9a9013}</Project>
       <Name>OpenVTT.Grid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Settings\OpenVTT.Settings.csproj">
+      <Project>{071f33e3-0c99-4b92-b5d9-c09ccb70c665}</Project>
+      <Name>OpenVTT.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

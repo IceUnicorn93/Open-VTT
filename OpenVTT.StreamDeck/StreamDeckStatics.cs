@@ -265,6 +265,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void SetFog()
         {
+
+
             var maxMapCount = (deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1);
             var maxX = (deck.Keys.KeyCountX - 2);
             var maxY = (deck.Keys.KeyCountY - 1);

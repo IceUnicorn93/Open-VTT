@@ -44,7 +44,7 @@ namespace OpenVTT.FogOfWar
                         {
                             var stringSize = graphics.MeasureString(fog.Name, new Font("Arial", 12));
                             var point = new Point(drawPoint.X - (int)stringSize.Width / 2, drawPoint.Y - (int)stringSize.Height / 2);
-                            graphics.DrawString(fog.Name, new Font("Arial", 12), new SolidBrush(Color.Red), point);
+                            graphics.DrawString(fog.Name, new Font("Arial", 12), new SolidBrush(Settings.Settings.Values.TextColor), point);
                             graphics.DrawPolygon(new Pen(new SolidBrush(Color.Gray)), TransformPolygonData(FogToPolygonData(fog), fog, img.Size));
                         } 
                     }
@@ -87,13 +87,13 @@ namespace OpenVTT.FogOfWar
                     {
                         var stringSize = graphics.MeasureString(fog.Name, new Font("Arial", 12));
                         var point = new Point(drawPoint.X - (int)stringSize.Width / 2, drawPoint.Y - (int)stringSize.Height / 2);
-                        graphics.DrawString(fog.Name, new Font("Arial", 12), new SolidBrush(Color.Red), point);
+                        graphics.DrawString(fog.Name, new Font("Arial", 12), new SolidBrush(Settings.Settings.Values.TextColor), point);
                         graphics.DrawPolygon(new Pen(new SolidBrush(Color.Gray)), TransformPolygonData(FogToPolygonData(fog), fog, img.Size));
                     }
                 }
             }
 
-            img = Grid.Grid.DrawGrid(img, IsPlayer);
+            img = Grid.Grid.DrawGrid(img, !IsPlayer);
 
             return img;
         }

@@ -15,5 +15,11 @@ namespace OpenVTT.Editor
         {
 
         }
+
+        internal void SetDefaultLocationAndSize()
+        {
+            Location = default;
+            Size = default;
+        }
     }
 }

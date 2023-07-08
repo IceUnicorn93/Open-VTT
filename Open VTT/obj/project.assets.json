@@ -104,7 +104,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Grid": "1.0.0"
+          "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
@@ -278,7 +279,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Grid": "1.0.0"
+          "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
@@ -452,7 +454,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Grid": "1.0.0"
+          "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
@@ -626,7 +629,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Grid": "1.0.0"
+          "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}

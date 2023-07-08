@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCustomControlData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CustomControlData>
+    <Location>
+      <X>515</X>
+      <Y>12</Y>
+    </Location>
+    <Size>
+      <Width>200</Width>
+      <Height>200</Height>
+    </Size>
+    <Text />
+    <Name>picturebox</Name>
+    <ControlType>Picturebox</ControlType>
+  </CustomControlData>
+  <CustomControlData>
+    <Location>
+      <X>120</X>
+      <Y>32</Y>
+    </Location>
+    <Size>
+      <Width>84</Width>
+      <Height>13</Height>
+    </Size>
+    <Text>Character Name</Text>
+    <Name>c2</Name>
+    <ControlType>Label</ControlType>
+  </CustomControlData>
+  <CustomControlData>
+    <Location>
+      <X>119</X>
+      <Y>54</Y>
+    </Location>
+    <Size>
+      <Width>60</Width>
+      <Height>13</Height>
+    </Size>
+    <Text>Description</Text>
+    <Name>c3</Name>
+    <ControlType>Label</ControlType>
+  </CustomControlData>
+  <CustomControlData>
+    <Location>
+      <X>231</X>
+      <Y>26</Y>
+    </Location>
+    <Size>
+      <Width>276</Width>
+      <Height>26</Height>
+    </Size>
+    <Text />
+    <Name>c4</Name>
+    <ControlType>Textbox</ControlType>
+  </CustomControlData>
+  <CustomControlData>
+    <Location>
+      <X>231</X>
+      <Y>54</Y>
+    </Location>
+    <Size>
+      <Width>279</Width>
+      <Height>159</Height>
+    </Size>
+    <Text />
+    <Name>c5</Name>
+    <ControlType>Textbox</ControlType>
+  </CustomControlData>
+</ArrayOfCustomControlData>

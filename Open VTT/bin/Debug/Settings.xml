@@ -11,12 +11,27 @@
       <Height>1440</Height>
       <Width>2560</Width>
     </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayPlayer</Display>
+      <PositionX>-2560</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+    <ScreenInformation>
+      <Display>InformationDisplayDM</Display>
+      <PositionX>0</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
   </Screens>
   <AutoSaveAction>true</AutoSaveAction>
-  <DisplayChangesInstantly>false</DisplayChangesInstantly>
+  <DisplayChangesInstantly>true</DisplayChangesInstantly>
   <DisplayGrid>false</DisplayGrid>
-  <NoteServerIP>127.0.0.1</NoteServerIP>
-  <NoteServerPort>5000</NoteServerPort>
+  <DisplayGridForDM>false</DisplayGridForDM>
+  <NoteServerIP />
+  <NoteServerPort>0</NoteServerPort>
   <XmlDmColor>
     <Alpha>150</Alpha>
     <Red>0</Red>
@@ -35,4 +50,10 @@
     <Green>128</Green>
     <Blue>128</Blue>
   </XmlGridColor>
+  <XmlTextColor>
+    <Alpha>255</Alpha>
+    <Red>255</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlTextColor>
 </Settings>

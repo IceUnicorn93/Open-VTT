@@ -4,10 +4,15 @@ namespace OpenVTT.Grid
 {
     internal class Grid
     {
-        public static Image DrawGrid(Image img, bool isPlayer)
+        public static Image DrawGrid(Image img, bool IsDM)
         {
-            if (!(Settings.Settings.Values.DisplayGrid && isPlayer))
+            var con = (Settings.Settings.Values.DisplayGrid && Settings.Settings.Values.DisplayGridForDM && IsDM)
+                        ||
+                      (Settings.Settings.Values.DisplayGrid && IsDM == false);
+
+            if (!con)
                 return img;
+                
 
             int countHowManyLinesLeftToRight = (int)Settings.Settings.Values.PlayerScreenWidthInches;
             int countHowManyLinesTopToBottom = (int)Settings.Settings.Values.PlayerScreenHeightInces;

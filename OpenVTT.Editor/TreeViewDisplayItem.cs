@@ -20,7 +20,6 @@ namespace OpenVTT.Editor
         public List<string> GetLocation(string fileextension = "", bool getFileName = true)
         {
             var pathParts = new List<string>();
-            //pathParts.Add(Session.Values.SessionFolder);
             pathParts.Add(Application.StartupPath);
             pathParts.Add("Notes");
             pathParts.AddRange(GetParentPath(this).Select(n => n.Name).ToArray());

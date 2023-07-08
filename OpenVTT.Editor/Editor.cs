@@ -50,7 +50,7 @@ namespace OpenVTT.Editor
             var lstToRemove = new List<Control>();
             foreach (Control item in Controls)
             {
-                if (!(item is ResizableLabel || item is ResizablePictureBox || item is ResizableTextbox))
+                if (!item.GetType().ToString().Contains("Resizable"))
                     continue;
 
                 lstToRemove.Add(item);
@@ -69,7 +69,7 @@ namespace OpenVTT.Editor
 
             foreach (Control item in Controls)
             {
-                if (!(item is ResizableLabel || item is ResizablePictureBox || item is ResizableTextbox))
+                if (!item.GetType().ToString().Contains("Resizable"))
                     continue;
 
                 var data = new CustomControlData()
@@ -89,32 +89,18 @@ namespace OpenVTT.Editor
                 list.Add(data);
             }
 
-            var x = new XmlSerializer(list.GetType());
-
             if (currentItem.ItemType == TreeViewDisplayItemType.Item)
             {
-                foreach (var item in list)
-                {
-                    item.Location = default;
-                    item.Size = default;
-                }
-
-                using (var sw = new StreamWriter(Path.Combine(currentItem.GetLocation(".xml").ToArray())))
-                {
-                    x.Serialize(sw, list);
-                }
+                foreach (var item in list) item.SetDefaultLocationAndSize();
+                Seriliaze(list, Path.Combine(currentItem.GetLocation(".xml").ToArray()));
             }
             else
             {
                 var p = currentItem.GetLocation();
                 p.Add("_Template.xml");
-                using (var sw = new StreamWriter(Path.Combine(p.ToArray())))
-                {
-                    x.Serialize(sw, list);
-                }
+
+                Seriliaze(list, Path.Combine(p.ToArray()));
             }
-
-
         }
 
         internal void Load(TreeViewDisplayItem item)
@@ -238,9 +224,7 @@ namespace OpenVTT.Editor
 
                 if (currentItem.ItemType == TreeViewDisplayItemType.Node)
                 {
-                    c.MouseDown += new MouseEventHandler(ControlMouseDown);
-                    c.MouseMove += new MouseEventHandler(ControlMouseMove);
-                    c.MouseUp += new MouseEventHandler(ControlMouseUp);
+                    SetControlEvents(c);
                 }
 
                 Controls.Add(c);
@@ -250,6 +234,82 @@ namespace OpenVTT.Editor
         internal ResizablePictureBox GetPictureBox()
         {
             return Controls.OfType<ResizablePictureBox>().SingleOrDefault();
+        }
+        //--------------------------------------------------------------------------------
+        // Seriliziation
+        //--------------------------------------------------------------------------------
+        private void Seriliaze(List<CustomControlData> data, string path) //Write
+        {
+            var x = new XmlSerializer(typeof(List<CustomControlData>));
+            using (var sw = new StreamWriter(path))
+            {
+                x.Serialize(sw, data);
+            }
+        }
+        private void Deseriliaze() //Read
+        {
+
+        }
+        //--------------------------------------------------------------------------------
+        // Button Events + TextBoxEvent
+        //--------------------------------------------------------------------------------
+        private void btnEditNewTextbox_Click(object sender, EventArgs e)
+        {
+            var tb = new ResizableTextbox();
+            tb.Name = $"c{Controls.Count - 6}";
+            tb.Location = new Point(20, 20);
+            tb.Size = new Size(100, 30);
+            tb.Multiline = true;
+
+            SetControlEvents(tb);
+
+            this.Controls.Add(tb);
+        }
+
+        private void btnEditNewLabel_Click(object sender, EventArgs e)
+        {
+            var lbl = new ResizableLabel();
+            lbl.Name = $"c{Controls.Count - 6}";
+            lbl.Location = new Point(20, 20);
+            lbl.Size = new Size(100, 30);
+            lbl.Text = "###--- Edit Me ---###";
+            lbl.AutoSize = true;
+
+            SetControlEvents(lbl);
+
+            this.Controls.Add(lbl);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void tbEditText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var c = (Control)tbEditText.Tag;
+                c.Text = tbEditText.Text;
+
+                Save();
+            }
+        }
+
+        //--------------------------------------------------------------------------------
+        // Control Events
+        //--------------------------------------------------------------------------------
+        private void SetControlEvents(Control control)
+        {
+            control.MouseDown += new MouseEventHandler(ControlMouseDown);
+            control.MouseMove += new MouseEventHandler(ControlMouseMove);
+            control.MouseUp += new MouseEventHandler(ControlMouseUp);
+            control.SizeChanged += new EventHandler(ControlSizeChanged);
+        }
+
+        private void ControlSizeChanged(object sender, EventArgs e)
+        {
+            Save();
         }
 
         private void ControlMouseUp(object sender, MouseEventArgs e)
@@ -288,53 +348,6 @@ namespace OpenVTT.Editor
                 previousPosition = e.Location;
                 Cursor = Cursors.Hand;
             }
-        }
-
-        private void btnEditNewTextbox_Click(object sender, EventArgs e)
-        {
-            var tb = new ResizableTextbox();
-            tb.Name = $"c{Controls.Count - 6}";
-            tb.Location = new Point(20, 20);
-            tb.Size = new Size(100, 30);
-            tb.Multiline = true;
-
-            tb.MouseDown += new MouseEventHandler(ControlMouseDown);
-            tb.MouseMove += new MouseEventHandler(ControlMouseMove);
-            tb.MouseUp += new MouseEventHandler(ControlMouseUp);
-
-            this.Controls.Add(tb);
-        }
-
-        private void btnEditNewLabel_Click(object sender, EventArgs e)
-        {
-            var lbl = new ResizableLabel();
-            lbl.Name = $"c{Controls.Count - 6}";
-            lbl.Location = new Point(20, 20);
-            lbl.Size = new Size(100, 30);
-            lbl.Text = "###--- Edit Me ---###";
-            lbl.AutoSize = true;
-
-            lbl.MouseDown += new MouseEventHandler(ControlMouseDown);
-            lbl.MouseMove += new MouseEventHandler(ControlMouseMove);
-            lbl.MouseUp += new MouseEventHandler(ControlMouseUp);
-
-            this.Controls.Add(lbl);
-        }
-
-        private void tbEditText_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                var c = (Control)tbEditText.Tag;
-                c.Text = tbEditText.Text;
-
-                Save();
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Save();
         }
     }
 }

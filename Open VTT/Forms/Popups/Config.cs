@@ -22,9 +22,12 @@ namespace Open_VTT.Forms.Popups
             cbAutoSaveAction.Checked = Settings.Values.AutoSaveAction;
             cbDisplayChangesInstantly.Checked = Settings.Values.DisplayChangesInstantly;
             cbDisplayGrid.Checked = Settings.Values.DisplayGrid;
+            cbDisplayGridForDM.Checked = Settings.Values.DisplayGridForDM;
 
             pnlDmColor.BackColor = Settings.Values.DmColor;
             pnlPlayerColor.BackColor = Settings.Values.PlayerColor;
+            pnlGridColor.BackColor = Settings.Values.GridColor;
+            pnlTextColor.BackColor = Settings.Values.TextColor;
 
             tbServerIP.Text = Settings.Values.NoteServerIP;
             nudServerPort.Value = Settings.Values.NoteServerPort;
@@ -86,7 +89,26 @@ namespace Open_VTT.Forms.Popups
 
         private void pnlGridColor_Click(object sender, EventArgs e)
         {
+            var clr = new ColorSelector(pnlGridColor.BackColor);
+            clr.ShowDialog();
+            pnlGridColor.BackColor = clr.SelectedColor;
+            Settings.Values.GridColor = clr.SelectedColor;
+            Settings.Save();
+        }
 
+        private void pnlTextColor_Click(object sender, EventArgs e)
+        {
+            var clr = new ColorSelector(pnlTextColor.BackColor);
+            clr.ShowDialog();
+            pnlTextColor.BackColor = clr.SelectedColor;
+            Settings.Values.TextColor = clr.SelectedColor;
+            Settings.Save();
+        }
+
+        private void cbDisplayGridForDM_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Values.DisplayGridForDM = cbDisplayGridForDM.Checked;
+            Settings.Save();
         }
     }
 }

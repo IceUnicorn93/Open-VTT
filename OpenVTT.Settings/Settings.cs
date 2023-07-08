@@ -20,6 +20,7 @@ namespace OpenVTT.Settings
         public bool AutoSaveAction = true;
         public bool DisplayChangesInstantly;
         public bool DisplayGrid;
+        public bool DisplayGridForDM = false;
 
         public string NoteServerIP; // IP Adress of Server
         public int NoteServerPort; // Port of Server
@@ -27,6 +28,7 @@ namespace OpenVTT.Settings
         internal Color DmColor = Color.FromArgb(150, 0, 0, 0);
         internal Color PlayerColor = Color.FromArgb(255, 0, 0, 0);
         internal Color GridColor = Color.FromKnownColor(KnownColor.Gray);
+        internal Color TextColor = Color.FromArgb(255, 0, 0, 255);
 
         private XmlColor _XmlDmColor = new XmlColor { Alpha = 150, Blue = 0, Green = 0, Red = 0 };
         public XmlColor XmlDmColor
@@ -70,6 +72,20 @@ namespace OpenVTT.Settings
             }
         }
 
+        private XmlColor _XmlTextColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 255 };
+        public XmlColor XmlTextColor
+        {
+            get
+            {
+                return _XmlTextColor;
+            }
+            set
+            {
+                _XmlTextColor = value;
+                TextColor = Color.FromArgb(_XmlTextColor.Alpha, _XmlTextColor.Red, _XmlTextColor.Green, _XmlTextColor.Blue);
+            }
+        }
+
         public static Settings Values;
 
         static Settings()
@@ -94,6 +110,7 @@ namespace OpenVTT.Settings
             Values.XmlDmColor = new XmlColor { Alpha = Values.DmColor.A, Blue = Values.DmColor.B, Green = Values.DmColor.G, Red = Values.DmColor.R };
             Values.XmlPlayerColor = new XmlColor { Alpha = Values.PlayerColor.A, Blue = Values.PlayerColor.B, Green = Values.PlayerColor.G, Red = Values.PlayerColor.R };
             Values.XmlGridColor = new XmlColor { Alpha = Values.GridColor.A, Blue = Values.GridColor.B, Green = Values.GridColor.G, Red = Values.GridColor.R };
+            Values.XmlTextColor = new XmlColor { Alpha = Values.TextColor.A, Blue = Values.TextColor.B, Green = Values.TextColor.G, Red = Values.TextColor.R };
 
 
             var x = new XmlSerializer(typeof(Settings));
