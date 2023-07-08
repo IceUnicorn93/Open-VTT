@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,11 +17,10 @@ namespace Open_VTT.Forms.Popups
 {
     internal partial class SceneControl : Form
     {
-
-
         public SceneControl()
         {
             InitializeComponent();
+
             var mainScreen = Screen.AllScreens.Single(n => n.Primary);
             this.Location = new Point(mainScreen.Bounds.X, mainScreen.Bounds.Y);
             this.WindowState = FormWindowState.Maximized;
@@ -220,6 +218,16 @@ namespace Open_VTT.Forms.Popups
                 if (Settings.Values.AutoSaveAction)
                     Session.Save(true);
             };
+
+            treeViewDisplay1.GenerateNewDisplayItem += () =>
+            {
+                using (var dialog = new DisplayItemGenerator())
+                    dialog.ShowDialog();
+            };
+            treeViewDisplay1.GetDmDisplay += () => WindowInstaces.InformationDisplayDM;
+            treeViewDisplay1.GetPlayerDisplay += () => WindowInstaces.InformationDisplayPlayer;
+            treeViewDisplay1.GetDmPictureBox += () => WindowInstaces.InformationDisplayDM.GetPictureBox();
+            treeViewDisplay1.GetPlayerPictureBox += () => WindowInstaces.InformationDisplayPlayer.GetPictureBox();
 
             FormClosed += FormClosedEvent;
 

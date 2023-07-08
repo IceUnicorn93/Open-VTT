@@ -83,41 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\WindowInstaces.cs" />
-    <Compile Include="Controls\DrawingPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\DrawingPictureBox.Designer.cs">
-      <DependentUpon>DrawingPictureBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\MapControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\MapControl.Designer.cs">
       <DependentUpon>MapControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\RecentlyOpenedControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\RecentlyOpenedControl.Designer.cs">
-      <DependentUpon>RecentlyOpenedControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\RecentlyOpenedRow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\RecentlyOpenedRow.Designer.cs">
-      <DependentUpon>RecentlyOpenedRow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ScreenSelector.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ScreenSelector.Designer.cs">
-      <DependentUpon>ScreenSelector.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TreeViewDisplay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TreeViewDisplay.Designer.cs">
-      <DependentUpon>TreeViewDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Popups\ColorSelector.cs">
       <SubType>Form</SubType>
@@ -181,23 +151,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\DrawingPictureBox.resx">
-      <DependentUpon>DrawingPictureBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapControl.resx">
       <DependentUpon>MapControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RecentlyOpenedControl.resx">
-      <DependentUpon>RecentlyOpenedControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RecentlyOpenedRow.resx">
-      <DependentUpon>RecentlyOpenedRow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ScreenSelector.resx">
-      <DependentUpon>ScreenSelector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TreeViewDisplay.resx">
-      <DependentUpon>TreeViewDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Popups\ColorSelector.resx">
       <DependentUpon>ColorSelector.cs</DependentUpon>
@@ -267,6 +222,10 @@
     <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">
       <Project>{bc0bf261-3ec5-4bed-b78a-16631b6c3fda}</Project>
       <Name>OpenVTT.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Controls\OpenVTT.Controls.csproj">
+      <Project>{547b2f8c-d067-4583-aad7-1378142c803b}</Project>
+      <Name>OpenVTT.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Editor.Controls\OpenVTT.Editor.Controls.csproj">
       <Project>{6a39d188-1289-49ac-a533-ff7dd53e0e4a}</Project>

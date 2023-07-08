@@ -6,22 +6,22 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Open_VTT.Controls
+namespace OpenVTT.Controls
 {
     internal partial class DrawingPictureBox : PictureBox
     {
-       internal RectangleDrawComplete RectangleComplete { get; set; }
-       internal PointDrawComplete PointComplete { get; set; }
-       internal PoligonDrawComplete PoligonComplete { get; set; }
+        internal RectangleDrawComplete RectangleComplete { get; set; }
+        internal PointDrawComplete PointComplete { get; set; }
+        internal PoligonDrawComplete PoligonComplete { get; set; }
 
-       Rectangle drawingRectangle { get; set; }
-       Point drawingRectangleMousePoint { get; set; }
+        Rectangle drawingRectangle { get; set; }
+        Point drawingRectangleMousePoint { get; set; }
 
-       Point pingPoing { get; set; }
+        Point pingPoing { get; set; }
 
-       List<Point> poligonPoints { get; set; }
-       Point poligonMousePosition { get; set; }
-       bool poligonIsDrawing { get; set; }
+        List<Point> poligonPoints { get; set; }
+        Point poligonMousePosition { get; set; }
+        bool poligonIsDrawing { get; set; }
 
 
         PictureBoxMode _drawMode;

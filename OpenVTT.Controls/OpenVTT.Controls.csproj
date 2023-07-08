@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{547B2F8C-D067-4583-AAD7-1378142C803B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenVTT.Controls</RootNamespace>
+    <AssemblyName>OpenVTT.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DrawingPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrawingPictureBox.Designer.cs">
+      <DependentUpon>DrawingPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MapControl.Designer.cs">
+      <DependentUpon>MapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecentlyOpenControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecentlyOpenControl.Designer.cs">
+      <DependentUpon>RecentlyOpenControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecentlyOpenRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecentlyOpenRow.Designer.cs">
+      <DependentUpon>RecentlyOpenRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenSelector.Designer.cs">
+      <DependentUpon>ScreenSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeViewDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeViewDisplay.Designer.cs">
+      <DependentUpon>TreeViewDisplay.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.Client\OpenVTT.Client.csproj">
+      <Project>{b3f2d6b2-62ed-4666-b394-775fd7c05024}</Project>
+      <Name>OpenVTT.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">
+      <Project>{bc0bf261-3ec5-4bed-b78a-16631b6c3fda}</Project>
+      <Name>OpenVTT.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Editor.Controls\OpenVTT.Editor.Controls.csproj">
+      <Project>{6a39d188-1289-49ac-a533-ff7dd53e0e4a}</Project>
+      <Name>OpenVTT.Editor.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Editor\OpenVTT.Editor.csproj">
+      <Project>{88a88fcd-315d-49e4-a396-5c19123473c7}</Project>
+      <Name>OpenVTT.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
+      <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
+      <Name>OpenVTT.Session</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Settings\OpenVTT.Settings.csproj">
+      <Project>{071f33e3-0c99-4b92-b5d9-c09ccb70c665}</Project>
+      <Name>OpenVTT.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RecentlyOpenControl.resx">
+      <DependentUpon>RecentlyOpenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecentlyOpenRow.resx">
+      <DependentUpon>RecentlyOpenRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenSelector.resx">
+      <DependentUpon>ScreenSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeViewDisplay.resx">
+      <DependentUpon>TreeViewDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

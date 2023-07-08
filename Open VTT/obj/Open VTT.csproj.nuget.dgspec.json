@@ -34,6 +34,9 @@
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
               },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj"
               },
@@ -109,6 +112,40 @@
         "frameworks": {
           "net472": {
             "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj",
+        "projectName": "OpenVTT.Controls",
+        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Client\\OpenVTT.Client.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Client\\OpenVTT.Client.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
+              }
+            }
           }
         }
       },

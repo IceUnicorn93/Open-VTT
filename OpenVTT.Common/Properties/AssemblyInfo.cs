@@ -38,6 +38,7 @@ using System.Runtime.InteropServices;
 [assembly: InternalsVisibleTo("Open VTT")]
 [assembly: InternalsVisibleTo("OpenVTT.Client")]
 [assembly: InternalsVisibleTo("OpenVTT.Common")]
+[assembly: InternalsVisibleTo("OpenVTT.Controls")]
 [assembly: InternalsVisibleTo("OpenVTT.Editor")]
 [assembly: InternalsVisibleTo("OpenVTT.Editor.Controls")]
 [assembly: InternalsVisibleTo("OpenVTT.FogOfWar")]

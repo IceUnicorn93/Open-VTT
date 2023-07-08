@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Controls;
 using OpenVTT.Editor;
 
 namespace Open_VTT.Forms.Popups
@@ -42,9 +43,9 @@ namespace Open_VTT.Forms.Popups
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.mapControl1 = new Open_VTT.Controls.MapControl();
-            this.drawPbMap = new Open_VTT.Controls.DrawingPictureBox();
+            this.drawPbMap = new DrawingPictureBox();
             this.editor1 = new OpenVTT.Editor.Editor();
-            this.treeViewDisplay1 = new Open_VTT.Controls.TreeViewDisplay();
+            this.treeViewDisplay1 = new TreeViewDisplay();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -253,8 +254,8 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnSave;
-        private Controls.DrawingPictureBox drawPbMap;
-        private Controls.TreeViewDisplay treeViewDisplay1;
+        private DrawingPictureBox drawPbMap;
+        private TreeViewDisplay treeViewDisplay1;
         private Controls.MapControl mapControl1;
         private Editor editor1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

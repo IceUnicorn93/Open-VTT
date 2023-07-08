@@ -1,4 +1,6 @@
 ﻿
+using OpenVTT.Controls;
+
 namespace Open_VTT.Forms
 {
     partial class Start
@@ -33,7 +35,7 @@ namespace Open_VTT.Forms
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnConfigure = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.recentlyOpenedControl1 = new Open_VTT.Controls.RecentlyOpenedControl();
+            this.recentlyOpenedControl1 = new RecentlyOpenedControl();
             this.SuspendLayout();
             // 
             // btnCreate
@@ -111,6 +113,6 @@ namespace Open_VTT.Forms
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnConfigure;
         private System.Windows.Forms.Button btnClose;
-        private Controls.RecentlyOpenedControl recentlyOpenedControl1;
+        private RecentlyOpenedControl recentlyOpenedControl1;
     }
 }

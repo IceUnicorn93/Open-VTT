@@ -1,6 +1,7 @@
 ﻿
 using Open_VTT.Controls;
 using OpenVTT.Common;
+using OpenVTT.Controls;
 
 namespace Open_VTT.Forms.Popups.Displayer
 {
@@ -32,7 +33,7 @@ namespace Open_VTT.Forms.Popups.Displayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayImagePictureBox = new Open_VTT.Controls.DrawingPictureBox();
+            this.displayImagePictureBox = new DrawingPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.displayImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 

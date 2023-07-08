@@ -62,12 +62,7 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.StreamDeck.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.NetworkMessage.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.SuggestedBindingRedirects.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.DrawingPictureBox.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.MapControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.RecentlyOpenedRow.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.ScreenSelector.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.TreeViewDisplay.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Config.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.DisplayItemGenerator.resources
@@ -88,3 +83,5 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.ColorSelector.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.pdb

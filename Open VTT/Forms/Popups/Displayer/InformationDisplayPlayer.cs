@@ -1,6 +1,7 @@
 ﻿using Open_VTT.Classes;
 using Open_VTT.Controls;
 using OpenVTT.Common;
+using OpenVTT.Controls;
 using OpenVTT.Settings;
 using System.ComponentModel;
 using System.Drawing;

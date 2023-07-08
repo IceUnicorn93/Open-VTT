@@ -1,8 +1,16 @@
 ﻿using OpenVTT.Common;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Open_VTT.Controls
+namespace OpenVTT.Controls
 {
     public partial class RecentlyOpenedRow : UserControl
     {
@@ -25,7 +33,7 @@ namespace Open_VTT.Controls
 
         private void btnOpen_Click(object sender, System.EventArgs e)
         {
-            SessionLoaded?.Invoke(FilePath);
+
         }
     }
 }

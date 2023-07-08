@@ -1,45 +1,48 @@
-﻿using Open_VTT.Classes;
-using Open_VTT.Forms.Popups;
-using OpenVTT.Common;
-using OpenVTT.Session;
+﻿using OpenVTT.Common;
 using OpenVTT.Editor;
 using OpenVTT.Editor.Controls;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
-using OpenVTT.Settings;
 
-namespace Open_VTT.Controls
+namespace OpenVTT.Controls
 {
     public partial class TreeViewDisplay : UserControl
     {
         private DrawingPictureBox ArtworkDisplay;
         private ResizablePictureBox MiniArtworkDisplay;
 
-        internal Editor Editor;
+        internal Editor.Editor Editor;
 
         Image MiniImage;
         Image BigImage;
 
         internal TreeViewDisplayItem currentInformationItem;
 
+        internal Action GenerateNewDisplayItem;
+        internal Func<Form> GetDmDisplay;
+        internal Func<Form> GetPlayerDisplay;
+        internal Func<DrawingPictureBox> GetDmPictureBox;
+        internal Func<DrawingPictureBox> GetPlayerPictureBox;
+
+
         public TreeViewDisplay()
         {
             InitializeComponent();
 
             networkSync1.SyncComplete += Init;
-            networkSync1.SERVER_PORT = Settings.Values.NoteServerPort;
-            networkSync1.SERVER_IP = Settings.Values.NoteServerIP;
+            networkSync1.SERVER_PORT = Settings.Settings.Values.NoteServerPort;
+            networkSync1.SERVER_IP = Settings.Settings.Values.NoteServerIP;
         }
 
         public void Init()
         {
-            ArtworkDisplay = WindowInstaces.InformationDisplayPlayer.GetPictureBox();
+            ArtworkDisplay = GetDmPictureBox();
 
             if (ArtworkDisplay == null)
                 throw new ArgumentNullException(nameof(ArtworkDisplay));
@@ -47,7 +50,7 @@ namespace Open_VTT.Controls
                 throw new ArgumentNullException(nameof(Editor));
 
             // Building Notes
-            Session.InitDisplayItems();
+            Session.Session.InitDisplayItems();
 
             PopulateTreeView();
         }
@@ -58,19 +61,19 @@ namespace Open_VTT.Controls
             var trackNodes = new List<TreeNode>();
 
             // First create a list of all Nodes, regardless of parent status
-            foreach (var item in Session.Values.DisplayItems)
+            foreach (var item in Session.Session.Values.DisplayItems)
                 if (item.ItemType == TreeViewDisplayItemType.Node)
                     trackNodes.Add(new TreeNode() { Text = item.Name, Tag = item });
 
             // Then create the final List, considering the parents
-            foreach (var item in Session.Values.DisplayItems)
+            foreach (var item in Session.Session.Values.DisplayItems)
                 if (item.ItemType == TreeViewDisplayItemType.Node && item.Parent == null)
                     treeNodes.Add(trackNodes.Single(n => n.Tag == item));
                 else if (item.ItemType == TreeViewDisplayItemType.Node && item.Parent != null)
                     trackNodes.Single(n => n.Tag == item.Parent).Nodes.Add(trackNodes.Single(n => n.Tag == item));
 
             // Finally populate the Tree List with Children
-            foreach (var item in Session.Values.DisplayItems)
+            foreach (var item in Session.Session.Values.DisplayItems)
                 if (item.Parent != null && item.ItemType == TreeViewDisplayItemType.Item)
                 {
                     trackNodes.Single(n => n.Tag == item.Parent).Nodes.Add(new TreeNode() { Text = item.Name, Tag = item });
@@ -87,9 +90,9 @@ namespace Open_VTT.Controls
             tvItems.Nodes.AddRange(treeNodes.ToArray());
 
             tbSearchItem.Items.Clear();
-            tbSearchItem.Items.AddRange(Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
+            tbSearchItem.Items.AddRange(Session.Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
         }
-        
+
         private void SetCurrentInformationItem()
         {
             if (MiniArtworkDisplay != null)
@@ -108,10 +111,10 @@ namespace Open_VTT.Controls
                 MiniImage = null;
                 MiniImage = Image.FromFile(imagePath);
 
-                
+
                 MiniArtworkDisplay.Image = MiniImage;
 
-                if (Settings.Values.DisplayChangesInstantly)
+                if (Settings.Settings.Values.DisplayChangesInstantly)
                 {
                     DisplayDmAndPlayer();
                 }
@@ -131,26 +134,26 @@ namespace Open_VTT.Controls
             {
                 BigImage = Image.FromFile(imagePath);
 
-                WindowInstaces.InformationDisplayDM.GetPictureBox().Image?.Dispose();
-                WindowInstaces.InformationDisplayDM.GetPictureBox().Image = null;
-                WindowInstaces.InformationDisplayDM.GetPictureBox().Image = BigImage;
+                GetDmPictureBox().Image?.Dispose();
+                GetDmPictureBox().Image = null;
+                GetDmPictureBox().Image = BigImage;
 
-                WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image?.Dispose();
-                WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = null;
-                WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = BigImage;
+                GetPlayerPictureBox().Image?.Dispose();
+                GetPlayerPictureBox().Image = null;
+                GetPlayerPictureBox().Image = BigImage;
             }
         }
 
         private void btnOpenViewer_Click(object sender, EventArgs e)
         {
-            WindowInstaces.InformationDisplayDM.Show();
-            WindowInstaces.InformationDisplayPlayer.Show();
+            GetDmDisplay()?.Show();
+            GetPlayerDisplay()?.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (var dialog = new DisplayItemGenerator())
-                dialog.ShowDialog();
+            if (GenerateNewDisplayItem != null)
+                GenerateNewDisplayItem();
 
             Init();
         }
@@ -171,7 +174,7 @@ namespace Open_VTT.Controls
                 {
                     void GetChildsToDelete(TreeViewDisplayItem parent)
                     {
-                        var list = Session.Values.DisplayItems.Where(n => n.Parent == parent).ToList();
+                        var list = Session.Session.Values.DisplayItems.Where(n => n.Parent == parent).ToList();
                         childsToDelete.AddRange(list);
 
                         if (list.Count > 0)
@@ -188,7 +191,7 @@ namespace Open_VTT.Controls
 
             foreach (var item in childsToDelete)
             {
-                Session.Values.DisplayItems.Remove(item);
+                Session.Session.Values.DisplayItems.Remove(item);
 
                 var p = new List<string>();
 
@@ -231,7 +234,7 @@ namespace Open_VTT.Controls
             if (e.KeyCode == Keys.Enter)
             {
                 //TODO: What to do if an Item exists multiple times due to same name?
-                currentInformationItem = Session.Values.DisplayItems.Single(n => n.Name == tbSearchItem.Text);
+                currentInformationItem = Session.Session.Values.DisplayItems.Single(n => n.Name == tbSearchItem.Text);
 
                 SetCurrentInformationItem();
             }
@@ -245,7 +248,7 @@ namespace Open_VTT.Controls
         private void tbSearchItem_TextUpdate(object sender, EventArgs e)
         {
             tbSearchItem.Items.Clear();
-            tbSearchItem.Items.AddRange(Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
+            tbSearchItem.Items.AddRange(Session.Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
             tbSearchItem.SelectionStart = tbSearchItem.Text.Length;
             tbSearchItem.DroppedDown = true;
 

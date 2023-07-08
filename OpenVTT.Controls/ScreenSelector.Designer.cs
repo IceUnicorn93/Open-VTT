@@ -1,7 +1,6 @@
-﻿
-namespace Open_VTT.Controls
+﻿namespace OpenVTT.Controls
 {
-    partial class RecentlyOpenedControl
+    partial class ScreenSelector
     {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -29,18 +28,31 @@ namespace Open_VTT.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // RecentlyOpenedControl
+            // cbType
+            // 
+            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(260, 3);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(134, 21);
+            this.cbType.TabIndex = 1;
+            // 
+            // ScreenSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "RecentlyOpenedControl";
-            this.Size = new System.Drawing.Size(200, 150);
+            this.Controls.Add(this.cbType);
+            this.Name = "ScreenSelector";
+            this.Size = new System.Drawing.Size(396, 239);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox cbType;
     }
 }

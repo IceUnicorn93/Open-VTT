@@ -1,5 +1,4 @@
-﻿using Open_VTT.Classes;
-using OpenVTT.Common;
+﻿using OpenVTT.Common;
 using OpenVTT.Settings;
 using System;
 using System.Collections.Generic;
@@ -9,9 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Open_VTT.Controls
+namespace OpenVTT.Controls
 {
     public partial class ScreenSelector : UserControl
     {
@@ -84,16 +84,16 @@ namespace Open_VTT.Controls
                         screenInfo.Display = selectedType;
 
 
-                        var s = Settings.Values.Screens.SingleOrDefault(n => n.Display == selectedType);
+                        var s = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == selectedType);
                         if (s == null)
-                            Settings.Values.Screens.Add(screenInfo);
+                            Settings.Settings.Values.Screens.Add(screenInfo);
                         else
-                        { 
-                            Settings.Values.Screens.RemoveAll(n => n.Display == selectedType);
-                            Settings.Values.Screens.Add(screenInfo);
+                        {
+                            Settings.Settings.Values.Screens.RemoveAll(n => n.Display == selectedType);
+                            Settings.Settings.Values.Screens.Add(screenInfo);
                         }
 
-                        Settings.Save();
+                        Settings.Settings.Save();
 
                         // Creating Sample Form to Show Player Location
                         var frm = new Form
@@ -123,7 +123,7 @@ namespace Open_VTT.Controls
                         frm.Controls.Add(b);
                         frm.ShowDialog();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }

@@ -78,6 +78,23 @@
           "bin/placeholder/OpenVTT.Common.dll": {}
         }
       },
+      "OpenVTT.Controls/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Client": "1.0.0",
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        }
+      },
       "OpenVTT.Editor/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -251,6 +268,23 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Controls/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Client": "1.0.0",
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
         }
       },
       "OpenVTT.Editor/1.0.0": {
@@ -428,6 +462,23 @@
           "bin/placeholder/OpenVTT.Common.dll": {}
         }
       },
+      "OpenVTT.Controls/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Client": "1.0.0",
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        }
+      },
       "OpenVTT.Editor/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -601,6 +652,23 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Controls/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Client": "1.0.0",
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
         }
       },
       "OpenVTT.Editor/1.0.0": {
@@ -783,6 +851,11 @@
       "path": "../OpenVTT.Common/OpenVTT.Common.csproj",
       "msbuildProject": "../OpenVTT.Common/OpenVTT.Common.csproj"
     },
+    "OpenVTT.Controls/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Controls/OpenVTT.Controls.csproj",
+      "msbuildProject": "../OpenVTT.Controls/OpenVTT.Controls.csproj"
+    },
     "OpenVTT.Editor/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.Editor/OpenVTT.Editor.csproj",
@@ -828,6 +901,7 @@
     ".NETFramework,Version=v4.7.2": [
       "OpenVTT.Client >= 1.0.0",
       "OpenVTT.Common >= 1.0.0",
+      "OpenVTT.Controls >= 1.0.0",
       "OpenVTT.Editor >= 1.0.0",
       "OpenVTT.Editor.Controls >= 1.0.0",
       "OpenVTT.FogOfWar >= 1.0.0",
@@ -870,6 +944,9 @@
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Controls\\OpenVTT.Controls.csproj"
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj"

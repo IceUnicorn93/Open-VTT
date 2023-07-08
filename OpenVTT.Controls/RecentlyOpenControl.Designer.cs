@@ -1,7 +1,6 @@
-﻿
-namespace Open_VTT.Controls
+﻿namespace OpenVTT.Controls
 {
-    partial class DrawingPictureBox
+    partial class RecentlyOpenedControl
     {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -29,7 +28,16 @@ namespace Open_VTT.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // RecentlyOpenedControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "RecentlyOpenedControl";
+            this.Size = new System.Drawing.Size(200, 150);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

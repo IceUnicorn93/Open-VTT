@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using OpenVTT.Common;
 using OpenVTT.Settings;
+using OpenVTT.Controls;
 
 namespace Open_VTT.Forms.Popups.Displayer
 {

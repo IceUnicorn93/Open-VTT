@@ -1,4 +1,6 @@
 ﻿
+using OpenVTT.Controls;
+
 namespace Open_VTT.Forms.Popups
 {
     partial class Config
@@ -34,7 +36,7 @@ namespace Open_VTT.Forms.Popups
             this.nudPlayerSize = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.screenSelector1 = new Open_VTT.Controls.ScreenSelector();
+            this.screenSelector1 = new ScreenSelector();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbAutoSaveAction = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -361,7 +363,7 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.NumericUpDown nudPlayerSize;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Controls.ScreenSelector screenSelector1;
+        private ScreenSelector screenSelector1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbAutoSaveAction;
         private System.Windows.Forms.GroupBox groupBox4;
