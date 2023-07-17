@@ -46,23 +46,30 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Client.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Editor.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Editor.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.FogOfWar.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Session.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.StreamDeck.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.NetworkMessage.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Client.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Common.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Editor.Controls.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Editor.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.FogOfWar.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Session.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.StreamDeck.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.NetworkMessage.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.SuggestedBindingRedirects.cache
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Controls.MapControl.resources
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.ColorSelector.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Config.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.DisplayItemGenerator.resources
@@ -78,10 +85,3 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CoreCompileInpu
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.exe
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Settings.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open_VTT.Forms.Popups.ColorSelector.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.pdb

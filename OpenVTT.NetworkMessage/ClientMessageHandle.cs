@@ -11,7 +11,7 @@ namespace OpenVTT.NetworkMessage
         private Message nextMessage = new Message();
         private Message lengthMessage = new Message() { Definition = null, fileInformation = null, packageSize = 0, type = MessageType.LengthDefinition };
 
-        private List<(string Name, string Type, DateTime LastWriteTime)> Definition;
+        private List<DirectoryDefinition> Definition;
         private List<Message> RequestQueue;
 
         private Client client;
@@ -88,7 +88,7 @@ namespace OpenVTT.NetworkMessage
             }
         }
 
-        internal List<(string Name, string Type, DateTime LastWriteTime)> GetDefinition()
+        internal List<DirectoryDefinition> GetDefinition()
         {
             var startupPath = Application.StartupPath;
 
@@ -96,14 +96,14 @@ namespace OpenVTT.NetworkMessage
                 Directory.CreateDirectory(Path.Combine(startupPath, "Notes"));
 
             var files = Directory.GetFileSystemEntries(Path.Combine(startupPath, "Notes"), "*", SearchOption.AllDirectories).ToList();
-            var Definition = new List<(string Name, string Type, DateTime LastWriteTime)>();
+            var Definition = new List<DirectoryDefinition>();
             foreach (var entry in files)
             {
                 var fi = new FileInfo(entry);
 
                 var info = (fi.Attributes == FileAttributes.Directory ? "Directory" : "File");
 
-                Definition.Add((entry.Replace(startupPath, ""), info, fi.LastWriteTime));
+                Definition.Add(new DirectoryDefinition { Name = entry.Replace(startupPath, ""), Type = info, LastWriteTime = fi.LastWriteTime });
             }
 
             return Definition;

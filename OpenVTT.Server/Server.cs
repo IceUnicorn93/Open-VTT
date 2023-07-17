@@ -1,5 +1,6 @@
 ﻿using OpenVTT.NetworkMessage;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace OpenVTT.Server
     {
         TcpListener listener;
 
-        //List<Client> clients;
+        List<Client> clients;
 
         Task acceptClientsTask;
 
@@ -20,7 +21,7 @@ namespace OpenVTT.Server
         {
             IPAddress localAdd = IPAddress.Parse(ip);
             listener = new TcpListener(localAdd, port);
-            //clients = new List<Client>();
+            clients = new List<Client>();
 
             acceptClientsTask = new Task(acceptClients);
         }
@@ -39,7 +40,7 @@ namespace OpenVTT.Server
 
             listener.Stop();
 
-            //clients.ForEach(client => client.Stop());
+            clients.ForEach(client => client.Stop());
         }
 
         private void acceptClients()
@@ -85,7 +86,7 @@ namespace OpenVTT.Server
 
                 c.MessageReceived += cmh.MessageHandle;
                 c.Start();
-                //clients.Add(c);
+                clients.Add(c);
             }
             Console.WriteLine("Server Loop Stopped");
         }

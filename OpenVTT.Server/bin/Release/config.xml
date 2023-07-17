@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ServerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SERVER_IP>127.0.0.1</SERVER_IP>
+  <PORT_NO>5000</PORT_NO>
+</ServerConfiguration>

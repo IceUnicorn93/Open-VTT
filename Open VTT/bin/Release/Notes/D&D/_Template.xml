@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCustomControlData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CustomControlData>
+    <Location>
+      <X>20</X>
+      <Y>20</Y>
+    </Location>
+    <Size>
+      <Width>200</Width>
+      <Height>200</Height>
+    </Size>
+    <Name>picturebox</Name>
+    <ControlType>Picturebox</ControlType>
+  </CustomControlData>
+</ArrayOfCustomControlData>

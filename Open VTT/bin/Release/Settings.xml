@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PlayerScreenSize>0</PlayerScreenSize>
+  <PlayerScreenWidthInches>0</PlayerScreenWidthInches>
+  <PlayerScreenHeightInces>0</PlayerScreenHeightInces>
+  <Screens>
+    <ScreenInformation>
+      <Display>Player</Display>
+      <PositionX>-2560</PositionX>
+      <PositionY>0</PositionY>
+      <Height>1440</Height>
+      <Width>2560</Width>
+    </ScreenInformation>
+  </Screens>
+  <AutoSaveAction>true</AutoSaveAction>
+  <DisplayChangesInstantly>false</DisplayChangesInstantly>
+  <DisplayGrid>false</DisplayGrid>
+  <DisplayGridForDM>false</DisplayGridForDM>
+  <NoteServerIP>127.0.0.1</NoteServerIP>
+  <NoteServerPort>5000</NoteServerPort>
+  <XmlDmColor>
+    <Alpha>150</Alpha>
+    <Red>0</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlDmColor>
+  <XmlPlayerColor>
+    <Alpha>255</Alpha>
+    <Red>0</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlPlayerColor>
+  <XmlGridColor>
+    <Alpha>255</Alpha>
+    <Red>128</Red>
+    <Green>128</Green>
+    <Blue>128</Blue>
+  </XmlGridColor>
+  <XmlTextColor>
+    <Alpha>255</Alpha>
+    <Red>255</Red>
+    <Green>0</Green>
+    <Blue>0</Blue>
+  </XmlTextColor>
+</Settings>

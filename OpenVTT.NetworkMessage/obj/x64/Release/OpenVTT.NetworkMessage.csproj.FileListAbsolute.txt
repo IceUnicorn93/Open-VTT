@@ -1,5 +1,1 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\x64\Release\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\x64\Release\OpenVTT.NetworkMessage.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\x64\Release\OpenVTT.NetworkMessage.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\x64\Release\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Release x64\OpenVTT.NetworkMessage.dll

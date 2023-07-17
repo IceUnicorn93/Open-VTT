@@ -15,47 +15,5 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.FogOfWar.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.Session.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.StreamDeck.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.csproj.SuggestedBindingRedirects.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.DrawingPictureBox.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.MapControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.RecentlyOpenedControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.RecentlyOpenedRow.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.ScreenSelector.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Controls.TreeViewDisplay.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.Config.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.DisplayItemGenerator.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.Displayer.InformationDisplayPlayer.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.NewScene.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.Displayer.MapPlayer.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.SceneControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Start.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Properties.Resources.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.csproj.GenerateResource.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.csproj.CopyComplete
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open VTT.exe
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.PrePlaceFogOfWar.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.Settings.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\x64\Release\OpenVTT.Grid.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\x64\Release\Open_VTT.Forms.Popups.ColorSelector.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\Open VTT.exe.config
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\Open VTT.exe
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenMacroBoard.SDK.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenMacroBoard.SDK.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\HidSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\HidSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\StreamDeckSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\StreamDeckSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\System.Drawing.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Client.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Editor.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.FogOfWar.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Session.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Settings.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.StreamDeck.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release x64\OpenVTT.Grid.dll

@@ -385,6 +385,198 @@
         }
       }
     },
+    ".NETFramework,Version=v4.7.2/win-arm64": {
+      "OpenMacroBoard.SDK/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "StreamDeckSharp/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/HidSharp.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netstandard2.0/StreamDeckSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/HidSharp.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netstandard2.0/StreamDeckSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "OpenVTT.Client/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.NetworkMessage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Client.dll": {}
+        }
+      },
+      "OpenVTT.Common/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Common.dll": {}
+        }
+      },
+      "OpenVTT.Controls/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Client": "1.0.0",
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Controls.dll": {}
+        }
+      },
+      "OpenVTT.Editor/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor.Controls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.dll": {}
+        }
+      },
+      "OpenVTT.Editor.Controls/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
+        }
+      },
+      "OpenVTT.FogOfWar/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Grid/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Settings": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Grid.dll": {}
+        }
+      },
+      "OpenVTT.NetworkMessage/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Session/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Editor": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Session.dll": {}
+        }
+      },
+      "OpenVTT.Settings/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Settings.dll": {}
+        }
+      },
+      "OpenVTT.StreamDeck/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Session": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.StreamDeck.dll": {}
+        }
+      }
+    },
     ".NETFramework,Version=v4.7.2/win-x64": {
       "OpenMacroBoard.SDK/3.0.0": {
         "type": "package",
@@ -986,6 +1178,9 @@
     },
     "runtimes": {
       "win": {
+        "#import": []
+      },
+      "win-arm64": {
         "#import": []
       },
       "win-x64": {

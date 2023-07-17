@@ -15,6 +15,8 @@ namespace OpenVTT.NetworkMessage
         RequestFileData = 4, // Client sends this Message to Request the Server File
         SendFileData = 5, // Server sends this Message to Send the Server File
 
+        RequestDisconnect = 6, // Client sends this Message once he disconnects (Stopping Server Client Task)
+
         TextMessage = 2_147_483_647, // Spare Message for simple Text Messages Exchange
     }
 
@@ -25,13 +27,13 @@ namespace OpenVTT.NetworkMessage
         public int packageSize;
 
         public FileInformation fileInformation = new FileInformation();
-        public List<(string Name, string Type, DateTime LastModified)> Definition;
+        public List<DirectoryDefinition> Definition;
 
         public string ToXML()
         {
             using (var stringwriter = new System.IO.StringWriter())
             {
-                var serializer = new XmlSerializer(this.GetType());
+                var serializer = new XmlSerializer(typeof(Message));
                 serializer.Serialize(stringwriter, this);
                 return stringwriter.ToString();
             }

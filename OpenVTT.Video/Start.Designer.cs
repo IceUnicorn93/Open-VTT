@@ -1,4 +1,6 @@
-﻿namespace OpenVTT.Video
+﻿using OpenVTT.Controls;
+
+namespace OpenVTT.Video
 {
     partial class Start
     {
@@ -100,7 +102,7 @@
         private System.Windows.Forms.Button btnConfigure;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnCreate;
-        private Controls.RecentlyOpenedControl recentlyOpenedControl1;
+        private RecentlyOpenedControl recentlyOpenedControl1;
     }
 }
 

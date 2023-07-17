@@ -30,8 +30,8 @@
   <DisplayChangesInstantly>true</DisplayChangesInstantly>
   <DisplayGrid>false</DisplayGrid>
   <DisplayGridForDM>false</DisplayGridForDM>
-  <NoteServerIP />
-  <NoteServerPort>0</NoteServerPort>
+  <NoteServerIP>127.0.0.1</NoteServerIP>
+  <NoteServerPort>5000</NoteServerPort>
   <XmlDmColor>
     <Alpha>150</Alpha>
     <Red>0</Red>

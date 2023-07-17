@@ -46,6 +46,8 @@
             this.tbSearchItem.Name = "tbSearchItem";
             this.tbSearchItem.Size = new System.Drawing.Size(229, 21);
             this.tbSearchItem.TabIndex = 12;
+            this.tbSearchItem.TextUpdate += new System.EventHandler(this.tbSearchItem_TextUpdate);
+            this.tbSearchItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchItem_KeyDown);
             // 
             // btnDisplay
             // 
@@ -56,6 +58,7 @@
             this.btnDisplay.TabIndex = 11;
             this.btnDisplay.Text = "Display Current";
             this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // tvItems
             // 
@@ -66,6 +69,7 @@
             this.tvItems.Name = "tvItems";
             this.tvItems.Size = new System.Drawing.Size(231, 91);
             this.tvItems.TabIndex = 10;
+            this.tvItems.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvItems_NodeMouseClick);
             // 
             // btnRemove
             // 
@@ -76,6 +80,7 @@
             this.btnRemove.TabIndex = 9;
             this.btnRemove.Text = "Remove Item";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -85,6 +90,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add Item";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnOpenViewer
             // 
@@ -94,9 +100,11 @@
             this.btnOpenViewer.TabIndex = 7;
             this.btnOpenViewer.Text = "Open Viewer";
             this.btnOpenViewer.UseVisualStyleBackColor = true;
+            this.btnOpenViewer.Click += new System.EventHandler(this.btnOpenViewer_Click);
             // 
             // networkSync1
             // 
+            this.networkSync1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.networkSync1.Location = new System.Drawing.Point(3, 179);
             this.networkSync1.Name = "networkSync1";
             this.networkSync1.Size = new System.Drawing.Size(227, 88);

@@ -32,6 +32,7 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Client.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Editor.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Editor.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.FogOfWar.dll
@@ -42,12 +43,7 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.NetworkMessage.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Release\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open VTT.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open VTT.csproj.SuggestedBindingRedirects.cache
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.DrawingPictureBox.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.MapControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedControl.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.RecentlyOpenedRow.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.ScreenSelector.resources
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Controls.TreeViewDisplay.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.ColorSelector.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Config.resources
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Release\Open_VTT.Forms.Popups.Displayer.InformationDisplayDM.resources

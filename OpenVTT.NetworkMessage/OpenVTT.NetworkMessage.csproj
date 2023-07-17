@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientMessageHandle.cs" />
+    <Compile Include="DirectoryDefinition.cs" />
     <Compile Include="FileInformation.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

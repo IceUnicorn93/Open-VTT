@@ -3,8 +3,8 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Editor.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.FogOfWar.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Release\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Release\OpenVTT.Session.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Release\OpenVTT.Session.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\Release\OpenVTT.Session.csproj.CopyComplete

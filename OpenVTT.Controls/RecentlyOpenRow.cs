@@ -31,9 +31,9 @@ namespace OpenVTT.Controls
             lblName.Text = new DirectoryInfo(FilePath).Parent.Name;
         }
 
-        private void btnOpen_Click(object sender, System.EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
-
+            SessionLoaded?.Invoke(FilePath);
         }
     }
 }

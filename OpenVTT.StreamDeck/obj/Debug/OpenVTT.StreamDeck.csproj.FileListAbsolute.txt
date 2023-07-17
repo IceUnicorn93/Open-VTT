@@ -7,6 +7,8 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.FogOfWar.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Session.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\StreamDeckSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\System.Drawing.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Editor.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Editor.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Common.pdb
@@ -19,6 +21,8 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenMacroBoard.SDK.xm
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\StreamDeckSharp.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\System.Drawing.Common.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Editor.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Editor.Controls.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.csproj.AssemblyReference.cache
@@ -26,7 +30,3 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.cs
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.pdb
