@@ -6,15 +6,15 @@ using System.Drawing;
 using System.Linq;
 using OpenVTT.Session;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using System.Collections.ObjectModel;
 
 namespace OpenVTT.StreamDeck
 {
 
     internal static class StreamDeckStatics
     {
-        public static List<(string State, Action action)> States = new List<(string State, Action action)>();
+        public static ObservableCollection<(string State, Action action)> States = new ObservableCollection<(string State, Action action)>();
         static string State;
         static IStreamDeckBoard deck;
         static int Page = 1;
@@ -38,6 +38,12 @@ namespace OpenVTT.StreamDeck
             States.Add(("SelectControl", () => { SetSelection(); }));
             States.Add(("Scene", () => { SetMaps(); }));
             States.Add(("Fog Of War", () => { SetFog(); }));
+
+            States.CollectionChanged += (sender, e) =>
+            {
+                SetSelection();
+            };
+
             State = "SelectControl";
 
             //Open the Stream Deck device
@@ -116,7 +122,7 @@ namespace OpenVTT.StreamDeck
             actions[position.X, position.Y] = action;
         }
 
-        static private void SetDeckKeyText(int X, int Y, string Text)
+        static internal void SetDeckKeyText(int X, int Y, string Text)
         {
             var newX = X * 104;
             var newY = Y * 104;

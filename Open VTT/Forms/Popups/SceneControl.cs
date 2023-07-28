@@ -288,6 +288,8 @@ namespace Open_VTT.Forms.Popups
                 mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
             });
 
+            StreamDeckStatics.States.Add(("Test State", () => { }));
+
             //UpdatePrePlaceFogOfWarList();
         }
 
