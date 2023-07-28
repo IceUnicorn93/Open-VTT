@@ -171,8 +171,16 @@ namespace OpenVTT.StreamDeck
 
         //------------------ All for Selecting the Deck State and displaying Opions
 
-        static internal void SwitchDeckState()
+        static internal void SwitchDeckState(int PageNumber = -1)
         {
+            if (PageNumber != -1)
+            {
+                Page = PageNumber;
+
+                var pos = deck.Keys.KeyCountX - ((deck.Keys.KeyCountX - 1) - 2);
+                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+            }
+
             switch (DeckState)
             {
                 case DeckStateEnum.SelectControl:
@@ -302,7 +310,7 @@ namespace OpenVTT.StreamDeck
                 }
             }
 
-            MaxPage = (int)Math.Ceiling((decimal)Session.Session.Values.ActiveScene.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Count / ((deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1)));
+            MaxPage = (int)Math.Ceiling((decimal)Session.Session.Values.ActiveScene.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Where(n => n.Name != "").ToList().Count / ((deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1)));
         }
 
         //------------------ Unsued functions, maybe one day ...

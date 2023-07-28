@@ -10,6 +10,7 @@
         //-> bring a copy of the 5e tools monster libary to my Notes Section
         //-> Rework the "Centroid" finding for the PrePlaced Fog of War(yes it works, but there are cases where it just breaks xD)
         //-> Make OpenVTT fully usable on Linux
+        //-> Make Version with Video Support (Using axWindowsMediaPlayer)
 
         //Maybe:
         //-> An Initiative Tracker
@@ -36,14 +37,12 @@
          * Importing an ArtworkImage if ArtworkImage is already set
          */
 
-        // Currently Implementing: Pre-Place Fog of War Selection
         // Initiative Tracker
         // Memory Activity
         // Digital Monster Library
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
         //--------> Include Editor for Layout
-        //Idea: {M0} Pre-Place Fog of War Sections and make it toggleble
 
         //--------------------------------------------------------------------
         // Planned ToDos

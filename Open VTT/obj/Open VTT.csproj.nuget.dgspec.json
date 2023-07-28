@@ -142,11 +142,20 @@
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor\\OpenVTT.Editor.csproj"
               },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"
               },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj"
               }
             }
           }
@@ -211,6 +220,21 @@
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
               }
             }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj",
+        "projectName": "OpenVTT.Forms",
+        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
           }
         }
       },

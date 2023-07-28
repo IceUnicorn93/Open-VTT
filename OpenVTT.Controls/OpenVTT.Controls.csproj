@@ -61,6 +61,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Displayer\InformationDisplayDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Displayer\InformationDisplayDM.Designer.cs">
+      <DependentUpon>InformationDisplayDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Displayer\InformationDisplayPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Displayer\InformationDisplayPlayer.Designer.cs">
+      <DependentUpon>InformationDisplayPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Displayer\MapPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Displayer\MapPlayer.Designer.cs">
+      <DependentUpon>MapPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Displayer\WindowInstaces.cs" />
     <Compile Include="DrawingPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -116,6 +135,14 @@
       <Project>{88a88fcd-315d-49e4-a396-5c19123473c7}</Project>
       <Name>OpenVTT.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.FogOfWar\OpenVTT.FogOfWar.csproj">
+      <Project>{25AF1078-0371-4A8E-B835-8E97948CB20D}</Project>
+      <Name>OpenVTT.FogOfWar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Forms\OpenVTT.Forms.csproj">
+      <Project>{75af342f-95e1-4c5b-8356-0ce5eea95d90}</Project>
+      <Name>OpenVTT.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
       <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
       <Name>OpenVTT.Session</Name>
@@ -124,8 +151,15 @@
       <Project>{071f33e3-0c99-4b92-b5d9-c09ccb70c665}</Project>
       <Name>OpenVTT.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.StreamDeck\OpenVTT.StreamDeck.csproj">
+      <Project>{5dcccedb-cf8f-4166-bba9-b46eb490bf1a}</Project>
+      <Name>OpenVTT.StreamDeck</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MapControl.resx">
+      <DependentUpon>MapControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecentlyOpenControl.resx">
       <DependentUpon>RecentlyOpenControl.cs</DependentUpon>
     </EmbeddedResource>

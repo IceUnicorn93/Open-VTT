@@ -1,5 +1,5 @@
-﻿using Open_VTT.Classes;
-using OpenVTT.Common;
+﻿using OpenVTT.Common;
+using OpenVTT.Controls.Displayer;
 using OpenVTT.FogOfWar;
 using OpenVTT.Session;
 using OpenVTT.Settings;
@@ -259,6 +259,7 @@ namespace Open_VTT.Forms.Popups
                     }
                 };
                 Session.Values.ActiveScene = Session.Values.Scenes.First();
+                Session.Save(false);
             }
 
             try { StreamDeckStatics.InitStreamDeck(); } // If a StreamDeck isn't connected, don't crash
@@ -266,6 +267,7 @@ namespace Open_VTT.Forms.Popups
 
             mapControl1.DmPictureBox = drawPbMap;
             mapControl1.Init();
+            mapControl1.UpdatePrePlaceFogOfWarList += UpdatePrePlaceFogOfWarList;
 
             treeViewDisplay1.Editor = editor1;
             treeViewDisplay1.Init();
@@ -286,7 +288,7 @@ namespace Open_VTT.Forms.Popups
                 mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
             });
 
-            UpdatePrePlaceFogOfWarList();
+            //UpdatePrePlaceFogOfWarList();
         }
 
         void UpdatePrePlaceFogOfWarList()

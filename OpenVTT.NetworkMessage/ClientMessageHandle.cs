@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace OpenVTT.NetworkMessage
 {
@@ -11,7 +13,7 @@ namespace OpenVTT.NetworkMessage
         private Message nextMessage = new Message();
         private Message lengthMessage = new Message() { Definition = null, fileInformation = null, packageSize = 0, type = MessageType.LengthDefinition };
 
-        private List<DirectoryDefinition> Definition;
+        private List<FileDefinition> Definition;
         private List<Message> RequestQueue;
 
         private Client client;
@@ -19,9 +21,12 @@ namespace OpenVTT.NetworkMessage
         public Action SyncComplete;
         public Action<string> SetCommandLabel;
         public Action<int> SetQueueLabel;
+        public Action<List<FileDefinition>> HandleDeletion;
 
         public ClientMessageHandle(Client c)
         {
+            Definition = new List<FileDefinition>();
+
             client = c;
         }
 
@@ -54,7 +59,7 @@ namespace OpenVTT.NetworkMessage
                 case MessageType.RequestFileStructure: // Server requested the Client File Structure
                     if (SetCommandLabel != null) SetCommandLabel("Requested FileStructure");
                     var def = GetDefinition();
-                    nextMessage = new NetworkMessage.Message()
+                    nextMessage = new Message()
                     {
                         Definition = def,
                         fileInformation = null,
@@ -79,7 +84,7 @@ namespace OpenVTT.NetworkMessage
                     if (SetCommandLabel != null) SetCommandLabel("Received FileData");
                     CreateFile(message.fileInformation);
                     break;
-                case MessageType.TextMessage: // Server sended a Text Message
+                case MessageType.SyncComplete: // Server sended SyncComplete
                     if (SetCommandLabel != null) SetCommandLabel("Push complete");
                     SyncComplete?.Invoke();
                     break;
@@ -88,25 +93,75 @@ namespace OpenVTT.NetworkMessage
             }
         }
 
-        internal List<DirectoryDefinition> GetDefinition()
+        #region Will be used later for detecting Deletions
+        #region XML Saving & Loading of DirectoryDefinition
+        private string DirectoryDefinitionToXML(List<FileDefinition> Def)
         {
+            using (var stringwriter = new StringWriter())
+            {
+                var serializer = new XmlSerializer(typeof(List<FileDefinition>));
+                serializer.Serialize(stringwriter, Def);
+                return stringwriter.ToString();
+            }
+        }
+        private List<FileDefinition> LoadDirectoryDefinitionFromXMLString(string xmlText)
+        {
+            using (var stringReader = new StringReader(xmlText))
+            {
+                var serializer = new XmlSerializer(Definition.GetType());
+                return serializer.Deserialize(stringReader) as List<FileDefinition>;
+            }
+        }
+        #endregion
+        #region Logic Saving & Loading of DirectoryDefinition
+        private void SaveDirectoryDefinition(bool local, List<FileDefinition> Def)
+        {
+            var startupPath = Application.StartupPath;
+            var localFile = Path.Combine(startupPath, "localNoteDefinition.xml");
+            var serverFile = Path.Combine(startupPath, "remoteNoteDefinition.xml");
+
+            if (local)
+                File.WriteAllText(localFile, DirectoryDefinitionToXML(Def));
+            else
+                File.WriteAllText(serverFile, DirectoryDefinitionToXML(Def));
+        }
+        private List<FileDefinition> LoadDirectoryDefinition(bool local)
+        {
+            var startupPath = Application.StartupPath;
+            var localFile = Path.Combine(startupPath, "localNoteDefinition.xml");
+            var serverFile = Path.Combine(startupPath, "remoteNoteDefinition.xml");
+
+            if (local && File.Exists(localFile))
+                return LoadDirectoryDefinitionFromXMLString(File.ReadAllText(localFile));
+            else if (!local && File.Exists(serverFile))
+                return LoadDirectoryDefinitionFromXMLString(File.ReadAllText(serverFile));
+            else
+                return new List<FileDefinition>();
+        }
+        #endregion 
+        #endregion
+
+        internal List<FileDefinition> GetDefinition()
+        {
+            
+
             var startupPath = Application.StartupPath;
 
             if (!Directory.Exists(Path.Combine(startupPath, "Notes")))
                 Directory.CreateDirectory(Path.Combine(startupPath, "Notes"));
 
             var files = Directory.GetFileSystemEntries(Path.Combine(startupPath, "Notes"), "*", SearchOption.AllDirectories).ToList();
-            var Definition = new List<DirectoryDefinition>();
+            var ret = new List<FileDefinition>();
             foreach (var entry in files)
             {
                 var fi = new FileInfo(entry);
 
                 var info = (fi.Attributes == FileAttributes.Directory ? "Directory" : "File");
 
-                Definition.Add(new DirectoryDefinition { Name = entry.Replace(startupPath, ""), Type = info, LastWriteTime = fi.LastWriteTime });
+                ret.Add(new FileDefinition { Name = entry.Replace(startupPath, ""), Type = info, LastWriteTime = fi.LastWriteTime });
             }
 
-            return Definition;
+            return ret;
         }
 
         private void CrossCheckDirectories()

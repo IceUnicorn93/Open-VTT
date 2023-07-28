@@ -1,5 +1,5 @@
-﻿using Open_VTT.Classes;
-using Open_VTT.Forms.Popups;
+﻿using Open_VTT.Forms.Popups;
+using OpenVTT.Controls.Displayer;
 using OpenVTT.Session;
 using OpenVTT.Settings;
 using System;

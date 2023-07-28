@@ -17,6 +17,7 @@ namespace OpenVTT.NetworkMessage
 
         RequestDisconnect = 6, // Client sends this Message once he disconnects (Stopping Server Client Task)
 
+        SyncComplete = 2_147_483_646, // Spare Message for simple Text Messages Exchange
         TextMessage = 2_147_483_647, // Spare Message for simple Text Messages Exchange
     }
 
@@ -27,7 +28,7 @@ namespace OpenVTT.NetworkMessage
         public int packageSize;
 
         public FileInformation fileInformation = new FileInformation();
-        public List<DirectoryDefinition> Definition;
+        public List<FileDefinition> Definition;
 
         public string ToXML()
         {
@@ -41,6 +42,8 @@ namespace OpenVTT.NetworkMessage
 
         public static Message LoadFromXMLString(string xmlText)
         {
+            if(xmlText == "") return null;
+
             using (var stringReader = new System.IO.StringReader(xmlText))
             {
                 var serializer = new XmlSerializer(typeof(Message));

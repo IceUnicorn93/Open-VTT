@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfFileDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileDefinition>
+    <Name>\Notes\Call of Cthulhu</Name>
+    <Type>Directory</Type>
+    <LastWriteTime>2023-07-23T16:17:01.7469802+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D</Name>
+    <Type>Directory</Type>
+    <LastWriteTime>2023-07-23T16:18:03.5838373+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\Lone Wolf</Name>
+    <Type>Directory</Type>
+    <LastWriteTime>2023-07-23T16:17:01.7469802+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\The Witcher</Name>
+    <Type>Directory</Type>
+    <LastWriteTime>2023-07-23T16:17:01.7469802+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\Characters</Name>
+    <Type>Directory</Type>
+    <LastWriteTime>2023-07-23T16:18:23.4589767+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\_Template.xml</Name>
+    <Type>File</Type>
+    <LastWriteTime>2023-07-23T16:17:56.1906058+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\Characters\Briana.xml</Name>
+    <Type>File</Type>
+    <LastWriteTime>2023-07-23T16:20:13.8621254+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\Characters\Dustin.xml</Name>
+    <Type>File</Type>
+    <LastWriteTime>2023-07-23T16:20:34.9296043+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\Characters\Olgore.xml</Name>
+    <Type>File</Type>
+    <LastWriteTime>2023-07-23T16:20:50.3794458+02:00</LastWriteTime>
+  </FileDefinition>
+  <FileDefinition>
+    <Name>\Notes\D&amp;D\Characters\_Template.xml</Name>
+    <Type>File</Type>
+    <LastWriteTime>2023-07-23T16:19:53.9248303+02:00</LastWriteTime>
+  </FileDefinition>
+</ArrayOfFileDefinition>

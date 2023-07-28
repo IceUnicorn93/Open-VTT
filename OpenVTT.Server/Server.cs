@@ -70,7 +70,7 @@ namespace OpenVTT.Server
                 {
                     var msg = new Message()
                     {
-                        type = MessageType.TextMessage,
+                        type = MessageType.SyncComplete,
                         Definition = null,
                         fileInformation = null,
                         packageSize = 0,

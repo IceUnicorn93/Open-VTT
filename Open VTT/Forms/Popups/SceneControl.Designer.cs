@@ -42,7 +42,7 @@ namespace Open_VTT.Forms.Popups
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.mapControl1 = new Open_VTT.Controls.MapControl();
+            this.mapControl1 = new MapControl();
             this.drawPbMap = new DrawingPictureBox();
             this.editor1 = new OpenVTT.Editor.Editor();
             this.treeViewDisplay1 = new TreeViewDisplay();
@@ -256,7 +256,7 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.Button btnSave;
         private DrawingPictureBox drawPbMap;
         private TreeViewDisplay treeViewDisplay1;
-        private Controls.MapControl mapControl1;
+        private MapControl mapControl1;
         private Editor editor1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

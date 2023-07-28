@@ -17,6 +17,8 @@ namespace OpenVTT.NetworkMessage
         private Task readTask;
         private NetworkStream nwStream;
 
+        private DateTime lastMessageReceived = DateTime.Now;
+
         public Client(TcpClient client)
         {
             tcpClient = client;
@@ -43,14 +45,22 @@ namespace OpenVTT.NetworkMessage
         {
             while (tcpClient != null && tcpClient.Client != null && tcpClient.Connected)
             {
+                if(DateTime.Now - lastMessageReceived > TimeSpan.FromHours(12)) // Kill the Client if there is no Action for 12 Hours
+                {
+                    tcpClient.Dispose();
+                    break;
+                }
+
                 nwStream = tcpClient.GetStream();
 
                 int oldRead = tcpClient.Available;
                 Task.Delay(500).Wait();
                 int newRead = tcpClient.Available;
 
-                if (oldRead == newRead) // if equal, all the data has been read
+                if (oldRead == newRead && tcpClient.Available > 0) // if equal, all the data has been read
                 {
+                    lastMessageReceived = DateTime.Now;
+
                     try
                     {
                         //---get the incoming data through a network stream---
