@@ -193,6 +193,14 @@
       <Project>{25af1078-0371-4a8e-b835-8e97948cb20d}</Project>
       <Name>OpenVTT.FogOfWar</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Forms\OpenVTT.Forms.csproj">
+      <Project>{75af342f-95e1-4c5b-8356-0ce5eea95d90}</Project>
+      <Name>OpenVTT.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Scripting\OpenVTT.Scripting.csproj">
+      <Project>{b56784f1-969b-48c7-b18f-1c7471c69ddc}</Project>
+      <Name>OpenVTT.Scripting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
       <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
       <Name>OpenVTT.Session</Name>

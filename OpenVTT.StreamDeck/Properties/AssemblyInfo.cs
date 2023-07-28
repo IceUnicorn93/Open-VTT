@@ -45,6 +45,7 @@ using System.Runtime.InteropServices;
 [assembly: InternalsVisibleTo("OpenVTT.Forms")]
 [assembly: InternalsVisibleTo("OpenVTT.Grid")]
 [assembly: InternalsVisibleTo("OpenVTT.NetworkMessage")]
+[assembly: InternalsVisibleTo("OpenVTT.Scripting")]
 [assembly: InternalsVisibleTo("OpenVTT.Server")]
 [assembly: InternalsVisibleTo("OpenVTT.Session")]
 [assembly: InternalsVisibleTo("OpenVTT.Settings")]

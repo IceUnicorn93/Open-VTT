@@ -164,6 +164,20 @@
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         }
       },
+      "OpenVTT.Scripting/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0",
+          "OpenVTT.StreamDeck": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -366,6 +380,20 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Scripting/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0",
+          "OpenVTT.StreamDeck": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
         }
       },
       "OpenVTT.Session/1.0.0": {
@@ -572,6 +600,20 @@
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         }
       },
+      "OpenVTT.Scripting/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0",
+          "OpenVTT.StreamDeck": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -774,6 +816,20 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
+        }
+      },
+      "OpenVTT.Scripting/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0",
+          "OpenVTT.StreamDeck": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
         }
       },
       "OpenVTT.Session/1.0.0": {
@@ -980,6 +1036,20 @@
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         }
       },
+      "OpenVTT.Scripting/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Session": "1.0.0",
+          "OpenVTT.Settings": "1.0.0",
+          "OpenVTT.StreamDeck": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Scripting.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -1138,6 +1208,11 @@
       "path": "../OpenVTT.NetworkMessage/OpenVTT.NetworkMessage.csproj",
       "msbuildProject": "../OpenVTT.NetworkMessage/OpenVTT.NetworkMessage.csproj"
     },
+    "OpenVTT.Scripting/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Scripting/OpenVTT.Scripting.csproj",
+      "msbuildProject": "../OpenVTT.Scripting/OpenVTT.Scripting.csproj"
+    },
     "OpenVTT.Session/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.Session/OpenVTT.Session.csproj",
@@ -1162,6 +1237,8 @@
       "OpenVTT.Editor >= 1.0.0",
       "OpenVTT.Editor.Controls >= 1.0.0",
       "OpenVTT.FogOfWar >= 1.0.0",
+      "OpenVTT.Forms >= 1.0.0",
+      "OpenVTT.Scripting >= 1.0.0",
       "OpenVTT.Session >= 1.0.0",
       "OpenVTT.Settings >= 1.0.0",
       "OpenVTT.StreamDeck >= 1.0.0",
@@ -1213,6 +1290,12 @@
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj"
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"

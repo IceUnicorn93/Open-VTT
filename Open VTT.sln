@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.Controls", "OpenVTT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.Forms", "OpenVTT.Forms\OpenVTT.Forms.csproj", "{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.Scripting", "OpenVTT.Scripting\OpenVTT.Scripting.csproj", "{B56784F1-969B-48C7-B18F-1C7471C69DDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,8 +151,16 @@ Global
 		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Debug|x64.Build.0 = Debug|x64
 		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|x64.ActiveCfg = Release|Any CPU
-		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|x64.Build.0 = Release|Any CPU
+		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|x64.ActiveCfg = Release|x64
+		{75AF342F-95E1-4C5B-8356-0CE5EEA95D90}.Release|x64.Build.0 = Release|x64
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Debug|x64.ActiveCfg = Debug|x64
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Debug|x64.Build.0 = Debug|x64
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Release|x64.ActiveCfg = Release|x64
+		{B56784F1-969B-48C7-B18F-1C7471C69DDC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

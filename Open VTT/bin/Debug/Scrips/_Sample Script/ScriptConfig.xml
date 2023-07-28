@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <isUI>false</isUI>
+  <Name>Sample</Name>
+  <Author>IceUnicorn / Dustin</Author>
+  <Description>This is a sample Script</Description>
+  <Version>1.0.0.0</Version>
+  <DLL_References>
+    <string>PathToSample.DLL</string>
+  </DLL_References>
+  <Using_References>
+    <string>System</string>
+    <string>System.XML</string>
+  </Using_References>
+</ScriptConfig>

@@ -117,6 +117,11 @@ namespace OpenVTT.StreamDeck
             });
         }
 
+        static internal void SetMaxPage(int max)
+        {
+            MaxPage = max;
+        }
+
         static internal void SetAction((int X, int Y) position, Action action)
         {
             actions[position.X, position.Y] = action;
