@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "lXIAO5CL/VojDBZHZVrotpUxTLIom3gBY9YFHt1PUFmURwo7Yy7481RL3YXotLfCusxXoWuUcmpZGHr8Pnb7KQ==",
+  "success": true,
+  "projectFilePath": "E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\Open VTT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jopla\\.nuget\\packages\\openmacroboard.sdk\\3.0.0\\openmacroboard.sdk.3.0.0.nupkg.sha512",
+    "C:\\Users\\jopla\\.nuget\\packages\\streamdecksharp\\3.2.0\\streamdecksharp.3.2.0.nupkg.sha512",
+    "C:\\Users\\jopla\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

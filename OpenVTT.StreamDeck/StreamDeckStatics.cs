@@ -11,19 +11,14 @@ using System.Text.RegularExpressions;
 
 namespace OpenVTT.StreamDeck
 {
-    internal enum DeckStateEnum
-    {
-        SelectControl,
-        Scene,
-        FogOfWar,
-    }
 
     internal static class StreamDeckStatics
     {
+        public static List<(string State, Action action)> States = new List<(string State, Action action)>();
+        static string State;
         static IStreamDeckBoard deck;
         static int Page = 1;
         static int MaxPage = 1;
-        static DeckStateEnum DeckState = DeckStateEnum.SelectControl;
 
         static Action[,] actions;
 
@@ -39,8 +34,14 @@ namespace OpenVTT.StreamDeck
 
         static internal void InitStreamDeck()
         {
+            States.Clear();
+            States.Add(("SelectControl", () => { SetSelection(); }));
+            States.Add(("Scene", () => { SetMaps(); }));
+            States.Add(("Fog Of War", () => { SetFog(); }));
+            State = "SelectControl";
+
             //Open the Stream Deck device
-            
+
             deck = StreamDeckSharp.StreamDeck.OpenDevice();
             deck.SetBrightness(100);
             deck.KeyStateChanged += Deck_KeyPressed;
@@ -48,41 +49,43 @@ namespace OpenVTT.StreamDeck
             // Set Action Array
             actions = new Action[deck.Keys.KeyCountX, deck.Keys.KeyCountY];
 
+            // Set Fog Buttons
+            SetFogButtons();
 
-            // Set Static Text
+            // Set Control Button
+            SetDeckKeyText(0, deck.Keys.KeyCountY - 1, "Control");
+
+            Page = 1;
+            SwitchDeckState();
+
+            //Display <- 1 -> in the Bottom Line
+            SetPageButtons();
+
+            // -> Switch to Selection
+            SetAction((0, deck.Keys.KeyCountY - 1), () =>
+            {
+                State = "SelectControl";
+                SetSelection();
+            });
+
+            IsInitialized = true;
+        }
+
+        static internal void SetFogButtons()
+        {
             SetDeckKeyText(0, 0, $"Layer{Environment.NewLine}  Up");
             SetDeckKeyText(0, 1, $"Layer{Environment.NewLine}Down");
 
             SetDeckKeyText(1, 0, $"Reveal{Environment.NewLine}    all");
             SetDeckKeyText(1, 1, $"Cover{Environment.NewLine}   all");
             SetDeckKeyText(1, 2, $" Set {Environment.NewLine}Active");
+        }
 
-            SetDeckKeyText(2, deck.Keys.KeyCountY - 1, "<-");
-            SetDeckKeyText(deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1, "->");
-
+        static internal void SetPageButtons()
+        {
+            // -> (Page Reset)
             var pos = deck.Keys.KeyCountX - ((deck.Keys.KeyCountX - 1) - 2);
             SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
-
-            SetDeckKeyText(0, deck.Keys.KeyCountY - 1, "Control");
-
-            Page = 1;
-            SwitchDeckState();
-
-            // <- (Page Decrement)
-            actions[2, deck.Keys.KeyCountY - 1] = new Action(() =>
-            {
-                if (Page > 1) Page--;
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
-                SwitchDeckState();
-            });
-            // -> (Page Increment)
-            actions[deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1] = new Action(() =>
-            {
-                if (Page < MaxPage) Page++;
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
-                SwitchDeckState();
-            });
-            // -> (Page Reset)
             actions[pos, deck.Keys.KeyCountY - 1] = new Action(() =>
             {
                 Page = 1;
@@ -90,14 +93,22 @@ namespace OpenVTT.StreamDeck
                 SwitchDeckState();
             });
 
-            // -> Switch to PrePlaceFogOfWar
-            SetAction((0, deck.Keys.KeyCountY - 1), () =>
+            // <- (Page Decrement)
+            SetDeckKeyText(2, deck.Keys.KeyCountY - 1, "<-");
+            actions[2, deck.Keys.KeyCountY - 1] = new Action(() =>
             {
-                DeckState = DeckStateEnum.SelectControl;
-                SetSelection();
+                if (Page > 1) Page--;
+                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SwitchDeckState();
             });
-
-            IsInitialized = true;
+            // -> (Page Increment)
+            SetDeckKeyText(deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1, "->");
+            actions[deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1] = new Action(() =>
+            {
+                if (Page < MaxPage) Page++;
+                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SwitchDeckState();
+            });
         }
 
         static internal void SetAction((int X, int Y) position, Action action)
@@ -181,20 +192,8 @@ namespace OpenVTT.StreamDeck
                 SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
             }
 
-            switch (DeckState)
-            {
-                case DeckStateEnum.SelectControl:
-                    SetSelection();
-                    break;
-                case DeckStateEnum.Scene:
-                    SetMaps();
-                    break;
-                case DeckStateEnum.FogOfWar:
-                    SetFog();
-                    break;
-                default:
-                    break;
-            }
+            var pair = States.Single(n => n.State == State);
+            pair.action();
         }
 
         static internal void SetSelection()
@@ -203,13 +202,13 @@ namespace OpenVTT.StreamDeck
             var maxX = (deck.Keys.KeyCountX - 2);
             var maxY = (deck.Keys.KeyCountY - 1);
 
-            var states = new List<(string Name, DeckStateEnum Value)>();
-            states.AddRange(Enum.GetValues(typeof(DeckStateEnum)).Cast<DeckStateEnum>().Select(n => (n.ToString(), n)).ToList());
+            var states = new List<(string State, Action action)>();
+            states.AddRange(States);
             states = states
                 .Skip((Page - 1) * maxMapCount)
                 .Take(maxMapCount)
-                .Where(n => n.Name != "SelectControl")
-                .Select(n => (Regex.Replace(n.Name, "(\\B[A-Z])", " $1"), n.Value))
+                .Where(n => n.State != "SelectControl")
+                .Select(n => (Regex.Replace(n.State, "(\\B[A-Z])", " $1"), n.action))
                 .ToList();
 
             for (int y = 0; y < maxY; y++)
@@ -224,11 +223,11 @@ namespace OpenVTT.StreamDeck
                     }
                     else
                     {
-                        SetDeckKeyText(x + 2, y, states[pos].Name);
+                        SetDeckKeyText(x + 2, y, states[pos].State);
                         var name = states[pos];
                         actions[x + 2, y] = new Action(() =>
                         {
-                            DeckState = states[pos].Value;
+                            State = states[pos].State;
                             SwitchDeckState();
                         });
                     }
