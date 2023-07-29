@@ -9,20 +9,31 @@ using OpenVTT.Common;
 
 namespace OpenVTT.Settings
 {
+    [Documentation("To use this Object use Settings.Settings.XYZ = ABC;")]
     public class Settings
     {
+        [Documentation("Size of the Player Screen, if it's 27\" enter 27")]
         public int PlayerScreenSize; // How many Inches has my Monitor eg. 27
+        [Documentation("Calcualted, How many Grid Lines left to right to draw")]
         public double PlayerScreenWidthInches; // How many lines would I need to draw from Left to right
+        [Documentation("Calcualted, How many Grid Lines top to bottom to draw")]
         public double PlayerScreenHeightInces; // How many lines would I need to draw from top to bottom
 
+        [Documentation("List of Screen-Information-Objects")]
         public List<ScreenInformation> Screens; // List of configured Screens
 
+        [Documentation("AutoSave-State, true = Automatic Saving")]
         public bool AutoSaveAction = true;
+        [Documentation("Display Fog of War changes directly? If yes input true")]
         public bool DisplayChangesInstantly;
+        [Documentation("Display Grid?")]
         public bool DisplayGrid;
+        [Documentation("Display Grid on DM Side? Only works if DisplayGrid == true")]
         public bool DisplayGridForDM = false;
 
+        [Documentation("ServerIP of the Notes Server")]
         public string NoteServerIP; // IP Adress of Server
+        [Documentation("ServerPort of the Notes Server")]
         public int NoteServerPort; // Port of Server
 
         internal Color DmColor = Color.FromArgb(150, 0, 0, 0);
@@ -31,6 +42,11 @@ namespace OpenVTT.Settings
         internal Color TextColor = Color.FromArgb(255, 0, 0, 255);
 
         private XmlColor _XmlDmColor = new XmlColor { Alpha = 150, Blue = 0, Green = 0, Red = 0 };
+        private XmlColor _XmlPlayerColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 0 };
+        private XmlColor _XmlGridColor = new XmlColor { Alpha = 255, Blue = 128, Green = 128, Red = 128 };
+        private XmlColor _XmlTextColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 255 };
+
+        [Documentation("XmlColor for the DM Fog of War")]
         public XmlColor XmlDmColor
         {
             get
@@ -44,7 +60,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        private XmlColor _XmlPlayerColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 0 };
+        [Documentation("XmlColor for the Player Fog of War")]
         public XmlColor XmlPlayerColor
         {
             get
@@ -58,7 +74,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        private XmlColor _XmlGridColor = new XmlColor { Alpha = 255, Blue = 128, Green = 128, Red = 128 };
+        [Documentation("XmlColor for the Grid")]
         public XmlColor XmlGridColor
         {
             get
@@ -72,7 +88,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        private XmlColor _XmlTextColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 255 };
+        [Documentation("XmlColor for the Text of pre-placed Fog of War")]
         public XmlColor XmlTextColor
         {
             get
@@ -86,8 +102,11 @@ namespace OpenVTT.Settings
             }
         }
 
+
+        [Documentation("Static Settings Object")]
         public static Settings Values;
 
+        [Documentation("Constructor")]
         static Settings()
         {
             Values = new Settings();
@@ -96,6 +115,7 @@ namespace OpenVTT.Settings
             Load();
         }
 
+        [Documentation("Save Method")]
         public static void Save()
         {
             var playerScreen = Values.Screens?.SingleOrDefault(n => n.Display == DisplayType.Player);
@@ -120,6 +140,7 @@ namespace OpenVTT.Settings
             }
         }
 
+        [Documentation("Load Method")]
         public static void Load()
         {
             if (!File.Exists(Path.Combine(Application.StartupPath, "Settings.xml")))

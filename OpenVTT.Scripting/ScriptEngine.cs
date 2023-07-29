@@ -1,9 +1,14 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
+using OpenVTT.Common;
+using OpenVTT.Session;
+using OpenVTT.Settings;
+using OpenVTT.StreamDeck;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace OpenVTT.Scripting
@@ -11,9 +16,9 @@ namespace OpenVTT.Scripting
     static internal class ScriptEngine
     {
         static List<string> SubDirectorys = new List<string>();
-        static List<ScriptHost> CalculatedHosts = new List<ScriptHost>();
+        static internal List<ScriptHost> CalculatedHosts = new List<ScriptHost>();
 
-        static internal bool calculated = false;
+        static internal bool Calculated = false;
         static internal Action HostsCalculated;
 
         static ScriptEngine()
@@ -23,16 +28,17 @@ namespace OpenVTT.Scripting
             if (!Directory.Exists(Path.Combine(".", "Scrips")))
             {
                 Directory.CreateDirectory(Path.Combine(".", "Scrips"));
-                Directory.CreateDirectory(Path.Combine(".", "Scrips", "_Sample Script"));
                 Directory.CreateDirectory(Path.Combine(".", "Scrips", "_DLL References"));
-
-                File.WriteAllText(Path.Combine(".", "Scrips", "_Sample Script", "Main.txt"), "Config.Version = 2;");
-                ScriptConfig.Save(Path.Combine(".", "Scrips", "_Sample Script", "ScriptConfig.xml"));
             }
 
-            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(".", "Scrips"), "*", SearchOption.TopDirectoryOnly));
-            SubDirectorys.RemoveAll(n => n.Contains("Sample Script"));
-            SubDirectorys.RemoveAll(n => n.Contains("DLL References"));
+            if (!Directory.Exists(Path.Combine(".", "Scrips", "_Sample Script")))
+            {
+                Directory.CreateDirectory(Path.Combine(".", "Scrips", "_Sample Script"));
+
+                File.WriteAllText(Path.Combine(".", "Scrips", "_Sample Script", "Main.txt"), "Page.Text = Config.Name;");
+                ScriptConfig.Save(Path.Combine(".", "Scrips", "_Sample Script", "ScriptConfig.xml"));
+                //CreateDocumentation();
+            }
         }
 
         static private void CleanUnusedFolders()
@@ -52,15 +58,72 @@ namespace OpenVTT.Scripting
             if (Directory.Exists(Path.Combine(".", "zh-Hant"))) Directory.Delete(Path.Combine(".", "zh-Hant"), true);
         }
 
+        static private void CreateDocumentation()
+        {
+            string text = "";
+
+            text += GetDocumentationForType(typeof(ScriptHost));
+            text += GetDocumentationForType(typeof(ScriptConfig));
+            text += GetDocumentationForType(typeof(StreamDeckStatics));
+            text += GetDocumentationForType(typeof(Session.Session));
+            text += GetDocumentationForType(typeof(Scene));
+            text += GetDocumentationForType(typeof(Layer));
+            text += GetDocumentationForType(typeof(FogOfWar.FogOfWar));
+            text += GetDocumentationForType(typeof(FogState));
+            text += GetDocumentationForType(typeof(Settings.Settings));
+            text += GetDocumentationForType(typeof(ScreenInformation));
+            text += GetDocumentationForType(typeof(DisplayType));
+            text += GetDocumentationForType(typeof(XmlColor));
+
+            File.WriteAllText(Path.Combine(".", "Scrips", "_Sample Script", "Documentation.txt"), text);
+        }
+
+        static private string GetDocumentationForType(Type type)
+        {
+            var ret = $"{type}{Environment.NewLine}";
+
+            ret += type.CustomAttributes.SingleOrDefault()?.ConstructorArguments.SingleOrDefault().Value as string ?? "";
+            ret += Environment.NewLine;
+            var lst = type.GetFields()[0].CustomAttributes.First().ConstructorArguments.ToList();
+
+            foreach (var item in type.GetFields())
+            {
+                var name = item.Name;
+                var propType = item.FieldType.Name;
+                var description = item.CustomAttributes.FirstOrDefault(n => n.GetType() == typeof(Documentation))?.ConstructorArguments.SingleOrDefault().Value as string ?? "";
+                //var getPrivate = item.GetMethod.IsPrivate;
+                //var setPrivate = item.SetMethod.IsPrivate;
+                // Get:{(getPrivate ? "private" : "public")} Set:{(setPrivate ? "private" : "public")}
+                ret += $"{name} | {propType} | {description}";
+                ret += Environment.NewLine;
+            }
+
+            //Propertys
+            //Methds
+
+            ret += Environment.NewLine;
+            ret += Environment.NewLine;
+
+            return ret;
+        }
+
         static internal async Task RunScripts()
         {
+            SubDirectorys.Clear();
+            CalculatedHosts.Clear();
+            Calculated = false;
+
+            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(".", "Scrips"), "*", SearchOption.TopDirectoryOnly));
+            SubDirectorys.RemoveAll(n => n.Contains("Sample Script"));
+            SubDirectorys.RemoveAll(n => n.Contains("DLL References"));
+
             var list = new List<Task>();
             foreach (var script in SubDirectorys)
                 list.Add(Task.Run(() => RunScript(script)));
 
             await Task.WhenAll(list);
             
-            calculated = true;
+            Calculated = true;
             HostsCalculated?.Invoke();
         }
 
@@ -74,8 +137,15 @@ namespace OpenVTT.Scripting
 
             if(config.isActive == false) return; // No need to load the Script if it's not active
 
-            //Adding Usings
+            //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
             var so = ScriptOptions.Default.AddImports(config.Using_References);
+            so = so.AddReferences(new[]
+            {
+                typeof(Settings.Settings).GetTypeInfo().Assembly,
+                typeof(Session.Session).GetTypeInfo().Assembly,
+                typeof(StreamDeckStatics).GetTypeInfo().Assembly,
+                typeof(Documentation).GetTypeInfo().Assembly,
+            });
 
             var script = "";
 
@@ -92,14 +162,15 @@ namespace OpenVTT.Scripting
                 script += Environment.NewLine;
             }
 
+            script += $"//---- Need to Add a 'return' value for the script without a ; Don't worry, thats correct";
             script += "null";
 
             var host = new ScriptHost { Config = config };
             try { await CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so); }
             catch (Exception ex)
             {
-                var errMessage = "Please see _Script.txt to see what file to fix!";
-                errMessage = ex.Message + Environment.NewLine + Environment.NewLine;
+                var errMessage = "Please see _Script.txt to see what file to fix! I recommend Notepad++";
+                errMessage = ex.Message + Environment.NewLine + "#####################################################################" + Environment.NewLine;
                 errMessage = ex.Message + Environment.NewLine + Environment.NewLine;
 
                 var innerEx = ex.InnerException;

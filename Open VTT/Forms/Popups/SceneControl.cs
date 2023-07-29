@@ -1,6 +1,7 @@
 ﻿using OpenVTT.Common;
 using OpenVTT.Controls.Displayer;
 using OpenVTT.FogOfWar;
+using OpenVTT.Scripting;
 using OpenVTT.Session;
 using OpenVTT.Settings;
 using OpenVTT.StreamDeck;
@@ -265,6 +266,12 @@ namespace Open_VTT.Forms.Popups
             try { StreamDeckStatics.InitStreamDeck(); } // If a StreamDeck isn't connected, don't crash
             catch { }
 
+            //don't await this call, this call is supposed to be "fire and forget"
+            //Use the HostsCalculated-Method to get notified once compiling is done
+            //In combination use Calculated to check if it's already calculated
+            ScriptEngine.RunScripts();
+            ScriptEngine.HostsCalculated += ScriptsCalculated;
+
             mapControl1.DmPictureBox = drawPbMap;
             mapControl1.Init();
             mapControl1.UpdatePrePlaceFogOfWarList += UpdatePrePlaceFogOfWarList;
@@ -289,6 +296,12 @@ namespace Open_VTT.Forms.Popups
             });
 
             //UpdatePrePlaceFogOfWarList();
+        }
+
+        void ScriptsCalculated()
+        {
+            foreach (var item in ScriptEngine.CalculatedHosts)
+                if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
         }
 
         void UpdatePrePlaceFogOfWarList()

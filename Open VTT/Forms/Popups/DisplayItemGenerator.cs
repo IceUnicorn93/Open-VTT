@@ -1,6 +1,6 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Controls;
 using OpenVTT.Editor;
-using OpenVTT.Session;
 using System;
 using System.Data;
 using System.IO;
@@ -20,14 +20,14 @@ namespace Open_VTT.Forms.Popups
 
         public void Init()
         {
-            Session.InitDisplayItems();
+            TreeViewDisplay.InitDisplayItems();
 
             tbName.Text = "";
             cbxParent.Text = "";
             rbItem.Checked = true;
             cbxParent.Items.Clear();
-            cbxParent.Items.AddRange(Session.Values.DisplayItems.Where(n => n.ItemType == TreeViewDisplayItemType.Node).ToArray());
-            cbxParent.AutoCompleteCustomSource.AddRange(Session.Values.DisplayItems.Where(n => n.ItemType == TreeViewDisplayItemType.Node).Select(n => n.Name).ToArray());
+            cbxParent.Items.AddRange(TreeViewDisplay.DisplayItems.Where(n => n.ItemType == TreeViewDisplayItemType.Node).ToArray());
+            cbxParent.AutoCompleteCustomSource.AddRange(TreeViewDisplay.DisplayItems.Where(n => n.ItemType == TreeViewDisplayItemType.Node).Select(n => n.Name).ToArray());
             tbName.Focus();
         }
 
@@ -48,7 +48,7 @@ namespace Open_VTT.Forms.Popups
                 Parent = (TreeViewDisplayItem)cbxParent.SelectedItem,
                 ItemType = rbItem.Checked ? TreeViewDisplayItemType.Item : TreeViewDisplayItemType.Node
             };
-            Session.Values.DisplayItems.Add(item);
+            TreeViewDisplay.DisplayItems.Add(item);
             var p = item.GetLocation();
 
             if (!rbNode.Checked)
@@ -57,11 +57,11 @@ namespace Open_VTT.Forms.Popups
             if (rbNode.Checked)
             { 
                 Directory.CreateDirectory(Path.Combine(p.ToArray()));
-                Session.CreateBlankTemplate(item);
+                TreeViewDisplay.CreateBlankTemplate(item);
             }
             else
-            { 
-                Session.CreateBlankNote(item);
+            {
+                TreeViewDisplay.CreateBlankNote(item);
             }
 
             Init();

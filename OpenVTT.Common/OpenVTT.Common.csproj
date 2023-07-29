@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomAttributes.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Extensions.cs" />

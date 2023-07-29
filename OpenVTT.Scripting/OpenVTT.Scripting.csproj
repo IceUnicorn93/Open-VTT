@@ -110,6 +110,14 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">
+      <Project>{bc0bf261-3ec5-4bed-b78a-16631b6c3fda}</Project>
+      <Name>OpenVTT.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.FogOfWar\OpenVTT.FogOfWar.csproj">
+      <Project>{25af1078-0371-4a8e-b835-8e97948cb20d}</Project>
+      <Name>OpenVTT.FogOfWar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
       <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
       <Name>OpenVTT.Session</Name>

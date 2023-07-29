@@ -11,10 +11,15 @@ using System.Collections.ObjectModel;
 
 namespace OpenVTT.StreamDeck
 {
-
-    internal static class StreamDeckStatics
+    [Documentation("To use this Object use StreamDeckStatics.XYZ = ABC;")]
+    public static class StreamDeckStatics
     {
+        [Documentation("States of the StreamDeck each State displays a diffrent Selection of Buttons")]
         public static ObservableCollection<(string State, Action action)> States = new ObservableCollection<(string State, Action action)>();
+        [Documentation("Number of Buttons left to right")]
+        public static int MaxX { get; internal set; }
+        [Documentation("Number of Buttons top to bottom")]
+        public static int MaxY { get; internal set; }
         static string State;
         static IStreamDeckBoard deck;
         static int Page = 1;
@@ -22,10 +27,10 @@ namespace OpenVTT.StreamDeck
 
         static Action[,] actions;
 
-        public static Action<Scene, int> LoadScene;
-        public static Action<FogOfWar.FogOfWar> LoadFog;
+        internal static Action<Scene, int> LoadScene;
+        internal static Action<FogOfWar.FogOfWar> LoadFog;
 
-        public static bool IsInitialized = false;
+        internal static bool IsInitialized = false;
 
         static internal void Dispose()
         {
@@ -52,6 +57,9 @@ namespace OpenVTT.StreamDeck
             deck.SetBrightness(100);
             deck.KeyStateChanged += Deck_KeyPressed;
 
+            MaxX = deck.Keys.KeyCountX;
+            MaxY = deck.Keys.KeyCountY;
+
             // Set Action Array
             actions = new Action[deck.Keys.KeyCountX, deck.Keys.KeyCountY];
 
@@ -59,81 +67,99 @@ namespace OpenVTT.StreamDeck
             SetFogButtons();
 
             // Set Control Button
-            SetDeckKeyText(0, deck.Keys.KeyCountY - 1, "Control");
-
-            Page = 1;
-            SwitchDeckState();
-
-            //Display <- 1 -> in the Bottom Line
-            SetPageButtons();
-
-            // -> Switch to Selection
+            SetDeckKeyText((0, deck.Keys.KeyCountY - 1), "Control");
             SetAction((0, deck.Keys.KeyCountY - 1), () =>
             {
                 State = "SelectControl";
                 SetSelection();
             });
 
+            Page = 1;
+            SwitchDeckState();
+
+            //Display <- 1 -> in the Bottom Line
+            SetPageButtons();
+            
             IsInitialized = true;
         }
-
-        static internal void SetFogButtons()
+        [Documentation("Clears all Buttons of the StreamDeck (Except the Control-Button)")]
+        static public void ClearButtons()
         {
-            SetDeckKeyText(0, 0, $"Layer{Environment.NewLine}  Up");
-            SetDeckKeyText(0, 1, $"Layer{Environment.NewLine}Down");
+            actions = new Action[deck.Keys.KeyCountX, deck.Keys.KeyCountY];
 
-            SetDeckKeyText(1, 0, $"Reveal{Environment.NewLine}    all");
-            SetDeckKeyText(1, 1, $"Cover{Environment.NewLine}   all");
-            SetDeckKeyText(1, 2, $" Set {Environment.NewLine}Active");
+            for (int x = 0; x < MaxX; x++)
+            {
+                for (int y = 0; y <  MaxY; y++)
+                {
+                    SetDeckKeyText((x, y), "");
+                }
+            }
+
+            SetDeckKeyText((0, deck.Keys.KeyCountY - 1), "Control");
+            SetAction((0, deck.Keys.KeyCountY - 1), () =>
+            {
+                State = "SelectControl";
+                SetSelection();
+            });
         }
+        [Documentation("Shows the Fog of War Control-Buttons")]
+        static public void SetFogButtons()
+        {
+            SetDeckKeyText((0, 0), $"Layer{Environment.NewLine}  Up");
+            SetDeckKeyText((0, 1), $"Layer{Environment.NewLine}Down");
 
-        static internal void SetPageButtons()
+            SetDeckKeyText((1, 0), $"Reveal{Environment.NewLine}    all");
+            SetDeckKeyText((1, 1), $"Cover{Environment.NewLine}   all");
+            SetDeckKeyText((1, 2), $" Set {Environment.NewLine}Active");
+        }
+        [Documentation("Shows the Paging Buttons")]
+        static public void SetPageButtons()
         {
             // -> (Page Reset)
             var pos = deck.Keys.KeyCountX - ((deck.Keys.KeyCountX - 1) - 2);
-            SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+            SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
             actions[pos, deck.Keys.KeyCountY - 1] = new Action(() =>
             {
                 Page = 1;
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
                 SwitchDeckState();
             });
 
             // <- (Page Decrement)
-            SetDeckKeyText(2, deck.Keys.KeyCountY - 1, "<-");
+            SetDeckKeyText((2, deck.Keys.KeyCountY - 1), "<-");
             actions[2, deck.Keys.KeyCountY - 1] = new Action(() =>
             {
                 if (Page > 1) Page--;
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
                 SwitchDeckState();
             });
             // -> (Page Increment)
-            SetDeckKeyText(deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1, "->");
+            SetDeckKeyText((deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1), "->");
             actions[deck.Keys.KeyCountX - 1, deck.Keys.KeyCountY - 1] = new Action(() =>
             {
                 if (Page < MaxPage) Page++;
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
                 SwitchDeckState();
             });
         }
-
-        static internal void SetMaxPage(int max)
+        [Documentation("Sets the Max Page Number")]
+        static public void SetMaxPage(int max)
         {
             MaxPage = max;
         }
-
-        static internal void SetAction((int X, int Y) position, Action action)
+        [Documentation("Sets the Button Action for the given Position")]
+        static public void SetAction((int X, int Y) position, Action action)
         {
             actions[position.X, position.Y] = action;
         }
-
-        static internal void SetDeckKeyText(int X, int Y, string Text)
+        [Documentation("Sets the Button Text for the given Position")]
+        static public void SetDeckKeyText((int X, int Y) position, string Text)
         {
-            var newX = X * 104;
-            var newY = Y * 104;
+            var newX = position.X * 104;
+            var newY = position.Y * 104;
 
             var key = deck.Keys.Single(k => k.X == newX && k.Y == newY);
-            deck.SetKeyBitmap((Y * deck.Keys.KeyCountX) + X, CreateBitmap(Text));
+            deck.SetKeyBitmap((position.Y * deck.Keys.KeyCountX) + position.X, CreateBitmap(Text));
         }
 
         static private KeyBitmap CreateBitmap(string Text)
@@ -192,15 +218,15 @@ namespace OpenVTT.StreamDeck
         }
 
         //------------------ All for Selecting the Deck State and displaying Opions
-
-        static internal void SwitchDeckState(int PageNumber = -1)
+        [Documentation("Reloads the Current Deck-State (If PageNumber != -1 Page will be Set to Parameter)")]
+        static public void SwitchDeckState(int PageNumber = -1)
         {
             if (PageNumber != -1)
             {
                 Page = PageNumber;
 
                 var pos = deck.Keys.KeyCountX - ((deck.Keys.KeyCountX - 1) - 2);
-                SetDeckKeyText(pos, deck.Keys.KeyCountY - 1, Page.ToString());
+                SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
             }
 
             var pair = States.Single(n => n.State == State);
@@ -229,12 +255,12 @@ namespace OpenVTT.StreamDeck
                     var pos = y * maxX + x;
                     if (pos >= states.Count)
                     {
-                        SetDeckKeyText(x + 2, y, "");
+                        SetDeckKeyText((x + 2, y), "");
                         actions[x + 2, y] = null;
                     }
                     else
                     {
-                        SetDeckKeyText(x + 2, y, states[pos].State);
+                        SetDeckKeyText((x + 2, y), states[pos].State);
                         var name = states[pos];
                         actions[x + 2, y] = new Action(() =>
                         {
@@ -245,7 +271,7 @@ namespace OpenVTT.StreamDeck
                 }
             }
 
-            MaxPage = (int)Math.Ceiling((decimal)Session.Session.Values.ActiveScene.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Count / ((deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1)));
+            MaxPage = (int)Math.Ceiling((decimal)States.Count / ((deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1)));
         }
 
         static internal void SetMaps()
@@ -263,12 +289,12 @@ namespace OpenVTT.StreamDeck
                     var pos = y * maxX + x;
                     if (pos >= mapNames.Count)
                     {
-                        SetDeckKeyText(x + 2, y, "");
+                        SetDeckKeyText((x + 2, y), "");
                         actions[x + 2, y] = null;
                     }
                     else
                     {
-                        SetDeckKeyText(x + 2, y, mapNames[pos]);
+                        SetDeckKeyText((x + 2, y), mapNames[pos]);
                         var name = mapNames[pos];
                         actions[x + 2, y] = new Action(() =>
                         {
@@ -305,12 +331,12 @@ namespace OpenVTT.StreamDeck
                     var pos = y * maxX + x;
                     if (pos >= fogNames.Count)
                     {
-                        SetDeckKeyText(x + 2, y, "");
+                        SetDeckKeyText((x + 2, y), "");
                         actions[x + 2, y] = null;
                     }
                     else
                     {
-                        SetDeckKeyText(x + 2, y, fogNames[pos]);
+                        SetDeckKeyText((x + 2, y), fogNames[pos]);
                         var name = fogNames[pos];
                         actions[x + 2, y] = new Action(() =>
                         {

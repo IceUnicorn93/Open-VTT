@@ -1,1 +1,1 @@
-Config.Version = 2;
+Page.Text = Config.Name;

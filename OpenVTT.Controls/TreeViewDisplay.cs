@@ -7,8 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace OpenVTT.Controls
 {
@@ -30,6 +30,127 @@ namespace OpenVTT.Controls
         internal Func<DrawingPictureBox> GetDmPictureBox;
         internal Func<DrawingPictureBox> GetPlayerPictureBox;
 
+        internal static List<TreeViewDisplayItem> DisplayItems;
+
+        internal static void InitDisplayItems()
+        {
+            List<string> listDirs = new List<string>();
+            List<string> listFile = new List<string>();
+
+            DisplayItems = new List<TreeViewDisplayItem>();
+
+            listDirs.Clear();
+            listFile.Clear();
+
+            Session.Session.GetDirectories(Session.Session.GetSubDirectoryApplicationPath("Notes"), true, listDirs, listFile);
+
+            foreach (var item in listDirs)
+            {
+                var direcotryList = item.Remove(0, Application.StartupPath.Length).Split(Path.DirectorySeparatorChar).Where(n => n != "" && n != "Notes").ToList(); // Monsters\Homebrew
+                DisplayItems.Add(new TreeViewDisplayItem
+                {
+                    Name = Path.GetFileName(item),
+                    ItemType = TreeViewDisplayItemType.Node,
+                    ParentDirectories = direcotryList
+                });
+
+                var parent = DisplayItems.SingleOrDefault(n =>
+                {
+                    if (n == null) return false;
+
+                    var parentList = n.ParentDirectories;
+
+                    if (parentList.Count == direcotryList.Count - 1)
+                    {
+                        var isMatch = true;
+
+                        for (int i = 0; i < parentList.Count; i++)
+                        {
+                            if (parentList[i] != direcotryList[i])
+                            {
+                                isMatch = false;
+                                break;
+                            }
+                        }
+                        if (isMatch == true && n.Name != Path.GetFileName(item)) return true; else return false;
+                    }
+                    return false;
+                });
+
+                DisplayItems.Last().Parent = parent;
+            }
+
+            foreach (var item in listFile)
+            {
+                var fi = new FileInfo(item);
+                var direcotryList = item.Remove(0, Application.StartupPath.Length).Split(Path.DirectorySeparatorChar).Where(n => n != "" && n != "Notes").ToList(); // Monsters\Homebrew
+
+                if (fi.Extension == ".xml" && fi.Name != "_Template.xml")
+                {
+                    DisplayItems.Add(new TreeViewDisplayItem
+                    {
+                        Name = fi.Name.Replace(fi.Extension, ""),
+                        ItemType = TreeViewDisplayItemType.Item,
+                        ParentDirectories = direcotryList
+                    });
+
+                    var parent = DisplayItems.SingleOrDefault(n =>
+                    {
+                        if (n == null) return false;
+
+                        var parentList = n.ParentDirectories;
+
+                        if (parentList.Count == direcotryList.Count - 1)
+                        {
+                            var isMatch = true;
+
+                            for (int i = 0; i < parentList.Count; i++)
+                            {
+                                if (parentList[i] != direcotryList[i])
+                                {
+                                    isMatch = false;
+                                    break;
+                                }
+                            }
+                            if (isMatch == true && n.Name != Path.GetFileName(item).Replace(".xml", "")) return true; else return false;
+                        }
+                        return false;
+                    });
+
+                    DisplayItems.Last().Parent = parent;
+                }
+            }
+        }
+
+        internal static void CreateBlankTemplate(TreeViewDisplayItem item)
+        {
+            var x = new XmlSerializer(typeof(List<CustomControlData>));
+            var p = item.GetLocation("", true);
+            p.Add("_Template.xml");
+            using (var sw = new StreamWriter(Path.Combine(p.ToArray())))
+            {
+                var list = new List<CustomControlData>
+                {
+                    new CustomControlData
+                    {
+                        ControlType = CustomControlType.Picturebox,
+                        Name = "picturebox",
+                        Location = new Point(20, 20),
+                        Size = new Size(200, 200)
+                    }
+                };
+                x.Serialize(sw, list);
+            }
+        }
+        internal static void CreateBlankNote(TreeViewDisplayItem item)
+        {
+            var x = new XmlSerializer(typeof(List<CustomControlData>));
+            using (var sw = new StreamWriter(Path.Combine(item.GetLocation(".xml").ToArray())))
+            {
+                x.Serialize(sw, new List<CustomControlData>());
+            }
+        }
+
 
         public TreeViewDisplay()
         {
@@ -50,7 +171,7 @@ namespace OpenVTT.Controls
                 throw new ArgumentNullException(nameof(Editor));
 
             // Building Notes
-            Session.Session.InitDisplayItems();
+            InitDisplayItems();
 
             PopulateTreeView();
         }
@@ -61,19 +182,19 @@ namespace OpenVTT.Controls
             var trackNodes = new List<TreeNode>();
 
             // First create a list of all Nodes, regardless of parent status
-            foreach (var item in Session.Session.Values.DisplayItems)
+            foreach (var item in DisplayItems)
                 if (item.ItemType == TreeViewDisplayItemType.Node)
                     trackNodes.Add(new TreeNode() { Text = item.Name, Tag = item });
 
             // Then create the final List, considering the parents
-            foreach (var item in Session.Session.Values.DisplayItems)
+            foreach (var item in DisplayItems)
                 if (item.ItemType == TreeViewDisplayItemType.Node && item.Parent == null)
                     treeNodes.Add(trackNodes.Single(n => n.Tag == item));
                 else if (item.ItemType == TreeViewDisplayItemType.Node && item.Parent != null)
                     trackNodes.Single(n => n.Tag == item.Parent).Nodes.Add(trackNodes.Single(n => n.Tag == item));
 
             // Finally populate the Tree List with Children
-            foreach (var item in Session.Session.Values.DisplayItems)
+            foreach (var item in DisplayItems)
                 if (item.Parent != null && item.ItemType == TreeViewDisplayItemType.Item)
                 {
                     trackNodes.Single(n => n.Tag == item.Parent).Nodes.Add(new TreeNode() { Text = item.Name, Tag = item });
@@ -90,7 +211,7 @@ namespace OpenVTT.Controls
             tvItems.Nodes.AddRange(treeNodes.ToArray());
 
             tbSearchItem.Items.Clear();
-            tbSearchItem.Items.AddRange(Session.Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
+            tbSearchItem.Items.AddRange(DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
         }
 
         private void SetCurrentInformationItem()
@@ -174,7 +295,7 @@ namespace OpenVTT.Controls
                 {
                     void GetChildsToDelete(TreeViewDisplayItem parent)
                     {
-                        var list = Session.Session.Values.DisplayItems.Where(n => n.Parent == parent).ToList();
+                        var list = DisplayItems.Where(n => n.Parent == parent).ToList();
                         childsToDelete.AddRange(list);
 
                         if (list.Count > 0)
@@ -191,7 +312,7 @@ namespace OpenVTT.Controls
 
             foreach (var item in childsToDelete)
             {
-                Session.Session.Values.DisplayItems.Remove(item);
+                DisplayItems.Remove(item);
 
                 var p = new List<string>();
 
@@ -234,7 +355,7 @@ namespace OpenVTT.Controls
             if (e.KeyCode == Keys.Enter)
             {
                 //TODO: What to do if an Item exists multiple times due to same name?
-                currentInformationItem = Session.Session.Values.DisplayItems.Single(n => n.Name == tbSearchItem.Text);
+                currentInformationItem = DisplayItems.Single(n => n.Name == tbSearchItem.Text);
 
                 SetCurrentInformationItem();
             }
@@ -248,7 +369,7 @@ namespace OpenVTT.Controls
         private void tbSearchItem_TextUpdate(object sender, EventArgs e)
         {
             tbSearchItem.Items.Clear();
-            tbSearchItem.Items.AddRange(Session.Session.Values.DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
+            tbSearchItem.Items.AddRange(DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
             tbSearchItem.SelectionStart = tbSearchItem.Text.Length;
             tbSearchItem.DroppedDown = true;
 

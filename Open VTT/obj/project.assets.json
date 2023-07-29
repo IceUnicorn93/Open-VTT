@@ -167,6 +167,8 @@
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
           "OpenVTT.StreamDeck": "1.0.0"
@@ -385,6 +387,8 @@
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
           "OpenVTT.StreamDeck": "1.0.0"
@@ -603,6 +607,8 @@
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
           "OpenVTT.StreamDeck": "1.0.0"
@@ -821,6 +827,8 @@
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
           "OpenVTT.StreamDeck": "1.0.0"
@@ -1039,6 +1047,8 @@
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
           "OpenVTT.StreamDeck": "1.0.0"

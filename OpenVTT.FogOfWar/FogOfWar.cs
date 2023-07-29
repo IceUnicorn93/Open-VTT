@@ -8,23 +8,32 @@ using OpenVTT.Common;
 
 namespace OpenVTT.FogOfWar
 {
+    [Documentation("To use this Object use var fow = new FogOfWar();")]
     public class FogOfWar
     {
+        [Documentation("FogState, see Enums")]
         public FogState state { get; set; }
 
+        [Documentation("Position of the Upper Left Corner for the Drawing")]
         public Point Position { get; set; }
+        [Documentation("Size of the Box drawn")]
         public Size DrawSize { get; set; }
+        [Documentation("Size of the ViewPort (UI Element)")]
         public Size BoxSize { get; set; }
 
         //Poligon removal Data
+        [Documentation("List of Point-Objects if a Poligon is drawn")]
         public List<Point> PoligonData { get; set; }
 
         //Imidiate or Toggle Fog
+        [Documentation("True, if it's Pre-Place Fog of War")]
         public bool IsToggleFog = false;
+        [Documentation("True, if it's not yet revealed")]
         public bool IsHidden = true;
+        [Documentation("Name of the Fog of War, just fill, if it's Pre Placed FogOfWar")]
         public string Name = "";
 
-        public Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)
+        internal Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)
         {
             var img = Image.FromFile(imagePath);
 
@@ -216,7 +225,7 @@ namespace OpenVTT.FogOfWar
             action();
         }
 
-        public void DrawCircle(Image image)
+        internal void DrawCircle(Image image)
         {
             var ret = PictureBoxHelper.Transform(this, new Size(image.Width, image.Height));
             var dimensions = PictureBoxHelper.GetPictureDimensions(this, new Size(image.Width, image.Height));

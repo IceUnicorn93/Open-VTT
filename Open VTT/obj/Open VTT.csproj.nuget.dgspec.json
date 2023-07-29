@@ -290,6 +290,12 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"
               },

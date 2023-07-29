@@ -1,1 +1,3 @@
 Config.Version = "2";
+Page.Text = Config.Name;
+StreamDeckStatics.States.Add(("ABC", () => {}));

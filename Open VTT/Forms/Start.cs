@@ -3,6 +3,7 @@ using OpenVTT.Controls.Displayer;
 using OpenVTT.Scripting;
 using OpenVTT.Session;
 using OpenVTT.Settings;
+using OpenVTT.StreamDeck;
 using System;
 using System.IO;
 using System.Linq;
@@ -15,8 +16,6 @@ namespace Open_VTT.Forms
         public Start()
         {
             InitializeComponent();
-
-            ScriptEngine.RunScripts();
 
             Settings.Load();
 
