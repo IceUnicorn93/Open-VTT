@@ -5,6 +5,7 @@ using OpenVTT.Forms;
 using OpenVTT.Session;
 using OpenVTT.StreamDeck;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -165,11 +166,33 @@ namespace OpenVTT.Controls
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
-                    var newFileName = Session.Session.GetSubDirectoryPathForFile("Images", Path.GetFileName(openFileDialog.FileName));
-
                     if (!Directory.Exists(Session.Session.GetSubDirectoryPath("Images")))
                         Directory.CreateDirectory(Session.Session.GetSubDirectoryPath("Images"));
+
+                    if (!Directory.Exists(Session.Session.GetSubDirectoryPath("Videos")))
+                        Directory.CreateDirectory(Session.Session.GetSubDirectoryPath("Videos"));
+
+                    if (!Directory.Exists(Session.Session.GetSubDirectoryPath("Thumbnails")))
+                        Directory.CreateDirectory(Session.Session.GetSubDirectoryPath("Thumbnails"));
+
+
+                    bool isImage;
+                    var ImageExtensions = new List<string>
+                    {
+                        "JPG",
+                        "GIF",
+                        "JPEG",
+                        "PNG",
+                        "BMP",
+                        "TIFF",
+                        "SVG",
+                    };
+                    if (ImageExtensions.Contains(Path.GetExtension(openFileDialog.FileName).ToUpperInvariant()))
+                        isImage = true;
+                    else
+                        isImage = false;
+
+                    var newFileName = Session.Session.GetSubDirectoryPathForFile(isImage ? "Images" : "Videos", Path.GetFileName(openFileDialog.FileName));
 
                     File.Copy(openFileDialog.FileName, newFileName, true);
 
@@ -179,6 +202,7 @@ namespace OpenVTT.Controls
                     var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
                     layer.RootPath = Session.Session.Values.SessionFolder;
                     layer.ImagePath = newFileName;
+                    layer.IsImageLayer = isImage;
 
                     if (Settings.Settings.Values.AutoSaveAction)
                         Session.Session.Save(true);

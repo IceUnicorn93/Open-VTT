@@ -6,6 +6,8 @@ namespace OpenVTT.Session
     [Documentation("To use this object use var l = new Layer();")]
     public class Layer
     {
+        [Documentation("If this layer uses an Image, true, for an animated Map, false")]
+        public bool IsImageLayer = true;
         [Documentation("Number of the Layer")]
         public int LayerNumber;
         [Documentation("Root Path of the Session-Folder")]

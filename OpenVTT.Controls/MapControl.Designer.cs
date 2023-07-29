@@ -169,7 +169,7 @@
             this.btnImportImage.Name = "btnImportImage";
             this.btnImportImage.Size = new System.Drawing.Size(87, 20);
             this.btnImportImage.TabIndex = 26;
-            this.btnImportImage.Text = "Import Image";
+            this.btnImportImage.Text = "Import Map";
             this.btnImportImage.UseVisualStyleBackColor = true;
             this.btnImportImage.Click += new System.EventHandler(this.btnImportImage_Click);
             // 

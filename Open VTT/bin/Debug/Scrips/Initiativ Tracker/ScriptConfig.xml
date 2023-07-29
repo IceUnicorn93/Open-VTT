@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isUI>true</isUI>
-  <isActive>true</isActive>
+  <isActive>false</isActive>
   <Name>Initiativ Tracker</Name>
   <Author>IceUnicorn / Dustin</Author>
   <Description>Initiativ Tracker for DnD</Description>
