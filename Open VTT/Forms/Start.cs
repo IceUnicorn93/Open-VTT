@@ -16,6 +16,8 @@ namespace Open_VTT.Forms
         {
             InitializeComponent();
 
+            ScriptEngine.RunScripts();
+
             Settings.Load();
 
             recentlyOpenedControl1.SessionLoaded += LoadWithHide;

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isUI>true</isUI>
-  <Name>Initiative Tracker</Name>
+  <isActive>true</isActive>
+  <Name>Initiativ Tracker</Name>
   <Author>IceUnicorn / Dustin</Author>
-  <Description>This is a ssimple Initiative Tracker for DnD</Description>
+  <Description>Initiativ Tracker for DnD</Description>
   <Version>1.0.0.0</Version>
   <File_References>
-    <string>Script.txt</string>
+    <string>Main.txt</string>
   </File_References>
   <DLL_References>
   </DLL_References>

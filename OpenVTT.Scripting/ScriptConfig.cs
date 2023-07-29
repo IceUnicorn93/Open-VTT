@@ -7,11 +7,12 @@ namespace OpenVTT.Scripting
     public class ScriptConfig
     {
         public bool isUI = false;
+        public bool isActive = false;
 
-        public string Name = "Sample";
-        public string Author = "IceUnicorn / Dustin";
-        public string Description = "This is a sample Script";
-        public string Version = "1.0.0.0";
+        public string Name = "";
+        public string Author = "";
+        public string Description = "";
+        public string Version = "";
 
         public List<string> File_References = new List<string>()
         {
@@ -24,14 +25,36 @@ namespace OpenVTT.Scripting
         };
 
 
-        public static void Save()
+        public static void Save(string path)
         {
-            string path = @".\ScriptConfig.xml";
+            var config = new ScriptConfig();
+
+            config.isUI = false;
+            config.isActive = false;
+
+            config.Name = "Sample";
+            config.Author = "IceUnicorn / Dustin";
+            config.Description = "This is a sample Script. Its deactivated (isActive=false) and woulnd't be shown in the UI (isUI=false)";
+            config.Version = "1.0.0.0";
+
+            config.File_References = new List<string>()
+            {
+                "Main.txt"
+            };
+            config.DLL_References = new List<string>()
+            {
+                "PathToSample.DLL"
+            };
+            config.Using_References = new List<string>()
+            {
+                "System",
+                "System.XML"
+            };
 
             var x = new XmlSerializer(typeof(ScriptConfig));
             using (var sw = new StreamWriter(path))
             {
-                x.Serialize(sw, new ScriptConfig());
+                x.Serialize(sw, config);
             }
         }
 
