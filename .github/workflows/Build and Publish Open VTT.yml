@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: [windowns-latest]
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
+    
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.2.0
+    
+    - name: Restore NuGet Packages
+      run: nuget restore "Open VTT.sln"
+    
+    - name: Build the Solution
+      run: msbuild "Open VTT.sln"
+    
+    
