@@ -24,9 +24,9 @@ jobs:
       run: nuget restore "Open VTT.sln"
     
     - name: Build the Solution - Debug AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=AnyCPU
+      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform="Any CPU"
     - name: Build the Solution - Release AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=AnyCPU
+      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform="Any CPU"
     - name: Build the Solution - Debug X64
       run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
     - name: Build the Solution - Release x64
