@@ -11,7 +11,15 @@ namespace OpenVTT.Common
         AttributeTargets.Property, AllowMultiple = true)]
     internal class Documentation : Attribute
     {
-        string Description;
+        public string Description = "";
+        public string Parameters = "";
+        public string ReturnType = "";
+        public string DataType = "";
+        public string Name = "";
+        public bool IsMethod = false;
+        public bool IsField = false;
+        public bool IsProperty = false;
+        public bool IsStatic = false;
 
         public Documentation(string description)
         {

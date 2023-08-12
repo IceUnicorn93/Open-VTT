@@ -11,14 +11,14 @@ using System.Collections.ObjectModel;
 
 namespace OpenVTT.StreamDeck
 {
-    [Documentation("To use this Object use StreamDeckStatics.XYZ = ABC;")]
+    [Documentation("To use this Object use StreamDeckStatics.XYZ = ABC;", Name = "StreamDeckStatics")]
     public static class StreamDeckStatics
     {
-        [Documentation("States of the StreamDeck each State displays a diffrent Selection of Buttons")]
+        [Documentation("States of the StreamDeck each State displays a diffrent Selection of Buttons", IsStatic = true, IsField = true, Name = "States", DataType = "ObservableCollection<(string State, Action action)>")]
         public static ObservableCollection<(string State, Action action)> States = new ObservableCollection<(string State, Action action)>();
-        [Documentation("Number of Buttons left to right")]
+        [Documentation("Number of Buttons left to right", IsStatic = true, IsField = true, Name = "MaxX", DataType = "int")]
         public static int MaxX { get; internal set; }
-        [Documentation("Number of Buttons top to bottom")]
+        [Documentation("Number of Buttons top to bottom", IsStatic = true, IsField = true, Name = "MaxY", DataType = "int")]
         public static int MaxY { get; internal set; }
         static string State;
         static IStreamDeckBoard deck;
@@ -34,6 +34,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void Dispose()
         {
+            deck.SetBrightness(0);
+            IsInitialized = false;
             if (deck != null) deck.Dispose();
         }
 
@@ -82,9 +84,11 @@ namespace OpenVTT.StreamDeck
             
             IsInitialized = true;
         }
-        [Documentation("Clears all Buttons of the StreamDeck (Except the Control-Button)")]
+        [Documentation("Clears all Buttons of the StreamDeck (Except the Control-Button)", IsStatic = true, IsMethod = true, Name = "ClearButtons", ReturnType = "void")]
         static public void ClearButtons()
         {
+            if (!IsInitialized) return;
+
             actions = new Action[deck.Keys.KeyCountX, deck.Keys.KeyCountY];
 
             for (int x = 0; x < MaxX; x++)
@@ -102,9 +106,11 @@ namespace OpenVTT.StreamDeck
                 SetSelection();
             });
         }
-        [Documentation("Shows the Fog of War Control-Buttons")]
+        [Documentation("Shows the Fog of War Control-Buttons", IsStatic = true, IsMethod = true, Name = "SetFogButtons", ReturnType = "void")]
         static public void SetFogButtons()
         {
+            if (!IsInitialized) return;
+
             SetDeckKeyText((0, 0), $"Layer{Environment.NewLine}  Up");
             SetDeckKeyText((0, 1), $"Layer{Environment.NewLine}Down");
 
@@ -112,9 +118,11 @@ namespace OpenVTT.StreamDeck
             SetDeckKeyText((1, 1), $"Cover{Environment.NewLine}   all");
             SetDeckKeyText((1, 2), $" Set {Environment.NewLine}Active");
         }
-        [Documentation("Shows the Paging Buttons")]
+        [Documentation("Shows the Paging Buttons", IsStatic = true, IsMethod = true, Name = "SetPageButtons", ReturnType = "void")]
         static public void SetPageButtons()
         {
+            if (!IsInitialized) return;
+
             // -> (Page Reset)
             var pos = deck.Keys.KeyCountX - ((deck.Keys.KeyCountX - 1) - 2);
             SetDeckKeyText((pos, deck.Keys.KeyCountY - 1), Page.ToString());
@@ -142,19 +150,25 @@ namespace OpenVTT.StreamDeck
                 SwitchDeckState();
             });
         }
-        [Documentation("Sets the Max Page Number")]
+        [Documentation("Sets the Max Page Number", IsStatic = true, IsMethod = true, Name = "SetMaxPage", Parameters = "int max", ReturnType = "void")]
         static public void SetMaxPage(int max)
         {
+            if (!IsInitialized) return;
+
             MaxPage = max;
         }
-        [Documentation("Sets the Button Action for the given Position")]
+        [Documentation("Sets the Button Action for the given Position", IsStatic = true, IsMethod = true, Name = "SetMaxPage", Parameters = "(int X, int Y) position, Action action", ReturnType = "void")]
         static public void SetAction((int X, int Y) position, Action action)
         {
+            if (!IsInitialized) return;
+
             actions[position.X, position.Y] = action;
         }
-        [Documentation("Sets the Button Text for the given Position")]
+        [Documentation("Sets the Button Text for the given Position", IsStatic = true, IsMethod = true, Name = "SetDeckKeyText", Parameters = "(int X, int Y) position, string Text", ReturnType = "void")]
         static public void SetDeckKeyText((int X, int Y) position, string Text)
         {
+            if (!IsInitialized) return;
+
             var newX = position.X * 104;
             var newY = position.Y * 104;
 
@@ -164,6 +178,8 @@ namespace OpenVTT.StreamDeck
 
         static private KeyBitmap CreateBitmap(string Text)
         {
+            if (!IsInitialized) return null;
+
             var keyImage = new Bitmap(96, 96);
 
             if (!Text.Contains(Environment.NewLine))
@@ -198,6 +214,8 @@ namespace OpenVTT.StreamDeck
 
         static private (int X, int Y) IdToLocation(int ID)
         {
+            if (!IsInitialized) return (0,0);
+
             int X = ID % (deck.Keys.KeyCountX);
             int Y = (ID - X) / deck.Keys.KeyCountX;
 
@@ -206,6 +224,8 @@ namespace OpenVTT.StreamDeck
 
         static private void Deck_KeyPressed(object sender, KeyEventArgs e)
         {
+            if (!IsInitialized) return;
+
             if (!(sender is IStreamDeckBoard sd)) return;
             if (!e.IsDown) return;
 
@@ -218,9 +238,11 @@ namespace OpenVTT.StreamDeck
         }
 
         //------------------ All for Selecting the Deck State and displaying Opions
-        [Documentation("Reloads the Current Deck-State (If PageNumber != -1 Page will be Set to Parameter)")]
+        [Documentation("Reloads the Current Deck-State (If PageNumber != -1 Page will be Set to Parameter)", IsStatic = true, IsMethod = true, Name = "SwitchDeckState", Parameters = "int PageNumber = -1", ReturnType = "void")]
         static public void SwitchDeckState(int PageNumber = -1)
         {
+            if (!IsInitialized) return;
+
             if (PageNumber != -1)
             {
                 Page = PageNumber;
@@ -235,6 +257,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void SetSelection()
         {
+            if (!IsInitialized) return;
+
             var maxMapCount = (deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1);
             var maxX = (deck.Keys.KeyCountX - 2);
             var maxY = (deck.Keys.KeyCountY - 1);
@@ -276,6 +300,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void SetMaps()
         {
+            if (!IsInitialized) return;
+
             var maxMapCount = (deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1);
             var maxX = (deck.Keys.KeyCountX - 2);
             var maxY = (deck.Keys.KeyCountY - 1);
@@ -309,7 +335,7 @@ namespace OpenVTT.StreamDeck
 
         static internal void SetFog()
         {
-
+            if(!IsInitialized) return;
 
             var maxMapCount = (deck.Keys.KeyCountX - 2) * (deck.Keys.KeyCountY - 1);
             var maxX = (deck.Keys.KeyCountX - 2);

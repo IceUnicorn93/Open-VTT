@@ -5,37 +5,40 @@ using System.Xml.Serialization;
 
 namespace OpenVTT.Scripting
 {
+    [Documentation("To use this Object just use var sc = new ScriptConfig();", Name = "ScriptConfig")]
     public class ScriptConfig
     {
-        [Documentation("True, if TabPage should be added to SceneControl")]
+        [Documentation("True, if TabPage should be added to SceneControl", IsField = true, Name = "isUI", DataType = "bool")]
         public bool isUI = false;
-        [Documentation("True, if Script should be compiled")]
+        [Documentation("True, if Script should be compiled", IsField = true, Name = "isActive", DataType = "bool")]
         public bool isActive = false;
 
-        [Documentation("Name of Script")]
+        [Documentation("Name of Script", IsField = true, Name = "Name", DataType = "string")]
         public string Name = "";
-        [Documentation("Name of the Author")]
+        [Documentation("Name of the Author", IsField = true, Name = "Author", DataType = "string")]
         public string Author = "";
-        [Documentation("Description of the Script")]
+        [Documentation("Description of the Script", IsField = true, Name = "Description", DataType = "string")]
         public string Description = "";
-        [Documentation("Version of the Script")]
+        [Documentation("Version of the Script", IsField = true, Name = "Version", DataType = "string")]
         public string Version = "";
 
-        [Documentation("List of files to load for the Script")]
+        [Documentation("List of files to load for the Script", IsField = true, Name = "File_References", DataType = "List<string>")]
         public List<string> File_References = new List<string>()
         {
         };
-        [Documentation("List of DLL References for the Script")]
+        [Documentation("List of DLL References for the Script", IsField = true, Name = "DLL_References", DataType = "List<string>")]
         public List<string> DLL_References = new List<string>()
         {
         };
-        [Documentation("List of Using References for the Script")]
+        [Documentation("List of Using References for the Script", IsField = true, Name = "Using_References", DataType = "List<string>")]
         public List<string> Using_References = new List<string>()
         {
             "OpenVTT.StreamDeck",
             "OpenVTT.Session",
             "OpenVTT.Settings",
             "OpenVTT.Common",
+            "System.Windows.Forms",
+            "System.Drawing",
         };
 
 
@@ -53,16 +56,15 @@ namespace OpenVTT.Scripting
 
             config.File_References = new List<string>()
             {
-                "Main.txt"
+                "Main.cs"
             };
             config.DLL_References = new List<string>()
             {
-                "PathToSample.DLL"
+                "SampleDllIn _DLL References-Folder.DLL"
             };
             config.Using_References = new List<string>()
             {
-                "System",
-                "System.XML"
+                "System"
             };
 
             var x = new XmlSerializer(typeof(ScriptConfig));

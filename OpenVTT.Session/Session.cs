@@ -9,38 +9,39 @@ using OpenVTT.Editor;
 
 namespace OpenVTT.Session
 {
-    [Documentation("To use this Object, use Session.Session.Values.XYZ = ABC; or Session.Session.Method();")]
+    [Documentation("To use this Object, use Session.Session.Values.XYZ = ABC; or Session.Session.Method();", Name = "Session")]
     public class Session
     {
         [XmlIgnore]
-        [Documentation("Number of Active Layer")]
+        [Documentation("Number of Active Layer", Name = "ActiveLayer", IsField = true, DataType = "int")]
         public int ActiveLayer { get; internal set; }
         [XmlIgnore]
-        [Documentation("Actual Active Scene-Object")]
+        [Documentation("Actual Active Scene-Object", Name = "ActiveScene", IsField = true, DataType = "Scene")]
         public Scene ActiveScene { get; internal set; }
 
-        [Documentation("Path where the Session-Folder was created")]
+        [Documentation("Path where the Session-Folder was created", Name = "SessionFolder", IsField = true, DataType = "string")]
         public string SessionFolder;
-        [Documentation("List of Scene-Objects")]
+        [Documentation("List of Scene-Objects", Name = "Scenes", IsField = true, DataType = "List<Scene>")]
         public List<Scene> Scenes;
+        [Documentation("List of CustomSettings-Objects", Name = "CustomData", IsField = true, DataType = "List<CustomSettings>")]
+        public List<CustomSettings> CustomData = new List<CustomSettings>();
 
         public Session()
         {
 
         }
 
-        [Documentation("Static Session-Object")]
+        [Documentation("Static Session-Object", Name = "Values", IsStatic = true, IsField = true, DataType = "Session")]
         public static Session Values;
 
-        [Documentation("Static Constructor")]
+        [Documentation("Static Constructor", Name = "Session", IsMethod = true, ReturnType = "Session")]
         static Session()
         {
             Values = new Session();
         }
 
-
-
-        internal static void Save(bool optimize)
+        [Documentation("Saves the Settings", Name = "Save", IsStatic = true, IsMethod = true, ReturnType = "void", Parameters = "bool optimize")]
+        public static void Save(bool optimize)
         {
             string path = GetSubDirectoryPathForFile(Values.SessionFolder, "Session.xml");
 
@@ -82,7 +83,7 @@ namespace OpenVTT.Session
             }
         }
 
-        [Documentation("Returns the Layer-Object for the given Layer-Number")]
+        [Documentation("Returns the Layer-Object for the given Layer-Number", Name = "GetLayer", IsStatic = true, IsMethod = true, ReturnType = "Layer", Parameters = "int number")]
         public static Layer GetLayer(int number)
         {
             return Values.ActiveScene.Layers.SingleOrDefault(n => n.LayerNumber == number);
@@ -92,13 +93,13 @@ namespace OpenVTT.Session
         {
             Values.ActiveLayer = number;
         }
-        [Documentation("Sets the Active-Scene to the given Scene")]
+        [Documentation("Sets the Active-Scene to the given Scene", Name = "SetScene", IsStatic = true, IsMethod = true, ReturnType = "void", Parameters = "Scene scene")]
         public static void SetScene(Scene scene)
         {
             Values.ActiveScene = scene;
         }
 
-        [Documentation("Gets the Updated Image Path for the current Layer")]
+        [Documentation("Gets the Updated Image Path for the current Layer", Name = "UpdatePath", IsStatic = true, IsMethod = true, ReturnType = "string")]
         public static string UpdatePath()
         {
             return UpdatePath(GetLayer(Values.ActiveLayer));

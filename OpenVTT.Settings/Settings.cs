@@ -9,31 +9,31 @@ using OpenVTT.Common;
 
 namespace OpenVTT.Settings
 {
-    [Documentation("To use this Object use Settings.Settings.XYZ = ABC;")]
+    [Documentation("To use this Object use Settings.Settings.XYZ = ABC;", Name = "Settings")]
     public class Settings
     {
-        [Documentation("Size of the Player Screen, if it's 27\" enter 27")]
+        [Documentation("Size of the Player Screen, if it's 27\" enter 27", Name = "PlayerScreenSize", IsField = true, DataType = "int")]
         public int PlayerScreenSize; // How many Inches has my Monitor eg. 27
-        [Documentation("Calcualted, How many Grid Lines left to right to draw")]
+        [Documentation("Calcualted, How many Grid Lines left to right to draw", Name = "PlayerScreenWidthInches", IsField = true, DataType = "double")]
         public double PlayerScreenWidthInches; // How many lines would I need to draw from Left to right
-        [Documentation("Calcualted, How many Grid Lines top to bottom to draw")]
+        [Documentation("Calcualted, How many Grid Lines top to bottom to draw", Name = "PlayerScreenHeightInces", IsField = true, DataType = "double")]
         public double PlayerScreenHeightInces; // How many lines would I need to draw from top to bottom
 
-        [Documentation("List of Screen-Information-Objects")]
+        [Documentation("List of Screen-Information-Objects", Name = "Screens", IsField = true, DataType = "List<ScreenInformation>")]
         public List<ScreenInformation> Screens; // List of configured Screens
 
-        [Documentation("AutoSave-State, true = Automatic Saving")]
+        [Documentation("AutoSave-State, true = Automatic Saving", Name = "AutoSaveAction", IsField = true, DataType = "bool")]
         public bool AutoSaveAction = true;
-        [Documentation("Display Fog of War changes directly? If yes input true")]
+        [Documentation("Display Fog of War changes directly? If yes input true", Name = "DisplayChangesInstantly", IsField = true, DataType = "bool")]
         public bool DisplayChangesInstantly;
-        [Documentation("Display Grid?")]
+        [Documentation("Display Grid?", Name = "DisplayGrid", IsField = true, DataType = "bool")]
         public bool DisplayGrid;
-        [Documentation("Display Grid on DM Side? Only works if DisplayGrid == true")]
+        [Documentation("Display Grid on DM Side? Only works if DisplayGrid == true", Name = "DisplayGridForDM", IsField = true, DataType = "bool")]
         public bool DisplayGridForDM = false;
 
-        [Documentation("ServerIP of the Notes Server")]
+        [Documentation("ServerIP of the Notes Server", Name = "NoteServerIP", IsField = true, DataType = "string")]
         public string NoteServerIP; // IP Adress of Server
-        [Documentation("ServerPort of the Notes Server")]
+        [Documentation("ServerPort of the Notes Server", Name = "NoteServerPort", IsField = true, DataType = "int")]
         public int NoteServerPort; // Port of Server
 
         internal Color DmColor = Color.FromArgb(150, 0, 0, 0);
@@ -46,7 +46,7 @@ namespace OpenVTT.Settings
         private XmlColor _XmlGridColor = new XmlColor { Alpha = 255, Blue = 128, Green = 128, Red = 128 };
         private XmlColor _XmlTextColor = new XmlColor { Alpha = 255, Blue = 0, Green = 0, Red = 255 };
 
-        [Documentation("XmlColor for the DM Fog of War")]
+        [Documentation("XmlColor for the DM Fog of War", Name = "XmlDmColor", IsProperty = true, DataType = "XmlColor")]
         public XmlColor XmlDmColor
         {
             get
@@ -60,7 +60,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        [Documentation("XmlColor for the Player Fog of War")]
+        [Documentation("XmlColor for the Player Fog of War", Name = "XmlPlayerColor", IsProperty = true, DataType = "XmlColor")]
         public XmlColor XmlPlayerColor
         {
             get
@@ -74,7 +74,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        [Documentation("XmlColor for the Grid")]
+        [Documentation("XmlColor for the Grid", Name = "XmlGridColor", IsProperty = true, DataType = "XmlColor")]
         public XmlColor XmlGridColor
         {
             get
@@ -88,7 +88,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        [Documentation("XmlColor for the Text of pre-placed Fog of War")]
+        [Documentation("XmlColor for the Text of pre-placed Fog of War", Name = "XmlTextColor", IsProperty = true, DataType = "XmlColor")]
         public XmlColor XmlTextColor
         {
             get
@@ -103,10 +103,10 @@ namespace OpenVTT.Settings
         }
 
 
-        [Documentation("Static Settings Object")]
+        [Documentation("Static Settings Object", Name = "Values", IsField = true, DataType = "Settings")]
         public static Settings Values;
 
-        [Documentation("Constructor")]
+        [Documentation("Constructor", Name = "Settings", IsMethod = true, ReturnType = "Settings")]
         static Settings()
         {
             Values = new Settings();
@@ -115,7 +115,7 @@ namespace OpenVTT.Settings
             Load();
         }
 
-        [Documentation("Save Method")]
+        [Documentation("Save Method", Name = "Save", IsMethod = true, ReturnType = "void")]
         public static void Save()
         {
             var playerScreen = Values.Screens?.SingleOrDefault(n => n.Display == DisplayType.Player);
@@ -140,7 +140,7 @@ namespace OpenVTT.Settings
             }
         }
 
-        [Documentation("Load Method")]
+        [Documentation("Load Method", Name = "Load", IsMethod = true, ReturnType = "void")]
         public static void Load()
         {
             if (!File.Exists(Path.Combine(Application.StartupPath, "Settings.xml")))

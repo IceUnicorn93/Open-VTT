@@ -8,29 +8,29 @@ using OpenVTT.Common;
 
 namespace OpenVTT.FogOfWar
 {
-    [Documentation("To use this Object use var fow = new FogOfWar();")]
+    [Documentation("To use this Object use var fow = new FogOfWar();", Name = "FogOfWar")]
     public class FogOfWar
     {
-        [Documentation("FogState, see Enums")]
+        [Documentation("FogState, see Enums", Name = "state", IsField = true, DataType = "FogState")]
         public FogState state { get; set; }
 
-        [Documentation("Position of the Upper Left Corner for the Drawing")]
+        [Documentation("Position of the Upper Left Corner for the Drawing", Name = "Position", IsField = true, DataType = "Point")]
         public Point Position { get; set; }
-        [Documentation("Size of the Box drawn")]
+        [Documentation("Size of the Box drawn", Name = "DrawSize", IsField = true, DataType = "Size")]
         public Size DrawSize { get; set; }
-        [Documentation("Size of the ViewPort (UI Element)")]
+        [Documentation("Size of the ViewPort (UI Element)", Name = "BoxSize", IsField = true, DataType = "Size")]
         public Size BoxSize { get; set; }
 
         //Poligon removal Data
-        [Documentation("List of Point-Objects if a Poligon is drawn")]
+        [Documentation("List of Point-Objects if a Poligon is drawn", Name = "PoligonData", IsField = true, DataType = "List<Point>")]
         public List<Point> PoligonData { get; set; }
 
         //Imidiate or Toggle Fog
-        [Documentation("True, if it's Pre-Place Fog of War")]
+        [Documentation("True, if it's Pre-Place Fog of War", Name = "IsToggleFog", IsField = true, DataType = "bool")]
         public bool IsToggleFog = false;
-        [Documentation("True, if it's not yet revealed")]
+        [Documentation("True, if it's not yet revealed", Name = "IsHidden", IsField = true, DataType = "bool")]
         public bool IsHidden = true;
-        [Documentation("Name of the Fog of War, just fill, if it's Pre Placed FogOfWar")]
+        [Documentation("Name of the Fog of War, just fill, if it's Pre Placed FogOfWar", Name = "Name", IsField = true, DataType = "string")]
         public string Name = "";
 
         internal Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)

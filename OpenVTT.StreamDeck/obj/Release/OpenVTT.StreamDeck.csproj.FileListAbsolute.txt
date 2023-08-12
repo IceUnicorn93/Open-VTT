@@ -8,8 +8,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\StreamDeckSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\OpenVTT.Settings.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\OpenVTT.Grid.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\OpenVTT.Editor.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\OpenVTT.Editor.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\HidSharp.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Release\OpenMacroBoard.SDK.pdb

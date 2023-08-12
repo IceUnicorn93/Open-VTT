@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <isUI>false</isUI>
+  <isActive>false</isActive>
+  <Name>Sample</Name>
+  <Author>IceUnicorn / Dustin</Author>
+  <Description>This is a sample Script. Its deactivated (isActive=false) and woulnd't be shown in the UI (isUI=false)</Description>
+  <Version>1.0.0.0</Version>
+  <File_References>
+    <string>Main.cs</string>
+  </File_References>
+  <DLL_References>
+    <string>SampleDllIn _DLL References-Folder.DLL</string>
+  </DLL_References>
+  <Using_References>
+    <string>System</string>
+  </Using_References>
+</ScriptConfig>
