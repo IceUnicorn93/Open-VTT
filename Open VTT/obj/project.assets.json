@@ -2,61 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -222,61 +167,6 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -442,61 +332,6 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-arm64": {
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -662,61 +497,6 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -882,61 +662,6 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -1103,76 +828,6 @@
     }
   },
   "libraries": {
-    "OpenMacroBoard.SDK/3.0.0": {
-      "sha512": "rr7lQR3wa/8+nJbwmGXFHi+Ix/yhU+IejGGWZfmCNxLe2npNnhNREMY90KtkEXvYttflkLBGNKMXjRBMRIrIfQ==",
-      "type": "package",
-      "path": "openmacroboard.sdk/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.dll",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.pdb",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.xml",
-        "openmacroboard.sdk.3.0.0.nupkg.sha512",
-        "openmacroboard.sdk.nuspec"
-      ]
-    },
-    "StreamDeckSharp/3.2.0": {
-      "sha512": "nijs/28t8tUXVtf7NjgtbhCxpDjNvDpOoVanN/5Eat+tHr8uD9JUauHdxuORK5zqK1sRczOm/e1MltAPu2JtpA==",
-      "type": "package",
-      "path": "streamdecksharp/3.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/HidSharp.dll",
-        "lib/netstandard2.0/HidSharp.pdb",
-        "lib/netstandard2.0/HidSharp.xml",
-        "lib/netstandard2.0/StreamDeckSharp.dll",
-        "lib/netstandard2.0/StreamDeckSharp.pdb",
-        "lib/netstandard2.0/StreamDeckSharp.xml",
-        "streamdecksharp.3.2.0.nupkg.sha512",
-        "streamdecksharp.nuspec"
-      ]
-    },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "type": "package",
-      "path": "system.drawing.common/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Drawing.Common.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Drawing.Common.dll",
-        "lib/net462/System.Drawing.Common.xml",
-        "lib/net6.0/System.Drawing.Common.dll",
-        "lib/net6.0/System.Drawing.Common.xml",
-        "lib/net7.0/System.Drawing.Common.dll",
-        "lib/net7.0/System.Drawing.Common.xml",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "OpenVTT.Client/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.Client/OpenVTT.Client.csproj",
@@ -1251,9 +906,7 @@
       "OpenVTT.Scripting >= 1.0.0",
       "OpenVTT.Session >= 1.0.0",
       "OpenVTT.Settings >= 1.0.0",
-      "OpenVTT.StreamDeck >= 1.0.0",
-      "StreamDeckSharp >= 3.2.0",
-      "System.Drawing.Common >= 7.0.0"
+      "OpenVTT.StreamDeck >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1321,18 +974,7 @@
       }
     },
     "frameworks": {
-      "net472": {
-        "dependencies": {
-          "StreamDeckSharp": {
-            "target": "Package",
-            "version": "[3.2.0, )"
-          },
-          "System.Drawing.Common": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          }
-        }
-      }
+      "net472": {}
     },
     "runtimes": {
       "win": {

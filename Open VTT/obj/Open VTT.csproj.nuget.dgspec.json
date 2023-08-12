@@ -66,18 +66,7 @@
         }
       },
       "frameworks": {
-        "net472": {
-          "dependencies": {
-            "StreamDeckSharp": {
-              "target": "Package",
-              "version": "[3.2.0, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          }
-        }
+        "net472": {}
       },
       "runtimes": {
         "win": {
