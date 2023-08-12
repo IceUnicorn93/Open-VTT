@@ -27,11 +27,8 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.StreamDeck.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.NetworkMessage.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\StreamDeckSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\StreamDeckSharp.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenMacroBoard.SDK.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenMacroBoard.SDK.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.MapControl.resources
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.RecentlyOpenedControl.resources

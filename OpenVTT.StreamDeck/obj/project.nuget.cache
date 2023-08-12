@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "fo8QhLOe+ces1rMrQtLEkJ3ZV2ZRCh0cGJGfSaY4qCIARhZQULO16UvmM0Uop0S0xrEssrlAiXcWKZ4P/gmrJg==",
+  "success": true,
+  "projectFilePath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jopla\\.nuget\\packages\\hidsharp\\2.1.0\\hidsharp.2.1.0.nupkg.sha512",
+    "C:\\Users\\jopla\\.nuget\\packages\\openmacroboard.sdk\\3.0.0\\openmacroboard.sdk.3.0.0.nupkg.sha512",
+    "C:\\Users\\jopla\\.nuget\\packages\\streamdecksharp\\3.2.0\\streamdecksharp.3.2.0.nupkg.sha512",
+    "C:\\Users\\jopla\\.nuget\\packages\\system.drawing.common\\4.7.3\\system.drawing.common.4.7.3.nupkg.sha512"
+  ],
+  "logs": []
+}

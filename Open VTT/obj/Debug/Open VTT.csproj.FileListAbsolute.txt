@@ -37,13 +37,6 @@ C:\Users\Daniel\source\repos\Open VTT\Open VTT\obj\Debug\Open VTT.csproj.Assembl
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.exe.config
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.exe
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Open VTT.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Client.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Controls.dll
@@ -59,10 +52,14 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.NetworkMessage.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.Scripting.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Collections.Immutable.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Reflection.Metadata.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Memory.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -84,20 +81,12 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.StreamDeck.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.NetworkMessage.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.Scripting.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.Scripting.xml
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.Scripting.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.Scripting.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Collections.Immutable.xml
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.xml
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Memory.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Threading.Tasks.Extensions.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Text.Encoding.CodePages.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Numerics.Vectors.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Buffers.xml
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\de\Microsoft.CodeAnalysis.Scripting.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\es\Microsoft.CodeAnalysis.Scripting.resources.dll
