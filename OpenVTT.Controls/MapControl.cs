@@ -45,14 +45,27 @@ namespace OpenVTT.Controls
 
             if (StreamDeckStatics.IsInitialized)
             {
-                StreamDeckStatics.SetAction((0, 0), new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null)))));
-                StreamDeckStatics.SetAction((0, 1), new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null)))));
+                StreamDeckStatics.ActionList.Add(("Layer  Up", new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Layer  Down", new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null))))));
 
-                StreamDeckStatics.SetAction((1, 0), new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null)))));
-                StreamDeckStatics.SetAction((1, 1), new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null)))));
-                StreamDeckStatics.SetAction((1, 2), new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null)))));
+                StreamDeckStatics.ActionList.Add(("Reveal All", new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Cover  All", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Set    Active", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
 
-                StreamDeckStatics.LoadScene = new Action<Scene, int>((s, i) => Invoke(new Action(() => LoadScene(s, i))));
+                Session.Session.Values.Scenes.Select(n => (n.Name, n))
+                    .ToList()
+                    .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Scene").PageingActions.Add(
+                        (
+                        n.Name,
+                        new Action(
+                            () => Invoke(
+                                new Action(
+                                    ()=>LoadScene(n.n, 0)
+                                    )
+                                )
+                            )
+                        )
+                        ));
             }
         }
 

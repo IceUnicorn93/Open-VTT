@@ -29,15 +29,14 @@ tbDescription.ReadOnly = true;
 Page.Controls.Add(lblAuthor);
 Page.Controls.Add(lblNameAndVersion);
 Page.Controls.Add(tbDescription);
-// StreamDeckStatics.States.Add(("ABC", () => {}));
 
-// Session.Values.CustomData.Add(
-// new CustomSettings()
-// {
-	// ScriptName = Config.Name,
-	// SettingName = "Test",
-	// ValueType = "System.String",
-	// Value = "ABCD"
-// }
-// );
-// Session.Save(false);
+
+(string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) description =
+	StreamDeckStatics.CreateDescription("Init   Tracker");
+
+description.ActionDescription[0,0] = "Next   Player";
+StreamDeckStatics.ActionList.Add(("Next   Player", new Action(() =>
+{
+	btnNext.Invoke(new Action(() => btnNext.PerformClick()));
+})));
+StreamDeckStatics.SwitchDeckState();

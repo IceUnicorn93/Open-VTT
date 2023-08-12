@@ -281,21 +281,31 @@ namespace Open_VTT.Forms.Popups
 
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
 
-            StreamDeckStatics.LoadFog += new Action<FogOfWar>(f =>
-            {
-                f.IsHidden = !f.IsHidden;
 
-                var layer = Session.GetLayer(Session.Values.ActiveLayer);
+            Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
+                .ToList()
+                .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Add(
+                    (
+                    n.Name,
+                    new Action(
+                        () =>
+                        { 
+                            n.f.IsHidden = !n.f.IsHidden;
 
-                mapControl1.dmImage = f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
-                mapControl1.playerImage = f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                            var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-                Thread.Sleep(100);
+                            mapControl1.dmImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+                            mapControl1.playerImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
 
-                mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
-            });
+                            Thread.Sleep(100);
 
-            //UpdatePrePlaceFogOfWarList();
+                            mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
+                        }
+                        )
+                    )
+                    ));
+
+            UpdatePrePlaceFogOfWarList();
         }
 
         void ScriptsCalculated()

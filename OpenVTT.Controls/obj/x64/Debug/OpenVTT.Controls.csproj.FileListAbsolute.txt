@@ -1,0 +1,45 @@
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Client.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Editor.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Editor.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.FogOfWar.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Forms.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Session.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.StreamDeck.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.NetworkMessage.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Grid.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\StreamDeckSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenMacroBoard.SDK.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Client.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Common.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Editor.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Editor.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.FogOfWar.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Forms.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Forms.dll.config
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Session.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Settings.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.StreamDeck.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.NetworkMessage.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenVTT.Grid.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\StreamDeckSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\StreamDeckSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenMacroBoard.SDK.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\OpenMacroBoard.SDK.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\HidSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug x64\HidSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.MapControl.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.RecentlyOpenedControl.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.RecentlyOpenedRow.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.ScreenSelector.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.TreeViewDisplay.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.csproj.GenerateResource.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\x64\Debug\OpenVTT.Controls.pdb
