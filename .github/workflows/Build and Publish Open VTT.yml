@@ -19,10 +19,16 @@ jobs:
     
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.2.0
+
+    - name: Clear NuGet Packages
+      run: nuget locals all -clear
     
-    - name: Restore NuGet Packages
-      run: nuget restore "Open VTT.sln"
-    
+    - name: Restore NuGet Packages for StreamDeck-Project
+      run: nuget restore OpenVTT.StreamDeck\OpenVTT.StreamDeck.csproj
+      
+    - name: Restore NuGet Packages for Scripting-Project
+      run: nuget restore OpenVTT.Scripting\OpenVTT.Scripting.csproj
+      
     - name: Build the Solution - Debug AnyCPU
       run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform="Any CPU"
     - name: Build the Solution - Release AnyCPU
