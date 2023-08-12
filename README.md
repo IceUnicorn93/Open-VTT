@@ -1,3 +1,5 @@
+[![CI Build](https://github.com/IceUnicorn93/Open-VTT/actions/workflows/Build%20and%20Publish%20Open%20VTT.yml/badge.svg?branch=main)](https://github.com/IceUnicorn93/Open-VTT/actions/workflows/Build%20and%20Publish%20Open%20VTT.yml)
+
 # Open-VTT
 
 Open VTT is an VTT like dynamic dungeon editor or foundry VTT.
