@@ -40,11 +40,6 @@
             Details about the classic Stream Deck
             </summary>
         </member>
-        <member name="P:StreamDeckSharp.Hardware.StreamDeckMK2">
-            <summary>
-            Details about the updated Stream Deck MK.2
-            </summary>
-        </member>
         <member name="P:StreamDeckSharp.Hardware.StreamDeckRev2">
             <summary>
             Details about the classic Stream Deck Rev 2

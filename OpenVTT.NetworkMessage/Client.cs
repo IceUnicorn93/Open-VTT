@@ -74,10 +74,10 @@ namespace OpenVTT.NetworkMessage
 
                         if (MessageReceived != null) { MessageReceived(dataReceived, this); }
                     }
-                    catch (SocketException ex)
+                    catch //(SocketException ex)
                     { }
-                    catch (IOException ex)
-                    { }
+                    //catch //(IOException ex)
+                    //{ }
                 }
             }
             Console.WriteLine("Client Loop Stopped");

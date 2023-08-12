@@ -18,7 +18,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenMacroBoard.SDK.pd
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenMacroBoard.SDK.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\StreamDeckSharp.xml
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\System.Drawing.Common.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Settings.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.csproj.AssemblyReference.cache
