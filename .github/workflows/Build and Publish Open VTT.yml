@@ -8,10 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: [windowns-latest]
+    runs-on: windows-2019
     
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v3
     
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.3.1
@@ -23,9 +24,9 @@ jobs:
       run: nuget restore "Open VTT.sln"
     
     - name: Build the Solution - Debug AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=AnyCPU
+      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform="Any CPU"
     - name: Build the Solution - Release AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=AnyCPU
+      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform="Any CPU"
     - name: Build the Solution - Debug X64
       run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
     - name: Build the Solution - Release x64
