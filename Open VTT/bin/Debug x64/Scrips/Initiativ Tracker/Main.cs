@@ -39,4 +39,3 @@ StreamDeckStatics.ActionList.Add(("Next   Player", new Action(() =>
 {
 	btnNext.Invoke(new Action(() => btnNext.PerformClick()));
 })));
-StreamDeckStatics.SwitchDeckState();

@@ -263,8 +263,9 @@ namespace Open_VTT.Forms.Popups
                 Session.Save(false);
             }
 
-            try { StreamDeckStatics.InitStreamDeck(); } // If a StreamDeck isn't connected, don't crash
-            catch { }
+            try { StreamDeckStatics.InitStreamDeck();} // If a StreamDeck isn't connected, don't crash
+            catch (Exception ex) { throw ex; }
+            //catch { }
 
             //don't await this call, this call is supposed to be "fire and forget"
             //Use the HostsCalculated-Method to get notified once compiling is done
@@ -282,28 +283,31 @@ namespace Open_VTT.Forms.Popups
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
 
 
-            Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
-                .ToList()
-                .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Add(
-                    (
-                    n.Name,
-                    new Action(
-                        () =>
-                        { 
-                            n.f.IsHidden = !n.f.IsHidden;
+            if (StreamDeckStatics.IsInitialized)
+            {
+                Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
+                        .ToList()
+                        .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Add(
+                            (
+                            n.Name,
+                            new Action(
+                                () =>
+                                {
+                                    n.f.IsHidden = !n.f.IsHidden;
 
-                            var layer = Session.GetLayer(Session.Values.ActiveLayer);
+                                    var layer = Session.GetLayer(Session.Values.ActiveLayer);
 
-                            mapControl1.dmImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
-                            mapControl1.playerImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                                    mapControl1.dmImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+                                    mapControl1.playerImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
 
-                            Thread.Sleep(100);
+                                    Thread.Sleep(100);
 
-                            mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
-                        }
-                        )
-                    )
-                    ));
+                                    mapControl1.ShowImages(Settings.Values.DisplayChangesInstantly);
+                                }
+                                )
+                            )
+                            )); 
+            }
 
             UpdatePrePlaceFogOfWarList();
         }
@@ -312,6 +316,8 @@ namespace Open_VTT.Forms.Popups
         {
             foreach (var item in ScriptEngine.CalculatedHosts)
                 if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
+
+            StreamDeckStatics.SwitchDeckState();
         }
 
         void UpdatePrePlaceFogOfWarList()

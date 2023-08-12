@@ -40,3 +40,7 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\StreamDeckSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenMacroBoard.SDK.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.Drawing.Common.dll

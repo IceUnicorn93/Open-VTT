@@ -17,10 +17,10 @@ namespace OpenVTT.StreamDeck
             DataType = "List<(string Name, Action action)>")]
         public static List<(string Name, Action action)> ActionList = new List<(string Name, Action action)>();
 
-        [Documentation("List of State Descriptions and PageingActions", 
-            IsStatic = true, IsField = true, Name = "StateDescrptions", 
+        [Documentation("List of State Descriptions and PageingActions",
+            IsStatic = true, IsField = true, Name = "StateDescrptions",
             DataType = "List<(string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions)>")]
-        public static 
+        public static
                 List<(string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions)> StateDescrptions =
             new List<(string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions)>();
 
@@ -44,6 +44,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void Dispose()
         {
+            if (!IsInitialized) return;
+
             deck.SetBrightness(0);
             IsInitialized = false;
             if (deck != null)
@@ -75,13 +77,13 @@ namespace OpenVTT.StreamDeck
             //Addding Pageing Functions
             ActionList.Add(("Previous Page", new Action(() =>
             {
-                if(Page > 1)
+                if (Page > 1)
                     Page -= 1;
                 SwitchDeckState();
             })));
             ActionList.Add(("Next Page", new Action(() =>
             {
-                if(Page < MaxPage)
+                if (Page < MaxPage)
                     Page += 1;
                 SwitchDeckState();
             })));
@@ -98,7 +100,7 @@ namespace OpenVTT.StreamDeck
 
             //Adding default States
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) SelectDescription = CreateDescription("Select");
-            SelectDescription.ActionDescription[0, 2] = "";
+            SelectDescription.ActionDescription[0, MaxY - 1] = "";
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) SceneDescription = CreateDescription("Scene");
             SceneDescription.ActionDescription[0, 0] = "Layer  Up";
             SceneDescription.ActionDescription[1, 0] = "Reveal All";
@@ -108,39 +110,12 @@ namespace OpenVTT.StreamDeck
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) FogDescription = CreateDescription("Fog of War");
 
             IsInitialized = true;
+
+            SwitchDeckState();
         }
 
         //------------------ All for Setting Buttons
-        static private void SetAction((int X, int Y) position, Action action)
-        {
-            if (!IsInitialized) return;
-            if (action == null) return;
-
-            actions[position.X, position.Y] = action;
-        }
-        
-        static private void SetDeckKeyText((int X, int Y) position, string Text)
-        {
-            if (!IsInitialized) return;
-
-            var offset = 0;
-            if (MaxX == 3)
-                offset = 74; // Educated Guess?
-            else if (MaxX == 5)
-                offset = 104;
-            else if (MaxX == 8)
-                offset = 134;
-
-            var newX = position.X * offset;
-            var newY = position.Y * offset;
-
-            deck.Keys.ToList().ForEach(k => Debug.WriteLine($"X: {k.X} | Y: {k.Y} | Dist: "));
-
-            var key = deck.Keys.Single(k => k.X == newX && k.Y == newY);
-            deck.SetKeyBitmap((position.Y * deck.Keys.KeyCountX) + position.X, CreateBitmap(Text));
-        }
-
-        static private KeyBitmap CreateBitmap(string Text)
+        static private KeyBitmap CreateBitmap(string Text, Color color)
         {
             if (!IsInitialized) return null;
 
@@ -151,6 +126,8 @@ namespace OpenVTT.StreamDeck
 
             using (Graphics g = Graphics.FromImage(keyImage))
             {
+                g.FillRectangle(new SolidBrush(color), new Rectangle(0, 0, keyImage.Width, keyImage.Height));
+
                 var font = new Font("Arial", 20);
                 var size = keyImage.Size;
                 SizeF textSize = new SizeF();
@@ -178,12 +155,31 @@ namespace OpenVTT.StreamDeck
 
         static private (int X, int Y) IdToLocation(int ID)
         {
-            if (!IsInitialized) return (0,0);
+            if (!IsInitialized) return (0, 0);
 
             int X = ID % (deck.Keys.KeyCountX);
             int Y = (ID - X) / deck.Keys.KeyCountX;
 
             return (X, Y);
+        }
+
+        static int offset = 0;
+        static private void SetDeckKey((int x, int y) position, string Text, Color color, Action action = null)
+        {
+            if (!IsInitialized) return;
+
+            actions[position.x, position.y] = action;
+
+            if(offset == 0)
+                offset = deck.Keys.ToList().Select(k => k.X).Distinct().OrderBy(k => k).Skip(1).First();
+
+            var newX = position.x * offset;
+            var newY = position.y * offset;
+
+            //deck.Keys.ToList().ForEach(k => Debug.WriteLine($"X: {k.X} | Y: {k.Y} | Dist: "));
+
+            var key = deck.Keys.Single(k => k.X == newX && k.Y == newY);
+            deck.SetKeyBitmap((position.y * deck.Keys.KeyCountX) + position.x, CreateBitmap(Text, color));
         }
 
         static private void Deck_KeyPressed(object sender, KeyEventArgs e)
@@ -201,7 +197,7 @@ namespace OpenVTT.StreamDeck
 
         //------------------ All for Selecting the Deck State and displaying Opions
         [Documentation("Reloads the Current Deck-State (If PageNumber != -1 Page will be Set to Parameter)",
-            IsStatic = true, IsMethod = true, Name = "SwitchDeckState",Parameters = "int PageNumber = -1",
+            IsStatic = true, IsMethod = true, Name = "SwitchDeckState", Parameters = "int PageNumber = -1",
             ReturnType = "void")]
         static public void SwitchDeckState(int PageNumber = -1)
         {
@@ -219,20 +215,21 @@ namespace OpenVTT.StreamDeck
                 for (int y = 0; y < MaxY; y++)
                     if (description.ActionDescription[x, y] != "Paging")
                     {
-                        if(description.ActionDescription[x, y] == "Previous Page")
-                            SetDeckKeyText((x, y), "<-");
+                        var text = "";
+                        if (description.ActionDescription[x, y] == "Previous Page")
+                            text = "<-";
                         else if (description.ActionDescription[x, y] == "Page 1")
-                            SetDeckKeyText((x, y), $"{Page}");
+                            text = $"{Page}";
                         else if (description.ActionDescription[x, y] == "Next Page")
-                            SetDeckKeyText((x, y), "->");
+                            text = "->";
                         else //Set Text based on description
-                            SetDeckKeyText((x, y), description.ActionDescription[x, y]);
+                            text = description.ActionDescription[x, y];
                         //Set Action based on list and description
-                        SetAction((x, y), ActionList.SingleOrDefault(n => n.Name == description.ActionDescription[x, y]).action);
+                        SetDeckKey((x, y), text, Color.FromArgb(255, 150,150,150), ActionList.SingleOrDefault(n => n.Name == description.ActionDescription[x, y]).action);
                     }
                     else // Clear Paging Pages
                     {
-                        SetDeckKeyText((x, y), "");
+                        SetDeckKey((x, y), "", Color.FromArgb(0, 150, 150, 150));
                         Paginglist.Add((x, y));
                     }
 
@@ -249,10 +246,7 @@ namespace OpenVTT.StreamDeck
             var pagingAct = pagingAction.OrderBy(n => n.DisplayName).Skip((Page - 1) * pageingCount).Take(pageingCount).ToList();
 
             for (int i = 0; i < pagingAct.Count; i++)
-            {
-                SetDeckKeyText(Paginglist[i], pagingAct[i].DisplayName);
-                SetAction(Paginglist[i], pagingAct[i].action);
-            }
+                SetDeckKey(Paginglist[i], pagingAct[i].DisplayName, Color.FromArgb(0, 150, 150, 150), pagingAct[i].action);
         }
         [Documentation("Retuns an empty Description with Pageing and return to Select (Already Added to the StateDescriptions)",
             IsStatic = true, IsMethod = true, Name = "CreateDescription", Parameters = "string Name",
@@ -260,17 +254,17 @@ namespace OpenVTT.StreamDeck
         static public (string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions) CreateDescription(string Name)
         {
             (string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions) description =
-                (Name, new string[MaxX,MaxY], new List<(string DisplayName, Action action)>());
+                (Name, new string[MaxX, MaxY], new List<(string DisplayName, Action action)>());
 
             for (int x = 0; x < MaxX; x++)
                 for (int y = 0; y < MaxY; y++)
                     description.ActionDescription[x, y] = "Paging";
 
 
-            if(MaxX > 3)
-            { 
+            if (MaxX > 3)
+            {
                 description.ActionDescription[0, MaxY - 1] = "Select";
-                for(int x = 1;x < MaxX - 3; x++)
+                for (int x = 1; x < MaxX - 3; x++)
                     description.ActionDescription[x, MaxY - 1] = "";
                 description.ActionDescription[MaxX - 3, MaxY - 1] = "Previous Page";
                 description.ActionDescription[MaxX - 2, MaxY - 1] = "Page 1";

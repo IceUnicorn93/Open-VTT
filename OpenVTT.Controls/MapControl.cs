@@ -52,20 +52,23 @@ namespace OpenVTT.Controls
                 StreamDeckStatics.ActionList.Add(("Cover  All", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
                 StreamDeckStatics.ActionList.Add(("Set    Active", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
 
-                Session.Session.Values.Scenes.Select(n => (n.Name, n))
-                    .ToList()
-                    .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Scene").PageingActions.Add(
-                        (
-                        n.Name,
-                        new Action(
-                            () => Invoke(
-                                new Action(
-                                    ()=>LoadScene(n.n, 0)
+                if (StreamDeckStatics.IsInitialized)
+                {
+                    Session.Session.Values.Scenes.Select(n => (n.Name, n))
+                                .ToList()
+                                .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Scene").PageingActions.Add(
+                                    (
+                                    n.Name,
+                                    new Action(
+                                        () => Invoke(
+                                            new Action(
+                                                () => LoadScene(n.n, 0)
+                                                )
+                                            )
+                                        )
                                     )
-                                )
-                            )
-                        )
-                        ));
+                                    )); 
+                }
             }
         }
 

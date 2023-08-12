@@ -1,7 +1,5 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenVTT.Scripting.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenVTT.Scripting.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\Microsoft.CodeAnalysis.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\Microsoft.CodeAnalysis.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\cs\Microsoft.CodeAnalysis.resources.dll
@@ -64,11 +62,12 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\zh-Hans\Microsoft.Code
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenMacroBoard.SDK.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenMacroBoard.SDK.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\StreamDeckSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Buffers.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Collections.Immutable.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Memory.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Numerics.Vectors.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Reflection.Metadata.dll
@@ -93,3 +92,7 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.cspr
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\StreamDeckSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenMacroBoard.SDK.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.xml
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Drawing.Common.dll
