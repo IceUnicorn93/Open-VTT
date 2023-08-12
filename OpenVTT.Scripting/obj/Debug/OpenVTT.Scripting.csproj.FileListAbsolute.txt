@@ -92,7 +92,4 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.cspr
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\StreamDeckSharp.xml
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenMacroBoard.SDK.xml
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\HidSharp.xml
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\System.Drawing.Common.dll

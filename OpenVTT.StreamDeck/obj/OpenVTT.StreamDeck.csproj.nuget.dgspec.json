@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj": {}
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj": {}
   },
   "projects": {
     "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
@@ -98,128 +98,6 @@
       },
       "frameworks": {
         "net472": {}
-      }
-    },
-    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj",
-        "projectName": "OpenVTT.Scripting",
-        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj",
-        "packagesPath": "C:\\Users\\jopla\\.nuget\\packages\\",
-        "outputPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\obj\\",
-        "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
-        "configFilePaths": [
-          "C:\\Users\\jopla\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net472"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net472": {
-            "projectReferences": {
-              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
-                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
-              },
-              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
-                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
-              },
-              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
-                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"
-              },
-              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
-                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
-              },
-              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj": {
-                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {
-          "dependencies": {
-            "Microsoft.CSharp": {
-              "target": "Package",
-              "version": "[4.7.0, )"
-            },
-            "Microsoft.CodeAnalysis.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.3.4, )"
-            },
-            "Microsoft.CodeAnalysis.CSharp": {
-              "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "Microsoft.CodeAnalysis.CSharp.Scripting": {
-              "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "Microsoft.CodeAnalysis.Common": {
-              "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "Microsoft.CodeAnalysis.Scripting.Common": {
-              "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "System.Buffers": {
-              "target": "Package",
-              "version": "[4.5.1, )"
-            },
-            "System.Collections.Immutable": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.Memory": {
-              "target": "Package",
-              "version": "[4.5.5, )"
-            },
-            "System.Numerics.Vectors": {
-              "target": "Package",
-              "version": "[4.5.0, )"
-            },
-            "System.Reflection.Metadata": {
-              "target": "Package",
-              "version": "[7.0.2, )"
-            },
-            "System.Runtime.CompilerServices.Unsafe": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "System.Text.Encoding.CodePages": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.Threading.Tasks.Extensions": {
-              "target": "Package",
-              "version": "[4.5.4, )"
-            }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
-        }
       }
     },
     "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {

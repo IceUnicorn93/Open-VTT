@@ -154,7 +154,3 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CoreCompileInpu
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.exe
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\obj\Debug\Open VTT.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.xml
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.xml
