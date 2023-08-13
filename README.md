@@ -18,6 +18,29 @@ My initial goal were:
 All while maintaining a certain Feature-Set.
 We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install mono-framework for that!)
 
+# Planned Features for the Future
+
+> [!NOTE]
+> Features my take a long time since I work on this project in my free time and in my own speed
+
+- Support for animated Maps
+- Rework of the Notes System
+- Rework of Centroid Calculation for Pre Placed Fog of War
+- Make Open VTT fully usable on Linux
+
+# Known Problems
+
+- [ ] Pressing like Crazy on StreamDeck Buttons causes a Crash (Specially with Set Active)
+- [ ] Sometimes Cross-Platform Storys are buggy (Windows to Linux)
+- [ ] Ping on Big Images causes a flicker
+- [ ] Ping on Big Images is to small
+- [ ] Artwork for a Note Child can't be changed once Set
+
+# Needs Testing
+
+- Scripting API on Linux
+- StreamDeck Implementation with a StreamDeck Mini
+
 # Instructions
 
 1) [Creating a Session/Story/Project](https://github.com/IceUnicorn93/Open-VTT/tree/main#1-creating-a-sessionstoryproject)
@@ -32,7 +55,6 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
    - 3.5) [Grid Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#35-grid-settings)
 4) [Working with the Scene Control](https://github.com/IceUnicorn93/Open-VTT/tree/main#4-working-with-the-scene-control)
    - 4.0.1) [Pinging on the Map](https://github.com/IceUnicorn93/Open-VTT/tree/main#401-pinging-on-the-map)
-   - 4.0.2) [Removing Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#402-removing-fog-of-war)
    - 4.1) [Importing Maps](https://github.com/IceUnicorn93/Open-VTT/tree/main#41-importing-maps)
    - 4.2) [Display Maps](https://github.com/IceUnicorn93/Open-VTT/tree/main#42-display-maps)
    - 4.3) [Working with Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#43-working-with-fog-of-war)
@@ -77,12 +99,12 @@ This folder will include a copy of everything assigned to this Session.
 
 # 2) Loading a Session/Story/Project
 
-# 2.1) Open a file
+## 2.1) Open a file
 
 Open the Tool (Open VTT.exe) and click "Load"
 A dialoge to select a file will open, select the Session.xml file you would like to load.
 
-# 2.2) Recently Opened files
+## 2.2) Recently Opened files
 
 If you created a Session with this installation of Open VTT, you will see a List of the last 8 Sessions you worked on.
 Click the "Open" Button next to the Session you would like open, to load this Session.
@@ -90,13 +112,14 @@ Click the "Open" Button next to the Session you would like open, to load this Se
 # 3) Configuration
 
 Click the "Configure" Button in the Start or Scene Control Window, a new Popup will open.
+Any changes to the Settings will be safed automatically!
 
-# 3.1) Automatic saving
+## 3.1) Automatic saving
 
 The Section "Autosave" has only one option. "Auto Save (Action Based)".
 If the checkbox is checked, each change in the Session will be safed automatically.
 
-# 3.2) Screen Selector Settings
+## 3.2) Screen Selector Settings
 
 The Section "Player Screen Selector" is located in the bottom of the Window since it needs the most space.
 You see a representation of your connected Displays/Screens.
@@ -107,93 +130,105 @@ A small blue Popup will appear with a sigular button saying "Okay Close". Click 
 "InformationDisplayPlayer" and "InformationDisplayDM" are used if you have a very specific Setup.
 They are used for my personal DM-Screen Setup. You don't need to configure them!
 
-# 3.3) Notes Server Settings
+## 3.3) Notes Server Settings
 
 The Section for the Notes Server is located in the top right corner and has 2 Settings. IP-Adress and Port.
 If your using a remote Note System, enter the IP-Adress and Port of the Note Server here.
 
-# 3.4) Fog of War Settings
+## 3.4) Fog of War Settings
 
 The Section for Fog of War is located on the Left side above the Screen Selector, it contains 6 Settings.
+"Display Changes instantly", check this checkbox to display any changes to the Fog of War to the playerys directly
+"Display Grid", check this checkbox if you want to use a 1" Grid on the player side
+"DM Color", click on the square right next to the Text to open a Popup where you can Set the Color for the DM Fog of War
+"Player Color", click on the square right next to the Text to open a Popup where you can Set the Color for the Player Fog of War
+"Grid Color", click on the square right next to the Text to open a Popup where you can Set the Grid Color
+"Text Color", click on the square right next to the Text to open a Popup where you can Set the Text Color for the Pre-Placed Fog of War
 
+## 3.5) Grid Settings
 
-# 3.5) Grid Settings
-
-
+The Section for the Grid Settings are in the top left corner and contains 2 Settings.
+"Player Window Size", enter the Size of your Player Screen here, if it's a 43" Screen, enter 43
+"Display Grid for DM", check this Box if you want to see the Grid on the DM view as well
+> [!IMPORTANT]
+> Enter the Player Window Size if you plan to use a Grid!
 
 # 4) Working with the Scene Control
 
+The Scene Control is the heart of the VTT, with this window you will manipulte the Fog of War, Select the Image to display and so on!
+This window only opens if you Loaded or Created a Story.
+
+## 4.0.1) Pinging on the Map
+
+If a map is Importet to this layer, make sure to select "Rectangle" and "Imidiate" in the top part of Scene Control.
+Right click on a part of the map you want to set a ping to. A ping Marker will appear for a few seconds.
+This Marker will be displayed on the Player Window as well!
+
+> [!IMPORTANT]
+> Please don't spam right click, the process is design to handle on ping after another. setting a new ping while a ping is still active causes weird effects!
 
 
-# 4.0.1) Pinging on the Map
-
-
-
-# 4.0.2) Removing Fog of War
-
-
-
-# 4.1) Importing Maps
-
-
-
-# 4.2) Display Maps
-
-
-
-# 4.3) Working with Fog of War
+## 4.1) Importing Maps
 
 
 
-# 4.3.1) Understanding Fog of War
+## 4.2) Display Maps
 
 
 
-# 4.3.2) Regular Fog of War
+## 4.3) Working with Fog of War
 
 
 
-# 4.3.3) Pre-Placed Fog of War
+### 4.3.1) Understanding Fog of War
 
 
 
-# 4.3.4) Rectangle Selection
+### 4.3.2) Regular Fog of War
 
 
 
-# 4.3.5) Poligon Selection
+### 4.3.3) Pre-Placed Fog of War
 
 
 
-# 4.4) Working with Layers
+### 4.3.4) Rectangle Selection
 
 
 
-# 4.4.1) Understanding Layers
+### 4.3.5) Poligon Selection
 
 
 
-# 4.4.2) Creating Layers
+## 4.4) Working with Layers
 
 
 
-# 4.4.3) Navigating Layers
+### 4.4.1) Understanding Layers
 
 
 
-# 4.5) Working with Scenes
+### 4.4.2) Creating Layers
 
 
 
-# 4.5.1) Uderstanding Scenes
+### 4.4.3) Navigating Layers
 
 
 
-# 4.5.2) Creating Scenes
+## 4.5) Working with Scenes
 
 
 
-# 4.5.3) Navigating Scenes
+### 4.5.1) Uderstanding Scenes
+
+
+
+### 4.5.2) Creating Scenes
+
+
+
+### 4.5.3) Navigating Scenes
 
 
 
@@ -201,31 +236,31 @@ The Section for Fog of War is located on the Left side above the Screen Selector
 
 
 
-# 5.1) Understanding Notes Structure
+## 5.1) Understanding Notes Structure
 
 
 
-# 5.2) Creating Templates
+## 5.2) Creating Templates
 
 
 
-# 5.3) Creating Childs
+## 5.3) Creating Childs
 
 
 
-# 5.4) Working with a remote Note Storage
+## 5.4) Working with a remote Note Storage
 
 
 
-# 5.4.1) Setup a remote Note Storage
+### 5.4.1) Setup a remote Note Storage
 
 
 
-# 5.4.2) Push Notes a remote Note Storage
+### 5.4.2) Push Notes a remote Note Storage
 
 
 
-# 5.4.3) Pull Notes from a remote Note Storage
+### 5.4.3) Pull Notes from a remote Note Storage
 
 
 
@@ -233,29 +268,31 @@ The Section for Fog of War is located on the Left side above the Screen Selector
 
 
 
-# 6.1) Understanding Scripting
+## 6.1) Understanding Scripting
 
 
 
-# 6.2) Scripting API
+## 6.2) Scripting API
 
 
 
-# 6.3) Sample Script
+## 6.3) Sample Script
 
-
+```
+Small Easy Sample Script!
+```
 
 # 7) Elgato StreamDeck
 
 
 
-# 7.1) Understanding the StreamDeck
+## 7.1) Understanding the StreamDeck
 
 
 
-# 7.2) Navigating the StreamDeck
+## 7.2) Navigating the StreamDeck
 
 
 
-# 7.3) Static and Paging Buttons
+## 7.3) Static and Paging Buttons
 
