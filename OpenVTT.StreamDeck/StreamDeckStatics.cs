@@ -108,6 +108,7 @@ namespace OpenVTT.StreamDeck
             SceneDescription.ActionDescription[1, 1] = "Cover  All";
             SceneDescription.ActionDescription[1, 2] = "Set    Active";
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) FogDescription = CreateDescription("Fog of War");
+            FogDescription.ActionDescription[1, 2] = "Set    Active";
 
             IsInitialized = true;
 

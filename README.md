@@ -21,12 +21,13 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 # Planned Features for the Future
 
 > [!NOTE]
-> Features my take a long time since I work on this project in my free time and in my own speed
+> Features may take a long time since I work on this project in my free time and in my own speed
 
 - Support for animated Maps
 - Rework of the Notes System
 - Rework of Centroid Calculation for Pre Placed Fog of War
 - Make Open VTT fully usable on Linux
+- Make all StreamDeck Buttons fully customizable
 
 # Known Problems
 
@@ -42,6 +43,11 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 - StreamDeck Implementation with a StreamDeck Mini
 
 # Instructions
+
+> [!NOTE]
+> The Tool is pretty self explaining. Don't read all of this. Only read the parts you don't understand.
+> The Instructions are ment to be read with Open VTT open.
+> Honestly, <you don't want to read all of this!
 
 1) [Creating a Session/Story/Project](https://github.com/IceUnicorn93/Open-VTT/tree/main#1-creating-a-sessionstoryproject)
 2) [Loading a Session/Story/Project](https://github.com/IceUnicorn93/Open-VTT/tree/main#2-loading-a-sessionstoryproject)
@@ -170,35 +176,52 @@ This Marker will be displayed on the Player Window as well!
 
 ## 4.1) Importing Maps
 
-
+Click on "Import Map". This will open a dialoge to choose an image or a video file (animated map).
+Select the file you want and it will be added to the Session and will become the map for the active layer.
 
 ## 4.2) Display Maps
 
+> [!IMPORTANT]
+> Please make sure to first set the Player Screen in the Config Menu!
 
+Click on "Set Active" in order to display the Map to the players.
 
 ## 4.3) Working with Fog of War
 
-
+Fog of War is what a VTT makes a VTT and not simply an Image Display.
 
 ### 4.3.1) Understanding Fog of War
 
-
+Fog of War hides certain areas of a map so players don't see everything directly.
+Each Layer can have multiple Fog of War "entities".
 
 ### 4.3.2) Regular Fog of War
 
-
+Regular Fog of War will be removed on loading a layer. To use regular Fog of War select "Imidiate" in the Selection.
+For Example your Layer displays a Building.
+You don't want to show the inside of the building, but the outside is okay.
+So you can use regular Fog of War to clear the Fog for the Outside of the Building.
 
 ### 4.3.3) Pre-Placed Fog of War
 
-
+Pre Placed Fog of War will not beremoved if a Layer gets loaded. To use Pre Placed Fog of War select "Pre-Place" in the Seleciton.
+To continue the example from before, the Building has multiple rooms.
+You can use Pre Placed Fog of War to map out the Building.
+Once you selected an Area, a popup will open asking you for a Name of this selection. Give it a good, unique name since this Name will be used to identify it later on!
 
 ### 4.3.4) Rectangle Selection
 
-
+Rectangle Selection for the Fog of War is excatly what it says. It's a rectangluar selection of Fog of War that gets removed once you finish the Selection.
+To use the Rectable Selection use the "Rectangle" Button in the Top.
+Left click and hold the Mouse Button in the Map and drag it as big as you need.
+Release the Button to confirm your Selection. The Fog of War will now be removed for this Selection.
 
 ### 4.3.5) Poligon Selection
 
-
+Poligon Selection for the Fog of War is everything thats not a rctangle, a hexagon, a pentagon, every shape you can imagine!
+To use the Poligon Selection use "Poligon" in the Top.
+Use a Left click to start your poligon selection. Each new left click sets a new Poligon-Point.
+Once you selected the shape you want, use Right click to confirm your selection. 
 
 ## 4.4) Working with Layers
 
