@@ -52,3 +52,14 @@ jobs:
       with:
         name: Artifacts
         path: "Open VTT\\bin\\Artifacts"
+
+    - name: Create release
+      uses: Roang-zero1/github-create-release-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload release artifacts
+      uses: Roang-zero1/github-upload-release-artifacts-action@v2
+      with:
+        args: "Open VTT\\bin\\Artifacts"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

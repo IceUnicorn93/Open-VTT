@@ -8,7 +8,7 @@ So I decided to make my own VTT.
 
 # What are my Ideas for Open VTT?
 
-Open VTT is supposed to run on old, weak hardware.
+Open VTT is supposed to run perfectly on old, weak hardware.
 My initial goal were:
 - RAM usage: as low as possible
 - CPU usage: as low as possible
