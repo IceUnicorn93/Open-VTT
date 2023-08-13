@@ -20,51 +20,51 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 
 # Instructions
 
-1) Creating a Session/Story/Project
-2) Loading a Session/Story/Project
-   - 2.1) Open a file
-   - 2.2) Recently Opened files
-3) Configuration
-   - 3.1) Automatic saving
-   - 3.2) Screen Selector Settings
-   - 3.3) Notes Server Settings
-   - 3.4) Fog of War Settings
-   - 3.5) Grid Settings
-4) Working with the Scene Control
-   - 4.0.1) Pinging on the Map
-   - 4.0.2) Removing Fog of War
-   - 4.1) Importing Maps
-   - 4.2) Display Maps
-   - 4.3) Working with Fog of War
-     - 4.3.1) Understanding Fog of War
-     - 4.3.2) Regular Fog of War
-     - 4.3.3) Pre-Placed Fog of War
-     - 4.3.4) Rectangle Selection
-     - 4.3.5) Poligon Selection
-   - 4.4) Working with Layers
-     - 4.4.1) Understanding Layers
-     - 4.4.2) Creating Layers
-     - 4.4.3) Navigating Layers
-   - 4.5) Working with Scenes
-     - 4.5.1) Uderstanding Scenes
-     - 4.5.2) Creating Scenes
-     - 4.5.3) Navigating Scenes
-5) Working with the Notes System
-   - 5.1) Understanding Notes Structure
-   - 5.2) Creating Templates
-   - 5.3) Creating Childs
-   - 5.4) Working with a remote Note Storage
-     - 5.4.1) Setup a remote Note Storage
-     - 5.4.2) Push Notes a remote Note Storage
-     - 5.4.3) Pull Notes from a remote Note Storage
-6) Scripting
-   - 6.1) Understanding Scripting
-   - 6.2) Scripting API
-   - 6.3) Sample Script
-7) Elgato StreamDeck
-   - 7.1) Understanding the StreamDeck
-   - 7.2) Navigating the StreamDeck
-   - 7.3) Static and Paging Buttons
+[1) Creating a Session/Story/Project](https://github.com/IceUnicorn93/Open-VTT/tree/main#1-creating-a-sessionstoryproject)
+[2) Loading a Session/Story/Project](https://github.com/IceUnicorn93/Open-VTT/tree/main#2-loading-a-sessionstoryproject)
+   - [2.1) Open a file](https://github.com/IceUnicorn93/Open-VTT/tree/main#21-open-a-file)
+   - [2.2) Recently Opened files](https://github.com/IceUnicorn93/Open-VTT/tree/main#22-recently-opened-files)
+[3) Configuration](https://github.com/IceUnicorn93/Open-VTT/tree/main#3-configuration)
+   - [3.1) Automatic saving](https://github.com/IceUnicorn93/Open-VTT/tree/main#31-automatic-saving)
+   - [3.2) Screen Selector Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#32-screen-selector-settings)
+   - [3.3) Notes Server Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#33-notes-server-settings)
+   - [3.4) Fog of War Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#34-fog-of-war-settings)
+   - [3.5) Grid Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#35-grid-settings)
+[4) Working with the Scene Control](https://github.com/IceUnicorn93/Open-VTT/tree/main#4-working-with-the-scene-control)
+   - [4.0.1) Pinging on the Map](https://github.com/IceUnicorn93/Open-VTT/tree/main#401-pinging-on-the-map)
+   - [4.0.2) Removing Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#402-removing-fog-of-war)
+   - [4.1) Importing Maps](https://github.com/IceUnicorn93/Open-VTT/tree/main#41-importing-maps)
+   - [4.2) Display Maps](https://github.com/IceUnicorn93/Open-VTT/tree/main#42-display-maps)
+   - [4.3) Working with Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#43-working-with-fog-of-war)
+     - [4.3.1) Understanding Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#431-understanding-fog-of-war)
+     - [4.3.2) Regular Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#432-regular-fog-of-war)
+     - [4.3.3) Pre-Placed Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#433-pre-placed-fog-of-war)
+     - [4.3.4) Rectangle Selection](https://github.com/IceUnicorn93/Open-VTT/tree/main#434-rectangle-selection)
+     - [4.3.5) Poligon Selection](https://github.com/IceUnicorn93/Open-VTT/tree/main#435-poligon-selection)
+   - [4.4) Working with Layers](https://github.com/IceUnicorn93/Open-VTT/tree/main#44-working-with-layers)
+     - [4.4.1) Understanding Layers](https://github.com/IceUnicorn93/Open-VTT/tree/main#441-understanding-layers)
+     - [4.4.2) Creating Layers](https://github.com/IceUnicorn93/Open-VTT/tree/main#442-creating-layers)
+     - [4.4.3) Navigating Layers](https://github.com/IceUnicorn93/Open-VTT/tree/main#443-navigating-layers)
+   - [4.5) Working with Scenes](https://github.com/IceUnicorn93/Open-VTT/tree/main#45-working-with-scenes)
+     - [4.5.1) Uderstanding Scenes](https://github.com/IceUnicorn93/Open-VTT/tree/main#451-uderstanding-scenes)
+     - [4.5.2) Creating Scenes](https://github.com/IceUnicorn93/Open-VTT/tree/main#452-creating-scenes)
+     - [4.5.3) Navigating Scenes](https://github.com/IceUnicorn93/Open-VTT/tree/main#453-navigating-scenes)
+[5) Working with the Notes System](https://github.com/IceUnicorn93/Open-VTT/tree/main#5-working-with-the-notes-system)
+   - [5.1) Understanding Notes Structure](https://github.com/IceUnicorn93/Open-VTT/tree/main#51-understanding-notes-structure)
+   - [5.2) Creating Templates](https://github.com/IceUnicorn93/Open-VTT/tree/main#52-creating-templates)
+   - [5.3) Creating Childs](https://github.com/IceUnicorn93/Open-VTT/tree/main#53-creating-childs)
+   - [5.4) Working with a remote Note Storage](https://github.com/IceUnicorn93/Open-VTT/tree/main#54-working-with-a-remote-note-storage)
+     - [5.4.1) Setup a remote Note Storage](https://github.com/IceUnicorn93/Open-VTT/tree/main#541-setup-a-remote-note-storage)
+     - [5.4.2) Push Notes a remote Note Storage](https://github.com/IceUnicorn93/Open-VTT/tree/main#542-push-notes-a-remote-note-storage)
+     - [5.4.3) Pull Notes from a remote Note Storage](https://github.com/IceUnicorn93/Open-VTT/tree/main#543-pull-notes-from-a-remote-note-storage)
+[6) Scripting](https://github.com/IceUnicorn93/Open-VTT/tree/main#6-scripting)
+   - [6.1) Understanding Scripting](https://github.com/IceUnicorn93/Open-VTT/tree/main#61-understanding-scripting)
+   - [6.2) Scripting API](https://github.com/IceUnicorn93/Open-VTT/tree/main#62-scripting-api)
+   - [6.3) Sample Script](https://github.com/IceUnicorn93/Open-VTT/tree/main#63-sample-script)
+[7) Elgato StreamDeck](https://github.com/IceUnicorn93/Open-VTT/tree/main#7-elgato-streamdeck)
+   - [7.1) Understanding the StreamDeck](https://github.com/IceUnicorn93/Open-VTT/tree/main#71-understanding-the-streamdeck)
+   - [7.2) Navigating the StreamDeck](https://github.com/IceUnicorn93/Open-VTT/tree/main#72-navigating-the-streamdeck)
+   - [7.3) Static and Paging Buttons](https://github.com/IceUnicorn93/Open-VTT/tree/main#73-static-and-paging-buttons)
 
 To Clarify: If I'm talking about a Session, I refere to a Folder or the Session.xml file
 
