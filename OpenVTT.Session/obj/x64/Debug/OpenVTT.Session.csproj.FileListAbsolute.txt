@@ -8,22 +8,3 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\x64\Debug\OpenVTT.Common.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\x64\Debug\OpenVTT.Editor.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\x64\Debug\OpenVTT.FogOfWar.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\x64\Debug\OpenVTT.Editor.Controls.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Session.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Session.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Editor.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.FogOfWar.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Settings.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Grid.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Common.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Editor.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.FogOfWar.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Editor.Controls.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Settings.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\bin\Debug x64\OpenVTT.Grid.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\x64\Debug\OpenVTT.Session.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\x64\Debug\OpenVTT.Session.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\x64\Debug\OpenVTT.Session.csproj.CopyComplete
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\x64\Debug\OpenVTT.Session.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Session\obj\x64\Debug\OpenVTT.Session.pdb

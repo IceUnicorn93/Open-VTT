@@ -1,5 +1,1 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\x64\Release\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Release x64\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Release\OpenVTT.Editor.Controls.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Release\OpenVTT.Editor.Controls.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Release\OpenVTT.Editor.Controls.dll

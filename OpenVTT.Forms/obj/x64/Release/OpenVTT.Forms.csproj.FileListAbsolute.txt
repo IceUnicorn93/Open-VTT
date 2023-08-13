@@ -1,5 +1,0 @@
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release x64\OpenVTT.Forms.dll.config
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release x64\OpenVTT.Forms.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\x64\Release\OpenVTT.Forms.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\x64\Release\OpenVTT.Forms.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\x64\Release\OpenVTT.Forms.dll

@@ -1,7 +1,0 @@
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Debug\OpenVTT.Forms.dll.config
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Debug\OpenVTT.Forms.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Debug\OpenVTT.Forms.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Debug\OpenVTT.Forms.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Debug\OpenVTT.Forms.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Debug\OpenVTT.Forms.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Debug\OpenVTT.Forms.pdb
