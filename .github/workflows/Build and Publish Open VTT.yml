@@ -26,14 +26,12 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore "Open VTT.sln"
       
-    - name: Build the Solution - Debug AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform="Any CPU"
-    - name: Build the Solution - Release AnyCPU
-      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform="Any CPU"
-    - name: Build the Solution - Debug X64
-      run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
-    - name: Build the Solution - Release x64
-      run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=x64
+    - name: Build the Solution in all formats
+      run: |
+        msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform="Any CPU"
+        msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform="Any CPU"
+        msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
+        msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=x64
 
     - name: Pack Artifacts
       run: |
