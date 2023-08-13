@@ -34,4 +34,23 @@ jobs:
       run: msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
     - name: Build the Solution - Release x64
       run: msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=x64
-    
+
+    - name: Pack Artifacts
+      run: |
+        cd "Open VTT"
+        cd bin
+        tar.exe -a -c -f "Debug Any CPU.zip" Debug
+        tar.exe -a -c -f "Release Any CPU.zip" Release
+        tar.exe -a -c -f "Debug x64.zip" "Debug x64"
+        tar.exe -a -c -f "Release x64.zip" "Release x64"
+        mkdir Artifacts
+        move "Debug Any CPU.zip" Artifacts
+        move "Release Any CPU.zip" Artifacts
+        move "Debug x64.zip" Artifacts
+        move "Release x64.zip" Artifacts
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: Artifacts
+        path: "Open VTT\\bin\\Artifacts"
