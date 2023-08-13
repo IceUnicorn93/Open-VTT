@@ -32,8 +32,12 @@ jobs:
         msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform="Any CPU"
         msbuild "Open VTT.sln" /property:Configuration=Debug /property:Platform=x64
         msbuild "Open VTT.sln" /property:Configuration=Release /property:Platform=x64
+        msbuild "OpenVTT.Server\OpenVTT.Server.csproj" /property:Configuration=Debug /property:Platform="Any CPU"
+        msbuild "OpenVTT.Server\OpenVTT.Server.csproj" /property:Configuration=Release /property:Platform="Any CPU"
+        msbuild "OpenVTT.Server\OpenVTT.Server.csproj" /property:Configuration=Debug /property:Platform=x64
+        msbuild "OpenVTT.Server\OpenVTT.Server.csproj" /property:Configuration=Release /property:Platform=x64
 
-    - name: Pack Artifacts
+    - name: Pack Open VTT Artifacts
       run: |
         cd "Open VTT"
         cd bin
@@ -46,12 +50,32 @@ jobs:
         move "Release Any CPU.zip" Artifacts
         move "Debug x64.zip" Artifacts
         move "Release x64.zip" Artifacts
+        
+    - name: Pack Open VTT Server Artifacts
+      run: |
+        cd OpenVTT.Server
+        cd bin
+        tar.exe -a -c -f "Debug Any CPU.zip" Debug
+        tar.exe -a -c -f "Release Any CPU.zip" Release
+        tar.exe -a -c -f "Debug x64.zip" "Debug x64"
+        tar.exe -a -c -f "Release x64.zip" "Release x64"
+        mkdir "Server Artifacts"
+        move "Debug Any CPU.zip" "Server Artifacts"
+        move "Release Any CPU.zip" "Server Artifacts"
+        move "Debug x64.zip" "Server Artifacts"
+        move "Release x64.zip" "Server Artifacts"
 
-    - name: Upload Build Artifacts
+    - name: Upload Open VTT Build Artifacts
       uses: actions/upload-artifact@v3.1.2
       with:
         name: Artifacts
         path: "Open VTT\\bin\\Artifacts"
+        
+    - name: Upload Open VTT Server Build Artifacts
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: Artifacts
+        path: "OpenVTT.Server\\bin\\Server Artifacts"
 
     #sadly only works on linux :c
     # - name: Create release
