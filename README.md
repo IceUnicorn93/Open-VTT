@@ -30,7 +30,7 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
    - 3.3) [Notes Server Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#33-notes-server-settings)
    - 3.4) [Fog of War Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#34-fog-of-war-settings)
    - 3.5) [Grid Settings](https://github.com/IceUnicorn93/Open-VTT/tree/main#35-grid-settings)
-4) Working with the Scene Control](https://github.com/IceUnicorn93/Open-VTT/tree/main#4-working-with-the-scene-control)
+4) [Working with the Scene Control](https://github.com/IceUnicorn93/Open-VTT/tree/main#4-working-with-the-scene-control)
    - 4.0.1) [Pinging on the Map](https://github.com/IceUnicorn93/Open-VTT/tree/main#401-pinging-on-the-map)
    - 4.0.2) [Removing Fog of War](https://github.com/IceUnicorn93/Open-VTT/tree/main#402-removing-fog-of-war)
    - 4.1) [Importing Maps](https://github.com/IceUnicorn93/Open-VTT/tree/main#41-importing-maps)
