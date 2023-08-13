@@ -45,9 +45,9 @@ namespace Open_VTT.Forms
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Load(openFileDialog.FileName);
-
                     recentlyOpenedControl1.AddPath(openFileDialog.FileName);
+
+                    Load(openFileDialog.FileName);
                 }
             }
             this.Show();
@@ -65,6 +65,8 @@ namespace Open_VTT.Forms
 
                     using (var sceneCreator = new SceneControl())
                     {
+                        recentlyOpenedControl1.AddPath(Path.Combine(Session.Values.SessionFolder, "Session.xml"));
+
                         sceneCreator.ShowDialog();
                     }
                 }

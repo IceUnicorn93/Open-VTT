@@ -1,55 +1,261 @@
 [![CI Build](https://github.com/IceUnicorn93/Open-VTT/actions/workflows/Build%20and%20Publish%20Open%20VTT.yml/badge.svg?branch=main)](https://github.com/IceUnicorn93/Open-VTT/actions/workflows/Build%20and%20Publish%20Open%20VTT.yml)
 
-# Open-VTT
+# What is Open VTT?
 
-Open VTT is an VTT like dynamic dungeon editor or foundry VTT.
-The dynamic dungeon editor didn't work for many users so I started working on my own implementation of an VTT.
+Open VTT is an Open Source Virtual Table Top.
+The software I used before was not longer usable on the harware I use for running a TTRPG.
+So I decided to make my own VTT.
 
-Open VTT has the goal of low memory use and fast loading times.
+# What are my Ideas for Open VTT?
 
-Right now the low memory use is achieved, the fast loading times could be improved by saving the state of images.
-Right now the images are reloaded and the fog of war gets applyed every time a change is happening.
+Open VTT is supposed to run on old, weak hardware.
+My initial goal were:
+- RAM usage: as low as possible
+- CPU usage: as low as possible
+- Only use Libarys if needed, everything else needs to be self made
+- If Libarys are used, only as much as needed!
 
-Open VTT also had the goal to be cross platform compatible with Linux by using the mono framework.
-Using the mono framework creates interesting challenges since it needs to work on windows as well.
+All while maintaining a certain Feature-Set.
+We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install mono-framework for that!)
 
-Open VTT is currently working on windows and Linux with a few known bugs.
+# Instructions
 
-1) Bringing a project from windows to Linux causes the scene images not to load for some reason
-2) the ping function isn't working on Linux (needs closer inspection)
-3) the save button in artwork and information isn't moving to the correct location 
-4) resizing the image in a node is t saving if you don't click the save button
-5) loading an image in artwork and information if an image already exists for the child causes a crash
+1) Creating a Session/Story/Project
+2) Loading a Session/Story/Project
+2.1) Open a file
+2.2) Recently Opened files
+3) Configuration
+3.1) Automatic saving
+3.2) Screen Selector Settings
+3.3) Notes Server Settings
+3.4) Fog of War Settings
+3.5) Grid Settings
+4) Working with the Scene Control
+4.0.1) Pinging on the Map
+4.0.2) Removing Fog of War
+4.1) Importing Maps
+4.2) Display Maps
+4.3) Working with Fog of War
+4.3.1) Understanding Fog of War
+4.3.2) Regular Fog of War
+4.3.3) Pre-Placed Fog of War
+4.3.4) Rectangle Selection
+4.3.5) Poligon Selection
+4.4) Working with Layers
+4.4.1) Understanding Layers
+4.4.2) Creating Layers
+4.4.3) Navigating Layers
+4.5) Working with Scenes
+4.5.1) Uderstanding Scenes
+4.5.2) Creating Scenes
+4.5.3) Navigating Scenes
+5) Working with the Notes System
+5.1) Understanding Notes Structure
+5.2) Creating Templates
+5.3) Creating Childs
+5.4) Working with a remote Note Storage
+5.4.1) Setup a remote Note Storage
+5.4.2) Push Notes a remote Note Storage
+5.4.3) Pull Notes from a remote Note Storage
+6) Scripting
+6.1) Understanding Scripting
+6.2) Scripting API
+6.3) Sample Script
+7) Elgato StreamDeck
+7.1) Understanding the StreamDeck
+7.2) Navigating the StreamDeck
+7.3) Static and Paging Buttons
 
-# About using Open VTT (Just the VTT Part)
-1) go to configure and configure your screens, at least the player
-2) save everything, i personally recommend to reload the software
-3) click create to create a new project.
-4) click import image in the to left corner and choose an image
-5) click cover everything to apply fog of war for the image
-6) start revealing parts of the image by clicking and dragging a rectangle on the image
-6.1) alternative click the poligon button and use the poligon function
-6.2) left click is a new point, right click confirms your selection
-7) need a layer up or down? Like a basement or second story of a building? Use the layer up and down function
-8) click new scene to create a second scene with new layers
-9) click set active to activate the player and update the fog of war on player side
-9.1) while in rectangle mode, right click on the map causes a ping. While in poligon mode there is no ping function
+To Clarify: If I'm talking about a Session, I refere to a Folder or the Session.xml file
 
-# Information System (Advanced Stuff)
-10) in information and artwork you can setup a note system and configure artworks for your notes
-11) click + to create a new node or new child
-11.1) node = folder, child = file
-12) the notes system works on a layout system. The layout is defined by the node and gets applyed to every child
-13) add label and textboxes as you like by using the buttons in the top right corner
-14) click Open viewer to open the GM Artwork display as well as the player artwork display
-14.1) click on D to display the artwork of the currently selected child
-15) double click on the GM Artwork display causes a ping that's also shown on player side
-16) click on - to remove the node or child, removing a node opens a popup asking you to confirm the deletion of the node
-17) as a new addition, a File Transfer for the Notes-System got implemented!
-18) In the Settings configure the IP and Port of your Notes Server (Server Exe is also aviavable)
-19) Click Connect to connect to the Server
-20) Click Get Server (PULL) to get the File Structure of the Server, if your file System is never, the Pull will not override the notes
-21) Click Set Server (PUSH) to send your File Structure to the Server, if the Server File System is never, the Push will not override the notes
+# 1) Creating a Session/Story/Project
 
-# Elgato StreamDeck Support
-22) you own an elgato stream deck? Awesome! Open VTT will recognize it and will give you quick access to switching maps, cover and revealing the the fog of war, updating the player (set active)
+Open the Tool (Open VTT.exe) and click "Create"
+A dialoge to select a folder will open, select a Folder where your Session should be saved.
+In that folder a "Session.xml" File will be created.
+This folder will include a copy of everything assigned to this Session.
+
+# 2) Loading a Session/Story/Project
+
+# 2.1) Open a file
+
+Open the Tool (Open VTT.exe) and click "Load"
+A dialoge to select a file will open, select the Session.xml file you would like to load.
+
+# 2.2) Recently Opened files
+
+If you created a Session with this installation of Open VTT, you will see a List of the last 8 Sessions you worked on.
+Click the "Open" Button next to the Session you would like open, to load this Session.
+
+# 3) Configuration
+
+Click the "Configure" Button in the Start or Scene Control Window, a new Popup will open.
+
+# 3.1) Automatic saving
+
+The Section "Autosave" has only one option. "Auto Save (Action Based)".
+If the checkbox is checked, each change in the Session will be safed automatically.
+
+# 3.2) Screen Selector Settings
+
+The Section "Player Screen Selector" is located in the bottom of the Window since it needs the most space.
+You see a representation of your connected Displays/Screens.
+In the Top right Corner of the Section you will find a Selector for "Player", "InformationDisplayPlayer" and "InformationDisplayDM".
+Select "Player" and click on the Button, representing the Screen you would like to use as your Player Screeen.
+A small blue Popup will appear with a sigular button saying "Okay Close". Click "Okay Close" to confirm your Selection.
+
+"InformationDisplayPlayer" and "InformationDisplayDM" are used if you have a very specific Setup.
+They are used for my personal DM-Screen Setup. You don't need to configure them!
+
+# 3.3) Notes Server Settings
+
+The Section for the Notes Server is located in the top right corner and has 2 Settings. IP-Adress and Port.
+If your using a remote Note System, enter the IP-Adress and Port of the Note Server here.
+
+# 3.4) Fog of War Settings
+
+The Section for Fog of War is located on the Left side above the Screen Selector, it contains 6 Settings.
+
+
+# 3.5) Grid Settings
+
+
+
+# 4) Working with the Scene Control
+
+
+
+# 4.0.1) Pinging on the Map
+
+
+
+# 4.0.2) Removing Fog of War
+
+
+
+# 4.1) Importing Maps
+
+
+
+# 4.2) Display Maps
+
+
+
+# 4.3) Working with Fog of War
+
+
+
+# 4.3.1) Understanding Fog of War
+
+
+
+# 4.3.2) Regular Fog of War
+
+
+
+# 4.3.3) Pre-Placed Fog of War
+
+
+
+# 4.3.4) Rectangle Selection
+
+
+
+# 4.3.5) Poligon Selection
+
+
+
+# 4.4) Working with Layers
+
+
+
+# 4.4.1) Understanding Layers
+
+
+
+# 4.4.2) Creating Layers
+
+
+
+# 4.4.3) Navigating Layers
+
+
+
+# 4.5) Working with Scenes
+
+
+
+# 4.5.1) Uderstanding Scenes
+
+
+
+# 4.5.2) Creating Scenes
+
+
+
+# 4.5.3) Navigating Scenes
+
+
+
+# 5) Working with the Notes System
+
+
+
+# 5.1) Understanding Notes Structure
+
+
+
+# 5.2) Creating Templates
+
+
+
+# 5.3) Creating Childs
+
+
+
+# 5.4) Working with a remote Note Storage
+
+
+
+# 5.4.1) Setup a remote Note Storage
+
+
+
+# 5.4.2) Push Notes a remote Note Storage
+
+
+
+# 5.4.3) Pull Notes from a remote Note Storage
+
+
+
+# 6) Scripting
+
+
+
+# 6.1) Understanding Scripting
+
+
+
+# 6.2) Scripting API
+
+
+
+# 6.3) Sample Script
+
+
+
+# 7) Elgato StreamDeck
+
+
+
+# 7.1) Understanding the StreamDeck
+
+
+
+# 7.2) Navigating the StreamDeck
+
+
+
+# 7.3) Static and Paging Buttons
+
