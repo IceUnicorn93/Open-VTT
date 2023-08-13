@@ -62,9 +62,9 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
    - 6.2) Scripting API
    - 6.3) Sample Script
 7) Elgato StreamDeck
-   -7.1) Understanding the StreamDeck
-   -7.2) Navigating the StreamDeck
-   -7.3) Static and Paging Buttons
+   - 7.1) Understanding the StreamDeck
+   - 7.2) Navigating the StreamDeck
+   - 7.3) Static and Paging Buttons
 
 To Clarify: If I'm talking about a Session, I refere to a Folder or the Session.xml file
 
