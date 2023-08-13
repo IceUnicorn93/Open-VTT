@@ -33,14 +33,14 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 4) Working with the Scene Control
    - 4.0.1) Pinging on the Map
    - 4.0.2) Removing Fog of War
-            - 4.1) Importing Maps
-            - 4.2) Display Maps
+   - 4.1) Importing Maps
+   - 4.2) Display Maps
    - 4.3) Working with Fog of War
-          - 4.3.1) Understanding Fog of War
-          - 4.3.2) Regular Fog of War
-          - 4.3.3) Pre-Placed Fog of War
-          - 4.3.4) Rectangle Selection
-          - 4.3.5) Poligon Selection
+     - 4.3.1) Understanding Fog of War
+     - 4.3.2) Regular Fog of War
+     - 4.3.3) Pre-Placed Fog of War
+     - 4.3.4) Rectangle Selection
+     - 4.3.5) Poligon Selection
    - 4.4) Working with Layers
           - 4.4.1) Understanding Layers
           - 4.4.2) Creating Layers
