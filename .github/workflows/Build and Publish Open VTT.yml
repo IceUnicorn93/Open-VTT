@@ -77,14 +77,6 @@ jobs:
         name: "Server Artifacts"
         path: "OpenVTT.Server\\bin\\Server Artifacts"
 
-    #sadly only works on linux :c
-    # - name: Create release
-      # uses: Roang-zero1/github-create-release-action@v2
-      # env:
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    # - name: Upload release artifacts
-      # uses: Roang-zero1/github-upload-release-artifacts-action@v2
-      # with:
-        # args: "Open VTT\\bin\\Artifacts"
-      # env:
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: GitHub Releases
+      uses: fnkr/github-action-ghr@v1.3
