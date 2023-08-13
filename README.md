@@ -225,11 +225,26 @@ Once you selected the shape you want, use Right click to confirm your selection.
 
 ## 4.4) Working with Layers
 
-
-
 ### 4.4.1) Understanding Layers
 
+Layers basically describe a Layer of a Location.
+Imagine a Building with multiple floors.
+Each floor could be represented with a layer.
+One Layer = One floor
 
+A new Scene always starts on Layer 0!
+You can go as high and as low as you want!
+
+Each Layer can have multiple Fog of War "entities"
+You can Imagine it like this:
+
+- Layer 0
+  - Fog of War Selection
+  - Fog of War Selection
+  - Fog of War Selection
+- Layer 1
+  - Fog of War Selection
+  - Fog of War Selection
 
 ### 4.4.2) Creating Layers
 
@@ -241,11 +256,26 @@ Once you selected the shape you want, use Right click to confirm your selection.
 
 ## 4.5) Working with Scenes
 
-
-
 ### 4.5.1) Uderstanding Scenes
 
+Scenes are basically diffrent locations.
+A Scene could be "Guild House" or "Tavern"
 
+Each Scene can have multiple Layers
+You can Imagine it like this:
+
+- Scene "Main"
+  - Layer 0
+    - Fog of War Selection
+    - Fog of War Selection
+    - Fog of War Selection
+  - Layer 1
+    - Fog of War Selection
+    - Fog of War Selection
+- Scene "Tavern"
+  - Layer 0
+  - Layer 1
+    - Fog of War Selection
 
 ### 4.5.2) Creating Scenes
 
