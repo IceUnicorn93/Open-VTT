@@ -22,14 +22,14 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 
 1) Creating a Session/Story/Project
 2) Loading a Session/Story/Project
-   -2.1) Open a file
-   -2.2) Recently Opened files
+   - Open a file
+   - Recently Opened files
 3) Configuration
-   -3.1) Automatic saving
-   -3.2) Screen Selector Settings
-   -3.3) Notes Server Settings
-   -3.4) Fog of War Settings
-   -3.5) Grid Settings
+   - 3.1) Automatic saving
+   - 3.2) Screen Selector Settings
+   - 3.3) Notes Server Settings
+   - 3.4) Fog of War Settings
+   - 3.5) Grid Settings
 4) Working with the Scene Control
    -4.0.1) Pinging on the Map
    -4.0.2) Removing Fog of War
