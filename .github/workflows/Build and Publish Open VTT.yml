@@ -76,11 +76,3 @@ jobs:
       with:
         name: "Server Artifacts"
         path: "OpenVTT.Server\\bin\\Server Artifacts"
-
-        
-    - name: Github Release
-      uses: elgohr/Github-Release-Action@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      with:
-        title: "Current Release"
