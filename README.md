@@ -42,29 +42,29 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
      - 4.3.4) Rectangle Selection
      - 4.3.5) Poligon Selection
    - 4.4) Working with Layers
-          - 4.4.1) Understanding Layers
-          - 4.4.2) Creating Layers
-          - 4.4.3) Navigating Layers
+     - 4.4.1) Understanding Layers
+     - 4.4.2) Creating Layers
+     - 4.4.3) Navigating Layers
    - 4.5) Working with Scenes
-          - 4.5.1) Uderstanding Scenes
-          - 4.5.2) Creating Scenes
-          - 4.5.3) Navigating Scenes
+     - 4.5.1) Uderstanding Scenes
+     - 4.5.2) Creating Scenes
+     - 4.5.3) Navigating Scenes
 5) Working with the Notes System
- -5.1) Understanding Notes Structure
- -5.2) Creating Templates
- -5.3) Creating Childs
- -5.4) Working with a remote Note Storage
-  -5.4.1) Setup a remote Note Storage
-  -5.4.2) Push Notes a remote Note Storage
-  -5.4.3) Pull Notes from a remote Note Storage
+   - 5.1) Understanding Notes Structure
+   - 5.2) Creating Templates
+   - 5.3) Creating Childs
+   - 5.4) Working with a remote Note Storage
+     - 5.4.1) Setup a remote Note Storage
+     - 5.4.2) Push Notes a remote Note Storage
+     - 5.4.3) Pull Notes from a remote Note Storage
 6) Scripting
- -6.1) Understanding Scripting
- -6.2) Scripting API
- -6.3) Sample Script
+   - 6.1) Understanding Scripting
+   - 6.2) Scripting API
+   - 6.3) Sample Script
 7) Elgato StreamDeck
- -7.1) Understanding the StreamDeck
- -7.2) Navigating the StreamDeck
- -7.3) Static and Paging Buttons
+   -7.1) Understanding the StreamDeck
+   -7.2) Navigating the StreamDeck
+   -7.3) Static and Paging Buttons
 
 To Clarify: If I'm talking about a Session, I refere to a Folder or the Session.xml file
 
