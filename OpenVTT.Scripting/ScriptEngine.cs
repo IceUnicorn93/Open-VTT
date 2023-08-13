@@ -27,18 +27,18 @@ namespace OpenVTT.Scripting
         {
             CleanUnusedFolders();
 
-            if (!Directory.Exists(Path.Combine(".", "Scrips")))
+            if (!Directory.Exists(Path.Combine(".", "Scripts")))
             {
-                Directory.CreateDirectory(Path.Combine(".", "Scrips"));
-                Directory.CreateDirectory(Path.Combine(".", "Scrips", "_DLL References"));
+                Directory.CreateDirectory(Path.Combine(".", "Scripts"));
+                Directory.CreateDirectory(Path.Combine(".", "Scripts", "_DLL References"));
             }
 
-            if (!Directory.Exists(Path.Combine(".", "Scrips", "_Sample Script")))
+            if (!Directory.Exists(Path.Combine(".", "Scripts", "_Sample Script")))
             {
-                Directory.CreateDirectory(Path.Combine(".", "Scrips", "_Sample Script"));
+                Directory.CreateDirectory(Path.Combine(".", "Scripts", "_Sample Script"));
 
-                File.WriteAllText(Path.Combine(".", "Scrips", "_Sample Script", "Main.cs"), GetDefaultScript());
-                ScriptConfig.Save(Path.Combine(".", "Scrips", "_Sample Script", "ScriptConfig.xml"));
+                File.WriteAllText(Path.Combine(".", "Scripts", "_Sample Script", "Main.cs"), GetDefaultScript());
+                ScriptConfig.Save(Path.Combine(".", "Scripts", "_Sample Script", "ScriptConfig.xml"));
             }
 
             CreateDocumentation();
@@ -77,8 +77,7 @@ tbDescription.ReadOnly = true;
 
 Page.Controls.Add(lblAuthor);
 Page.Controls.Add(lblNameAndVersion);
-Page.Controls.Add(tbDescription);
-//StreamDeckStatics.States.Add((""ABC"", () => {}));";
+Page.Controls.Add(tbDescription);";
         }
 
         static private void CleanUnusedFolders()
@@ -113,7 +112,7 @@ Page.Controls.Add(tbDescription);
             foreach (var item in list)
                 text += GetDocumentationForType(item);
 
-            File.WriteAllText(Path.Combine(".", "Scrips", "Documentation.txt"), text);
+            File.WriteAllText(Path.Combine(".", "Scripts", "Documentation.txt"), text);
         }
 
         static private string GetDocumentationForType(Type type)
@@ -288,7 +287,7 @@ Page.Controls.Add(tbDescription);
             CalculatedHosts.Clear();
             Calculated = false;
 
-            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(".", "Scrips"), "*", SearchOption.TopDirectoryOnly));
+            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(".", "Scripts"), "*", SearchOption.TopDirectoryOnly));
             SubDirectorys.RemoveAll(n => n.Contains("Sample Script"));
             SubDirectorys.RemoveAll(n => n.Contains("DLL References"));
 
@@ -330,7 +329,7 @@ Page.Controls.Add(tbDescription);
             var script = "";
 
             //Adding DLL References using #r
-            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(".", "Scrips", "DLL References", dll)}\"" + Environment.NewLine;
+            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(".", "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
 
             script += Environment.NewLine;
 
@@ -351,13 +350,13 @@ Page.Controls.Add(tbDescription);
             catch (Exception ex)
             {
                 var errMessage = "Please see _Script.txt to see what file to fix! I recommend Notepad++";
-                errMessage = ex.Message + Environment.NewLine + "#####################################################################" + Environment.NewLine;
-                errMessage = ex.Message + Environment.NewLine + Environment.NewLine;
+                errMessage += ex.Message + Environment.NewLine + "#####################################################################" + Environment.NewLine;
+                errMessage += ex.Message + Environment.NewLine + Environment.NewLine;
 
                 var innerEx = ex.InnerException;
                 while (innerEx != null)
                 {
-                    errMessage = innerEx.Message + Environment.NewLine + Environment.NewLine;
+                    errMessage += innerEx.Message + Environment.NewLine + Environment.NewLine;
                     innerEx = innerEx.InnerException;
                 }
 

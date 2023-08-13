@@ -5,7 +5,6 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace OpenVTT.StreamDeck
 {
