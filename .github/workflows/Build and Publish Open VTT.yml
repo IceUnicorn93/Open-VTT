@@ -1,8 +1,8 @@
 name: CI Build
 
 on:
-  push:
-    branches: [main]
+#  push:
+#    branches: [main]
   pull_request:
     branches: [main]
 
@@ -53,13 +53,14 @@ jobs:
         name: Artifacts
         path: "Open VTT\\bin\\Artifacts"
 
-    - name: Create release
-      uses: Roang-zero1/github-create-release-action@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload release artifacts
-      uses: Roang-zero1/github-upload-release-artifacts-action@v2
-      with:
-        args: "Open VTT\\bin\\Artifacts"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #sadly only works on linux :c
+    # - name: Create release
+      # uses: Roang-zero1/github-create-release-action@v2
+      # env:
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Upload release artifacts
+      # uses: Roang-zero1/github-upload-release-artifacts-action@v2
+      # with:
+        # args: "Open VTT\\bin\\Artifacts"
+      # env:
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
