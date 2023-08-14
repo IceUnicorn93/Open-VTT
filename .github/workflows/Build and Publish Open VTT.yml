@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: windows-2019
-    
+    env:
+      GH_TOKEN: ${{ github.token }}
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v3
