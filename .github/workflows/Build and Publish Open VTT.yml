@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: windows-2019
+    env:
+      GH_TOKEN: ${{ github.token }}
     
     steps:
     - name: Checkout
@@ -16,6 +18,9 @@ jobs:
 
     - name: Setup GitHub CLI
       uses: sersoft-gmbh/setup-gh-cli-action@v1.0.1
+      with:
+        version: latest
+        github-token: GH_TOKEN
     
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.3.1
