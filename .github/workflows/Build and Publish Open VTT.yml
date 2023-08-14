@@ -63,15 +63,15 @@ jobs:
       run: |
         cd OpenVTT.Server
         cd bin
-        tar.exe -a -c -f "Debug Any CPU.zip" Debug
-        tar.exe -a -c -f "Release Any CPU.zip" Release
-        tar.exe -a -c -f "Debug x64.zip" "Debug x64"
-        tar.exe -a -c -f "Release x64.zip" "Release x64"
+        tar.exe -a -c -f "Server Debug Any CPU.zip" Debug
+        tar.exe -a -c -f "Server Release Any CPU.zip" Release
+        tar.exe -a -c -f "Server Debug x64.zip" "Debug x64"
+        tar.exe -a -c -f "Server Release x64.zip" "Release x64"
         mkdir "Server Artifacts"
-        move "Debug Any CPU.zip" "Server Artifacts"
-        move "Release Any CPU.zip" "Server Artifacts"
-        move "Debug x64.zip" "Server Artifacts"
-        move "Release x64.zip" "Server Artifacts"
+        move "Server Debug Any CPU.zip" "Server Artifacts"
+        move "Server Release Any CPU.zip" "Server Artifacts"
+        move "Server Debug x64.zip" "Server Artifacts"
+        move "Server Release x64.zip" "Server Artifacts"
 
 #    - name: Upload Open VTT Build Artifacts
 #      uses: actions/upload-artifact@v3.1.2
@@ -88,4 +88,12 @@ jobs:
     - name: Create automated Release
       run: |
         gh release create CI_Release -t "CI_Release" -n "CI Release with Current Build Artifacts attached."
-        gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Release Any CPU.zip" "OpenVTT.Server\\bin\\Server Artifacts\\Release Any CPU.zip" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Debug Any CPU.zip" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Release Any CPU.zip" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Debug x64.zip" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Release x64.zip" --clobber
+        
+        gh release upload CI_Release "OpenVTT.Server\\bin\\Server Artifacts\\Server Debug Any CPU.zip" --clobber
+        gh release upload CI_Release "OpenVTT.Server\\bin\\Server Artifacts\\Server Release Any CPU.zip" --clobber
+        gh release upload CI_Release "OpenVTT.Server\\bin\\Server Artifacts\\Server Debug x64.zip" --clobber
+        gh release upload CI_Release "OpenVTT.Server\\bin\\Server Artifacts\\Server Release x64.zip" --clobber
