@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: windows-2019
-    env:
-      GH_TOKEN: ${{ github.token }}
     
     steps:
     - name: Checkout
@@ -87,4 +85,4 @@ jobs:
 
     - name: Create automated Release
       run: |
-        gh release create CI_Release --title "CI Release" --notes "This is a Test"
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts" "OpenVTT.Server\\bin\\Server Artifacts" --title "CI Release" --notes "Current CI Release"
