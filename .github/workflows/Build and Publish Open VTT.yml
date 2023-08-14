@@ -88,4 +88,4 @@ jobs:
     - name: Create automated Release
       run: |
         gh release create CI_Release -t "CI_Release" -n "CI Release with Current Build Artifacts attached."
-        gh release create upload CI_Release "Open VTT\\bin\\Artifacts" "OpenVTT.Server\\bin\\Server Artifacts" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts" "OpenVTT.Server\\bin\\Server Artifacts" --clobber
