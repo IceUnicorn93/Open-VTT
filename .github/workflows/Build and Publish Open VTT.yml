@@ -71,18 +71,18 @@ jobs:
         move "Debug x64.zip" "Server Artifacts"
         move "Release x64.zip" "Server Artifacts"
 
-    - name: Upload Open VTT Build Artifacts
-      uses: actions/upload-artifact@v3.1.2
-      with:
-        name: Artifacts
-        path: "Open VTT\\bin\\Artifacts"
-        
-    - name: Upload Open VTT Server Build Artifacts
-      uses: actions/upload-artifact@v3.1.2
-      with:
-        name: "Server Artifacts"
-        path: "OpenVTT.Server\\bin\\Server Artifacts"
+#    - name: Upload Open VTT Build Artifacts
+#      uses: actions/upload-artifact@v3.1.2
+#      with:
+#        name: Artifacts
+#        path: "Open VTT\\bin\\Artifacts"
+#        
+#    - name: Upload Open VTT Server Build Artifacts
+#      uses: actions/upload-artifact@v3.1.2
+#      with:
+#        name: "Server Artifacts"
+#        path: "OpenVTT.Server\\bin\\Server Artifacts"
 
     - name: Create automated Release
       run: |
-        gh release upload CI_Release "Open VTT\\bin\\Artifacts" "OpenVTT.Server\\bin\\Server Artifacts" --title "CI Release" --notes "Current CI Release" --clobber
+        gh release upload CI_Release "Open VTT\\bin\\Artifacts" "OpenVTT.Server\\bin\\Server Artifacts" -t "CI Release" --notes "Current CI Release" --clobber
