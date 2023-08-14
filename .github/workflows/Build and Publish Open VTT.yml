@@ -13,6 +13,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: Setup GitHub CLI
+      uses: sersoft-gmbh/setup-gh-cli-action@v1.0.1
     
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.3.1
@@ -76,3 +79,18 @@ jobs:
       with:
         name: "Server Artifacts"
         path: "OpenVTT.Server\\bin\\Server Artifacts"
+
+    - name: Create automated Release
+      run: |
+        gh api \
+        --method POST \
+        -H "Accept: application/vnd.github+json" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        /repos/IceUnicorn93/Open-VTT/releases \
+        -f tag_name='Automated Release' \
+        -f target_commitish='master' \
+        -f name='CI Release' \
+        -f body='CI Release of the latest Build Artifacts' \
+        -F draft=false \
+        -F prerelease=false \
+        -F generate_release_notes=false 
