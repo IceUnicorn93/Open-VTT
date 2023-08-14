@@ -80,7 +80,7 @@ jobs:
 
     - name: Create automated Release
       run: |
-        gh release create CI_Release -t "CI Release " + "2023-08-14:15:30" -n "CI Release with Current Build Artifacts attached."
+        gh release create CI_Release -t "CI Release" -n "CI Release with Current Build Artifacts attached."
         gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Debug Any CPU.zip" --clobber
         gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Release Any CPU.zip" --clobber
         gh release upload CI_Release "Open VTT\\bin\\Artifacts\\Debug x64.zip" --clobber
