@@ -41,3 +41,8 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 
 - Scripting API on Linux
 - StreamDeck Implementation with a StreamDeck Mini
+
+# Wiki
+
+I put the Instructions in the wiki [HERE](https://github.com/IceUnicorn93/Open-VTT/wiki)
+Also a fea other links are there, over the time I will work on the wiki so keep an eye on that!
