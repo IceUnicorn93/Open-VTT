@@ -36,6 +36,8 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 - [ ] Ping on Big Images causes a flicker
 - [ ] Ping on Big Images is to small
 - [ ] Artwork for a Note Child can't be changed once Set
+- [ ] Starting Open VTT will create a scripting folder from the starting location
+- [ ] scripting isnt working on Linux due to wrong location on startup
 
 # Needs Testing
 
