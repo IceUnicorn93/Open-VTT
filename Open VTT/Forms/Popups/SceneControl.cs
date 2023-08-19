@@ -282,9 +282,23 @@ namespace Open_VTT.Forms.Popups
 
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
 
+            UpdatePrePlaceFogOfWarList();
+        }
 
+        void ScriptsCalculated()
+        {
+            foreach (var item in ScriptEngine.CalculatedHosts)
+                if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
+
+            StreamDeckStatics.SwitchDeckState();
+        }
+
+        void UpdatePrePlaceFogOfWarList()
+        {
             if (StreamDeckStatics.IsInitialized)
             {
+                StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Clear();
+
                 Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
                         .ToList()
                         .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Add(
@@ -306,22 +320,10 @@ namespace Open_VTT.Forms.Popups
                                 }
                                 )
                             )
-                            )); 
+                            ));
+                StreamDeckStatics.SwitchDeckState();
             }
 
-            UpdatePrePlaceFogOfWarList();
-        }
-
-        void ScriptsCalculated()
-        {
-            foreach (var item in ScriptEngine.CalculatedHosts)
-                if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
-
-            StreamDeckStatics.SwitchDeckState();
-        }
-
-        void UpdatePrePlaceFogOfWarList()
-        {
             flowLayoutPanel1.Controls.Clear();
 
             var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog == true).OrderBy(n => n.Name).ToList();
