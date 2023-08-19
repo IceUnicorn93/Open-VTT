@@ -1,0 +1,6 @@
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug\OpenVTT.Editor.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug\OpenVTT.Editor.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Debug\OpenVTT.Editor.Controls.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Debug\OpenVTT.Editor.Controls.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Debug\OpenVTT.Editor.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Debug\OpenVTT.Editor.Controls.pdb

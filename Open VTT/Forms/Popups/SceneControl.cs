@@ -264,8 +264,8 @@ namespace Open_VTT.Forms.Popups
             }
 
             try { StreamDeckStatics.InitStreamDeck();} // If a StreamDeck isn't connected, don't crash
-            catch (Exception ex) { throw ex; }
-            //catch { }
+            //catch (Exception ex) { throw ex; }
+            catch { }
 
             //don't await this call, this call is supposed to be "fire and forget"
             //Use the HostsCalculated-Method to get notified once compiling is done
