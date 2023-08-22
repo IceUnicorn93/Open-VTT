@@ -44,6 +44,26 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 - Scripting API on Linux
 - StreamDeck Implementation with a StreamDeck Mini
 
+# Getting Started
+
+I tried my best to make the software as simple to use as possible. But let me give you a quick rundown :3 <br>
+Click configure and select the Screen you want as your Player Screen, Restart the Software, Click Create and Import a map <br>
+Click "Set Active" and there you go :3
+
+# Contributing
+
+Ok, listen I know this might sound weird but please hear me out. I would love to accept any Contribution you make at this point, but I made this Version of Open VTT for my personal Home Games.<br>
+Once I finished developing the anmiated map support (Witch is not a requierment for my home games!) and the rework of the Notes System, I will put the State in a Branch called "Minimal Version" or something like that. <br>
+After that Main branch becomes the Community Contribution Branch. Unfortunally due to health problems PRs may take a long time since I do this in my free time and only if I feel well enough to work on it. Thanks for understanding this
+
+# Sepcial Thanks
+
+A Special Thanks to the NuGet packages I used for this Project <br>
+These Include (and are not limited to):
+- Microsoft.CodeAnalysis.CSharp.Scripting
+- StreamDeckSharp
+- InputSimulator (Not integrated yet, but will be for the animated maps)
+
 # Wiki
 
 I put the Instructions in the wiki [HERE](https://github.com/IceUnicorn93/Open-VTT/wiki)
