@@ -13,8 +13,8 @@ namespace OpenVTT.StreamDeck
     {
         [Documentation("List of Static Button-Actions, used in StateDescription.ActionDescription",
             IsStatic = true, IsField = true, Name = "ActionList",
-            DataType = "List<(string Name, Action action)>")]
-        public static List<(string Name, Action action)> ActionList = new List<(string Name, Action action)>();
+            DataType = "List<(string DisplayText, string Name, Action action)>")]
+        public static List<(string DisplayText, string Name, Action action)> ActionList = new List<(string DisplayText, string Name, Action action)>();
 
         [Documentation("List of State Descriptions and PageingActions",
             IsStatic = true, IsField = true, Name = "StateDescrptions",
@@ -74,24 +74,24 @@ namespace OpenVTT.StreamDeck
             StateDescrptions.Clear();
 
             //Addding Pageing Functions
-            ActionList.Add(("Previous Page", new Action(() =>
+            ActionList.Add(("Previous Page", "Previous Page", new Action(() =>
             {
                 if (Page > 1)
                     Page -= 1;
                 SwitchDeckState();
             })));
-            ActionList.Add(("Next Page", new Action(() =>
+            ActionList.Add(("Next Page", "Next Page", new Action(() =>
             {
                 if (Page < MaxPage)
                     Page += 1;
                 SwitchDeckState();
             })));
-            ActionList.Add(("Page 1", new Action(() =>
+            ActionList.Add(("Page 1", "Page 1", new Action(() =>
             {
                 Page = 1;
                 SwitchDeckState();
             })));
-            ActionList.Add(("Select", new Action(() =>
+            ActionList.Add(("Select", "Select", new Action(() =>
             {
                 CurrentState = "Select";
                 SwitchDeckState(1);
@@ -99,15 +99,42 @@ namespace OpenVTT.StreamDeck
 
             //Adding default States
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) SelectDescription = CreateDescription("Select");
-            SelectDescription.ActionDescription[0, MaxY - 1] = "";
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) SceneDescription = CreateDescription("Scene");
-            SceneDescription.ActionDescription[0, 0] = "Layer  Up";
-            SceneDescription.ActionDescription[1, 0] = "Reveal All";
-            SceneDescription.ActionDescription[0, 1] = "Layer  Down";
-            SceneDescription.ActionDescription[1, 1] = "Cover  All";
-            SceneDescription.ActionDescription[1, 2] = "Set    Active";
             (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) FogDescription = CreateDescription("Fog of War");
-            FogDescription.ActionDescription[1, 2] = "Set    Active";
+
+            SelectDescription.ActionDescription[0, MaxY - 1] = "";
+
+            if (MaxX == 8) // StreamDeck XL
+            {// Wow, so much space!
+                SceneDescription.ActionDescription[0, 0] = "Layer Up";
+                SceneDescription.ActionDescription[1, 0] = "Reveal All";
+                SceneDescription.ActionDescription[0, 1] = "Layer Down";
+                SceneDescription.ActionDescription[1, 1] = "Cover All";
+                SceneDescription.ActionDescription[0, 2] = "";
+                SceneDescription.ActionDescription[1, 2] = "";
+                SceneDescription.ActionDescription[1, 3] = "Set Active";
+
+                FogDescription.ActionDescription[1, 3] = "Set Active";
+            }
+            else if (MaxX == 5) // Normal StreamDeck
+            {//Ok, thats good. I like it!
+                SceneDescription.ActionDescription[0, 0] = "Layer Up";
+                SceneDescription.ActionDescription[1, 0] = "Reveal All";
+                SceneDescription.ActionDescription[0, 1] = "Layer Down";
+                SceneDescription.ActionDescription[1, 1] = "Cover All";
+                SceneDescription.ActionDescription[1, 2] = "Set Active";
+
+                FogDescription.ActionDescription[1, 2] = "Set Active";
+            }
+            else // StreamDeck Mini
+            {// Husten, this is so tiny! We are super crowded!
+                SceneDescription.ActionDescription[0, 0] = "Set Active";
+
+                FogDescription.ActionDescription[0, 0] = "Set Active";
+            }
+            
+            
+            
 
             IsInitialized = true;
 
@@ -223,7 +250,7 @@ namespace OpenVTT.StreamDeck
                         else if (description.ActionDescription[x, y] == "Next Page")
                             text = "->";
                         else //Set Text based on description
-                            text = description.ActionDescription[x, y];
+                            text = ActionList.SingleOrDefault(n => n.Name == description.ActionDescription[x, y]).DisplayText ?? "";
                         //Set Action based on list and description
                         SetDeckKey((x, y), text, Color.FromArgb(255, 150,150,150), ActionList.SingleOrDefault(n => n.Name == description.ActionDescription[x, y]).action);
                     }
@@ -261,7 +288,7 @@ namespace OpenVTT.StreamDeck
                     description.ActionDescription[x, y] = "Paging";
 
 
-            if (MaxX > 3)
+            if(MaxX == 8) // StreamDeck XL
             {
                 description.ActionDescription[0, MaxY - 1] = "Select";
                 for (int x = 1; x < MaxX - 3; x++)
@@ -270,13 +297,24 @@ namespace OpenVTT.StreamDeck
                 description.ActionDescription[MaxX - 2, MaxY - 1] = "Page 1";
                 description.ActionDescription[MaxX - 1, MaxY - 1] = "Next Page";
             }
-            else // it's a 2*3 StreamDeck
+            else if(MaxX == 5) // Normal StreamDeck
+            {
+                description.ActionDescription[0, MaxY - 1] = "Select";
+                for (int x = 1; x < MaxX - 3; x++)
+                    description.ActionDescription[x, MaxY - 1] = "";
+                description.ActionDescription[MaxX - 3, MaxY - 1] = "Previous Page";
+                description.ActionDescription[MaxX - 2, MaxY - 1] = "Page 1";
+                description.ActionDescription[MaxX - 1, MaxY - 1] = "Next Page";
+            }
+            else // StreamDeck Mini
             {
                 description.ActionDescription[MaxX - 3, MaxY - 1] = "Select";
                 description.ActionDescription[MaxX - 2, MaxY - 1] = "Previous Page";
                 description.ActionDescription[MaxX - 1, MaxY - 1] = "Next Page";
             }
-            StateDescrptions.Add(description);
+
+            if(!StateDescrptions.Any(n => n.State == Name))
+                StateDescrptions.Add(description);
 
             if (StateDescrptions.Any(n => n.State == "Select") && Name != "Select")
                 StateDescrptions.Single(n => n.State == "Select").PageingActions.Add(

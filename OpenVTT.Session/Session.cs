@@ -13,8 +13,13 @@ namespace OpenVTT.Session
     public class Session
     {
         [XmlIgnore]
-        [Documentation("Number of Active Layer", Name = "ActiveLayer", IsField = true, DataType = "int")]
-        public int ActiveLayer { get; internal set; }
+        [Documentation("Number of Active Layer", Name = "ActiveLayerNumber", IsField = true, DataType = "int")]
+        public int ActiveLayerNumber { get; internal set; }
+
+        [XmlIgnore]
+        [Documentation("The current Layer", Name = "ActiveLayer", IsField = true, DataType = "Layer")]
+        public Layer ActiveLayer { get => Values.ActiveScene.Layers.SingleOrDefault(n => n.LayerNumber == Values.ActiveLayerNumber); }
+
         [XmlIgnore]
         [Documentation("Actual Active Scene-Object", Name = "ActiveScene", IsField = true, DataType = "Scene")]
         public Scene ActiveScene { get; internal set; }
@@ -91,7 +96,7 @@ namespace OpenVTT.Session
         [Documentation("Sets the Layer-Number")]
         public static void SetLayer(int number)
         {
-            Values.ActiveLayer = number;
+            Values.ActiveLayerNumber = number;
         }
         [Documentation("Sets the Active-Scene to the given Scene", Name = "SetScene", IsStatic = true, IsMethod = true, ReturnType = "void", Parameters = "Scene scene")]
         public static void SetScene(Scene scene)
@@ -102,7 +107,7 @@ namespace OpenVTT.Session
         [Documentation("Gets the Updated Image Path for the current Layer", Name = "UpdatePath", IsStatic = true, IsMethod = true, ReturnType = "string")]
         public static string UpdatePath()
         {
-            return UpdatePath(GetLayer(Values.ActiveLayer));
+            return UpdatePath(Values.ActiveLayer);
         }
         private static string UpdatePath(Layer layer)
         {
@@ -120,17 +125,17 @@ namespace OpenVTT.Session
 
         internal static string GetSubDirectoryPath(string path)
         {
-            return UpdatePath(Path.Combine(Values.SessionFolder, path), GetLayer(Values.ActiveLayer).DirectorySeperator);
+            return UpdatePath(Path.Combine(Values.SessionFolder, path), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static string GetSubDirectoryApplicationPath(string path)
         {
-            return UpdatePath(Path.Combine(Application.StartupPath, path), GetLayer(Values.ActiveLayer).DirectorySeperator);
+            return UpdatePath(Path.Combine(Application.StartupPath, path), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static string GetSubDirectoryPathForFile(string path, string fileName)
         {
-            return UpdatePath(Path.Combine(Values.SessionFolder, path, fileName), GetLayer(Values.ActiveLayer).DirectorySeperator);
+            return UpdatePath(Path.Combine(Values.SessionFolder, path, fileName), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static void GetDirectories(string path, bool recursive, List<string> listDirs, List<string> listFile, bool isSource = true)

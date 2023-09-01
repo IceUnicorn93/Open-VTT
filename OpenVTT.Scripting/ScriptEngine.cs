@@ -10,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,18 +28,20 @@ namespace OpenVTT.Scripting
         {
             CleanUnusedFolders();
 
-            if (!Directory.Exists(Path.Combine(".", "Scripts")))
+            var appStartPath = Application.StartupPath;
+
+            if (!Directory.Exists(Path.Combine(appStartPath, "Scripts")))
             {
-                Directory.CreateDirectory(Path.Combine(".", "Scripts"));
-                Directory.CreateDirectory(Path.Combine(".", "Scripts", "_DLL References"));
+                Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts"));
+                Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts", "_DLL References"));
             }
 
-            if (!Directory.Exists(Path.Combine(".", "Scripts", "_Sample Script")))
+            if (!Directory.Exists(Path.Combine(appStartPath, "Scripts", "_Sample Script")))
             {
-                Directory.CreateDirectory(Path.Combine(".", "Scripts", "_Sample Script"));
+                Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts", "_Sample Script"));
 
-                File.WriteAllText(Path.Combine(".", "Scripts", "_Sample Script", "Main.cs"), GetDefaultScript());
-                ScriptConfig.Save(Path.Combine(".", "Scripts", "_Sample Script", "ScriptConfig.xml"));
+                File.WriteAllText(Path.Combine(appStartPath, "Scripts", "_Sample Script", "Main.cs"), GetDefaultScript());
+                ScriptConfig.Save(Path.Combine(appStartPath, "Scripts", "_Sample Script", "ScriptConfig.xml"));
             }
 
             CreateDocumentation();
@@ -82,24 +85,28 @@ Page.Controls.Add(tbDescription);";
 
         static private void CleanUnusedFolders()
         {
-            if (Directory.Exists(Path.Combine(".", "cs"))) Directory.Delete(Path.Combine(".", "cs"), true);
-            if (Directory.Exists(Path.Combine(".", "de"))) Directory.Delete(Path.Combine(".", "de"), true);
-            if (Directory.Exists(Path.Combine(".", "es"))) Directory.Delete(Path.Combine(".", "es"), true);
-            if (Directory.Exists(Path.Combine(".", "fr"))) Directory.Delete(Path.Combine(".", "fr"), true);
-            if (Directory.Exists(Path.Combine(".", "it"))) Directory.Delete(Path.Combine(".", "it"), true);
-            if (Directory.Exists(Path.Combine(".", "ja"))) Directory.Delete(Path.Combine(".", "ja"), true);
-            if (Directory.Exists(Path.Combine(".", "ko"))) Directory.Delete(Path.Combine(".", "ko"), true);
-            if (Directory.Exists(Path.Combine(".", "pl"))) Directory.Delete(Path.Combine(".", "pl"), true);
-            if (Directory.Exists(Path.Combine(".", "pt-BR"))) Directory.Delete(Path.Combine(".", "pt-BR"), true);
-            if (Directory.Exists(Path.Combine(".", "ru"))) Directory.Delete(Path.Combine(".", "ru"), true);
-            if (Directory.Exists(Path.Combine(".", "tr"))) Directory.Delete(Path.Combine(".", "tr"), true);
-            if (Directory.Exists(Path.Combine(".", "zh-Hans"))) Directory.Delete(Path.Combine(".", "zh-Hans"), true);
-            if (Directory.Exists(Path.Combine(".", "zh-Hant"))) Directory.Delete(Path.Combine(".", "zh-Hant"), true);
+            var appStartPath = Application.StartupPath;
+
+            if (Directory.Exists(Path.Combine(appStartPath, "cs"))) Directory.Delete(Path.Combine(appStartPath, "cs"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "de"))) Directory.Delete(Path.Combine(appStartPath, "de"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "es"))) Directory.Delete(Path.Combine(appStartPath, "es"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "fr"))) Directory.Delete(Path.Combine(appStartPath, "fr"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "it"))) Directory.Delete(Path.Combine(appStartPath, "it"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "ja"))) Directory.Delete(Path.Combine(appStartPath, "ja"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "ko"))) Directory.Delete(Path.Combine(appStartPath, "ko"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "pl"))) Directory.Delete(Path.Combine(appStartPath, "pl"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "pt-BR"))) Directory.Delete(Path.Combine(appStartPath, "pt-BR"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "ru"))) Directory.Delete(Path.Combine(appStartPath, "ru"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "tr"))) Directory.Delete(Path.Combine(appStartPath, "tr"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "zh-Hans"))) Directory.Delete(Path.Combine(appStartPath, "zh-Hans"), true);
+            if (Directory.Exists(Path.Combine(appStartPath, "zh-Hant"))) Directory.Delete(Path.Combine(appStartPath, "zh-Hant"), true);
         }
 
         static private void CreateDocumentation()
         {
             string text = "";
+
+            var appStartPath = Application.StartupPath;
 
             var list = new List<Type>()
             {
@@ -112,7 +119,7 @@ Page.Controls.Add(tbDescription);";
             foreach (var item in list)
                 text += GetDocumentationForType(item);
 
-            File.WriteAllText(Path.Combine(".", "Scripts", "Documentation.txt"), text);
+            File.WriteAllText(Path.Combine(appStartPath, "Scripts", "Documentation.txt"), text);
         }
 
         static private string GetDocumentationForType(Type type)
@@ -283,26 +290,35 @@ Page.Controls.Add(tbDescription);";
 
         static internal async Task RunScripts()
         {
+            var appStartPath = Application.StartupPath;
+
             SubDirectorys.Clear();
             CalculatedHosts.Clear();
             Calculated = false;
 
-            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(".", "Scripts"), "*", SearchOption.TopDirectoryOnly));
+            SubDirectorys.AddRange(Directory.GetDirectories(Path.Combine(appStartPath, "Scripts"), "*", SearchOption.TopDirectoryOnly));
             SubDirectorys.RemoveAll(n => n.Contains("Sample Script"));
             SubDirectorys.RemoveAll(n => n.Contains("DLL References"));
 
             var list = new List<Task>();
-            foreach (var script in SubDirectorys)
-                list.Add(Task.Run(() => RunScript(script)));
+            //foreach (var script in SubDirectorys)
+            //    list.Add(Task.Run(() => RunScript(script)));
 
-            await Task.WhenAll(list);
-            
-            Calculated = true;
-            HostsCalculated?.Invoke();
+            //await Task.WhenAll(list);
+
+            foreach (var script in SubDirectorys)
+                RunScript(script);
+
+                Calculated = true;
+
+            if (HostsCalculated != null)
+                    HostsCalculated();
         }
 
-        static private async Task RunScript(string path)
+        static private void RunScript(string path)
         {
+            var appStartPath = Application.StartupPath;
+
             if (File.Exists(Path.Combine(path, "_Error.txt"))) File.Delete(Path.Combine(path, "_Error.txt"));
             if (File.Exists(Path.Combine(path, "_Script.txt"))) File.Delete(Path.Combine(path, "_Script.txt"));
 
@@ -329,10 +345,9 @@ Page.Controls.Add(tbDescription);";
             var script = "";
 
             //Adding DLL References using #r
-            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(".", "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
+            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
 
             script += Environment.NewLine;
-
             foreach (var file in config.File_References)
             {
                 script += $"//---- File: {file}";
@@ -346,10 +361,13 @@ Page.Controls.Add(tbDescription);";
             script += "null";
 
             var host = new ScriptHost { Config = config };
-            try { await CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so); }
+            try
+            {
+                var r = CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so).Result;
+            }
             catch (Exception ex)
             {
-                var errMessage = "Please see _Script.txt to see what file to fix! I recommend Notepad++";
+                var errMessage = "Please see _Script.txt to see what file to fix! I recommend Notepad++" + Environment.NewLine;
                 errMessage += ex.Message + Environment.NewLine + "#####################################################################" + Environment.NewLine;
                 errMessage += ex.Message + Environment.NewLine + Environment.NewLine;
 
@@ -363,6 +381,8 @@ Page.Controls.Add(tbDescription);";
                 File.WriteAllText(Path.Combine(path, "_Error.txt"), errMessage);
                 File.WriteAllText(Path.Combine(path, "_Script.txt"), script);
             }
+
+            MessageBox.Show("Hosts Added");
             CalculatedHosts.Add(host);
         }
     }

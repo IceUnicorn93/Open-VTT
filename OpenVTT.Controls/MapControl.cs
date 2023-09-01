@@ -45,12 +45,12 @@ namespace OpenVTT.Controls
 
             if (StreamDeckStatics.IsInitialized)
             {
-                StreamDeckStatics.ActionList.Add(("Layer  Up", new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Layer  Down", new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Layer  Up", "Layer Up", new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Layer  Down", "Layer Down", new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null))))));
 
-                StreamDeckStatics.ActionList.Add(("Reveal All", new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Cover  All", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Set    Active", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Reveal All", "Reveal All", new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Cover  All", "Cover All", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Set    Active", "Set Active", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
 
                 if (StreamDeckStatics.IsInitialized)
                 {
@@ -85,7 +85,7 @@ namespace OpenVTT.Controls
                 Invoke(new Action(
                         () =>
                         {
-                            SetLayerDisplay($"Layer: {Session.Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
+                            SetLayerDisplay($"Layer: {Session.Session.Values.ActiveLayerNumber} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
 
                             // Re-Add Scenes
                             cbxScenes.Items.Clear();
@@ -96,14 +96,14 @@ namespace OpenVTT.Controls
             }
             catch
             {
-                SetLayerDisplay($"Layer: {Session.Session.Values.ActiveLayer} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
+                SetLayerDisplay($"Layer: {Session.Session.Values.ActiveLayerNumber} [{SceneToLoad.Layers.Min(n => n.LayerNumber)} to {SceneToLoad.Layers.Max(n => n.LayerNumber)}] | {SceneToLoad.Name}");
                 // Re-Add Scenes
                 cbxScenes.Items.Clear();
                 cbxScenes.Items.AddRange(Session.Session.Values.Scenes.ToArray());
             }
 
             // Load new Background-Image
-            if (SceneToLoad.Layers.Count > 0 && Session.Session.GetLayer(Session.Session.Values.ActiveLayer).ImagePath != string.Empty)
+            if (SceneToLoad.Layers.Count > 0 && Session.Session.Values.ActiveLayer.ImagePath != string.Empty)
             {
                 dmImage = Image.FromFile(Session.Session.UpdatePath());
                 playerImage = Image.FromFile(Session.Session.UpdatePath());
@@ -121,7 +121,7 @@ namespace OpenVTT.Controls
 
 
             // Add Fog of War
-            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+            var layer = Session.Session.Values.ActiveLayer;
             if (layer != null)
             {
                 var action = new Action<Image, Color>((Image img, Color color) =>
@@ -215,7 +215,7 @@ namespace OpenVTT.Controls
                     LoadImages(newFileName);
                     ShowImages(false);
 
-                    var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+                    var layer = Session.Session.Values.ActiveLayer;
                     layer.RootPath = Session.Session.Values.SessionFolder;
                     layer.ImagePath = newFileName;
                     layer.IsImageLayer = isImage;
@@ -243,7 +243,7 @@ namespace OpenVTT.Controls
             if (dmImage == null)
                 return;
 
-            Session.Session.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Clear();
+            Session.Session.Values.ActiveLayer.FogOfWar.Clear();
 
             var fog = new FogOfWar.FogOfWar
             {
@@ -257,8 +257,8 @@ namespace OpenVTT.Controls
             fog.DrawSize = new Size(pictureWidth, pictureHeight);
             fog.Position = new Point(offsetLeftRight, offsetTopBottom);
 
-            Session.Session.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Add(fog);
-            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+            Session.Session.Values.ActiveLayer.FogOfWar.Add(fog);
+            var layer = Session.Session.Values.ActiveLayer;
 
             dmImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
             playerImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
@@ -290,8 +290,8 @@ namespace OpenVTT.Controls
             fog.DrawSize = new Size(pictureWidth, pictureHeight);
             fog.Position = new Point(offsetLeftRight, offsetTopBottom);
 
-            Session.Session.GetLayer(Session.Session.Values.ActiveLayer).FogOfWar.Clear();
-            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+            Session.Session.Values.ActiveLayer.FogOfWar.Clear();
+            var layer = Session.Session.Values.ActiveLayer;
 
             dmImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
             playerImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
@@ -322,39 +322,39 @@ namespace OpenVTT.Controls
 
         private void btnLayerUp_Click(object sender, EventArgs e)
         {
-            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer + 1);
+            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayerNumber + 1);
             // Layer Exists
             if (layer != null)
-                LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayer + 1);
+                LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayerNumber + 1);
             else // layer doesn't exist
             {
-                var cLayer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+                var cLayer = Session.Session.Values.ActiveLayer;
                 if (cLayer.ImagePath != string.Empty && cLayer.RootPath != string.Empty) // Only create new Layer if Image is loaded to active layer
                 {
-                    Session.Session.Values.ActiveScene.Layers.Add(new Layer { LayerNumber = Session.Session.Values.ActiveLayer + 1, DirectorySeperator = Path.DirectorySeparatorChar });
+                    Session.Session.Values.ActiveScene.Layers.Add(new Layer { LayerNumber = Session.Session.Values.ActiveLayerNumber + 1, DirectorySeperator = Path.DirectorySeparatorChar });
 
                     if (Settings.Settings.Values.AutoSaveAction)
                         Session.Session.Save(false);
 
-                    LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayer + 1);
+                    LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayerNumber + 1);
                 }
             }
         }
 
         private void btnLayerDown_Click(object sender, EventArgs e)
         {
-            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer - 1);
+            var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayerNumber - 1);
 
             if (layer != null)// Layer Exists
-                LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayer - 1);
+                LoadScene(Session.Session.Values.ActiveScene, Session.Session.Values.ActiveLayerNumber - 1);
             else // layer doesn't exist
             {
-                var cLayer = Session.Session.GetLayer(Session.Session.Values.ActiveLayer);
+                var cLayer = Session.Session.Values.ActiveLayer;
                 if (cLayer.ImagePath != string.Empty && cLayer.RootPath != string.Empty)
                 {
                     var nLayer = new Layer
                     {
-                        LayerNumber = Session.Session.Values.ActiveLayer - 1,
+                        LayerNumber = Session.Session.Values.ActiveLayerNumber - 1,
                         DirectorySeperator = Path.DirectorySeparatorChar,
                     };
                     Session.Session.Values.ActiveScene.Layers.Add(nLayer);

@@ -17,7 +17,7 @@ namespace OpenVTT.Controls
         Rectangle drawingRectangle { get; set; }
         Point drawingRectangleMousePoint { get; set; }
 
-        Point pingPoing { get; set; }
+        Point pingPoint { get; set; }
 
         List<Point> poligonPoints { get; set; }
         Point poligonMousePosition { get; set; }
@@ -92,13 +92,13 @@ namespace OpenVTT.Controls
                 case PictureBoxMode.Ping:
                     if (e.Button == MouseButtons.Left)
                     {
-                        PointComplete?.Invoke(pingPoing);
+                        PointComplete?.Invoke(pingPoint);
                         new Task(() =>
                         {
                             Thread.Sleep(2_000);
-                            pingPoing = new Point(-1, -1);
+                            pingPoint = new Point(-1, -1);
                             Invalidate();
-                            PointComplete?.Invoke(pingPoing);
+                            PointComplete?.Invoke(pingPoint);
                         }).Start();
                     }
                     break;
@@ -112,13 +112,13 @@ namespace OpenVTT.Controls
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
-                        PointComplete?.Invoke(pingPoing);
+                        PointComplete?.Invoke(pingPoint);
                         new Task(() =>
                         {
                             Thread.Sleep(2_000);
-                            pingPoing = new Point(-1, -1);
+                            pingPoint = new Point(-1, -1);
                             Invalidate();
-                            PointComplete?.Invoke(pingPoing);
+                            PointComplete?.Invoke(pingPoint);
                         }).Start();
                     }
                     break;
@@ -135,7 +135,7 @@ namespace OpenVTT.Controls
                 case PictureBoxMode.Ping:
                     if (e.Button == MouseButtons.Left)
                     {
-                        pingPoing = new Point(e.X, e.Y);
+                        pingPoint = new Point(e.X, e.Y);
                         Invalidate();
                     }
                     break;
@@ -147,7 +147,7 @@ namespace OpenVTT.Controls
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
-                        pingPoing = new Point(e.X, e.Y);
+                        pingPoint = new Point(e.X, e.Y);
                         Invalidate();
                     }
                     break;
@@ -206,7 +206,7 @@ namespace OpenVTT.Controls
 
         public void SetPingPoint(Point point)
         {
-            pingPoing = point;
+            pingPoint = point;
             Invalidate();
         }
     }

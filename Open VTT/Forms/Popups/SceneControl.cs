@@ -120,8 +120,8 @@ namespace Open_VTT.Forms.Popups
                     WindowInstaces.Player.GetPictureBox().Image = null;
 
                     mapControl1.ShowImages(
-                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Settings.Values.DmColor, false),
-                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.GetLayer(Session.Values.ActiveLayer).FogOfWar, Settings.Values.PlayerColor, true),
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false),
+                    f.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.PlayerColor, true),
                     true);
 
                     drawPbMap.BackgroundImage = null;
@@ -136,7 +136,7 @@ namespace Open_VTT.Forms.Popups
 
             drawPbMap.RectangleComplete += (Rectangle r) =>
             {
-                if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
+                if (Session.Values.ActiveLayer.FogOfWar.Count == 0)
                     return;
                 
                 var fogName = "";
@@ -157,7 +157,7 @@ namespace Open_VTT.Forms.Popups
                     Name = fogName,
                 };
 
-                var layer = Session.GetLayer(Session.Values.ActiveLayer);
+                var layer = Session.Values.ActiveLayer;
                 layer.FogOfWar.Add(fog);
 
                 new Task(() =>
@@ -178,7 +178,7 @@ namespace Open_VTT.Forms.Popups
 
             drawPbMap.PoligonComplete += (Point[] p) =>
             {
-                if (Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Count == 0)
+                if (Session.Values.ActiveLayer.FogOfWar.Count == 0)
                     return;
 
                 var fogName = "";
@@ -200,7 +200,7 @@ namespace Open_VTT.Forms.Popups
                     Name = fogName,
                 };
 
-                var layer = Session.GetLayer(Session.Values.ActiveLayer);
+                var layer = Session.Values.ActiveLayer;
                 layer.FogOfWar.Add(fog);
 
                 new Task(() =>
@@ -270,8 +270,8 @@ namespace Open_VTT.Forms.Popups
             //don't await this call, this call is supposed to be "fire and forget"
             //Use the HostsCalculated-Method to get notified once compiling is done
             //In combination use Calculated to check if it's already calculated
-            ScriptEngine.RunScripts();
             ScriptEngine.HostsCalculated += ScriptsCalculated;
+            ScriptEngine.RunScripts();
 
             mapControl1.DmPictureBox = drawPbMap;
             mapControl1.Init();
@@ -288,7 +288,12 @@ namespace Open_VTT.Forms.Popups
         void ScriptsCalculated()
         {
             foreach (var item in ScriptEngine.CalculatedHosts)
+            {
                 if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
+            }
+
+            tabControl1.Update();
+            this.Update();
 
             StreamDeckStatics.SwitchDeckState();
         }
@@ -299,7 +304,7 @@ namespace Open_VTT.Forms.Popups
             {
                 StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Clear();
 
-                Session.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
+                Session.Values.ActiveLayer.FogOfWar.Where(n => n.IsToggleFog).Select(f => (f.Name, f))
                         .ToList()
                         .ForEach(n => StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Add(
                             (
@@ -309,7 +314,7 @@ namespace Open_VTT.Forms.Popups
                                 {
                                     n.f.IsHidden = !n.f.IsHidden;
 
-                                    var layer = Session.GetLayer(Session.Values.ActiveLayer);
+                                    var layer = Session.Values.ActiveLayer;
 
                                     mapControl1.dmImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
                                     mapControl1.playerImage = n.f.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
@@ -326,7 +331,7 @@ namespace Open_VTT.Forms.Popups
 
             flowLayoutPanel1.Controls.Clear();
 
-            var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar.Where(n => n.IsToggleFog == true).OrderBy(n => n.Name).ToList();
+            var fogs = Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayerNumber).FogOfWar.Where(n => n.IsToggleFog == true).OrderBy(n => n.Name).ToList();
 
             for (int i = 0; i < fogs.Count; i++)
             {
@@ -343,8 +348,8 @@ namespace Open_VTT.Forms.Popups
                     var fog = ((Button)sender).Tag as FogOfWar;
                     fog.IsHidden = !fog.IsHidden;
 
-                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Settings.Values.DmColor, false);
-                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayer).FogOfWar, Settings.Values.PlayerColor, true);
+                    mapControl1.dmImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayerNumber).FogOfWar, Settings.Values.DmColor, false);
+                    mapControl1.playerImage = fog.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayerNumber).FogOfWar, Settings.Values.PlayerColor, true);
 
                     Thread.Sleep(100);
 

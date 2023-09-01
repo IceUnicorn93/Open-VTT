@@ -34,8 +34,8 @@ Page.Controls.Add(tbDescription);
 (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) description =
 	StreamDeckStatics.CreateDescription("Init   Tracker");
 
-description.ActionDescription[0,0] = "Next   Player";
-StreamDeckStatics.ActionList.Add(("Next   Player", new Action(() =>
+description.ActionDescription[0,0] = "Next Player";
+StreamDeckStatics.ActionList.Add(("Next   Player", "Next Player", new Action(() =>
 {
 	btnNext.Invoke(new Action(() => btnNext.PerformClick()));
 })));
