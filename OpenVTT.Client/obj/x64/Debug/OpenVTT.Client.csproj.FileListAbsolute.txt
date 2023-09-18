@@ -2,3 +2,16 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\x64\Debug\OpenVTT.Client.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\x64\Debug\OpenVTT.Client.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\x64\Debug\OpenVTT.NetworkMessage.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\x64\Debug\OpenVTT.NetworkMessage.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.Client.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.Client.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.NetworkMessage.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug x64\OpenVTT.NetworkMessage.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.NetworkSync.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.csproj.GenerateResource.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\x64\Debug\OpenVTT.Client.pdb

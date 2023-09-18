@@ -1,2 +1,11 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\x64\Debug\OpenVTT.Editor.Controls.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\x64\Debug\OpenVTT.Editor.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug x64\OpenVTT.Editor.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug x64\OpenVTT.Editor.Controls.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug x64\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Debug x64\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Debug\OpenVTT.Editor.Controls.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Debug\OpenVTT.Editor.Controls.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Debug\OpenVTT.Editor.Controls.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Debug\OpenVTT.Editor.Controls.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\x64\Debug\OpenVTT.Editor.Controls.pdb
