@@ -1,5 +1,6 @@
 ﻿using OpenVTT.Common;
 using OpenVTT.Editor.Controls;
+using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,6 +41,8 @@ namespace OpenVTT.Editor
 
         public Editor()
         {
+            Logger.Log("Class: Editor | Constructor");
+
             InitializeComponent();
 
             Init();
@@ -47,6 +50,8 @@ namespace OpenVTT.Editor
 
         private void Init()
         {
+            Logger.Log("Class: Editor | Init");
+
             var lstToRemove = new List<Control>();
             foreach (Control item in Controls)
             {
@@ -62,6 +67,8 @@ namespace OpenVTT.Editor
 
         private void Save()
         {
+            Logger.Log("Class: Editor | Save");
+
             if (currentItem == null)
                 return;
 
@@ -105,6 +112,8 @@ namespace OpenVTT.Editor
 
         internal void Load(TreeViewDisplayItem item)
         {
+            Logger.Log("Class: Editor | Load");
+
             Init();
 
             currentItem = item;
@@ -128,6 +137,8 @@ namespace OpenVTT.Editor
 
         private void PopulateWithInstance(string ItemPath)
         {
+            Logger.Log("Class: Editor | PopulateWithInstance");
+
             if (!File.Exists(ItemPath))
                 return;
 
@@ -166,6 +177,8 @@ namespace OpenVTT.Editor
 
         private void PlaceFromTemplate(List<CustomControlData> list, string TemplatePath)
         {
+            Logger.Log("Class: Editor | PlaceFromTemplate");
+
             if (!File.Exists(TemplatePath))
                 return;
 
@@ -233,6 +246,8 @@ namespace OpenVTT.Editor
 
         internal ResizablePictureBox GetPictureBox()
         {
+            Logger.Log("Class: Editor | GetPictureBox");
+
             return Controls.OfType<ResizablePictureBox>().SingleOrDefault();
         }
         //--------------------------------------------------------------------------------
@@ -240,6 +255,8 @@ namespace OpenVTT.Editor
         //--------------------------------------------------------------------------------
         private void Seriliaze(List<CustomControlData> data, string path) //Write
         {
+            Logger.Log("Class: Editor | Seriliaze");
+
             var x = new XmlSerializer(typeof(List<CustomControlData>));
             using (var sw = new StreamWriter(path))
             {
@@ -248,6 +265,7 @@ namespace OpenVTT.Editor
         }
         private void Deseriliaze() //Read
         {
+            Logger.Log("Class: Editor | Deseriliaze");
 
         }
         //--------------------------------------------------------------------------------
@@ -255,6 +273,8 @@ namespace OpenVTT.Editor
         //--------------------------------------------------------------------------------
         private void btnEditNewTextbox_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Editor | btnEditNewTextbox_Click");
+
             var tb = new ResizableTextbox();
             tb.Name = $"c{Controls.Count - 6}";
             tb.Location = new Point(20, 20);
@@ -268,6 +288,8 @@ namespace OpenVTT.Editor
 
         private void btnEditNewLabel_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Editor | btnEditNewLabel_Click");
+
             var lbl = new ResizableLabel();
             lbl.Name = $"c{Controls.Count - 6}";
             lbl.Location = new Point(20, 20);
@@ -282,11 +304,15 @@ namespace OpenVTT.Editor
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Editor | btnSave_Click");
+
             Save();
         }
 
         private void tbEditText_KeyDown(object sender, KeyEventArgs e)
         {
+            Logger.Log("Class: Editor | tbEditText_KeyDown");
+
             if (e.KeyCode == Keys.Enter)
             {
                 var c = (Control)tbEditText.Tag;
@@ -301,6 +327,8 @@ namespace OpenVTT.Editor
         //--------------------------------------------------------------------------------
         private void SetControlEvents(Control control)
         {
+            Logger.Log("Class: Editor | SetControlEvents");
+
             control.MouseDown += new MouseEventHandler(ControlMouseDown);
             control.MouseMove += new MouseEventHandler(ControlMouseMove);
             control.MouseUp += new MouseEventHandler(ControlMouseUp);
@@ -309,11 +337,15 @@ namespace OpenVTT.Editor
 
         private void ControlSizeChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Editor | ControlSizeChanged");
+
             Save();
         }
 
         private void ControlMouseUp(object sender, MouseEventArgs e)
         {
+            Logger.Log("Class: Editor | ControlMouseUp");
+
             activeControl = null;
             Cursor = Cursors.Default;
 
@@ -322,6 +354,8 @@ namespace OpenVTT.Editor
 
         private void ControlMouseMove(object sender, MouseEventArgs e)
         {
+            Logger.Log("Class: Editor | ControlMouseMove");
+
             if (activeControl == null || activeControl != sender)
                 return;
             var location = activeControl.Location;
@@ -332,6 +366,8 @@ namespace OpenVTT.Editor
 
         private void ControlMouseDown(object sender, MouseEventArgs e)
         {
+            Logger.Log("Class: Editor | ControlMouseDown");
+
             if (e.Button == MouseButtons.Right)
             {
                 if (!(sender is ResizablePictureBox))

@@ -1,4 +1,5 @@
-﻿using OpenVTT.NetworkMessage;
+﻿using OpenVTT.Logging;
+using OpenVTT.NetworkMessage;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,10 @@ namespace OpenVTT.Server
     {
         static void Main(string[] args)
         {
+            _ = new Logger(Application.StartupPath);
+
+            Logger.Log("Class: ServerProgram | Constructor");
+
             ServerConfiguration config;
             if (File.Exists(".\\config.xml"))
                 config = ServerConfiguration.LoadFromXMLString(File.ReadAllText(".\\config.xml"));

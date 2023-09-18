@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using OpenVTT.Common;
+using OpenVTT.Logging;
 using OpenVTT.Session;
 using OpenVTT.Settings;
 using OpenVTT.StreamDeck;
@@ -26,6 +27,8 @@ namespace OpenVTT.Scripting
 
         static ScriptEngine()
         {
+            Logger.Log("Class: ScriptEngine | Constructor");
+
             CleanUnusedFolders();
 
             var appStartPath = Application.StartupPath;
@@ -49,6 +52,8 @@ namespace OpenVTT.Scripting
 
         static private string GetDefaultScript()
         {
+            Logger.Log("Class: ScriptEngine | GetDefaultScript");
+
             return
             @"Page.Text = Config.Name;
 
@@ -85,6 +90,8 @@ Page.Controls.Add(tbDescription);";
 
         static private void CleanUnusedFolders()
         {
+            Logger.Log("Class: ScriptEngine | CleanUnusedFolders");
+
             var appStartPath = Application.StartupPath;
 
             if (Directory.Exists(Path.Combine(appStartPath, "cs"))) Directory.Delete(Path.Combine(appStartPath, "cs"), true);
@@ -104,6 +111,8 @@ Page.Controls.Add(tbDescription);";
 
         static private void CreateDocumentation()
         {
+            Logger.Log("Class: ScriptEngine | CreateDocumentation");
+
             string text = "";
 
             var appStartPath = Application.StartupPath;
@@ -124,6 +133,8 @@ Page.Controls.Add(tbDescription);";
 
         static private string GetDocumentationForType(Type type)
         {
+            Logger.Log("Class: ScriptEngine | GetDocumentationForType");
+
             Documentation documentation = (Documentation)Attribute.GetCustomAttribute(type, typeof(Documentation));
             var ret = "";
             ret += $"{documentation?.Name ?? ""}";
@@ -290,6 +301,8 @@ Page.Controls.Add(tbDescription);";
 
         static internal async Task RunScripts()
         {
+            Logger.Log("Class: ScriptEngine | RunScripts");
+
             var appStartPath = Application.StartupPath;
 
             SubDirectorys.Clear();
@@ -317,6 +330,8 @@ Page.Controls.Add(tbDescription);";
 
         static private void RunScript(string path)
         {
+            Logger.Log("Class: ScriptEngine | RunScript");
+
             var appStartPath = Application.StartupPath;
 
             if (File.Exists(Path.Combine(path, "_Error.txt"))) File.Delete(Path.Combine(path, "_Error.txt"));

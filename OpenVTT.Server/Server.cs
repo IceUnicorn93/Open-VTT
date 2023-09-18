@@ -1,9 +1,11 @@
-﻿using OpenVTT.NetworkMessage;
+﻿using OpenVTT.Logging;
+using OpenVTT.NetworkMessage;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OpenVTT.Server
 {
@@ -19,6 +21,8 @@ namespace OpenVTT.Server
 
         public Server(string ip, int port)
         {
+            Logger.Log("Class: Server | Constructor");
+
             IPAddress localAdd = IPAddress.Parse(ip);
             listener = new TcpListener(localAdd, port);
             clients = new List<Client>();
@@ -28,6 +32,8 @@ namespace OpenVTT.Server
 
         public void Start()
         {
+            Logger.Log("Class: Server | Start");
+
             Console.WriteLine("Listening...");
             listener.Start();
 
@@ -36,6 +42,8 @@ namespace OpenVTT.Server
 
         public void Stop()
         {
+            Logger.Log("Class: Server | Stop");
+
             run = false;
 
             listener.Stop();
@@ -45,6 +53,8 @@ namespace OpenVTT.Server
 
         private void acceptClients()
         {
+            Logger.Log("Class: Server | acceptClients");
+
             while (run)
             {
                 TcpClient tcpClient = null;

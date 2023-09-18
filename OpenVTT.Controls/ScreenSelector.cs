@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using OpenVTT.Settings;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace OpenVTT.Controls
     {
         public ScreenSelector()
         {
+            Logger.Log("Class: ScreenSelector | Constructor");
+
             InitializeComponent();
 
             //Fill combo box
@@ -75,6 +78,8 @@ namespace OpenVTT.Controls
 
                 btn.Click += (object sender, EventArgs e) =>
                 {
+                    Logger.Log("Class: ScreenSelector | Select Screen Button");
+
                     try
                     {
                         var clickedButton = (Button)sender;
@@ -117,6 +122,8 @@ namespace OpenVTT.Controls
                         b.Location = new Point(frm.Width / 2 - b.Width / 2, frm.Height / 2 - b.Height / 2);
                         b.Click += (object o, EventArgs ea) =>
                         {
+                            Logger.Log("Class: ScreenSelector | Select Screen Button Pressed");
+
                             frm.Close();
                         };
                         //Add Close Button and Show Form

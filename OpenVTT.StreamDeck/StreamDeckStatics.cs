@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
+using OpenVTT.Logging;
 
 namespace OpenVTT.StreamDeck
 {
@@ -43,6 +44,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void Dispose()
         {
+            Logger.Log("Class: StreamDeckStatics | Dispose");
+
             if (!IsInitialized) return;
 
             deck.SetBrightness(0);
@@ -56,6 +59,8 @@ namespace OpenVTT.StreamDeck
 
         static internal void InitStreamDeck()
         {
+            Logger.Log("Class: StreamDeckStatics | InitStreamDeck");
+
             //Open the Stream Deck device
             deck = StreamDeckSharp.StreamDeck.OpenDevice();
             deck.SetBrightness(100);
@@ -144,6 +149,8 @@ namespace OpenVTT.StreamDeck
         //------------------ All for Setting Buttons
         static private KeyBitmap CreateBitmap(string Text, Color color)
         {
+            Logger.Log("Class: StreamDeckStatics | CreateBitmap");
+
             if (!IsInitialized) return null;
 
             var keyImage = new Bitmap(96, 96);
@@ -182,6 +189,8 @@ namespace OpenVTT.StreamDeck
 
         static private (int X, int Y) IdToLocation(int ID)
         {
+            Logger.Log("Class: StreamDeckStatics | IdToLocation");
+
             if (!IsInitialized) return (0, 0);
 
             int X = ID % (deck.Keys.KeyCountX);
@@ -193,6 +202,8 @@ namespace OpenVTT.StreamDeck
         static int offset = 0;
         static private void SetDeckKey((int x, int y) position, string Text, Color color, Action action = null)
         {
+            Logger.Log("Class: StreamDeckStatics | SetDeckKey");
+
             if (!IsInitialized) return;
 
             actions[position.x, position.y] = action;
@@ -211,6 +222,8 @@ namespace OpenVTT.StreamDeck
 
         static private void Deck_KeyPressed(object sender, KeyEventArgs e)
         {
+            Logger.Log("Class: StreamDeckStatics | Deck_KeyPressed");
+
             if (!IsInitialized) return;
 
             if (!(sender is IStreamDeckBoard sd)) return;
@@ -228,6 +241,8 @@ namespace OpenVTT.StreamDeck
             ReturnType = "void")]
         static public void SwitchDeckState(int PageNumber = -1)
         {
+            Logger.Log("Class: StreamDeckStatics | SwitchDeckState");
+
             if (!IsInitialized) return;
 
             if (PageNumber != -1)
@@ -280,6 +295,8 @@ namespace OpenVTT.StreamDeck
             ReturnType = "(string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions)")]
         static public (string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions) CreateDescription(string Name)
         {
+            Logger.Log("Class: StreamDeckStatics | CreateDescription");
+
             (string State, string[,] ActionDescription, List<(string DisplayName, Action action)> PageingActions) description =
                 (Name, new string[MaxX, MaxY], new List<(string DisplayName, Action action)>());
 

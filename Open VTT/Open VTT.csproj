@@ -189,6 +189,10 @@
       <Project>{75af342f-95e1-4c5b-8356-0ce5eea95d90}</Project>
       <Name>OpenVTT.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
+      <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
+      <Name>OpenVTT.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Scripting\OpenVTT.Scripting.csproj">
       <Project>{b56784f1-969b-48c7-b18f-1c7471c69ddc}</Project>
       <Name>OpenVTT.Scripting</Name>

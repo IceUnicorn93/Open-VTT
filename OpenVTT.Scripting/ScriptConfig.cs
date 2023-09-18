@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -44,6 +45,8 @@ namespace OpenVTT.Scripting
 
         internal static void Save(string path)
         {
+            Logger.Log("Class: ScriptConfig | Save");
+
             var config = new ScriptConfig();
 
             config.isUI = false;
@@ -76,6 +79,8 @@ namespace OpenVTT.Scripting
 
         internal static ScriptConfig Load(string path)
         {
+            Logger.Log("Class: ScriptConfig | Load");
+
             var ret = new ScriptConfig();
 
             var x = new XmlSerializer(typeof(ScriptConfig));

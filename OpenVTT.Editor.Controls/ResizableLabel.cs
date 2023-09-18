@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using OpenVTT.Logging;
+using System.Windows.Forms;
 
 namespace OpenVTT.Editor.Controls
 {
@@ -10,6 +11,8 @@ namespace OpenVTT.Editor.Controls
 
         public ResizableLabel()
         {
+            Logger.Log("Class: ResizableLabel | Constructor");
+
             this.ResizeRedraw = true;
         }
 

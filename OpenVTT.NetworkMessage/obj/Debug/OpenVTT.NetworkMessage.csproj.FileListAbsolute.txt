@@ -4,3 +4,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Debug\OpenVTT.NetworkMe
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Debug\OpenVTT.NetworkMessage.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Debug\OpenVTT.NetworkMessage.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Debug\OpenVTT.NetworkMessage.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Debug\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Debug\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Debug\OpenVTT.NetworkMessage.csproj.CopyComplete

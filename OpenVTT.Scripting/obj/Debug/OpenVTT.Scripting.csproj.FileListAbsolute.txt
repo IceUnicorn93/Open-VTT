@@ -93,3 +93,5 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.cspr
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\obj\Debug\OpenVTT.Scripting.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Scripting\bin\Debug\OpenVTT.Logging.pdb

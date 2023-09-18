@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using OpenVTT.Common;
+using OpenVTT.Logging;
 
 namespace OpenVTT.Settings
 {
@@ -109,6 +110,8 @@ namespace OpenVTT.Settings
         [Documentation("Constructor", Name = "Settings", IsMethod = true, ReturnType = "Settings")]
         static Settings()
         {
+            Logger.Log("Class: Settings | Constructor");
+
             Values = new Settings();
             Values.Screens = new List<ScreenInformation>();
 
@@ -118,6 +121,8 @@ namespace OpenVTT.Settings
         [Documentation("Save Method", Name = "Save", IsMethod = true, ReturnType = "void")]
         public static void Save()
         {
+            Logger.Log("Class: Settings | Save");
+
             var playerScreen = Values.Screens?.SingleOrDefault(n => n.Display == DisplayType.Player);
             if (playerScreen != null && playerScreen.Height > 0 && playerScreen.Width > 0 && Values.PlayerScreenSize > 0)
             {
@@ -143,6 +148,8 @@ namespace OpenVTT.Settings
         [Documentation("Load Method", Name = "Load", IsMethod = true, ReturnType = "void")]
         public static void Load()
         {
+            Logger.Log("Class: Settings | Load");
+
             if (!File.Exists(Path.Combine(Application.StartupPath, "Settings.xml")))
                 return;
 

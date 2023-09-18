@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace OpenVTT.Common
 
         public static IEnumerable<String> SplitInParts(this String s, Int32 partLength)
         {
+            Logger.Log("Class: StringExtensions | SplitInParts");
+
             if (s == null)
                 throw new ArgumentNullException(nameof(s));
             if (partLength <= 0)

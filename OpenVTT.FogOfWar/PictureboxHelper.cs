@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace OpenVTT.FogOfWar
     {
         public static (int pictureWidth, int pictureHeight, int offsetLeftRight, int offsetTopBottom, float ratio) GetPictureDimensions(FogOfWar fog, Size imageSize)
         {
+            Logger.Log("Class: PictureBoxHelper | GetPictureDimensions");
+
             if (imageSize == null)
                 return (0, 0, 0, 0, 0);
 
@@ -49,6 +52,8 @@ namespace OpenVTT.FogOfWar
 
         public static (int PositionX, int PositionY, int DrawWidth, int DrawHeight) Transform(FogOfWar fog, Size imageSize)
         {
+            Logger.Log("Class: PictureBoxHelper | Transform");
+
             if (imageSize == null)
                 return (0, 0, 0, 0);
 

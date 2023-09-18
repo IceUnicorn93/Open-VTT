@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 
 namespace OpenVTT.Common
 {
@@ -23,9 +24,16 @@ namespace OpenVTT.Common
 
         public Documentation(string description)
         {
+            Logger.Log("Class: Documentation | Constructor");
+
             Description = description;
         }
 
-        public string GetDescription() => Description;
+        public string GetDescription()
+        {
+            Logger.Log("Class: Documentation | GetDescription");
+
+            return Description;
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using OpenVTT.Common;
+using OpenVTT.Logging;
 
 namespace OpenVTT.FogOfWar
 {
@@ -35,6 +36,8 @@ namespace OpenVTT.FogOfWar
 
         internal Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)
         {
+            Logger.Log("Class: FogOfWar | DrawFogOfWarComplete");
+
             var img = Image.FromFile(imagePath);
 
             foreach (var fog in fogs)
@@ -109,6 +112,8 @@ namespace OpenVTT.FogOfWar
 
         private void DrawFogOfWar(Image image, Color drawColor, FogOfWar fog = null)
         {
+            Logger.Log("Class: FogOfWar | DrawFogOfWar");
+
             var ret = PictureBoxHelper.Transform(fog ?? this, new Size(image.Width, image.Height));
             var action = (Action)(() =>
             {
@@ -124,6 +129,8 @@ namespace OpenVTT.FogOfWar
 
         private void RemoveFogOfWar(Image image, string originalImage, FogOfWar fog = null)
         {
+            Logger.Log("Class: FogOfWar | RemoveFogOfWar");
+
             var ret = PictureBoxHelper.Transform(fog ?? this, new Size(image.Width, image.Height));
             var action = (Action)(() =>
             {
@@ -141,6 +148,8 @@ namespace OpenVTT.FogOfWar
 
         private void DrawFogOfWarPoligon(Image image, Color drawColor, FogOfWar fog = null)
         {
+            Logger.Log("Class: FogOfWar | DrawFogOfWarPoligon");
+
             Rectangle outRect = new Rectangle(0, 0, image.Width, image.Height);
 
             var newPoints = new List<Point>();
@@ -178,6 +187,8 @@ namespace OpenVTT.FogOfWar
 
         private void RemoveFogOfWarPoligon(Image image, string originalImage, FogOfWar fog = null)
         {
+            Logger.Log("Class: FogOfWar | RemoveFogOfWarPoligon");
+
             Rectangle outRect = new Rectangle(0, 0, image.Width, image.Height);
 
             var newPoints = new List<Point>();
@@ -227,6 +238,8 @@ namespace OpenVTT.FogOfWar
 
         internal void DrawCircle(Image image)
         {
+            Logger.Log("Class: FogOfWar | DrawCircle");
+
             var ret = PictureBoxHelper.Transform(this, new Size(image.Width, image.Height));
             var dimensions = PictureBoxHelper.GetPictureDimensions(this, new Size(image.Width, image.Height));
 
@@ -247,6 +260,8 @@ namespace OpenVTT.FogOfWar
 
         private Point GetCentroid(FogOfWar fog, Size img)
         {
+            Logger.Log("Class: FogOfWar | GetCentroid(FogOfWar fog, Size img)");
+
             var x = PictureBoxHelper.GetPictureDimensions(fog, img);
 
             var points = FogToPolygonData(fog).ToList();
@@ -256,6 +271,8 @@ namespace OpenVTT.FogOfWar
 
         private Point GetCentroid(List<Point> points, FogOfWar fog, Size img)
         {
+            Logger.Log("Class: FogOfWar | GetCentroid(List<Point> points, FogOfWar fog, Size img)");
+
             Point GetMiddle(List<Point> pointList)
             {
                 var minX = pointList.Select(n => n.X).Min();
@@ -314,6 +331,8 @@ namespace OpenVTT.FogOfWar
 
         private Point[] FogToPolygonData(FogOfWar fog)
         {
+            Logger.Log("Class: FogOfWar | FogToPolygonData");
+
             var points = new Point[0];
 
             if (fog.PoligonData != null && fog.PoligonData.Count > 0)
@@ -334,6 +353,8 @@ namespace OpenVTT.FogOfWar
 
         private Point[] TransformPolygonData(Point[] points, FogOfWar fog, Size img)
         {
+            Logger.Log("Class: FogOfWar | TransformPolygonData");
+
             var newPoints = new List<Point>();
             foreach (var p in points)
             {

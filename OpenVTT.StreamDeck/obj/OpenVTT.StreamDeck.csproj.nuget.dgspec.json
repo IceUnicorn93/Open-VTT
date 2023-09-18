@@ -11,7 +11,11 @@
         "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj",
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
+              }
+            }
           }
         }
       },
@@ -26,7 +30,11 @@
         "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj",
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
+              }
+            }
           }
         }
       },
@@ -47,6 +55,9 @@
               },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Editor.Controls\\OpenVTT.Editor.Controls.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
               }
             }
           }
@@ -70,6 +81,9 @@
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Grid\\OpenVTT.Grid.csproj"
               },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
               }
@@ -89,10 +103,28 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Settings\\OpenVTT.Settings.csproj"
               }
             }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj",
+        "projectName": "OpenVTT.Logging",
+        "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
           }
         }
       },
@@ -116,6 +148,9 @@
               },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
               }
             }
           }
@@ -135,6 +170,9 @@
             "projectReferences": {
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
               }
             }
           }
@@ -173,6 +211,9 @@
               },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+              },
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
               },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"

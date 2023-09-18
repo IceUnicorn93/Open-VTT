@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -32,6 +33,8 @@ namespace OpenVTT.NetworkMessage
 
         public string ToXML()
         {
+            Logger.Log("Class: Message | ToXML");
+
             using (var stringwriter = new System.IO.StringWriter())
             {
                 var serializer = new XmlSerializer(typeof(Message));
@@ -42,7 +45,9 @@ namespace OpenVTT.NetworkMessage
 
         public static Message LoadFromXMLString(string xmlText)
         {
-            if(xmlText == "") return null;
+            Logger.Log("Class: Message | LoadFromXMLString");
+
+            if (xmlText == "") return null;
 
             using (var stringReader = new System.IO.StringReader(xmlText))
             {

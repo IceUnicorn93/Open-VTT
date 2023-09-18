@@ -1,4 +1,5 @@
-﻿using OpenVTT.Settings;
+﻿using OpenVTT.Logging;
+using OpenVTT.Settings;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace Open_VTT.Forms.Popups
     {
         public Config()
         {
+            Logger.Log("Class: Config | Constructor");
+
             InitializeComponent();
 
             var mainScreen = Screen.AllScreens.Single(n => n.Primary);
@@ -35,42 +38,56 @@ namespace Open_VTT.Forms.Popups
 
         public void nudPlayerSize_ValueChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | nudPlayerSize_ValueChanged");
+
             Settings.Values.PlayerScreenSize = (int)nudPlayerSize.Value;
             Settings.Save();
         }
 
         public void cbAutoSaveAction_CheckedChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | cbAutoSaveAction_CheckedChanged");
+
             Settings.Values.AutoSaveAction = cbAutoSaveAction.Checked;
             Settings.Save();
         }
 
         public void cbDisplayChangesInstantly_CheckedChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | cbDisplayChangesInstantly_CheckedChanged");
+
             Settings.Values.DisplayChangesInstantly = cbDisplayChangesInstantly.Checked;
             Settings.Save();
         }
 
         private void tbServerIP_TextChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | tbServerIP_TextChanged");
+
             Settings.Values.NoteServerIP = tbServerIP.Text;
             Settings.Save();
         }
 
         private void nudServerPort_ValueChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | nudServerPort_ValueChanged");
+
             Settings.Values.NoteServerPort = (int)nudServerPort.Value;
             Settings.Save();
         }
 
         private void cbDisplayGrid_CheckedChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | cbDisplayGrid_CheckedChanged");
+
             Settings.Values.DisplayGrid = cbDisplayGrid.Checked;
             Settings.Save();
         }
 
         private void pnlDmColor_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | pnlDmColor_Click");
+
             var clr = new ColorSelector(pnlDmColor.BackColor);
             clr.ShowDialog();
             pnlDmColor.BackColor = clr.SelectedColor;
@@ -80,6 +97,8 @@ namespace Open_VTT.Forms.Popups
 
         private void pnlPlayerColor_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | pnlPlayerColor_Click");
+
             var clr = new ColorSelector(pnlPlayerColor.BackColor);
             clr.ShowDialog();
             pnlPlayerColor.BackColor = clr.SelectedColor;
@@ -89,6 +108,8 @@ namespace Open_VTT.Forms.Popups
 
         private void pnlGridColor_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | pnlGridColor_Click");
+
             var clr = new ColorSelector(pnlGridColor.BackColor);
             clr.ShowDialog();
             pnlGridColor.BackColor = clr.SelectedColor;
@@ -98,6 +119,8 @@ namespace Open_VTT.Forms.Popups
 
         private void pnlTextColor_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | pnlTextColor_Click");
+
             var clr = new ColorSelector(pnlTextColor.BackColor);
             clr.ShowDialog();
             pnlTextColor.BackColor = clr.SelectedColor;
@@ -107,6 +130,8 @@ namespace Open_VTT.Forms.Popups
 
         private void cbDisplayGridForDM_CheckedChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Config | cbDisplayGridForDM_CheckedChanged");
+
             Settings.Values.DisplayGridForDM = cbDisplayGridForDM.Checked;
             Settings.Save();
         }

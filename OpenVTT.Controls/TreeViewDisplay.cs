@@ -1,6 +1,7 @@
 ﻿using OpenVTT.Common;
 using OpenVTT.Editor;
 using OpenVTT.Editor.Controls;
+using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -154,6 +155,8 @@ namespace OpenVTT.Controls
 
         public TreeViewDisplay()
         {
+            Logger.Log("Class: TreeViewDisplay | Constructor");
+
             InitializeComponent();
 
             networkSync1.SyncComplete += Init;
@@ -163,6 +166,8 @@ namespace OpenVTT.Controls
 
         public void Init()
         {
+            Logger.Log("Class: TreeViewDisplay | Init");
+
             ArtworkDisplay = GetDmPictureBox();
 
             if (ArtworkDisplay == null)
@@ -178,6 +183,8 @@ namespace OpenVTT.Controls
 
         private void PopulateTreeView()
         {
+            Logger.Log("Class: TreeViewDisplay | PopulateTreeView");
+
             var treeNodes = new List<TreeNode>();
             var trackNodes = new List<TreeNode>();
 
@@ -216,6 +223,8 @@ namespace OpenVTT.Controls
 
         private void SetCurrentInformationItem()
         {
+            Logger.Log("Class: TreeViewDisplay | SetCurrentInformationItem");
+
             if (MiniArtworkDisplay != null)
             {
                 MiniArtworkDisplay.Image?.Dispose();
@@ -246,6 +255,8 @@ namespace OpenVTT.Controls
 
         private void DisplayDmAndPlayer()
         {
+            Logger.Log("Class: TreeViewDisplay | DisplayDmAndPlayer");
+
             var imagePath = Path.Combine(currentInformationItem.GetLocation(".png").ToArray());
 
             BigImage?.Dispose();
@@ -267,12 +278,16 @@ namespace OpenVTT.Controls
 
         private void btnOpenViewer_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | btnOpenViewer_Click");
+
             GetDmDisplay()?.Show();
             GetPlayerDisplay()?.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | btnAdd_Click");
+
             if (GenerateNewDisplayItem != null)
                 GenerateNewDisplayItem();
 
@@ -281,6 +296,8 @@ namespace OpenVTT.Controls
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | btnRemove_Click");
+
             ArtworkDisplay.Image?.Dispose();
             ArtworkDisplay.Image = null;
             MiniArtworkDisplay.Image?.Dispose();
@@ -345,6 +362,8 @@ namespace OpenVTT.Controls
 
         private void tvItems_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | tvItems_NodeMouseClick");
+
             currentInformationItem = (TreeViewDisplayItem)e.Node.Tag;
 
             SetCurrentInformationItem();
@@ -352,6 +371,8 @@ namespace OpenVTT.Controls
 
         private void tbSearchItem_KeyDown(object sender, KeyEventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | tbSearchItem_KeyDown");
+
             if (e.KeyCode == Keys.Enter)
             {
                 //TODO: What to do if an Item exists multiple times due to same name?
@@ -363,11 +384,15 @@ namespace OpenVTT.Controls
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | btnDisplay_Click");
+
             DisplayDmAndPlayer();
         }
 
         private void tbSearchItem_TextUpdate(object sender, EventArgs e)
         {
+            Logger.Log("Class: TreeViewDisplay | tbSearchItem_TextUpdate");
+
             tbSearchItem.Items.Clear();
             tbSearchItem.Items.AddRange(DisplayItems.Where(n => n.Name.ToLower().Contains(tbSearchItem.Text.ToLower()) && n.ItemType == TreeViewDisplayItemType.Item).Select(n => n.Name).ToArray());
             tbSearchItem.SelectionStart = tbSearchItem.Text.Length;

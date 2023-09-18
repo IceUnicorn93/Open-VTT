@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -37,6 +38,8 @@ namespace OpenVTT.Session
         [Documentation("Returns the Value casted (Works with System-Datatypes)", Name = "GetValue<T>", IsMethod = true, DataType = "T")]
         public T GetValue<T>()
         {
+            Logger.Log("Class: CustomObjectData | GetValue");
+
             try
             {
                 var converter = TypeDescriptor.GetConverter(typeof(T));

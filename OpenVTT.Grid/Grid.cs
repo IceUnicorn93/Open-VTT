@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using OpenVTT.Logging;
+using System.Drawing;
 
 namespace OpenVTT.Grid
 {
@@ -6,6 +7,8 @@ namespace OpenVTT.Grid
     {
         public static Image DrawGrid(Image img, bool IsDM)
         {
+            Logger.Log("Class: Grid | DrawGrid");
+
             var con = (Settings.Settings.Values.DisplayGrid && Settings.Settings.Values.DisplayGridForDM && IsDM)
                         ||
                       (Settings.Settings.Values.DisplayGrid && IsDM == false);

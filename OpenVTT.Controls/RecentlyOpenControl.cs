@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace OpenVTT.Controls
 
         public RecentlyOpenedControl()
         {
+            Logger.Log("Class: RecentlyOpenedControl | Constructor");
+
             InitializeComponent();
 
             Paths = new List<string>();
@@ -32,6 +35,8 @@ namespace OpenVTT.Controls
 
         internal void Init()
         {
+            Logger.Log("Class: RecentlyOpenedControl | Init");
+
             Controls.Clear();
 
             for (int i = 0; i < Paths.Count; i++)
@@ -46,6 +51,8 @@ namespace OpenVTT.Controls
 
         internal void AddPath(string path)
         {
+            Logger.Log("Class: RecentlyOpenedControl | AddPath");
+
             Paths.Remove(path);
 
             Paths.Insert(0, path);
@@ -60,6 +67,8 @@ namespace OpenVTT.Controls
 
         void Save()
         {
+            Logger.Log("Class: RecentlyOpenedControl | Save");
+
             Paths = Paths.Where(n => File.Exists(n)).ToList();
 
             var x = new XmlSerializer(typeof(List<string>));
@@ -71,6 +80,8 @@ namespace OpenVTT.Controls
 
         void Load()
         {
+            Logger.Log("Class: RecentlyOpenedControl | Load");
+
             if (!File.Exists(Path.Combine(Application.StartupPath, "RecentlyOpened.xml")))
                 return;
 

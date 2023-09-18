@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Collections.Generic;
 
 namespace OpenVTT.Session
@@ -23,6 +24,8 @@ namespace OpenVTT.Session
         [Documentation("Constructor", Name = "Layer", IsMethod = true, ReturnType = "Layer")]
         public Layer()
         {
+            Logger.Log("Class: Layer | Constructor");
+
             LayerNumber = 0;
             ImagePath = string.Empty;
             RootPath = string.Empty;

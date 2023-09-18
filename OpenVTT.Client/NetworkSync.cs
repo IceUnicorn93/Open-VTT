@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using OpenVTT.Logging;
 
 namespace OpenVTT.Client
 {
@@ -19,6 +20,8 @@ namespace OpenVTT.Client
 
         public NetworkSync()
         {
+            Logger.Log("Class: NetworkSync | Constructor");
+
             InitializeComponent();
 
             lblCommand.Text = "";
@@ -26,6 +29,8 @@ namespace OpenVTT.Client
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: NetworkSync | btnConnect_Click");
+
             if (tcpClient == null) // Connect
             {
                 
@@ -66,7 +71,9 @@ namespace OpenVTT.Client
         private void btnPull_Click(object sender, EventArgs e)
         { // Request Directory from Server
 
-            if(MessageBox.Show("Clear all Notes (Yes) or only Update Difference(No)?", "Clear Notes?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            Logger.Log("Class: NetworkSync | btnPull_Click");
+
+            if (MessageBox.Show("Clear all Notes (Yes) or only Update Difference(No)?", "Clear Notes?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 var startupPath = Application.StartupPath;
                 if(Directory.Exists(Path.Combine(startupPath, "Notes")))
@@ -90,6 +97,8 @@ namespace OpenVTT.Client
         private void btnPush_Click(object sender, EventArgs e)
         { // Send Directory to Server
 
+            Logger.Log("Class: NetworkSync | btnPush_Click");
+
             var cmh = new ClientMessageHandle(null);
             var msg = new NetworkMessage.Message()
             {
@@ -107,11 +116,15 @@ namespace OpenVTT.Client
 
         private void SetCommandLabel(string text)
         {
+            Logger.Log("Class: NetworkSync | SetCommandLabel");
+
             lblCommand.Invoke((MethodInvoker)delegate { lblCommand.Text = text; });
         }
 
         private void SetQueueLabel(int howManyInQueue)
         {
+            Logger.Log("Class: NetworkSync | SetQueueLabel");
+
             lblQueue.Invoke((MethodInvoker)delegate { lblQueue.Text = $"Queue: {howManyInQueue}"; });
         }
     }

@@ -1,6 +1,7 @@
 ﻿using OpenVTT.Common;
 using OpenVTT.Controls.Displayer;
 using OpenVTT.FogOfWar;
+using OpenVTT.Logging;
 using OpenVTT.Scripting;
 using OpenVTT.Session;
 using OpenVTT.Settings;
@@ -20,6 +21,8 @@ namespace Open_VTT.Forms.Popups
     {
         public SceneControl()
         {
+            Logger.Log("Class: SceneControl | Constructor");
+
             InitializeComponent();
 
             var mainScreen = Screen.AllScreens.Single(n => n.Primary);
@@ -237,11 +240,15 @@ namespace Open_VTT.Forms.Popups
 
         private void FormClosedEvent(object sender, FormClosedEventArgs e)
         {
+            Logger.Log("Class: SceneControl | FormClosedEvent");
+
             StreamDeckStatics.Dispose();
         }
 
         void Init()
         {
+            Logger.Log("Class: SceneControl | Init");
+
             if (Session.Values.ActiveScene == null)
             {
                 Session.Values.Scenes = new List<Scene>
@@ -287,6 +294,8 @@ namespace Open_VTT.Forms.Popups
 
         void ScriptsCalculated()
         {
+            Logger.Log("Class: SceneControl | ScriptsCalculated");
+
             foreach (var item in ScriptEngine.CalculatedHosts)
             {
                 if (item.Config.isUI) tabControl1.TabPages.Add(item.Page);
@@ -300,6 +309,8 @@ namespace Open_VTT.Forms.Popups
 
         void UpdatePrePlaceFogOfWarList()
         {
+            Logger.Log("Class: SceneControl | UpdatePrePlaceFogOfWarList");
+
             if (StreamDeckStatics.IsInitialized)
             {
                 StreamDeckStatics.StateDescrptions.Single(m => m.State == "Fog of War").PageingActions.Clear();
@@ -368,11 +379,15 @@ namespace Open_VTT.Forms.Popups
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: SceneControl | btnSave_Click");
+
             Session.Save(true);
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: SceneControl | btnConfig_Click");
+
             using (var config = new Config())
             {
                 config.ShowDialog();

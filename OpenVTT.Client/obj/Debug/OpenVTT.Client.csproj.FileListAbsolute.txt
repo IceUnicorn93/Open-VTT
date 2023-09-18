@@ -9,3 +9,5 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Debug\OpenVTT.Client.csproj.Cor
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Debug\OpenVTT.Client.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Debug\OpenVTT.Client.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\obj\Debug\OpenVTT.Client.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Client\bin\Debug\OpenVTT.Logging.pdb

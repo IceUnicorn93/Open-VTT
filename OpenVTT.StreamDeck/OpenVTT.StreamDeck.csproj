@@ -89,6 +89,10 @@
       <Project>{25AF1078-0371-4A8E-B835-8E97948CB20D}</Project>
       <Name>OpenVTT.FogOfWar</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
+      <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
+      <Name>OpenVTT.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
       <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
       <Name>OpenVTT.Session</Name>

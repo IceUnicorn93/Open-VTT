@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using OpenVTT.Common;
 using OpenVTT.Editor;
+using OpenVTT.Logging;
 
 namespace OpenVTT.Session
 {
@@ -33,7 +34,7 @@ namespace OpenVTT.Session
 
         public Session()
         {
-
+            Logger.Log("Class: Session | Constructor");
         }
 
         [Documentation("Static Session-Object", Name = "Values", IsStatic = true, IsField = true, DataType = "Session")]
@@ -42,12 +43,16 @@ namespace OpenVTT.Session
         [Documentation("Static Constructor", Name = "Session", IsMethod = true, ReturnType = "Session")]
         static Session()
         {
+            Logger.Log("Class: Session | static Constructor");
+
             Values = new Session();
         }
 
         [Documentation("Saves the Settings", Name = "Save", IsStatic = true, IsMethod = true, ReturnType = "void", Parameters = "bool optimize")]
         public static void Save(bool optimize)
         {
+            Logger.Log("Class: Session | Save");
+
             string path = GetSubDirectoryPathForFile(Values.SessionFolder, "Session.xml");
 
             //Validate Fog of War
@@ -78,6 +83,8 @@ namespace OpenVTT.Session
 
         internal static void Load(string path = "")
         {
+            Logger.Log("Class: Session | Load");
+
             if (path == "")
                 path = GetSubDirectoryPathForFile(Values.SessionFolder, "Session.xml");
 
@@ -91,26 +98,36 @@ namespace OpenVTT.Session
         [Documentation("Returns the Layer-Object for the given Layer-Number", Name = "GetLayer", IsStatic = true, IsMethod = true, ReturnType = "Layer", Parameters = "int number")]
         public static Layer GetLayer(int number)
         {
+            Logger.Log("Class: Session | GetLayer");
+
             return Values.ActiveScene.Layers.SingleOrDefault(n => n.LayerNumber == number);
         }
         [Documentation("Sets the Layer-Number")]
         public static void SetLayer(int number)
         {
+            Logger.Log("Class: Session | SetLayer");
+
             Values.ActiveLayerNumber = number;
         }
         [Documentation("Sets the Active-Scene to the given Scene", Name = "SetScene", IsStatic = true, IsMethod = true, ReturnType = "void", Parameters = "Scene scene")]
         public static void SetScene(Scene scene)
         {
+            Logger.Log("Class: Session | SetScene");
+
             Values.ActiveScene = scene;
         }
 
         [Documentation("Gets the Updated Image Path for the current Layer", Name = "UpdatePath", IsStatic = true, IsMethod = true, ReturnType = "string")]
         public static string UpdatePath()
         {
+            Logger.Log("Class: Session | UpdatePath");
+
             return UpdatePath(Values.ActiveLayer);
         }
         private static string UpdatePath(Layer layer)
         {
+            Logger.Log("Class: Session | UpdatePath(Layer layer)");
+
             var oldSessionPath = layer.RootPath;
             var oldImagePath = layer.ImagePath;
             var absolutImagePath = oldImagePath.Replace(oldSessionPath, "").Remove(0, 1);
@@ -120,26 +137,36 @@ namespace OpenVTT.Session
 
         private static string UpdatePath(string path, char replacement)
         {
+            Logger.Log("Class: Session | UpdatePath(string path, char replacement)");
+
             return path.Replace(replacement, Path.DirectorySeparatorChar);
         }
 
         internal static string GetSubDirectoryPath(string path)
         {
+            Logger.Log("Class: Session | GetSubDirectoryPath");
+
             return UpdatePath(Path.Combine(Values.SessionFolder, path), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static string GetSubDirectoryApplicationPath(string path)
         {
+            Logger.Log("Class: Session | GetSubDirectoryApplicationPath");
+
             return UpdatePath(Path.Combine(Application.StartupPath, path), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static string GetSubDirectoryPathForFile(string path, string fileName)
         {
+            Logger.Log("Class: Session | GetSubDirectoryPathForFile");
+
             return UpdatePath(Path.Combine(Values.SessionFolder, path, fileName), Values.ActiveLayer.DirectorySeperator);
         }
 
         internal static void GetDirectories(string path, bool recursive, List<string> listDirs, List<string> listFile, bool isSource = true)
         {
+            Logger.Log("Class: Session | GetDirectories");
+
             if (isSource == false)
                 listDirs.Add(path);
             if (recursive) // if we want to get subdirectories

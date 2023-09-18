@@ -1,6 +1,7 @@
 ﻿using OpenVTT.Common;
 using OpenVTT.Controls;
 using OpenVTT.Editor;
+using OpenVTT.Logging;
 using System;
 using System.Data;
 using System.IO;
@@ -13,6 +14,8 @@ namespace Open_VTT.Forms.Popups
     {
         public DisplayItemGenerator()
         {
+            Logger.Log("Class: DisplayItemGenerator | Constructor");
+
             InitializeComponent();
 
             Init();
@@ -20,6 +23,8 @@ namespace Open_VTT.Forms.Popups
 
         public void Init()
         {
+            Logger.Log("Class: DisplayItemGenerator | Init");
+
             TreeViewDisplay.InitDisplayItems();
 
             tbName.Text = "";
@@ -33,6 +38,8 @@ namespace Open_VTT.Forms.Popups
 
         public void btnCreate_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: DisplayItemGenerator | btnCreate_Click");
+
             //If Childs in Root are not allowed
             if (rbNode.Checked == false && cbxParent.SelectedItem == null)
             {

@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,6 +10,8 @@ namespace OpenVTT.Controls.Displayer
     {
         public MapPlayer()
         {
+            Logger.Log("Class: MapPlayer | Constructor");
+
             InitializeComponent();
 
             var screen = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == DisplayType.Player);
@@ -21,6 +24,8 @@ namespace OpenVTT.Controls.Displayer
 
         internal DrawingPictureBox GetPictureBox()
         {
+            Logger.Log("Class: MapPlayer | GetPictureBox");
+
             return displayImagePictureBox;
         }
     }

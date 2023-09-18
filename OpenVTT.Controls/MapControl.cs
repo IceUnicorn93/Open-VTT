@@ -2,6 +2,7 @@
 using OpenVTT.Controls.Displayer;
 using OpenVTT.FogOfWar;
 using OpenVTT.Forms;
+using OpenVTT.Logging;
 using OpenVTT.Session;
 using OpenVTT.StreamDeck;
 using System;
@@ -29,11 +30,15 @@ namespace OpenVTT.Controls
 
         public MapControl()
         {
+            Logger.Log("Class: MapControl | Constructor");
+
             InitializeComponent();
         }
 
         public void Init()
         {
+            Logger.Log("Class: MapControl | Init");
+
             playerWindow = WindowInstaces.Player;
             PlayerPictureBox = playerWindow.GetPictureBox();
             DmPictureBox.DrawMode = PictureBoxMode.Rectangle;
@@ -74,6 +79,8 @@ namespace OpenVTT.Controls
 
         public void LoadScene(Scene SceneToLoad, int LayerToLoad)
         {
+            Logger.Log("Class: MapControl | LoadScene");
+
             Session.Session.SetLayer(LayerToLoad);
             Session.Session.SetScene(SceneToLoad);
 
@@ -147,11 +154,15 @@ namespace OpenVTT.Controls
 
         public void SetLayerDisplay(string text)
         {
+            Logger.Log("Class: MapControl | SetLayerDisplay");
+
             lblLayer.Text = text;
         }
 
         void LoadImages(string Path)
         {
+            Logger.Log("Class: MapControl | LoadImages");
+
             dmImage?.Dispose();
             dmImage = null;
             dmImage = Image.FromFile(Path);
@@ -162,11 +173,15 @@ namespace OpenVTT.Controls
 
         public void ShowImages(bool showPlayer)
         {
+            Logger.Log("Class: MapControl | ShowImages(bool showPlayer)");
+
             ShowImages(dmImage, playerImage, showPlayer);
         }
 
         public void ShowImages(Image dm, Image player, bool showPlayer)
         {
+            Logger.Log("Class: MapControl | ShowImages(Image dm, Image player, bool showPlayer)");
+
             DmPictureBox.Image = dm;
 
             if (showPlayer || Settings.Settings.Values.DisplayChangesInstantly)
@@ -178,6 +193,8 @@ namespace OpenVTT.Controls
 
         private void btnImportImage_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnImportImage_Click");
+
             using (var openFileDialog = new OpenFileDialog())
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -228,6 +245,8 @@ namespace OpenVTT.Controls
 
         private void btnSetActive_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnSetActive_Click");
+
             WindowInstaces.Player.Show();
             ShowImages(true);
 
@@ -240,6 +259,8 @@ namespace OpenVTT.Controls
 
         private void btnCoverAll_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnCoverAll_Click");
+
             if (dmImage == null)
                 return;
 
@@ -276,6 +297,8 @@ namespace OpenVTT.Controls
 
         private void btnRevealAll_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnRevealAll_Click");
+
             if (dmImage == null)
                 return;
 
@@ -306,6 +329,8 @@ namespace OpenVTT.Controls
 
         private void btnRectangleFogOfWar_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnRectangleFogOfWar_Click");
+
             DmPictureBox.DrawMode = PictureBoxMode.Rectangle;
             btnPoligonFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);
             btnPoligonFogOfWar.UseVisualStyleBackColor = true;
@@ -314,6 +339,8 @@ namespace OpenVTT.Controls
 
         private void btnPoligonFogOfWar_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnPoligonFogOfWar_Click");
+
             DmPictureBox.DrawMode = PictureBoxMode.Poligon;
             btnRectangleFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);
             btnRectangleFogOfWar.UseVisualStyleBackColor = true;
@@ -322,6 +349,8 @@ namespace OpenVTT.Controls
 
         private void btnLayerUp_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnLayerUp_Click");
+
             var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayerNumber + 1);
             // Layer Exists
             if (layer != null)
@@ -343,6 +372,8 @@ namespace OpenVTT.Controls
 
         private void btnLayerDown_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnLayerDown_Click");
+
             var layer = Session.Session.GetLayer(Session.Session.Values.ActiveLayerNumber - 1);
 
             if (layer != null)// Layer Exists
@@ -369,6 +400,8 @@ namespace OpenVTT.Controls
 
         private void btnNewScene_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnNewScene_Click");
+
             using (var form = new NewScene())
             {
                 form.ShowDialog();
@@ -391,11 +424,15 @@ namespace OpenVTT.Controls
 
         private void cbxScenes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | cbxScenes_SelectedIndexChanged");
+
             LoadScene((Scene)cbxScenes.SelectedItem, 0);
         }
 
         private void btnImidiateFogOfWar_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnImidiateFogOfWar_Click");
+
             PrePlaceFogOfWar = false;
 
             btnReSetFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -405,6 +442,8 @@ namespace OpenVTT.Controls
 
         private void btnReSetFogOfWar_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: MapControl | btnReSetFogOfWar_Click");
+
             PrePlaceFogOfWar = true;
 
             btnImidiateFogOfWar.BackColor = Color.FromKnownColor(KnownColor.Control);

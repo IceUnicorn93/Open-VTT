@@ -11,3 +11,5 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\obj\Debug\OpenVTT.FogOfWar.csproj
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\obj\Debug\OpenVTT.FogOfWar.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\obj\Debug\OpenVTT.FogOfWar.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\obj\Debug\OpenVTT.FogOfWar.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\bin\Debug\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.FogOfWar\bin\Debug\OpenVTT.Logging.pdb

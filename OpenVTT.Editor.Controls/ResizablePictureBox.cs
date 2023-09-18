@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using OpenVTT.Logging;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,6 +20,8 @@ namespace OpenVTT.Editor.Controls
 
         public ResizablePictureBox()
         {
+            Logger.Log("Class: ResizablePictureBox | Constructor");
+
             this.ResizeRedraw = true;
 
             this.ResizeRedraw = true;

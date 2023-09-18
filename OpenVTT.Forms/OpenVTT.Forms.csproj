@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
+      <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
+      <Name>OpenVTT.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

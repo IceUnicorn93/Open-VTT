@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,11 +15,15 @@ namespace OpenVTT.Editor
 
         public override string ToString()
         {
+            Logger.Log("Class: TreeViewDisplayItem | ToString");
+
             return string.Join("=>", ParentDirectories);
         }
 
         public List<string> GetLocation(string fileextension = "", bool getFileName = true)
         {
+            Logger.Log("Class: TreeViewDisplayItem | GetLocation");
+
             var pathParts = new List<string>();
             pathParts.Add(Application.StartupPath);
             pathParts.Add("Notes");
@@ -30,6 +35,8 @@ namespace OpenVTT.Editor
 
         public List<TreeViewDisplayItem> GetParentPath(TreeViewDisplayItem Parent)
         {
+            Logger.Log("Class: TreeViewDisplayItem | GetParentPath");
+
             List<TreeViewDisplayItem> m(TreeViewDisplayItem p)
             {
                 var r = new List<TreeViewDisplayItem>();

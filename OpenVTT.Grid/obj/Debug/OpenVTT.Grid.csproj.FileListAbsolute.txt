@@ -15,3 +15,5 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Debug\OpenVTT.Grid.csproj.CoreCom
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Debug\OpenVTT.Grid.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Debug\OpenVTT.Grid.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Debug\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Debug\OpenVTT.Logging.pdb

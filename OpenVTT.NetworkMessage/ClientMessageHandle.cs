@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace OpenVTT.NetworkMessage
 
         public ClientMessageHandle(Client c)
         {
+            Logger.Log("Class: ClientMessageHandle | Constructor");
+
             Definition = new List<FileDefinition>();
 
             client = c;
@@ -32,6 +35,8 @@ namespace OpenVTT.NetworkMessage
 
         internal void MessageHandle(string data, Client client)
         {
+            Logger.Log("Class: ClientMessageHandle | MessageHandle");
+
             var okMessage = new Message()
             {
                 type = MessageType.Ok,
@@ -143,7 +148,7 @@ namespace OpenVTT.NetworkMessage
 
         internal List<FileDefinition> GetDefinition()
         {
-            
+            Logger.Log("Class: ClientMessageHandle | GetDefinition");
 
             var startupPath = Application.StartupPath;
 
@@ -166,6 +171,8 @@ namespace OpenVTT.NetworkMessage
 
         private void CrossCheckDirectories()
         {
+            Logger.Log("Class: ClientMessageHandle | CrossCheckDirectories");
+
             SetCommandLabel("Checking Definition");
 
             var localDef = GetDefinition();
@@ -218,6 +225,8 @@ namespace OpenVTT.NetworkMessage
 
         private void CreateFile(FileInformation fileInformation)
         {
+            Logger.Log("Class: ClientMessageHandle | CreateFile");
+
             var startupPath = Application.StartupPath;
             var path = Path.Combine(startupPath, fileInformation.fileLocation.Remove(0, 1));
 
@@ -246,6 +255,8 @@ namespace OpenVTT.NetworkMessage
 
         private void SendFile(string fileLocation, Client client)
         {
+            Logger.Log("Class: ClientMessageHandle | SendFile");
+
             var startupPath = Application.StartupPath;
             var path = Path.Combine(startupPath, fileLocation.Remove(0, 1));
 

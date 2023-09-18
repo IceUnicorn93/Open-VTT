@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,6 +16,8 @@ namespace OpenVTT.Session
         [Documentation("Constructor", Name = "Scene", IsMethod = true, ReturnType = "Scene")]
         public Scene()
         {
+            Logger.Log("Class: Scene | Constructor");
+
             Name = "Main";
 
             Layers = new List<Layer>();
@@ -23,12 +26,16 @@ namespace OpenVTT.Session
         [Documentation("Returns the Layer for the given Parameter", Name = "GetLayer", IsMethod = true, ReturnType = "Layer", Parameters = "int number")]
         public Layer GetLayer(int number)
         {
+            Logger.Log("Class: Scene | GetLayer");
+
             return Layers.SingleOrDefault(n => n.LayerNumber == number);
         }
 
         [Documentation("Overriden ToString()", Name = "ToString", IsMethod = true, ReturnType = "string")]
         public override string ToString()
         {
+            Logger.Log("Class: Scene | ToString");
+
             return Name;
         }
     }

@@ -478,6 +478,9 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -489,7 +492,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -500,6 +504,9 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -512,6 +519,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -524,6 +532,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -533,12 +542,22 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
+      "OpenVTT.Logging/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -550,7 +569,8 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -566,6 +586,7 @@
           "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "StreamDeckSharp": "3.2.0",
           "System.Buffers": "4.5.1",
@@ -1056,6 +1077,9 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -1067,7 +1091,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -1078,6 +1103,9 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -1090,6 +1118,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1102,6 +1131,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1111,12 +1141,22 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
+      "OpenVTT.Logging/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -1128,7 +1168,8 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -1144,6 +1185,7 @@
           "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "StreamDeckSharp": "3.2.0",
           "System.Buffers": "4.5.1",
@@ -1634,6 +1676,9 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -1645,7 +1690,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -1656,6 +1702,9 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -1668,6 +1717,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1680,6 +1730,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1689,12 +1740,22 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
+      "OpenVTT.Logging/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -1706,7 +1767,8 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -1722,6 +1784,7 @@
           "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "StreamDeckSharp": "3.2.0",
           "System.Buffers": "4.5.1",
@@ -2212,6 +2275,9 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -2223,7 +2289,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -2234,6 +2301,9 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -2246,6 +2316,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2258,6 +2329,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2267,12 +2339,22 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
+      "OpenVTT.Logging/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -2284,7 +2366,8 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -2300,6 +2383,7 @@
           "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "StreamDeckSharp": "3.2.0",
           "System.Buffers": "4.5.1",
@@ -2790,6 +2874,9 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -2801,7 +2888,8 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -2812,6 +2900,9 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -2824,6 +2915,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2836,6 +2928,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2845,12 +2938,22 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
+      "OpenVTT.Logging/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Logging.dll": {}
+        }
+      },
       "OpenVTT.Session/1.0.0": {
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -2862,7 +2965,8 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0"
+          "OpenVTT.Common": "1.0.0",
+          "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -2878,6 +2982,7 @@
           "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
+          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "StreamDeckSharp": "3.2.0",
           "System.Buffers": "4.5.1",
@@ -4112,6 +4217,11 @@
       "path": "../OpenVTT.Grid/OpenVTT.Grid.csproj",
       "msbuildProject": "../OpenVTT.Grid/OpenVTT.Grid.csproj"
     },
+    "OpenVTT.Logging/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Logging/OpenVTT.Logging.csproj",
+      "msbuildProject": "../OpenVTT.Logging/OpenVTT.Logging.csproj"
+    },
     "OpenVTT.Session/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.Session/OpenVTT.Session.csproj",
@@ -4138,6 +4248,7 @@
       "Microsoft.CodeAnalysis.Scripting.Common >= 4.6.0",
       "OpenVTT.Common >= 1.0.0",
       "OpenVTT.FogOfWar >= 1.0.0",
+      "OpenVTT.Logging >= 1.0.0",
       "OpenVTT.Session >= 1.0.0",
       "OpenVTT.Settings >= 1.0.0",
       "OpenVTT.StreamDeck >= 1.0.0",
@@ -4183,6 +4294,9 @@
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.FogOfWar\\OpenVTT.FogOfWar.csproj"
+            },
+            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
+              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Session\\OpenVTT.Session.csproj"

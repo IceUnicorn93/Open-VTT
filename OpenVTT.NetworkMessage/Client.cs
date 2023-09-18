@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenVTT.Logging;
+using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
@@ -21,31 +22,41 @@ namespace OpenVTT.NetworkMessage
 
         public Client(TcpClient client)
         {
+            Logger.Log("Class: Client | Constructor");
+
             tcpClient = client;
             readTask = new Task(ReadLoop);
         }
 
         public void Start()
         {
+            Logger.Log("Class: Client | Start");
+
             readTask.Start();
         }
 
         public void Stop()
         {
+            Logger.Log("Class: Client | Stop");
+
             tcpClient.Close();
         }
 
         public void Write(string s)
         {
+            Logger.Log("Class: Client | Write");
+
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(s);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
         }
 
         private void ReadLoop()
         {
+            Logger.Log("Class: Client | ReadLoop");
+
             while (tcpClient != null && tcpClient.Client != null && tcpClient.Connected)
             {
-                if(DateTime.Now - lastMessageReceived > TimeSpan.FromHours(12)) // Kill the Client if there is no Action for 12 Hours
+                if (DateTime.Now - lastMessageReceived > TimeSpan.FromHours(12)) // Kill the Client if there is no Action for 12 Hours
                 {
                     tcpClient.Dispose();
                     break;
@@ -59,6 +70,8 @@ namespace OpenVTT.NetworkMessage
 
                 if (oldRead == newRead && tcpClient.Available > 0) // if equal, all the data has been read
                 {
+                    Logger.Log("Class: Client | ReadLoop | Loop");
+
                     lastMessageReceived = DateTime.Now;
 
                     try

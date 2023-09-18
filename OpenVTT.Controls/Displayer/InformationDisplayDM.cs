@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace OpenVTT.Controls.Displayer
     {
         internal InformationDisplayDM()
         {
+            Logger.Log("Class: InformationDisplayDM | Constructor");
+
             InitializeComponent();
 
             var screen = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == DisplayType.InformationDisplayDM);
@@ -27,6 +30,8 @@ namespace OpenVTT.Controls.Displayer
 
         internal DrawingPictureBox GetPictureBox()
         {
+            Logger.Log("Class: InformationDisplayDM | GetPictureBox");
+
             return displayImagePictureBox;
         }
     }

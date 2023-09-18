@@ -1,4 +1,5 @@
 ﻿using OpenVTT.Common;
+using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,15 @@ namespace OpenVTT.Controls
 
         public RecentlyOpenedRow()
         {
+            Logger.Log("Class: RecentlyOpenedRow | Constructor");
+
             InitializeComponent();
         }
 
         public RecentlyOpenedRow(string path = "") : this()
         {
+            Logger.Log("Class: RecentlyOpenedRow | Constructor(string path = \"\")");
+
             if (path == "") return;
 
             FilePath = path;
@@ -33,6 +38,8 @@ namespace OpenVTT.Controls
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: RecentlyOpenedRow | btnOpen_Click");
+
             SessionLoaded?.Invoke(FilePath);
         }
     }

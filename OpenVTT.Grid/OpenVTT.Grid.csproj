@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
+      <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
+      <Name>OpenVTT.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Settings\OpenVTT.Settings.csproj">
       <Project>{071f33e3-0c99-4b92-b5d9-c09ccb70c665}</Project>
       <Name>OpenVTT.Settings</Name>

@@ -1,5 +1,6 @@
 ﻿using Open_VTT.Forms.Popups;
 using OpenVTT.Controls.Displayer;
+using OpenVTT.Logging;
 using OpenVTT.Scripting;
 using OpenVTT.Session;
 using OpenVTT.Settings;
@@ -15,6 +16,8 @@ namespace Open_VTT.Forms
     {
         public Start()
         {
+            Logger.Log("Class: Start | Constructor");
+
             InitializeComponent();
 
             Settings.Load();
@@ -25,11 +28,15 @@ namespace Open_VTT.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Start | btnClose_Click");
+
             this.Close();
         }
 
         private void btnConfigure_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Start | btnConfigure_Click");
+
             this.Hide();
             using (var config = new Config())
             {
@@ -40,6 +47,8 @@ namespace Open_VTT.Forms
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Start | btnLoad_Click");
+
             this.Hide();
             using (var openFileDialog = new OpenFileDialog())
             {
@@ -55,6 +64,8 @@ namespace Open_VTT.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Start | btnCreate_Click");
+
             this.Hide();
             using (var folderBrowserDiaglog = new FolderBrowserDialog())
             {
@@ -76,6 +87,8 @@ namespace Open_VTT.Forms
 
         private void Load(string path)
         {
+            Logger.Log("Class: Start | Load");
+
             Session.Load(path);
             Session.Values.SessionFolder = Path.GetDirectoryName(path);
             Session.Values.ActiveScene = Session.Values.Scenes.First();
@@ -102,6 +115,7 @@ namespace Open_VTT.Forms
 
         private void LoadWithHide(string path)
         {
+            Logger.Log("Class: Start | LoadWithHide");
 
             this.Hide();
 
