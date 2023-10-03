@@ -24,8 +24,6 @@ namespace OpenVTT.Common
 
         public Documentation(string description)
         {
-            Logger.Log("Class: Documentation | Constructor");
-
             Description = description;
         }
 

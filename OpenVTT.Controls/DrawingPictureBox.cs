@@ -52,8 +52,6 @@ namespace OpenVTT.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Logger.Log("Class: DrawingPictureBox | OnPaint");
-
             base.OnPaint(e);
 
             switch (DrawMode)
@@ -92,8 +90,6 @@ namespace OpenVTT.Controls
         }
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            Logger.Log("Class: DrawingPictureBox | OnMouseUp");
-
             switch (DrawMode)
             {
                 case PictureBoxMode.Ping:
@@ -137,8 +133,6 @@ namespace OpenVTT.Controls
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            Logger.Log("Class: DrawingPictureBox | OnMouseDown");
-
             switch (DrawMode)
             {
                 case PictureBoxMode.Ping:
@@ -185,8 +179,6 @@ namespace OpenVTT.Controls
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            Logger.Log("Class: DrawingPictureBox | OnMouseMove");
-
             switch (DrawMode)
             {
                 case PictureBoxMode.Rectangle:
@@ -217,8 +209,6 @@ namespace OpenVTT.Controls
 
         public void SetPingPoint(Point point)
         {
-            Logger.Log("Class: DrawingPictureBox | SetPingPoint");
-
             pingPoint = point;
             Invalidate();
         }

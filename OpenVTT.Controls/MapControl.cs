@@ -182,11 +182,18 @@ namespace OpenVTT.Controls
         {
             Logger.Log("Class: MapControl | ShowImages(Image dm, Image player, bool showPlayer)");
 
-            DmPictureBox.Image = dm;
+            try
+            { 
+                DmPictureBox.Image = dm;
 
-            if (showPlayer || Settings.Settings.Values.DisplayChangesInstantly)
+                if (showPlayer || Settings.Settings.Values.DisplayChangesInstantly)
+                {
+                    PlayerPictureBox.Image = player;
+                }
+            }
+            catch (Exception ex)
             {
-                PlayerPictureBox.Image = player;
+                Logger.Log(ex.Message);
             }
         }
 
@@ -212,15 +219,15 @@ namespace OpenVTT.Controls
                     bool isImage;
                     var ImageExtensions = new List<string>
                     {
-                        "JPG",
-                        "GIF",
-                        "JPEG",
-                        "PNG",
-                        "BMP",
-                        "TIFF",
-                        "SVG",
+                        ".JPG",
+                        ".GIF",
+                        ".JPEG",
+                        ".PNG",
+                        ".BMP",
+                        ".TIFF",
+                        ".SVG",
                     };
-                    if (ImageExtensions.Contains(Path.GetExtension(openFileDialog.FileName).ToUpperInvariant()))
+                    if (ImageExtensions.Contains(Path.GetExtension(openFileDialog.FileName).ToUpper()))
                         isImage = true;
                     else
                         isImage = false;

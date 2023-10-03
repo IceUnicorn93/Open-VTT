@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace OpenVTT.Logging
@@ -7,6 +8,8 @@ namespace OpenVTT.Logging
     {
         static string appPath;
         static DateTime startupTime;
+
+        static List<string> lines = new List<string>();
 
         public Logger(string applicationPath)
         {
@@ -23,7 +26,15 @@ namespace OpenVTT.Logging
             if (string.IsNullOrWhiteSpace(appPath)) return;
             if (default(DateTime) == startupTime) return;
 
-            File.AppendAllText(Path.Combine(appPath, $"Log - {startupTime:yyyy-MM-dd - HH.mm.ss}.txt"), $"{DateTime.Now:HH:mm:ss} {message}{Environment.NewLine}");
+            lines.Add($"{DateTime.Now:HH:mm:ss} {message}{Environment.NewLine}");
+
+            if(lines.Count == 10)
+            {
+                var messageDump = string.Join(" ", lines.ToArray());
+                File.AppendAllText(Path.Combine(appPath, $"Log - {startupTime:yyyy-MM-dd - HH.mm.ss}.txt"), messageDump);
+
+                lines.Clear();
+            }
         }
     }
 }

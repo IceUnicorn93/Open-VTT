@@ -313,16 +313,22 @@ Page.Controls.Add(tbDescription);";
             SubDirectorys.RemoveAll(n => n.Contains("Sample Script"));
             SubDirectorys.RemoveAll(n => n.Contains("DLL References"));
 
-            var list = new List<Task>();
-            //foreach (var script in SubDirectorys)
-            //    list.Add(Task.Run(() => RunScript(script)));
+            var runAsync = false;
+            if(runAsync)
+            {
+                var list = new List<Task>();
+                foreach (var script in SubDirectorys)
+                    list.Add(Task.Run(() => RunScript(script)));
 
-            //await Task.WhenAll(list);
-
-            foreach (var script in SubDirectorys)
-                RunScript(script);
+                await Task.WhenAll(list);
+            }
+            else
+            {
+                foreach (var script in SubDirectorys)
+                    RunScript(script);
 
                 Calculated = true;
+            }
 
             if (HostsCalculated != null)
                     HostsCalculated();
