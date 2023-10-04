@@ -386,7 +386,7 @@ Page.Controls.Add(tbDescription);";
             try { list.Add(typeof(Point).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
 
-            list.ForEach(n => config.DLL_References.Add(n.Location));
+            list.Distinct().ToList().ForEach(n => config.DLL_References.Add(n.Location));
 
             //int skipper = 0;
             //for (int i = 0; i < list.Count; i++)
