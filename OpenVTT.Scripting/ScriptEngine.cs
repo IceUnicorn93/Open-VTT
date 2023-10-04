@@ -386,21 +386,23 @@ Page.Controls.Add(tbDescription);";
             try { list.Add(typeof(Point).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
 
-            int skipper = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                var tempList = new List<Assembly>();
-                tempList.AddRange(list.Skip(skipper).Take(i + 1 - skipper));
-                try
-                {
-                    Logger.Log($"Class: ScriptEngine | RunScript | Add Assembly References: Take:{i} Skip:{skipper}");
-                    so = so.AddReferences(tempList.Distinct().ToArray());
-                }
-                catch (Exception ex)
-                {
-                    skipper++;
-                } 
-            }
+            list.ForEach(n => config.DLL_References.Add(n.Location));
+
+            //int skipper = 0;
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    var tempList = new List<Assembly>();
+            //    tempList.AddRange(list.Skip(skipper).Take(i + 1 - skipper));
+            //    try
+            //    {
+            //        Logger.Log($"Class: ScriptEngine | RunScript | Add Assembly References: Take:{i} Skip:{skipper}");
+            //        so = so.AddReferences(tempList.Distinct().ToArray());
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        skipper++;
+            //    } 
+            //}
 
 
             //so = so.AddReferences(new[]
