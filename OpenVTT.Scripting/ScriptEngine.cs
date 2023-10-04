@@ -359,7 +359,7 @@ Page.Controls.Add(tbDescription);";
 
             var list = new List<Assembly>();
 
-            try { list.Add(typeof(Settings.Settings).GetTypeInfo().Assembly); }
+            try { list.Add(typeof(OpenVTT.Settings.Settings).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings"); }
 
             try { list.Add(typeof(Session.Session).GetTypeInfo().Assembly); }
