@@ -354,13 +354,13 @@ Page.Controls.Add(tbDescription);";
             if(config.isActive == false) return; // No need to load the Script if it's not active
 
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
-            Logger.Log("Class: ScriptEngine | RunScript | Add References");
+            Logger.Log("Class: ScriptEngine | RunScript | Add Using References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
 
             var list = new List<Assembly>();
 
-            //try { list.Add(typeof(OpenVTT.Settings.Settings).GetTypeInfo().Assembly); }
-            //catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings"); }
+            try { list.Add(typeof(OpenVTT.Settings.Settings).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings"); }
 
             try { list.Add(typeof(Session.Session).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Session"); }
@@ -389,7 +389,7 @@ Page.Controls.Add(tbDescription);";
 
             try
             {
-                Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings");
+                Logger.Log("Class: ScriptEngine | RunScript | Add Assembly References");
                 so = so.AddReferences(list.Distinct().ToArray());
             }
             catch (Exception ex)
