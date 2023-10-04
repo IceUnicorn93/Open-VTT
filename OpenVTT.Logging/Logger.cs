@@ -28,7 +28,7 @@ namespace OpenVTT.Logging
 
             lines.Add($"{DateTime.Now:HH:mm:ss} {message}{Environment.NewLine}");
 
-            if(lines.Count == 10)
+            if(lines.Count == 10 || message.ToLower().Contains("exception"))
             {
                 var messageDump = string.Join(" ", lines.ToArray());
                 File.AppendAllText(Path.Combine(appPath, $"Log - {startupTime:yyyy-MM-dd - HH.mm.ss}.txt"), messageDump);

@@ -326,9 +326,9 @@ Page.Controls.Add(tbDescription);";
             {
                 foreach (var script in SubDirectorys)
                     RunScript(script);
-
-                Calculated = true;
             }
+
+            Calculated = true;
 
             if (HostsCalculated != null)
                     HostsCalculated();
@@ -344,11 +344,13 @@ Page.Controls.Add(tbDescription);";
             if (File.Exists(Path.Combine(path, "_Script.txt"))) File.Delete(Path.Combine(path, "_Script.txt"));
 
             //Loading the Configuration for the Script
+            Logger.Log("Class: ScriptEngine | RunScript | Load Config");
             var config = ScriptConfig.Load(Path.Combine(path, "ScriptConfig.xml"));
 
             if(config.isActive == false) return; // No need to load the Script if it's not active
 
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
+            Logger.Log("Class: ScriptEngine | RunScript | Add References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
             so = so.AddReferences(new[]
             {
@@ -365,6 +367,7 @@ Page.Controls.Add(tbDescription);";
 
             var script = "";
 
+            Logger.Log("Class: ScriptEngine | RunScript | Build Script");
             //Adding DLL References using #r
             foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
 
@@ -381,6 +384,7 @@ Page.Controls.Add(tbDescription);";
             script += Environment.NewLine;
             script += "null";
 
+            Logger.Log("Class: ScriptEngine | RunScript | Create ScriptHost");
             var host = new ScriptHost { Config = config };
             try
             {
@@ -403,7 +407,6 @@ Page.Controls.Add(tbDescription);";
                 File.WriteAllText(Path.Combine(path, "_Script.txt"), script);
             }
 
-            MessageBox.Show("Hosts Added");
             CalculatedHosts.Add(host);
         }
     }
