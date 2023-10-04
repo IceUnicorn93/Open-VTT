@@ -359,7 +359,7 @@ Page.Controls.Add(tbDescription);";
 
             var list = new List<Assembly>();
 
-            try { list.Add(typeof(OpenVTT.Settings.Settings).GetTypeInfo().Assembly); }
+            try { list.Add(typeof(Settings.Settings).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings"); }
 
             try { list.Add(typeof(Session.Session).GetTypeInfo().Assembly); }
@@ -387,15 +387,20 @@ Page.Controls.Add(tbDescription);";
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
 
 
-            try
+            for (int i = 0; i < list.Count; i++)
             {
-                Logger.Log("Class: ScriptEngine | RunScript | Add Assembly References");
-                so = so.AddReferences(list.Distinct().ToArray());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
+                var tempList = new List<Assembly>();
+                tempList.AddRange(list.Take(i + 1));
+                try
+                {
+                    Logger.Log("Class: ScriptEngine | RunScript | Add Assembly References");
+                    so = so.AddReferences(list.Distinct().ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
+                } 
             }
 
 
