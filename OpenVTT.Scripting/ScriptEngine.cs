@@ -393,8 +393,8 @@ Page.Controls.Add(tbDescription);";
                 tempList.AddRange(list.Take(i + 1));
                 try
                 {
-                    Logger.Log("Class: ScriptEngine | RunScript | Add Assembly References");
-                    so = so.AddReferences(list.Distinct().ToArray());
+                    Logger.Log($"Class: ScriptEngine | RunScript | Add Assembly References: {i}");
+                    so = so.AddReferences(tempList.Distinct().ToArray());
                 }
                 catch (Exception ex)
                 {
