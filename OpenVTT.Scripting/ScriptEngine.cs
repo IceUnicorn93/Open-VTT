@@ -357,18 +357,18 @@ Page.Controls.Add(tbDescription);";
             Logger.Log("Class: ScriptEngine | RunScript | Add References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
             //TODO: Reactivate after Linux Testing is done!!!!
-            //so = so.AddReferences(new[]
-            //{
-            //    typeof(Settings.Settings).GetTypeInfo().Assembly,
-            //    typeof(Session.Session).GetTypeInfo().Assembly,
-            //    typeof(CustomSettings).GetTypeInfo().Assembly,
-            //    typeof(CustomObject).GetTypeInfo().Assembly,
-            //    typeof(CustomObjectData).GetTypeInfo().Assembly,
-            //    typeof(StreamDeckStatics).GetTypeInfo().Assembly,
-            //    typeof(Documentation).GetTypeInfo().Assembly,
-            //    typeof(Form).GetTypeInfo().Assembly,
-            //    typeof(Point).GetTypeInfo().Assembly,
-            //});
+            so = so.AddReferences(new[]
+            {
+                //typeof(Settings.Settings).GetTypeInfo().Assembly,
+                //typeof(Session.Session).GetTypeInfo().Assembly,
+                //typeof(CustomSettings).GetTypeInfo().Assembly,
+                //typeof(CustomObject).GetTypeInfo().Assembly,
+                //typeof(CustomObjectData).GetTypeInfo().Assembly,
+                //typeof(StreamDeckStatics).GetTypeInfo().Assembly,
+                //typeof(Documentation).GetTypeInfo().Assembly,
+                typeof(Form).GetTypeInfo().Assembly,
+                //typeof(Point).GetTypeInfo().Assembly,
+            });
 
             var script = "";
 
@@ -383,20 +383,11 @@ Page.Controls.Add(tbDescription);";
                 script += $"//---- File: {file}";
                 script += Environment.NewLine;
                 Logger.Log($"Class: ScriptEngine | RunScript | Read File: {Path.Combine(path, file)}");
-
-                try
-                {
-                    script += File.ReadAllText(Path.Combine(path, file));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                script += File.ReadAllText(Path.Combine(path, file));
                 
                 script += Environment.NewLine;
             }
 
-            Logger.Log("Class: ScriptEngine | RunScript | Create Last Script Part");
             script += $"//---- Need to Add a 'return' value for the script without a ; Don't worry, thats correct";
             script += Environment.NewLine;
             script += "null";
