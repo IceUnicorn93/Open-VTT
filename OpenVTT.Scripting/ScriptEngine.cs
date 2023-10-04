@@ -352,18 +352,18 @@ Page.Controls.Add(tbDescription);";
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
             Logger.Log("Class: ScriptEngine | RunScript | Add References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
-            so = so.AddReferences(new[]
-            {
-                typeof(Settings.Settings).GetTypeInfo().Assembly,
-                typeof(Session.Session).GetTypeInfo().Assembly,
-                typeof(CustomSettings).GetTypeInfo().Assembly,
-                typeof(CustomObject).GetTypeInfo().Assembly,
-                typeof(CustomObjectData).GetTypeInfo().Assembly,
-                typeof(StreamDeckStatics).GetTypeInfo().Assembly,
-                typeof(Documentation).GetTypeInfo().Assembly,
-                typeof(Form).GetTypeInfo().Assembly,
-                typeof(Point).GetTypeInfo().Assembly,
-            });
+            //so = so.AddReferences(new[]
+            //{
+            //    typeof(Settings.Settings).GetTypeInfo().Assembly,
+            //    typeof(Session.Session).GetTypeInfo().Assembly,
+            //    typeof(CustomSettings).GetTypeInfo().Assembly,
+            //    typeof(CustomObject).GetTypeInfo().Assembly,
+            //    typeof(CustomObjectData).GetTypeInfo().Assembly,
+            //    typeof(StreamDeckStatics).GetTypeInfo().Assembly,
+            //    typeof(Documentation).GetTypeInfo().Assembly,
+            //    typeof(Form).GetTypeInfo().Assembly,
+            //    typeof(Point).GetTypeInfo().Assembly,
+            //});
 
             var script = "";
 
