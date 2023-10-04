@@ -356,34 +356,61 @@ Page.Controls.Add(tbDescription);";
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
             Logger.Log("Class: ScriptEngine | RunScript | Add References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
+
+            var list = new List<Assembly>();
+
+            try { list.Add(typeof(Settings.Settings).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings"); }
+
+            try { list.Add(typeof(Session.Session).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Session"); }
+
+            try { list.Add(typeof(CustomSettings).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at CustomSettings"); }
+
+            try { list.Add(typeof(CustomObject).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at CustomObject"); }
+
+            try { list.Add(typeof(CustomObjectData).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at CustomObjectData"); }
+
+            try { list.Add(typeof(StreamDeckStatics).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at StreamDeckStatics"); }
+
+            try { list.Add(typeof(Documentation).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Documentation"); }
+
+            try { list.Add(typeof(Form).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Form"); }
+
+            try { list.Add(typeof(Point).GetTypeInfo().Assembly); }
+            catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
+
+
             try
             {
-                so = so.AddReferences(new[]
-                    {
-                typeof(Settings.Settings).GetTypeInfo().Assembly,
-                typeof(Session.Session).GetTypeInfo().Assembly,
-                typeof(CustomSettings).GetTypeInfo().Assembly,
-                typeof(CustomObject).GetTypeInfo().Assembly,
-                typeof(CustomObjectData).GetTypeInfo().Assembly,
-                typeof(StreamDeckStatics).GetTypeInfo().Assembly,
-                typeof(Documentation).GetTypeInfo().Assembly,
-                typeof(Form).GetTypeInfo().Assembly,
-                typeof(Point).GetTypeInfo().Assembly,
-            });
+                Logger.Log("Class: ScriptEngine | RunScript | Fail at Settings");
+                so = so.AddReferences(list.Distinct().ToArray());
             }
             catch (Exception ex)
             {
-                var text = ex.Message;
-                var inner = ex.InnerException;
-                while(inner != null)
-                {
-                    text += inner.Message + Environment.NewLine;
-                    inner = inner.InnerException;
-                }
-
-                Logger.Log($"Class: ScriptEngine | RunScript | Add References Exception: {text}");
                 MessageBox.Show(ex.Message);
+                throw;
             }
+
+
+            //so = so.AddReferences(new[]
+            //{
+            //typeof(Settings.Settings).GetTypeInfo().Assembly,
+            //typeof(Session.Session).GetTypeInfo().Assembly,
+            //typeof(CustomSettings).GetTypeInfo().Assembly,
+            //typeof(CustomObject).GetTypeInfo().Assembly,
+            //typeof(CustomObjectData).GetTypeInfo().Assembly,
+            //typeof(StreamDeckStatics).GetTypeInfo().Assembly,
+            //typeof(Documentation).GetTypeInfo().Assembly,
+            //typeof(Form).GetTypeInfo().Assembly,
+            //typeof(Point).GetTypeInfo().Assembly,
+            //});
 
             var script = "";
 
