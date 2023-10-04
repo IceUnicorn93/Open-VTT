@@ -1,4 +1,6 @@
-﻿using OpenVTT.Logging;
+﻿using OpenVTT.Controls;
+using OpenVTT.Logging;
+using OpenVTT.Scripting;
 using OpenVTT.Settings;
 using System;
 using System.Drawing;
@@ -34,6 +36,13 @@ namespace Open_VTT.Forms.Popups
 
             tbServerIP.Text = Settings.Values.NoteServerIP;
             nudServerPort.Value = Settings.Values.NoteServerPort;
+
+            for (int i = 0; i < ScriptEngine.CalculatedHosts.Count; i++)
+            {
+                var ctrl = new ScriptDisplay(ScriptEngine.CalculatedHosts[i]);
+                tpScripting.Controls.Add(ctrl);
+                ctrl.Location = new Point(10, 10 + (i * 30));
+            }
         }
 
         public void nudPlayerSize_ValueChanged(object sender, EventArgs e)

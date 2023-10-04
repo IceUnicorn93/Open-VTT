@@ -389,9 +389,14 @@ Page.Controls.Add(tbDescription);";
             try
             {
                 var r = CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so).Result;
+
+                host.hasSuccessfullyRun = true;
             }
             catch (Exception ex)
             {
+                host.exception = ex;
+                host.hasSuccessfullyRun = false;
+
                 var errMessage = "Please see _Script.txt to see what file to fix! I recommend Notepad++" + Environment.NewLine;
                 errMessage += ex.Message + Environment.NewLine + "#####################################################################" + Environment.NewLine;
                 errMessage += ex.Message + Environment.NewLine + Environment.NewLine;

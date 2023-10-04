@@ -111,6 +111,12 @@
     <Compile Include="ScreenSelector.Designer.cs">
       <DependentUpon>ScreenSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScriptDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScriptDisplay.Designer.cs">
+      <DependentUpon>ScriptDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="TreeViewDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,10 @@
       <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
       <Name>OpenVTT.Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.Scripting\OpenVTT.Scripting.csproj">
+      <Project>{b56784f1-969b-48c7-b18f-1c7471c69ddc}</Project>
+      <Name>OpenVTT.Scripting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Session\OpenVTT.Session.csproj">
       <Project>{df882d6b-b6cc-40d1-b08e-367a1169d135}</Project>
       <Name>OpenVTT.Session</Name>
@@ -172,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenSelector.resx">
       <DependentUpon>ScreenSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptDisplay.resx">
+      <DependentUpon>ScriptDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TreeViewDisplay.resx">
       <DependentUpon>TreeViewDisplay.cs</DependentUpon>
