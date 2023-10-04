@@ -352,6 +352,7 @@ Page.Controls.Add(tbDescription);";
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
             Logger.Log("Class: ScriptEngine | RunScript | Add References");
             var so = ScriptOptions.Default.AddImports(config.Using_References);
+            //TODO: Reactivate after Linux Testing is done!!!!
             //so = so.AddReferences(new[]
             //{
             //    typeof(Settings.Settings).GetTypeInfo().Assembly,
@@ -367,25 +368,29 @@ Page.Controls.Add(tbDescription);";
 
             var script = "";
 
-            Logger.Log("Class: ScriptEngine | RunScript | Build Script");
+            Logger.Log("Class: ScriptEngine | RunScript | Create #r Reference");
             //Adding DLL References using #r
             foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
 
+            Logger.Log("Class: ScriptEngine | RunScript | Create FileReferences");
             script += Environment.NewLine;
             foreach (var file in config.File_References)
             {
                 script += $"//---- File: {file}";
                 script += Environment.NewLine;
+                Logger.Log("Class: ScriptEngine | RunScript | Read File");
                 script += File.ReadAllText(Path.Combine(path, file));
                 script += Environment.NewLine;
             }
 
+            Logger.Log("Class: ScriptEngine | RunScript | Create Last Script Part");
             script += $"//---- Need to Add a 'return' value for the script without a ; Don't worry, thats correct";
             script += Environment.NewLine;
             script += "null";
 
             Logger.Log("Class: ScriptEngine | RunScript | Create ScriptHost");
             var host = new ScriptHost { Config = config };
+            CalculatedHosts.Add(host);
             try
             {
                 var r = CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so).Result;
@@ -411,8 +416,6 @@ Page.Controls.Add(tbDescription);";
                 File.WriteAllText(Path.Combine(path, "_Error.txt"), errMessage);
                 File.WriteAllText(Path.Combine(path, "_Script.txt"), script);
             }
-
-            CalculatedHosts.Add(host);
         }
     }
 }
