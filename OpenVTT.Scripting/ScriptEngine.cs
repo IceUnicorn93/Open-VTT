@@ -373,7 +373,15 @@ Page.Controls.Add(tbDescription);";
             }
             catch (Exception ex)
             {
-                Logger.Log("Class: ScriptEngine | RunScript | Add References Exception");
+                var text = ex.Message;
+                var inner = ex.InnerException;
+                while(inner != null)
+                {
+                    text += inner.Message + Environment.NewLine;
+                    inner = inner.InnerException;
+                }
+
+                Logger.Log($"Class: ScriptEngine | RunScript | Add References Exception: {text}");
                 MessageBox.Show(ex.Message);
             }
 
