@@ -316,6 +316,8 @@ Page.Controls.Add(tbDescription);";
             var runAsync = false;
             if(runAsync)
             {
+                Logger.Log("Class: ScriptEngine | RunScripts Async");
+
                 var list = new List<Task>();
                 foreach (var script in SubDirectorys)
                     list.Add(Task.Run(() => RunScript(script)));
@@ -324,6 +326,8 @@ Page.Controls.Add(tbDescription);";
             }
             else
             {
+                Logger.Log("Class: ScriptEngine | RunScripts Sync");
+
                 foreach (var script in SubDirectorys)
                     RunScript(script);
             }
@@ -378,8 +382,17 @@ Page.Controls.Add(tbDescription);";
             {
                 script += $"//---- File: {file}";
                 script += Environment.NewLine;
-                Logger.Log("Class: ScriptEngine | RunScript | Read File");
-                script += File.ReadAllText(Path.Combine(path, file));
+                Logger.Log($"Class: ScriptEngine | RunScript | Read File: {Path.Combine(path, file)}");
+
+                try
+                {
+                    script += File.ReadAllText(Path.Combine(path, file));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
                 script += Environment.NewLine;
             }
 
