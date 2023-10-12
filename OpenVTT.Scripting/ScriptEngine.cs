@@ -386,24 +386,15 @@ Page.Controls.Add(tbDescription);";
             try { list.Add(typeof(Point).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
 
+            /*
+             * Copy used DLLs to a Temp Folder in that Script Folder.
+             * Collect Locations for these DLLs
+             * Add these Locations to DLL References
+             * Alternative
+             * Add them to the ScriptOptions
+             */
+
             list.Distinct().ToList().ForEach(n => config.DLL_References.Add(n.Location));
-
-            //int skipper = 0;
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    var tempList = new List<Assembly>();
-            //    tempList.AddRange(list.Skip(skipper).Take(i + 1 - skipper));
-            //    try
-            //    {
-            //        Logger.Log($"Class: ScriptEngine | RunScript | Add Assembly References: Take:{i} Skip:{skipper}");
-            //        so = so.AddReferences(tempList.Distinct().ToArray());
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        skipper++;
-            //    } 
-            //}
-
 
             //so = so.AddReferences(new[]
             //{
@@ -422,7 +413,7 @@ Page.Controls.Add(tbDescription);";
 
             Logger.Log("Class: ScriptEngine | RunScript | Create #r Reference");
             //Adding DLL References using #r
-            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "DLL References", dll)}\"" + Environment.NewLine;
+            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "_DLL References", dll)}\"" + Environment.NewLine;
 
             Logger.Log("Class: ScriptEngine | RunScript | Create FileReferences");
             script += Environment.NewLine;
