@@ -24,15 +24,24 @@
         //Actively under work:
         /*
          * -> StreamDeck Layout Configurable in Config Menu
+         *      Thats pretty neat, no need to stick to my ideals
          * -> Animated Map Support
+         *      For what ever reason they want it
          * -> [x] Add Designer for Notes and new Scipts (OpenVTT.UiDesigner)
+         *      Custom designs for new Plugins/Scripts and for the Notes
          * -> Re-Run failed Scripts
+         *      No need to reload a story. that would be nice
+         * -> Finetuning for Grid-Values
+         *      Sometimes Grids can be slightly rectangluar (specially on ultra wide Monitors)
          */
 
         // Bugs:
         /*
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
          *  Specially: {Random Buttons} layer switching, Cover all
+         * 
+         * Grid will only be displayed if some kind of Fog of War is in the Layer
+         *  Should be changed to always display
          */
 
         // Needs Testing:
