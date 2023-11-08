@@ -22,7 +22,7 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
@@ -85,10 +85,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
@@ -142,13 +142,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
@@ -202,10 +202,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
@@ -634,7 +634,7 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
@@ -697,10 +697,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
@@ -754,13 +754,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
@@ -814,10 +814,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
@@ -1246,7 +1246,7 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
@@ -1309,10 +1309,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
@@ -1366,13 +1366,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
@@ -1426,10 +1426,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
@@ -1858,7 +1858,7 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
@@ -1921,10 +1921,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
@@ -1978,13 +1978,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
@@ -2038,10 +2038,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
@@ -2470,7 +2470,7 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
@@ -2533,10 +2533,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
@@ -2590,13 +2590,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
+      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
+          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
@@ -2650,10 +2650,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
+      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
@@ -3682,10 +3682,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.CodeAnalysis.Common/4.6.0": {
-      "sha512": "N3uLvekc7DjvE1BX8YW7UH7ldjA4ps/Tun2YmOoSIItJrh1gnQIMKUbK1c3uQUx2NHbLibVZI4o/VB9xb4B7tA==",
+    "Microsoft.CodeAnalysis.Common/4.7.0": {
+      "sha512": "pD5S14xMUebSGYe75kt0q/aaS/ftvktSo/pEv7aX7hNPHfdZS+SZeXvkvcffGxWkunYOyRF9m1oN7zzSdYj9dQ==",
       "type": "package",
-      "path": "microsoft.codeanalysis.common/4.6.0",
+      "path": "microsoft.codeanalysis.common/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3707,6 +3707,22 @@
         "lib/net6.0/tr/Microsoft.CodeAnalysis.resources.dll",
         "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
         "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.pdb",
+        "lib/net7.0/Microsoft.CodeAnalysis.xml",
+        "lib/net7.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.pdb",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.xml",
@@ -3723,14 +3739,14 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "microsoft.codeanalysis.common.4.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.common.4.7.0.nupkg.sha512",
         "microsoft.codeanalysis.common.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.CSharp/4.6.0": {
-      "sha512": "9pyFZUN2Lyu3C0Xfs49kezfH+CzQHMibGsQeQPu0P+GWyH2XXDwmyZ6jAaKQGNUXOJfC2OK01hWMJTJY315uDQ==",
+    "Microsoft.CodeAnalysis.CSharp/4.7.0": {
+      "sha512": "JHCP2L6lB0oJ3tQoHkC67SFZxW+KbJVOnAo+6L01K5r/NlBlSUhTk5nUAldWhTVwGdzqNeHqGtnEqpsCmGSwQA==",
       "type": "package",
-      "path": "microsoft.codeanalysis.csharp/4.6.0",
+      "path": "microsoft.codeanalysis.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3752,6 +3768,22 @@
         "lib/net6.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.pdb",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/net7.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.pdb",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.xml",
@@ -3768,14 +3800,14 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "microsoft.codeanalysis.csharp.4.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.4.7.0.nupkg.sha512",
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.CSharp.Scripting/4.6.0": {
-      "sha512": "v8ioTrFxoZ5iFxz/sMLMm7e/mY2rnQKyQHLo9+IhbLqtIP+4GWozjb+eNf/cpZ91EQ0wpIIKTuqZjccpBvItFw==",
+    "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
+      "sha512": "c2a+u437pZCaAcNSdI0hvvb5vAWph+sQYRpU7eFHaVU3s8Z3qOd72UJFI4m96x2bVt/7O3oSvxGSfMFf9g8DFg==",
       "type": "package",
-      "path": "microsoft.codeanalysis.csharp.scripting/4.6.0",
+      "path": "microsoft.codeanalysis.csharp.scripting/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3797,6 +3829,22 @@
         "lib/net6.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
         "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
         "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.pdb",
+        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.xml",
+        "lib/net7.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
+        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.pdb",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.xml",
@@ -3813,14 +3861,14 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "microsoft.codeanalysis.csharp.scripting.4.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.scripting.4.7.0.nupkg.sha512",
         "microsoft.codeanalysis.csharp.scripting.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.Scripting.Common/4.6.0": {
-      "sha512": "BprguoVYmzRKvBtIDV0mkpGur5V385zqf2aPejBVcBwX9oTJORs/aPric8S2RmV+FKZj6Sj6jbmT4nwOvBQHbg==",
+    "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
+      "sha512": "/rooxKDFwy5XnhXdhGfk0I7zaPuLg6G+jPlS0r0gxmdgYwhqIvLBRm2DMyI2WthxwGtPTCo2LqhCc5i5+JEnaw==",
       "type": "package",
-      "path": "microsoft.codeanalysis.scripting.common/4.6.0",
+      "path": "microsoft.codeanalysis.scripting.common/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3842,6 +3890,22 @@
         "lib/net6.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
         "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
         "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.dll",
+        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.pdb",
+        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.xml",
+        "lib/net7.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
+        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.pdb",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.xml",
@@ -3858,7 +3922,7 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "microsoft.codeanalysis.scripting.common.4.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.scripting.common.4.7.0.nupkg.sha512",
         "microsoft.codeanalysis.scripting.common.nuspec"
       ]
     },
@@ -4337,10 +4401,10 @@
     ".NETFramework,Version=v4.7.2": [
       "Microsoft.CSharp >= 4.7.0",
       "Microsoft.CodeAnalysis.Analyzers >= 3.3.4",
-      "Microsoft.CodeAnalysis.CSharp >= 4.6.0",
-      "Microsoft.CodeAnalysis.CSharp.Scripting >= 4.6.0",
-      "Microsoft.CodeAnalysis.Common >= 4.6.0",
-      "Microsoft.CodeAnalysis.Scripting.Common >= 4.6.0",
+      "Microsoft.CodeAnalysis.CSharp >= 4.7.0",
+      "Microsoft.CodeAnalysis.CSharp.Scripting >= 4.7.0",
+      "Microsoft.CodeAnalysis.Common >= 4.7.0",
+      "Microsoft.CodeAnalysis.Scripting.Common >= 4.7.0",
       "Newtonsoft.Json >= 13.0.3",
       "OpenVTT.Common >= 1.0.0",
       "OpenVTT.FogOfWar >= 1.0.0",
@@ -4422,19 +4486,19 @@
           },
           "Microsoft.CodeAnalysis.CSharp": {
             "target": "Package",
-            "version": "[4.6.0, )"
+            "version": "[4.7.0, )"
           },
           "Microsoft.CodeAnalysis.CSharp.Scripting": {
             "target": "Package",
-            "version": "[4.6.0, )"
+            "version": "[4.7.0, )"
           },
           "Microsoft.CodeAnalysis.Common": {
             "target": "Package",
-            "version": "[4.6.0, )"
+            "version": "[4.7.0, )"
           },
           "Microsoft.CodeAnalysis.Scripting.Common": {
             "target": "Package",
-            "version": "[4.6.0, )"
+            "version": "[4.7.0, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
