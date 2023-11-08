@@ -33,7 +33,6 @@ namespace Open_VTT.Forms.Popups
         {
             this.tabCtrlPages = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
-            this.tpScripting = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nudServerPort = new System.Windows.Forms.NumericUpDown();
@@ -59,6 +58,9 @@ namespace Open_VTT.Forms.Popups
             this.label2 = new System.Windows.Forms.Label();
             this.nudPlayerSize = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.tpScripting = new System.Windows.Forms.TabPage();
+            this.btnOpenDesigner = new System.Windows.Forms.Button();
+            this.flpScripts = new System.Windows.Forms.FlowLayoutPanel();
             this.tabCtrlPages.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -68,6 +70,7 @@ namespace Open_VTT.Forms.Popups
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).BeginInit();
+            this.tpScripting.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCtrlPages
@@ -95,16 +98,6 @@ namespace Open_VTT.Forms.Popups
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
-            // 
-            // tpScripting
-            // 
-            this.tpScripting.Location = new System.Drawing.Point(4, 22);
-            this.tpScripting.Name = "tpScripting";
-            this.tpScripting.Padding = new System.Windows.Forms.Padding(3);
-            this.tpScripting.Size = new System.Drawing.Size(787, 493);
-            this.tpScripting.TabIndex = 1;
-            this.tpScripting.Text = "Scripting";
-            this.tpScripting.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -144,6 +137,7 @@ namespace Open_VTT.Forms.Popups
             0,
             0,
             0});
+            this.nudServerPort.ValueChanged += new System.EventHandler(this.nudServerPort_ValueChanged);
             // 
             // tbServerIP
             // 
@@ -152,6 +146,7 @@ namespace Open_VTT.Forms.Popups
             this.tbServerIP.Size = new System.Drawing.Size(100, 20);
             this.tbServerIP.TabIndex = 1;
             this.tbServerIP.Text = "255.255.255.255";
+            this.tbServerIP.TextChanged += new System.EventHandler(this.tbServerIP_TextChanged);
             // 
             // label3
             // 
@@ -188,6 +183,7 @@ namespace Open_VTT.Forms.Popups
             this.pnlTextColor.Name = "pnlTextColor";
             this.pnlTextColor.Size = new System.Drawing.Size(17, 17);
             this.pnlTextColor.TabIndex = 9;
+            this.pnlTextColor.Click += new System.EventHandler(this.pnlTextColor_Click);
             // 
             // label8
             // 
@@ -205,6 +201,7 @@ namespace Open_VTT.Forms.Popups
             this.pnlGridColor.Name = "pnlGridColor";
             this.pnlGridColor.Size = new System.Drawing.Size(17, 17);
             this.pnlGridColor.TabIndex = 7;
+            this.pnlGridColor.Click += new System.EventHandler(this.pnlGridColor_Click);
             // 
             // label7
             // 
@@ -222,6 +219,7 @@ namespace Open_VTT.Forms.Popups
             this.pnlDmColor.Name = "pnlDmColor";
             this.pnlDmColor.Size = new System.Drawing.Size(17, 17);
             this.pnlDmColor.TabIndex = 5;
+            this.pnlDmColor.Click += new System.EventHandler(this.pnlDmColor_Click);
             // 
             // pnlPlayerColor
             // 
@@ -230,6 +228,7 @@ namespace Open_VTT.Forms.Popups
             this.pnlPlayerColor.Name = "pnlPlayerColor";
             this.pnlPlayerColor.Size = new System.Drawing.Size(17, 17);
             this.pnlPlayerColor.TabIndex = 4;
+            this.pnlPlayerColor.Click += new System.EventHandler(this.pnlPlayerColor_Click);
             // 
             // label6
             // 
@@ -258,6 +257,7 @@ namespace Open_VTT.Forms.Popups
             this.cbDisplayGrid.TabIndex = 1;
             this.cbDisplayGrid.Text = "Display Grid";
             this.cbDisplayGrid.UseVisualStyleBackColor = true;
+            this.cbDisplayGrid.CheckedChanged += new System.EventHandler(this.cbDisplayGrid_CheckedChanged);
             // 
             // cbDisplayChangesInstantly
             // 
@@ -268,6 +268,7 @@ namespace Open_VTT.Forms.Popups
             this.cbDisplayChangesInstantly.TabIndex = 0;
             this.cbDisplayChangesInstantly.Text = "Display Changes instantly";
             this.cbDisplayChangesInstantly.UseVisualStyleBackColor = true;
+            this.cbDisplayChangesInstantly.CheckedChanged += new System.EventHandler(this.cbDisplayChangesInstantly_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -288,6 +289,7 @@ namespace Open_VTT.Forms.Popups
             this.cbAutoSaveAction.TabIndex = 0;
             this.cbAutoSaveAction.Text = "Auto Save (Action Based)";
             this.cbAutoSaveAction.UseVisualStyleBackColor = true;
+            this.cbAutoSaveAction.CheckedChanged += new System.EventHandler(this.cbAutoSaveAction_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -332,6 +334,7 @@ namespace Open_VTT.Forms.Popups
             this.cbDisplayGridForDM.TabIndex = 10;
             this.cbDisplayGridForDM.Text = "Display Grid for DM";
             this.cbDisplayGridForDM.UseVisualStyleBackColor = true;
+            this.cbDisplayGridForDM.CheckedChanged += new System.EventHandler(this.cbDisplayGridForDM_CheckedChanged);
             // 
             // label2
             // 
@@ -348,6 +351,7 @@ namespace Open_VTT.Forms.Popups
             this.nudPlayerSize.Name = "nudPlayerSize";
             this.nudPlayerSize.Size = new System.Drawing.Size(54, 20);
             this.nudPlayerSize.TabIndex = 1;
+            this.nudPlayerSize.ValueChanged += new System.EventHandler(this.nudPlayerSize_ValueChanged);
             // 
             // label1
             // 
@@ -357,6 +361,40 @@ namespace Open_VTT.Forms.Popups
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Player Window Size";
+            // 
+            // tpScripting
+            // 
+            this.tpScripting.Controls.Add(this.btnOpenDesigner);
+            this.tpScripting.Controls.Add(this.flpScripts);
+            this.tpScripting.Location = new System.Drawing.Point(4, 22);
+            this.tpScripting.Name = "tpScripting";
+            this.tpScripting.Padding = new System.Windows.Forms.Padding(3);
+            this.tpScripting.Size = new System.Drawing.Size(787, 493);
+            this.tpScripting.TabIndex = 1;
+            this.tpScripting.Text = "Scripting";
+            this.tpScripting.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenDesigner
+            // 
+            this.btnOpenDesigner.Location = new System.Drawing.Point(688, 6);
+            this.btnOpenDesigner.Name = "btnOpenDesigner";
+            this.btnOpenDesigner.Size = new System.Drawing.Size(91, 23);
+            this.btnOpenDesigner.TabIndex = 1;
+            this.btnOpenDesigner.Text = "Open Designer";
+            this.btnOpenDesigner.UseVisualStyleBackColor = true;
+            this.btnOpenDesigner.Visible = false;
+            this.btnOpenDesigner.Click += new System.EventHandler(this.btnOpenDesigner_Click);
+            // 
+            // flpScripts
+            // 
+            this.flpScripts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpScripts.AutoScroll = true;
+            this.flpScripts.Location = new System.Drawing.Point(6, 35);
+            this.flpScripts.Name = "flpScripts";
+            this.flpScripts.Size = new System.Drawing.Size(775, 452);
+            this.flpScripts.TabIndex = 0;
             // 
             // Config
             // 
@@ -380,6 +418,7 @@ namespace Open_VTT.Forms.Popups
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).EndInit();
+            this.tpScripting.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -414,5 +453,7 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.NumericUpDown nudPlayerSize;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tpScripting;
+        private System.Windows.Forms.FlowLayoutPanel flpScripts;
+        private System.Windows.Forms.Button btnOpenDesigner;
     }
 }

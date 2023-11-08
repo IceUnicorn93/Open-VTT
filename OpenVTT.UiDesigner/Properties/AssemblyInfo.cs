@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("OpenVTT.Scripting")]
+[assembly: AssemblyTitle("OpenVTT.UiDesigner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenVTT.Scripting")]
+[assembly: AssemblyProduct("OpenVTT.UiDesigner")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("b56784f1-969b-48c7-b18f-1c7471c69ddc")]
+[assembly: Guid("67894bd5-ab56-4270-adb1-bd582f26c900")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
@@ -36,18 +36,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: InternalsVisibleTo("Open VTT")]
-[assembly: InternalsVisibleTo("OpenVTT.Client")]
-[assembly: InternalsVisibleTo("OpenVTT.Common")]
 [assembly: InternalsVisibleTo("OpenVTT.Controls")]
-[assembly: InternalsVisibleTo("OpenVTT.Editor")]
-[assembly: InternalsVisibleTo("OpenVTT.Editor.Controls")]
-[assembly: InternalsVisibleTo("OpenVTT.FogOfWar")]
-[assembly: InternalsVisibleTo("OpenVTT.Forms")]
-[assembly: InternalsVisibleTo("OpenVTT.Grid")]
-[assembly: InternalsVisibleTo("OpenVTT.NetworkMessage")]
-[assembly: InternalsVisibleTo("OpenVTT.Scripting")]
-[assembly: InternalsVisibleTo("OpenVTT.Server")]
-[assembly: InternalsVisibleTo("OpenVTT.Session")]
-[assembly: InternalsVisibleTo("OpenVTT.Settings")]
-[assembly: InternalsVisibleTo("OpenVTT.StreamDeck")]
-[assembly: InternalsVisibleTo("OpenVTT.UiDesigner")]

@@ -386,6 +386,7 @@ Page.Controls.Add(tbDescription);";
             try { list.Add(typeof(Point).GetTypeInfo().Assembly); }
             catch { Logger.Log("Class: ScriptEngine | RunScript | Fail at Point"); }
 
+            //TODO: More Testing for Linux
             /*
              * Copy used DLLs to a Temp Folder in that Script Folder.
              * Collect Locations for these DLLs
@@ -459,6 +460,32 @@ Page.Controls.Add(tbDescription);";
                 File.WriteAllText(Path.Combine(path, "_Error.txt"), errMessage);
                 File.WriteAllText(Path.Combine(path, "_Script.txt"), script);
             }
+        }
+
+        static internal T RunUiScript<T>(string code, UiScriptHost host)
+        {
+            var script = "";
+
+            var so = ScriptOptions.Default.AddImports("System",
+                "System.Drawing",
+                "System.ComponentModel",
+                "System.Windows.Forms");
+
+            var dlls = Directory.GetFileSystemEntries(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\", "System*.dll", SearchOption.TopDirectoryOnly).ToList();
+            dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Wrapper.dll"));
+            dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Thunk.dll"));
+
+            foreach (var dll in dlls) script += $"#r \"{dll}\"" + Environment.NewLine;
+
+            script += Environment.NewLine;
+
+            script += code;
+            script = script.Replace("Submission#0.", "");
+
+            if (host == null)
+                return CSharpScript.EvaluateAsync<T>(code: script, options: so).Result;
+            else
+                return CSharpScript.EvaluateAsync<T>(code: script, globals: host, options: so).Result;
         }
     }
 }

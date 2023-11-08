@@ -209,6 +209,10 @@
       <Project>{5dcccedb-cf8f-4166-bba9-b46eb490bf1a}</Project>
       <Name>OpenVTT.StreamDeck</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenVTT.UiDesigner\OpenVTT.UiDesigner.csproj">
+      <Project>{67894bd5-ab56-4270-adb1-bd582f26c900}</Project>
+      <Name>OpenVTT.UiDesigner</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

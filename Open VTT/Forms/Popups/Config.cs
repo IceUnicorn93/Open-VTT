@@ -1,9 +1,11 @@
 ﻿using OpenVTT.Controls;
+using OpenVTT.Controls.Forms;
 using OpenVTT.Logging;
 using OpenVTT.Scripting;
 using OpenVTT.Settings;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -40,8 +42,7 @@ namespace Open_VTT.Forms.Popups
             for (int i = 0; i < ScriptEngine.CalculatedHosts.Count; i++)
             {
                 var ctrl = new ScriptDisplay(ScriptEngine.CalculatedHosts[i]);
-                tpScripting.Controls.Add(ctrl);
-                ctrl.Location = new Point(10, 10 + (i * 30));
+                flpScripts.Controls.Add(ctrl);
             }
         }
 
@@ -143,6 +144,26 @@ namespace Open_VTT.Forms.Popups
 
             Settings.Values.DisplayGridForDM = cbDisplayGridForDM.Checked;
             Settings.Save();
+        }
+
+        private void btnOpenDesigner_Click(object sender, EventArgs e)
+        {
+            Logger.Log("Class: Config | btnOpenDesigner_Click");
+
+            using (var fbd = new FolderBrowserDialog())
+            {
+                fbd.SelectedPath = Path.Combine(Application.StartupPath, "Scripts");
+
+                if(fbd.ShowDialog() == DialogResult.OK)
+                {
+                    using(var sd = new ScriptDesigner())
+                    {
+                        sd.IsNotesDesigner = false;
+                        sd.LoadPath = fbd.SelectedPath;
+                        sd.ShowDialog();
+                    }
+                }
+            }
         }
     }
 }

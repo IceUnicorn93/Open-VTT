@@ -60,7 +60,7 @@
             this.btnImidiateFogOfWar.Name = "btnImidiateFogOfWar";
             this.btnImidiateFogOfWar.Size = new System.Drawing.Size(87, 20);
             this.btnImidiateFogOfWar.TabIndex = 37;
-            this.btnImidiateFogOfWar.Text = "Imidiate";
+            this.btnImidiateFogOfWar.Text = "Immidiate";
             this.btnImidiateFogOfWar.UseVisualStyleBackColor = false;
             this.btnImidiateFogOfWar.Click += new System.EventHandler(this.btnImidiateFogOfWar_Click);
             // 
@@ -118,7 +118,7 @@
             this.btnPoligonFogOfWar.Name = "btnPoligonFogOfWar";
             this.btnPoligonFogOfWar.Size = new System.Drawing.Size(87, 20);
             this.btnPoligonFogOfWar.TabIndex = 31;
-            this.btnPoligonFogOfWar.Text = "Poligon";
+            this.btnPoligonFogOfWar.Text = "Polygon";
             this.btnPoligonFogOfWar.UseVisualStyleBackColor = true;
             this.btnPoligonFogOfWar.Click += new System.EventHandler(this.btnPoligonFogOfWar_Click);
             // 

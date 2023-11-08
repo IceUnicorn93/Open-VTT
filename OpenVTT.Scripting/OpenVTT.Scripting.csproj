@@ -102,6 +102,7 @@
     <Compile Include="ScriptConfig.cs" />
     <Compile Include="ScriptEngine.cs" />
     <Compile Include="ScriptHost.cs" />
+    <Compile Include="UiScriptHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">

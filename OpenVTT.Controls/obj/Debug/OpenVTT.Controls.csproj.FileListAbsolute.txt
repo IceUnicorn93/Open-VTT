@@ -114,3 +114,12 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\zh-Hans\Microsoft.CodeA
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.ScriptDisplay.resources
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\Newtonsoft.Json.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\Interop.WMPLib.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\AxInterop.WMPLib.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\Interop.WMPLib.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\AxInterop.WMPLib.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj.ResolveComReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Displayer.AnimatedMapDisplayer.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Forms.ScriptDesigner.resources
