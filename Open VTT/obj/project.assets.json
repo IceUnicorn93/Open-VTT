@@ -4325,8 +4325,7 @@
       "OpenVTT.Session >= 1.0.0",
       "OpenVTT.Settings >= 1.0.0",
       "OpenVTT.StreamDeck >= 1.0.0",
-      "OpenVTT.UiDesigner >= 1.0.0",
-      "System.Reflection.Metadata >= 7.0.2"
+      "OpenVTT.UiDesigner >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4400,14 +4399,7 @@
       }
     },
     "frameworks": {
-      "net472": {
-        "dependencies": {
-          "System.Reflection.Metadata": {
-            "target": "Package",
-            "version": "[7.0.2, )"
-          }
-        }
-      }
+      "net472": {}
     },
     "runtimes": {
       "win": {
