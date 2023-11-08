@@ -1,7 +1,0 @@
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Release\OpenVTT.NetworkMessage.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Release\OpenVTT.Logging.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\bin\Release\OpenVTT.Logging.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Release\OpenVTT.NetworkMessage.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Release\OpenVTT.NetworkMessage.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Release\OpenVTT.NetworkMessage.csproj.CopyComplete
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.NetworkMessage\obj\Release\OpenVTT.NetworkMessage.dll

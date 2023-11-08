@@ -1,7 +1,0 @@
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Release\OpenVTT.Editor.Controls.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Release\OpenVTT.Logging.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\bin\Release\OpenVTT.Logging.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Release\OpenVTT.Editor.Controls.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Release\OpenVTT.Editor.Controls.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Release\OpenVTT.Editor.Controls.csproj.CopyComplete
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Editor.Controls\obj\Release\OpenVTT.Editor.Controls.dll

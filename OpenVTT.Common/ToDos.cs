@@ -6,7 +6,7 @@
         // Priority: 0 -> Nice to Have | 1 -> Priority | 2 -> Less Priority .. | 10 -> No priority
 
         //Communicated Feautes:
-        //-> Rework of the Notes Section(it works but the code is ugly)
+        //-> Rework of the Notes Section(it works but te code is ugly)
         //-> bring a copy of the 5e tools monster libary to my Notes Section
         //-> Rework the "Centroid" finding for the PrePlaced Fog of War(yes it works, but there are cases where it just breaks xD)
         //-> Make OpenVTT fully usable on Linux (Sometimes Problems with Updating FOW, Scripting has Problems with DLL references)
@@ -14,7 +14,7 @@
 
         //Maybe?:
         //-> Display Memory Usage
-        //-> Scene Templates for Scenes the Players visit frequently (could be a script!)
+        //-> Scene Templates for Scenes the Players visit frequently
 
 
         //--------------------------------------------------------------------
@@ -24,15 +24,15 @@
         //Actively under work:
         /*
          * -> StreamDeck Layout Configurable in Config Menu
-         *      Thats pretty neat, no need to stick to my layout
+         *      Thats pretty neat, no need to stick to my ideals
          * -> Animated Map Support
-         *      For what ever reason they want it, we stick with good old static maps
+         *      For what ever reason they want it
          * -> [x] Add Designer for Notes and new Scipts (OpenVTT.UiDesigner)
          *      Custom designs for new Plugins/Scripts and for the Notes
          * -> Re-Run failed Scripts
-         *      No need to reload a story. that could be nice
+         *      No need to reload a story. that would be nice
          * -> Finetuning for Grid-Values
-         *      Sometimes Grids can be rectangluar (specially on ultra wide Monitors)
+         *      Sometimes Grids can be slightly rectangluar (specially on ultra wide Monitors)
          */
 
         // Bugs:
@@ -42,8 +42,6 @@
          * 
          * Grid will only be displayed if some kind of Fog of War is in the Layer
          *  Should be changed to always display
-         *  
-         * Scripting isnt't working with GitHub-Builds, because System.Reflection.Metadata isn't included in the Artifact
          */
 
         // Needs Testing:

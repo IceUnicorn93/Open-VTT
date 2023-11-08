@@ -2,490 +2,9 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "HidSharp/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        },
-        "runtime": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Reflection.Metadata": "7.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net45/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Collections.Immutable/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reflection.Metadata/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5"
-        },
-        "compile": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.NetworkMessage": "1.0.0"
         },
         "compile": {
@@ -497,9 +16,6 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -516,12 +32,9 @@
           "OpenVTT.Editor.Controls": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Forms": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Scripting": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "OpenVTT.UiDesigner": "1.0.0"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Controls.dll": {}
@@ -534,8 +47,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -546,9 +58,6 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -561,7 +70,6 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -573,9 +81,6 @@
       },
       "OpenVTT.Forms/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Forms.dll": {}
         },
@@ -586,7 +91,6 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -596,20 +100,8 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
-      "OpenVTT.Logging/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        }
-      },
       "OpenVTT.NetworkMessage/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         },
@@ -619,28 +111,12 @@
       },
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.7.0",
-          "Microsoft.CodeAnalysis.Common": "4.7.0",
-          "Microsoft.CodeAnalysis.Scripting.Common": "4.7.0",
-          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "System.Buffers": "4.5.1",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Reflection.Metadata": "7.0.2",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Scripting.dll": {}
@@ -654,8 +130,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -667,8 +142,7 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -679,522 +153,23 @@
       },
       "OpenVTT.StreamDeck/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Session": "1.0.0",
-          "StreamDeckSharp": "3.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Drawing.Common": "7.0.0"
+          "OpenVTT.Session": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
-        }
-      },
-      "OpenVTT.UiDesigner/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Scripting": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "HidSharp/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        },
-        "runtime": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Reflection.Metadata": "7.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net45/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Collections.Immutable/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reflection.Metadata/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5"
-        },
-        "compile": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.NetworkMessage": "1.0.0"
         },
         "compile": {
@@ -1206,9 +181,6 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -1225,12 +197,9 @@
           "OpenVTT.Editor.Controls": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Forms": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Scripting": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "OpenVTT.UiDesigner": "1.0.0"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Controls.dll": {}
@@ -1243,8 +212,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -1255,9 +223,6 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -1270,7 +235,6 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1282,9 +246,6 @@
       },
       "OpenVTT.Forms/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Forms.dll": {}
         },
@@ -1295,7 +256,6 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1305,20 +265,8 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
-      "OpenVTT.Logging/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        }
-      },
       "OpenVTT.NetworkMessage/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         },
@@ -1328,28 +276,12 @@
       },
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.7.0",
-          "Microsoft.CodeAnalysis.Common": "4.7.0",
-          "Microsoft.CodeAnalysis.Scripting.Common": "4.7.0",
-          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "System.Buffers": "4.5.1",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Reflection.Metadata": "7.0.2",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Scripting.dll": {}
@@ -1363,8 +295,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -1376,8 +307,7 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -1388,522 +318,23 @@
       },
       "OpenVTT.StreamDeck/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Session": "1.0.0",
-          "StreamDeckSharp": "3.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Drawing.Common": "7.0.0"
+          "OpenVTT.Session": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
-        }
-      },
-      "OpenVTT.UiDesigner/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Scripting": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-arm64": {
-      "HidSharp/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        },
-        "runtime": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Reflection.Metadata": "7.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net45/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Collections.Immutable/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reflection.Metadata/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5"
-        },
-        "compile": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.NetworkMessage": "1.0.0"
         },
         "compile": {
@@ -1915,9 +346,6 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -1934,12 +362,9 @@
           "OpenVTT.Editor.Controls": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Forms": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Scripting": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "OpenVTT.UiDesigner": "1.0.0"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Controls.dll": {}
@@ -1952,8 +377,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -1964,9 +388,6 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -1979,7 +400,6 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -1991,9 +411,6 @@
       },
       "OpenVTT.Forms/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Forms.dll": {}
         },
@@ -2004,7 +421,6 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2014,20 +430,8 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
-      "OpenVTT.Logging/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        }
-      },
       "OpenVTT.NetworkMessage/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         },
@@ -2037,28 +441,12 @@
       },
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.7.0",
-          "Microsoft.CodeAnalysis.Common": "4.7.0",
-          "Microsoft.CodeAnalysis.Scripting.Common": "4.7.0",
-          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "System.Buffers": "4.5.1",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Reflection.Metadata": "7.0.2",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Scripting.dll": {}
@@ -2072,8 +460,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -2085,8 +472,7 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -2097,522 +483,23 @@
       },
       "OpenVTT.StreamDeck/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Session": "1.0.0",
-          "StreamDeckSharp": "3.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Drawing.Common": "7.0.0"
+          "OpenVTT.Session": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
-        }
-      },
-      "OpenVTT.UiDesigner/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Scripting": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "HidSharp/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        },
-        "runtime": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Reflection.Metadata": "7.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net45/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Collections.Immutable/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reflection.Metadata/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5"
-        },
-        "compile": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.NetworkMessage": "1.0.0"
         },
         "compile": {
@@ -2624,9 +511,6 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -2643,12 +527,9 @@
           "OpenVTT.Editor.Controls": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Forms": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Scripting": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "OpenVTT.UiDesigner": "1.0.0"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Controls.dll": {}
@@ -2661,8 +542,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -2673,9 +553,6 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -2688,7 +565,6 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2700,9 +576,6 @@
       },
       "OpenVTT.Forms/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Forms.dll": {}
         },
@@ -2713,7 +586,6 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -2723,20 +595,8 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
-      "OpenVTT.Logging/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        }
-      },
       "OpenVTT.NetworkMessage/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         },
@@ -2746,28 +606,12 @@
       },
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.7.0",
-          "Microsoft.CodeAnalysis.Common": "4.7.0",
-          "Microsoft.CodeAnalysis.Scripting.Common": "4.7.0",
-          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "System.Buffers": "4.5.1",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Reflection.Metadata": "7.0.2",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Scripting.dll": {}
@@ -2781,8 +625,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -2794,8 +637,7 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -2806,522 +648,23 @@
       },
       "OpenVTT.StreamDeck/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Session": "1.0.0",
-          "StreamDeckSharp": "3.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Drawing.Common": "7.0.0"
+          "OpenVTT.Session": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
-        }
-      },
-      "OpenVTT.UiDesigner/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Scripting": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "HidSharp/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        },
-        "runtime": {
-          "lib/net35/HidSharp.dll": {
-            "related": ".pdb;.XML"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Reflection.Metadata": "7.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]",
-          "Microsoft.CodeAnalysis.Scripting.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.7.0]"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenMacroBoard.SDK/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenMacroBoard.SDK.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "StreamDeckSharp/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenMacroBoard.SDK": "[3.0.0, 4.0.0)",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/HidSharp.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/netstandard2.0/StreamDeckSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net45/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Collections.Immutable/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reflection.Metadata/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5"
-        },
-        "compile": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net462/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net462/_._": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net461/System.Threading.Tasks.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "OpenVTT.Client/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.NetworkMessage": "1.0.0"
         },
         "compile": {
@@ -3333,9 +676,6 @@
       },
       "OpenVTT.Common/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Common.dll": {}
         },
@@ -3352,12 +692,9 @@
           "OpenVTT.Editor.Controls": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Forms": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Scripting": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "OpenVTT.UiDesigner": "1.0.0"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Controls.dll": {}
@@ -3370,8 +707,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Editor.Controls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
@@ -3382,9 +718,6 @@
       },
       "OpenVTT.Editor.Controls/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         },
@@ -3397,7 +730,6 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Grid": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -3409,9 +741,6 @@
       },
       "OpenVTT.Forms/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.Forms.dll": {}
         },
@@ -3422,7 +751,6 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
         "compile": {
@@ -3432,20 +760,8 @@
           "bin/placeholder/OpenVTT.Grid.dll": {}
         }
       },
-      "OpenVTT.Logging/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Logging.dll": {}
-        }
-      },
       "OpenVTT.NetworkMessage/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/OpenVTT.NetworkMessage.dll": {}
         },
@@ -3455,28 +771,12 @@
       },
       "OpenVTT.Scripting/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
-          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.7.0",
-          "Microsoft.CodeAnalysis.Common": "4.7.0",
-          "Microsoft.CodeAnalysis.Scripting.Common": "4.7.0",
-          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Session": "1.0.0",
           "OpenVTT.Settings": "1.0.0",
-          "OpenVTT.StreamDeck": "1.0.0",
-          "System.Buffers": "4.5.1",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Memory": "4.5.5",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Reflection.Metadata": "7.0.2",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
+          "OpenVTT.StreamDeck": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Scripting.dll": {}
@@ -3490,8 +790,7 @@
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.Editor": "1.0.0",
-          "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.FogOfWar": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Session.dll": {}
@@ -3503,8 +802,7 @@
       "OpenVTT.Settings/1.0.0": {
         "type": "project",
         "dependencies": {
-          "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Logging": "1.0.0"
+          "OpenVTT.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.Settings.dll": {}
@@ -3515,726 +813,21 @@
       },
       "OpenVTT.StreamDeck/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "HidSharp": "2.1.0",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
-          "OpenVTT.Logging": "1.0.0",
-          "OpenVTT.Session": "1.0.0",
-          "StreamDeckSharp": "3.2.0",
-          "System.Buffers": "4.5.1",
-          "System.Drawing.Common": "7.0.0"
+          "OpenVTT.Session": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
         },
         "runtime": {
           "bin/placeholder/OpenVTT.StreamDeck.dll": {}
-        }
-      },
-      "OpenVTT.UiDesigner/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Scripting": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.UiDesigner.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "HidSharp/2.1.0": {
-      "sha512": "UTdxWvbgp2xzT1Ajaa2va+Qi3oNHJPasYmVhbKI2VVdu1VYP6yUG+RikhsHvpD7iM0S8e8UYb5Qm/LTWxx9QAA==",
-      "type": "package",
-      "path": "hidsharp/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "HidSharp.chm",
-        "hidsharp.2.1.0.nupkg.sha512",
-        "hidsharp.nuspec",
-        "lib/net35/HidSharp.XML",
-        "lib/net35/HidSharp.dll",
-        "lib/net35/HidSharp.pdb",
-        "lib/netstandard2.0/HidSharp.XML",
-        "lib/netstandard2.0/HidSharp.dll",
-        "lib/netstandard2.0/HidSharp.pdb"
-      ]
-    },
-    "Microsoft.CodeAnalysis.Common/4.7.0": {
-      "sha512": "pD5S14xMUebSGYe75kt0q/aaS/ftvktSo/pEv7aX7hNPHfdZS+SZeXvkvcffGxWkunYOyRF9m1oN7zzSdYj9dQ==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.common/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "ThirdPartyNotices.rtf",
-        "lib/net6.0/Microsoft.CodeAnalysis.dll",
-        "lib/net6.0/Microsoft.CodeAnalysis.pdb",
-        "lib/net6.0/Microsoft.CodeAnalysis.xml",
-        "lib/net6.0/cs/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/de/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/es/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/fr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/it/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/ja/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/ko/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/pl/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/ru/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/tr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.pdb",
-        "lib/net7.0/Microsoft.CodeAnalysis.xml",
-        "lib/net7.0/cs/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/de/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/es/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/fr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/it/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/ja/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/ko/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/pl/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/ru/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/tr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.pdb",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.xml",
-        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "microsoft.codeanalysis.common.4.7.0.nupkg.sha512",
-        "microsoft.codeanalysis.common.nuspec"
-      ]
-    },
-    "Microsoft.CodeAnalysis.CSharp/4.7.0": {
-      "sha512": "JHCP2L6lB0oJ3tQoHkC67SFZxW+KbJVOnAo+6L01K5r/NlBlSUhTk5nUAldWhTVwGdzqNeHqGtnEqpsCmGSwQA==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.csharp/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "ThirdPartyNotices.rtf",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.dll",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.pdb",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.xml",
-        "lib/net6.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.pdb",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.xml",
-        "lib/net7.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.pdb",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.xml",
-        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "microsoft.codeanalysis.csharp.4.7.0.nupkg.sha512",
-        "microsoft.codeanalysis.csharp.nuspec"
-      ]
-    },
-    "Microsoft.CodeAnalysis.CSharp.Scripting/4.7.0": {
-      "sha512": "c2a+u437pZCaAcNSdI0hvvb5vAWph+sQYRpU7eFHaVU3s8Z3qOd72UJFI4m96x2bVt/7O3oSvxGSfMFf9g8DFg==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.csharp.scripting/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "ThirdPartyNotices.rtf",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.Scripting.pdb",
-        "lib/net6.0/Microsoft.CodeAnalysis.CSharp.Scripting.xml",
-        "lib/net6.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.pdb",
-        "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Scripting.xml",
-        "lib/net7.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.pdb",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Scripting.xml",
-        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "microsoft.codeanalysis.csharp.scripting.4.7.0.nupkg.sha512",
-        "microsoft.codeanalysis.csharp.scripting.nuspec"
-      ]
-    },
-    "Microsoft.CodeAnalysis.Scripting.Common/4.7.0": {
-      "sha512": "/rooxKDFwy5XnhXdhGfk0I7zaPuLg6G+jPlS0r0gxmdgYwhqIvLBRm2DMyI2WthxwGtPTCo2LqhCc5i5+JEnaw==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.scripting.common/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "ThirdPartyNotices.rtf",
-        "lib/net6.0/Microsoft.CodeAnalysis.Scripting.dll",
-        "lib/net6.0/Microsoft.CodeAnalysis.Scripting.pdb",
-        "lib/net6.0/Microsoft.CodeAnalysis.Scripting.xml",
-        "lib/net6.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net6.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.dll",
-        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.pdb",
-        "lib/net7.0/Microsoft.CodeAnalysis.Scripting.xml",
-        "lib/net7.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.pdb",
-        "lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.xml",
-        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "microsoft.codeanalysis.scripting.common.4.7.0.nupkg.sha512",
-        "microsoft.codeanalysis.scripting.common.nuspec"
-      ]
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "type": "package",
-      "path": "microsoft.csharp/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/Microsoft.CSharp.dll",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.3/Microsoft.CSharp.dll",
-        "lib/netstandard2.0/Microsoft.CSharp.dll",
-        "lib/netstandard2.0/Microsoft.CSharp.xml",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/uap10.0.16299/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.7.0.nupkg.sha512",
-        "microsoft.csharp.nuspec",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/Microsoft.CSharp.dll",
-        "ref/netcore50/Microsoft.CSharp.xml",
-        "ref/netcore50/de/Microsoft.CSharp.xml",
-        "ref/netcore50/es/Microsoft.CSharp.xml",
-        "ref/netcore50/fr/Microsoft.CSharp.xml",
-        "ref/netcore50/it/Microsoft.CSharp.xml",
-        "ref/netcore50/ja/Microsoft.CSharp.xml",
-        "ref/netcore50/ko/Microsoft.CSharp.xml",
-        "ref/netcore50/ru/Microsoft.CSharp.xml",
-        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
-        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/Microsoft.CSharp.dll",
-        "ref/netstandard1.0/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
-        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
-        "ref/netstandard2.0/Microsoft.CSharp.dll",
-        "ref/netstandard2.0/Microsoft.CSharp.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/uap10.0.16299/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "Newtonsoft.Json/13.0.3": {
-      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
-      "type": "package",
-      "path": "newtonsoft.json/13.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "README.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/net6.0/Newtonsoft.Json.dll",
-        "lib/net6.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
-      ]
-    },
-    "OpenMacroBoard.SDK/3.0.0": {
-      "sha512": "rr7lQR3wa/8+nJbwmGXFHi+Ix/yhU+IejGGWZfmCNxLe2npNnhNREMY90KtkEXvYttflkLBGNKMXjRBMRIrIfQ==",
-      "type": "package",
-      "path": "openmacroboard.sdk/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.dll",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.pdb",
-        "lib/netstandard2.0/OpenMacroBoard.SDK.xml",
-        "openmacroboard.sdk.3.0.0.nupkg.sha512",
-        "openmacroboard.sdk.nuspec"
-      ]
-    },
-    "StreamDeckSharp/3.2.0": {
-      "sha512": "nijs/28t8tUXVtf7NjgtbhCxpDjNvDpOoVanN/5Eat+tHr8uD9JUauHdxuORK5zqK1sRczOm/e1MltAPu2JtpA==",
-      "type": "package",
-      "path": "streamdecksharp/3.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/HidSharp.dll",
-        "lib/netstandard2.0/HidSharp.pdb",
-        "lib/netstandard2.0/HidSharp.xml",
-        "lib/netstandard2.0/StreamDeckSharp.dll",
-        "lib/netstandard2.0/StreamDeckSharp.pdb",
-        "lib/netstandard2.0/StreamDeckSharp.xml",
-        "streamdecksharp.3.2.0.nupkg.sha512",
-        "streamdecksharp.nuspec"
-      ]
-    },
-    "System.Buffers/4.5.1": {
-      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
-      "type": "package",
-      "path": "system.buffers/4.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Buffers.dll",
-        "lib/net461/System.Buffers.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "lib/netstandard1.1/System.Buffers.xml",
-        "lib/netstandard2.0/System.Buffers.dll",
-        "lib/netstandard2.0/System.Buffers.xml",
-        "lib/uap10.0.16299/_._",
-        "ref/net45/System.Buffers.dll",
-        "ref/net45/System.Buffers.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.1/System.Buffers.dll",
-        "ref/netstandard1.1/System.Buffers.xml",
-        "ref/netstandard2.0/System.Buffers.dll",
-        "ref/netstandard2.0/System.Buffers.xml",
-        "ref/uap10.0.16299/_._",
-        "system.buffers.4.5.1.nupkg.sha512",
-        "system.buffers.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Collections.Immutable/7.0.0": {
-      "sha512": "dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
-      "type": "package",
-      "path": "system.collections.immutable/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "README.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Collections.Immutable.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
-        "lib/net462/System.Collections.Immutable.dll",
-        "lib/net462/System.Collections.Immutable.xml",
-        "lib/net6.0/System.Collections.Immutable.dll",
-        "lib/net6.0/System.Collections.Immutable.xml",
-        "lib/net7.0/System.Collections.Immutable.dll",
-        "lib/net7.0/System.Collections.Immutable.xml",
-        "lib/netstandard2.0/System.Collections.Immutable.dll",
-        "lib/netstandard2.0/System.Collections.Immutable.xml",
-        "system.collections.immutable.7.0.0.nupkg.sha512",
-        "system.collections.immutable.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "type": "package",
-      "path": "system.drawing.common/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Drawing.Common.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Drawing.Common.dll",
-        "lib/net462/System.Drawing.Common.xml",
-        "lib/net6.0/System.Drawing.Common.dll",
-        "lib/net6.0/System.Drawing.Common.xml",
-        "lib/net7.0/System.Drawing.Common.dll",
-        "lib/net7.0/System.Drawing.Common.xml",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Memory/4.5.5": {
-      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
-      "type": "package",
-      "path": "system.memory/4.5.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.5.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Numerics.Vectors/4.5.0": {
-      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
-      "type": "package",
-      "path": "system.numerics.vectors/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Numerics.Vectors.dll",
-        "lib/net46/System.Numerics.Vectors.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.Numerics.Vectors.dll",
-        "lib/netstandard1.0/System.Numerics.Vectors.xml",
-        "lib/netstandard2.0/System.Numerics.Vectors.dll",
-        "lib/netstandard2.0/System.Numerics.Vectors.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/System.Numerics.Vectors.dll",
-        "ref/net45/System.Numerics.Vectors.xml",
-        "ref/net46/System.Numerics.Vectors.dll",
-        "ref/net46/System.Numerics.Vectors.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/System.Numerics.Vectors.dll",
-        "ref/netstandard1.0/System.Numerics.Vectors.xml",
-        "ref/netstandard2.0/System.Numerics.Vectors.dll",
-        "ref/netstandard2.0/System.Numerics.Vectors.xml",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.numerics.vectors.4.5.0.nupkg.sha512",
-        "system.numerics.vectors.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Reflection.Metadata/7.0.2": {
-      "sha512": "eDRR3/gdnAx0lRhZssc3y32+iCalFgQzaw/5ZNtqtkZ1hMnRFvazcuojYeRo0MH1DrnBAH4rrwJgeXc2KfkP+A==",
-      "type": "package",
-      "path": "system.reflection.metadata/7.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "README.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Reflection.Metadata.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Reflection.Metadata.targets",
-        "lib/net462/System.Reflection.Metadata.dll",
-        "lib/net462/System.Reflection.Metadata.xml",
-        "lib/net6.0/System.Reflection.Metadata.dll",
-        "lib/net6.0/System.Reflection.Metadata.xml",
-        "lib/net7.0/System.Reflection.Metadata.dll",
-        "lib/net7.0/System.Reflection.Metadata.xml",
-        "lib/netstandard2.0/System.Reflection.Metadata.dll",
-        "lib/netstandard2.0/System.Reflection.Metadata.xml",
-        "system.reflection.metadata.7.0.2.nupkg.sha512",
-        "system.reflection.metadata.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Text.Encoding.CodePages/7.0.0": {
-      "sha512": "LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
-      "type": "package",
-      "path": "system.text.encoding.codepages/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Text.Encoding.CodePages.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Text.Encoding.CodePages.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Text.Encoding.CodePages.dll",
-        "lib/net462/System.Text.Encoding.CodePages.xml",
-        "lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "lib/net7.0/System.Text.Encoding.CodePages.xml",
-        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.xml",
-        "system.text.encoding.codepages.7.0.0.nupkg.sha512",
-        "system.text.encoding.codepages.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "OpenVTT.Client/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.Client/OpenVTT.Client.csproj",
@@ -4275,11 +868,6 @@
       "path": "../OpenVTT.Grid/OpenVTT.Grid.csproj",
       "msbuildProject": "../OpenVTT.Grid/OpenVTT.Grid.csproj"
     },
-    "OpenVTT.Logging/1.0.0": {
-      "type": "project",
-      "path": "../OpenVTT.Logging/OpenVTT.Logging.csproj",
-      "msbuildProject": "../OpenVTT.Logging/OpenVTT.Logging.csproj"
-    },
     "OpenVTT.NetworkMessage/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.NetworkMessage/OpenVTT.NetworkMessage.csproj",
@@ -4304,11 +892,6 @@
       "type": "project",
       "path": "../OpenVTT.StreamDeck/OpenVTT.StreamDeck.csproj",
       "msbuildProject": "../OpenVTT.StreamDeck/OpenVTT.StreamDeck.csproj"
-    },
-    "OpenVTT.UiDesigner/1.0.0": {
-      "type": "project",
-      "path": "../OpenVTT.UiDesigner/OpenVTT.UiDesigner.csproj",
-      "msbuildProject": "../OpenVTT.UiDesigner/OpenVTT.UiDesigner.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4320,13 +903,10 @@
       "OpenVTT.Editor.Controls >= 1.0.0",
       "OpenVTT.FogOfWar >= 1.0.0",
       "OpenVTT.Forms >= 1.0.0",
-      "OpenVTT.Logging >= 1.0.0",
       "OpenVTT.Scripting >= 1.0.0",
       "OpenVTT.Session >= 1.0.0",
       "OpenVTT.Settings >= 1.0.0",
-      "OpenVTT.StreamDeck >= 1.0.0",
-      "OpenVTT.UiDesigner >= 1.0.0",
-      "System.Reflection.Metadata >= 7.0.2"
+      "OpenVTT.StreamDeck >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4377,9 +957,6 @@
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Forms\\OpenVTT.Forms.csproj"
             },
-            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
-              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
-            },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Scripting\\OpenVTT.Scripting.csproj"
             },
@@ -4391,23 +968,13 @@
             },
             "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj": {
               "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.StreamDeck\\OpenVTT.StreamDeck.csproj"
-            },
-            "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.UiDesigner\\OpenVTT.UiDesigner.csproj": {
-              "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.UiDesigner\\OpenVTT.UiDesigner.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "net472": {
-        "dependencies": {
-          "System.Reflection.Metadata": {
-            "target": "Package",
-            "version": "[7.0.2, )"
-          }
-        }
-      }
+      "net472": {}
     },
     "runtimes": {
       "win": {
