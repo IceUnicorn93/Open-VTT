@@ -72,7 +72,14 @@
         }
       },
       "frameworks": {
-        "net472": {}
+        "net472": {
+          "dependencies": {
+            "System.Reflection.Metadata": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          }
+        }
       },
       "runtimes": {
         "win": {
