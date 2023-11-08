@@ -1,0 +1,8 @@
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release\OpenVTT.Forms.dll.config
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release\OpenVTT.Forms.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\bin\Release\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Release\OpenVTT.Forms.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Release\OpenVTT.Forms.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Release\OpenVTT.Forms.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Forms\obj\Release\OpenVTT.Forms.dll

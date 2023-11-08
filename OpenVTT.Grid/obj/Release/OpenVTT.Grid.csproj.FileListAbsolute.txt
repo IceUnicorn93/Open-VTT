@@ -1,3 +1,12 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Debug x64\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Debug x64\OpenVTT.Settings.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Debug x64\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Release\OpenVTT.Grid.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Release\OpenVTT.Logging.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Release\OpenVTT.Settings.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Release\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\bin\Release\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Release\OpenVTT.Grid.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Release\OpenVTT.Grid.csproj.CoreCompileInputs.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Release\OpenVTT.Grid.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Grid\obj\Release\OpenVTT.Grid.dll
