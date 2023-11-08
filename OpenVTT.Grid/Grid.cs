@@ -13,9 +13,10 @@ namespace OpenVTT.Grid
                         ||
                       (Settings.Settings.Values.DisplayGrid && IsDM == false);
 
+            if (img == null) return img;
+
             if (!con)
                 return img;
-                
 
             int countHowManyLinesLeftToRight = (int)Settings.Settings.Values.PlayerScreenWidthInches;
             int countHowManyLinesTopToBottom = (int)Settings.Settings.Values.PlayerScreenHeightInces;
