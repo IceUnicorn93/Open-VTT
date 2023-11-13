@@ -16,6 +16,8 @@ namespace Open_VTT
         {
             _ = new Logger(Application.StartupPath);
 
+            //Do not remove this line!
+            //It's needed for UiDesign Scripting (Loading of Custom Designs)
             var a = new VolatileClassForMetaData();
 
             try

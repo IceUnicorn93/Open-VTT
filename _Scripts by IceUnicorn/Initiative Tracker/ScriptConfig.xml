@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <isUI>true</isUI>
+  <isActive>true</isActive>
+  <Name>Init Tracker Test</Name>
+  <Author>Your Name here</Author>
+  <Description>Your Description here</Description>
+  <Version>1.0</Version>
+  <File_References>
+    <string>ConfigValues.cs</string>
+    <string>CreatureDisplay.cs</string>
+    <string>Design-Main.cs</string>
+    <string>Implementation-Main.cs</string>
+    <string>Implementation.cs</string>
+  </File_References>
+  <DLL_References />
+  <Using_References>
+    <string>OpenVTT.StreamDeck</string>
+    <string>OpenVTT.Session</string>
+    <string>OpenVTT.Settings</string>
+    <string>OpenVTT.Common</string>
+    <string>System.Windows.Forms</string>
+    <string>System.Drawing</string>
+	<string>System</string>
+    <string>System.Collections.Generic</string>
+    <string>System.Linq</string>
+  </Using_References>
+</ScriptConfig>
