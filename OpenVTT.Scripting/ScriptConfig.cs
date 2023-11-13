@@ -64,7 +64,7 @@ namespace OpenVTT.Scripting
             };
             config.DLL_References = new List<string>()
             {
-                "SampleDllIn _DLL References-Folder.DLL"
+                "SampleDllIn.dll"
             };
             config.Using_References = new List<string>()
             {

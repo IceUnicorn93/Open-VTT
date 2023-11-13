@@ -36,7 +36,6 @@ namespace OpenVTT.Scripting
             if (!Directory.Exists(Path.Combine(appStartPath, "Scripts")))
             {
                 Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts"));
-                Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts", "_DLL References"));
             }
 
             if (!Directory.Exists(Path.Combine(appStartPath, "Scripts", "_Sample Script")))
@@ -414,7 +413,7 @@ Page.Controls.Add(tbDescription);";
 
             Logger.Log("Class: ScriptEngine | RunScript | Create #r Reference");
             //Adding DLL References using #r
-            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(appStartPath, "Scripts", "_DLL References", dll)}\"" + Environment.NewLine;
+            foreach (var dll in config.DLL_References) script += $"#r \"{Path.Combine(path, dll)}\"" + Environment.NewLine;
 
             Logger.Log("Class: ScriptEngine | RunScript | Create FileReferences");
             script += Environment.NewLine;
