@@ -382,7 +382,6 @@ namespace Open_VTT.Forms.Popups
             this.btnOpenDesigner.TabIndex = 1;
             this.btnOpenDesigner.Text = "Open Designer";
             this.btnOpenDesigner.UseVisualStyleBackColor = true;
-            this.btnOpenDesigner.Visible = false;
             this.btnOpenDesigner.Click += new System.EventHandler(this.btnOpenDesigner_Click);
             // 
             // flpScripts

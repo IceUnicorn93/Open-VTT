@@ -70,6 +70,12 @@
     </Compile>
     <Compile Include="listBoxItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScriptDescription.Designer.cs">
+      <DependentUpon>ScriptDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Structure.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Designer.resx">
       <DependentUpon>Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptDescription.resx">
+      <DependentUpon>ScriptDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Structure.resx">
       <DependentUpon>Structure.cs</DependentUpon>

@@ -46,6 +46,10 @@ namespace OpenVTT.UiDesigner
             InitializeComponent();
         }
 
+        // Setup Design Surface and CodeGeneration
+        // https://stackoverflow.com/questions/59529839/hosting-windows-forms-designer-serialize-designer-at-runtime-and-generate-c-sh
+        DesignSurface designSurface;
+
         private void Designer_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(LoadPath) || string.IsNullOrWhiteSpace(LoadPath)) return;
@@ -55,6 +59,9 @@ namespace OpenVTT.UiDesigner
             designSurface = new DesignSurface(typeof(UserControl));
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
+
+            var sd = (ScriptDescription)host.CreateComponent(typeof(ScriptDescription));
+            root.Controls.Add(sd);
 
             var selectionService = (ISelectionService)host.GetService(typeof(ISelectionService));
             selectionService.SelectionChanged += (o, args) => { pgControl.SelectedObject = ((ISelectionService)o).PrimarySelection; };
@@ -81,6 +88,11 @@ namespace OpenVTT.UiDesigner
             pnlDesigner.Controls.Add(view);
 
             FillItembox();
+
+
+            //if Main-Design-File exists, load it
+            if (File.Exists(Path.Combine(LoadPath, "Design-Main.cs")))
+                LoadDesign(Path.Combine(LoadPath, "Design-Main.cs"));
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -111,62 +123,7 @@ namespace OpenVTT.UiDesigner
                     return;
             }
 
-            this.Text = "Designer - Working on: " + path;
-
-            var code = File.ReadAllText(path);
-
-            var lines = CleanUpCode(code); //Remove unneccessary stuff like "this."
-
-            var processed = ProcessLines(lines); //Process lines and get Componenets and InitScript
-            var componentDeclarations = processed.componentDeclarations;
-            var initComponents = processed.initComponents;
-
-            var componentNameWithType = TransformComponents(componentDeclarations); //Transform Components so we get the Name and the Type
-
-            var mainControlInit = RemoveUsedLinesFromInit(componentNameWithType, initComponents); //Get the Instructions for the main Component
-
-            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
-            var root = (UserControl)host.RootComponent;
-
-            //"Clean up" -> Set Default BackColor and remove all old components
-            root.BackColor = Color.FromKnownColor(KnownColor.Control);
-            while (root.Controls.Count > 0) //Cleanup all Components
-                host.DestroyComponent(root.Controls[0]);
-
-            //Fill DesignSurface!
-            var sh = new UiScriptHost { host = host, root = root };
-            ProcessMainControl(mainControlInit, sh); // first run Main Control/Component
-            TypeDescriptor.GetProperties(root)["Name"].SetValue(root, root.Name); //For whatever reason, the Name Property has to be set extra
-            ProcessComponents(componentNameWithType, initComponents, sh); // then the Child-Controls
-
-            //Refill the Textbox
-            FillItembox();
-
-            //Set Counters to highest Number
-            var lst = root.Controls.Cast<Control>().ToList();
-            lbControls.Items.Remove("----------");
-            foreach (listBoxItem item in lbControls.Items)
-            {
-                var t = item.ItemType;
-                var sameType = lst.Where(n => n.GetType().ToString() == t.ToString()).ToList();
-                if (sameType.Any())
-                {
-                    var max = sameType.Max(n =>
-                    {
-                        var componentNameWithOnlyDigits = n.Name.ToCharArray().Where(m => char.IsDigit(m)).ToList();
-
-                        if (componentNameWithOnlyDigits.Any())
-                            return int.Parse(string.Join("", componentNameWithOnlyDigits));
-                        else
-                            return 0;
-                    });
-                    item.countPressed = max;
-                }
-                else
-                    item.countPressed = 0;
-            }
-
-            GC.Collect(Bottom);
+            LoadDesign(path);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -176,7 +133,37 @@ namespace OpenVTT.UiDesigner
 
             var code = GenerateCSFromDesigner(designSurface);
 
-            File.WriteAllText(Path.Combine(LoadPath, $"{root.Name}-Code.cs"), code);
+            File.WriteAllText(Path.Combine(LoadPath, $"Design-{root.Name}.cs"), code);
+
+            ScriptConfig sc;
+            if (File.Exists(Path.Combine(LoadPath, "ScriptConfig.xml"))) //File exists
+            { 
+                sc = ScriptConfig.Load(Path.Combine(LoadPath, "ScriptConfig.xml"));
+            }
+            else //New file
+            {
+                sc = new ScriptConfig();
+
+                sc.isActive = true;
+                sc.isUI = true;
+
+                sc.Name = LoadPath.Split(Path.DirectorySeparatorChar).Last();
+                sc.Author = "Your Name here";
+                sc.Description = "Your Description here";
+                sc.Version = "1.0";
+
+                sc.File_References = new List<string>();
+                sc.DLL_References = new List<string>();
+            }
+
+            CreateImplementationFiles();
+
+            sc.File_References.Clear();
+            sc.File_References.AddRange(Directory.GetFiles(LoadPath, "*.cs").Select(n => Path.GetFileName(n)));
+
+            sc.Using_References = sc.Using_References.Distinct().ToList();
+
+            sc.Save(Path.Combine(LoadPath, "ScriptConfig.xml"));
 
             Console.Beep();
         }
@@ -192,8 +179,8 @@ namespace OpenVTT.UiDesigner
 
             var designFiles = new List<string>();
             designFiles.AddRange(Directory.GetFiles(LoadPath));
-            designFiles.RemoveAll(n => n.Contains("Main-Code.cs"));
-            types.AddRange(designFiles.Select(n => Path.GetFileName(n).Replace("-Code.cs", "")));
+            designFiles.RemoveAll(n => n.Contains("Design-Main.cs"));
+            types.AddRange(designFiles.Select(n => Path.GetFileName(n).Replace("Design-", "").Replace(".cs", "")));
 
             var structDesigner = new StructureDesigner();
             structDesigner.Types = types.ToArray();
@@ -233,11 +220,8 @@ namespace OpenVTT.UiDesigner
             CreateItem(item, $"{item.DefaultName}{item.countPressed}", "");
         }
 
+        //----------------------------------------------------------------------------------------------------------------------------
 
-
-        // Setup Design Surface and CodeGeneration
-        // https://stackoverflow.com/questions/59529839/hosting-windows-forms-designer-serialize-designer-at-runtime-and-generate-c-sh
-        DesignSurface designSurface;
         private void FillItembox()
         {
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
@@ -404,12 +388,12 @@ namespace OpenVTT.UiDesigner
             lbControls.Items.Add("----------");
 
             var designFiles = new List<string>();
-            designFiles.AddRange(Directory.GetFiles(LoadPath));
-            designFiles.RemoveAll(n => n.Contains("Main-Code.cs"));
+            designFiles.AddRange(Directory.GetFiles(LoadPath, "Design-*.cs"));
+            designFiles.RemoveAll(n => n.Contains("Design-Main.cs"));
 
             foreach (var designFile in designFiles)
             {
-                var fileName = Path.GetFileName(designFile).Replace("-Code.cs", "");
+                var fileName = Path.GetFileName(designFile).Replace("Design-", "").Replace(".cs", "");
 
                 var item = new listBoxItem
                 {
@@ -444,6 +428,130 @@ namespace OpenVTT.UiDesigner
             }
         }
 
+        private void LoadDesign(string path)
+        {
+            this.Text = "Designer - Working on: " + path;
+
+            var code = File.ReadAllText(path);
+
+            var lines = CleanUpCode(code); //Remove unneccessary stuff like "this."
+
+            var processed = ProcessLines(lines); //Process lines and get Componenets and InitScript
+            var componentDeclarations = processed.componentDeclarations;
+            var initComponents = processed.initComponents;
+
+            var componentNameWithType = TransformComponents(componentDeclarations); //Transform Components so we get the Name and the Type
+
+            var mainControlInit = RemoveUsedLinesFromInit(componentNameWithType, initComponents); //Get the Instructions for the main Component
+
+            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+            var root = (UserControl)host.RootComponent;
+
+            //"Clean up" -> Set Default BackColor and remove all old components
+            root.BackColor = Color.FromKnownColor(KnownColor.Control);
+            while (root.Controls.Count > 0) //Cleanup all Components
+                host.DestroyComponent(root.Controls[0]);
+
+            //Fill DesignSurface!
+            var sh = new UiScriptHost { host = host, root = root };
+            ProcessMainControl(mainControlInit, sh); // first run Main Control/Component
+            TypeDescriptor.GetProperties(root)["Name"].SetValue(root, root.Name); //For whatever reason, the Name Property has to be set extra
+            ProcessComponents(componentNameWithType, initComponents, sh); // then the Child-Controls
+
+            //Refill the Textbox
+            FillItembox();
+
+            //Set Counters to highest Number
+            var lst = root.Controls.Cast<Control>().ToList();
+            lbControls.Items.Remove("----------");
+            foreach (listBoxItem item in lbControls.Items)
+            {
+                var t = item.ItemType;
+                var sameType = lst.Where(n => n.GetType().ToString() == t.ToString()).ToList();
+                if (sameType.Any())
+                {
+                    var max = sameType.Max(n =>
+                    {
+                        var componentNameWithOnlyDigits = n.Name.ToCharArray().Where(m => char.IsDigit(m)).ToList();
+
+                        if (componentNameWithOnlyDigits.Any())
+                            return int.Parse(string.Join("", componentNameWithOnlyDigits));
+                        else
+                            return 0;
+                    });
+                    item.countPressed = max;
+                }
+                else
+                    item.countPressed = 0;
+            }
+
+            GC.Collect(Bottom);
+        }
+
+        private void CreateImplementationFiles()
+        {
+            var designFiles = Directory.GetFiles(LoadPath, "Design-*.cs");
+            foreach (var file in designFiles)
+            {
+                var fileName = Path.GetFileName(file);
+                fileName = fileName.Replace("Design-", "");
+                fileName = "Implementation-" + fileName;
+
+                if (File.Exists(Path.Combine(LoadPath, fileName)))
+                    continue;
+                else
+                {
+                    var designFileContent = File.ReadAllLines(file).ToList();
+                    var buttonNames = new List<string>();
+                    designFileContent.ForEach(n =>
+                    {
+                        if(n.Contains("private System.Windows.Forms.Button "))
+                        {
+                            var buttonLine = n;
+                            buttonLine = buttonLine.Trim();
+                            var buttonNameWithSemicolon = buttonLine.Replace("private System.Windows.Forms.Button ", "");
+                            var buttonName = buttonNameWithSemicolon.Replace(";", "").Trim();
+                            buttonNames.Add(buttonName);
+                        }
+                    });
+
+                    var fileCode = "";
+                    fileCode += $"public partial class {Path.GetFileName(file).Replace("Design-", "").Replace(".cs", "")} : System.Windows.Forms.UserControl" + Environment.NewLine;
+                    fileCode += "{" + Environment.NewLine;
+                    fileCode += $"\tpublic {Path.GetFileName(file).Replace("Design-", "").Replace(".cs", "")}(object o)" + Environment.NewLine;
+                    fileCode += "\t{" + Environment.NewLine;
+                    fileCode += $"\t\tthis.InitializeComponent();" + Environment.NewLine;
+                    fileCode += $"\t\t" + Environment.NewLine;
+
+                    foreach (var button in buttonNames)
+                    {
+                        fileCode += $"\t\t{button}.Click += (s, e) =>" + Environment.NewLine;
+                        fileCode += "\t\t{" + Environment.NewLine;
+                        fileCode += "\t\t\t" + Environment.NewLine;
+                        fileCode += "\t\t};" + Environment.NewLine;
+                    }
+
+                    fileCode += "\t}" + Environment.NewLine;
+                    fileCode += "}" + Environment.NewLine;
+
+                    File.WriteAllText(Path.Combine(LoadPath, fileName), fileCode);
+                }
+            }
+
+            if(!File.Exists(Path.Combine(LoadPath, "Implementation.cs")))
+            {
+                var fileContent = "";
+
+                fileContent += $"Page.Text = Config.Name;{Environment.NewLine}";
+                fileContent += $"{Environment.NewLine}";
+                fileContent += $"var main = new Main(null);{Environment.NewLine}";
+                fileContent += $"main.Dock = DockStyle.Fill;{Environment.NewLine}";
+                fileContent += $"Page.Controls.Add(main);{Environment.NewLine}";
+
+                File.WriteAllText(Path.Combine(LoadPath, "Implementation.cs"), fileContent);
+            }
+        }
+
         string GenerateCSFromDesigner(DesignSurface designSurface)
         {
             CodeTypeDeclaration type;
@@ -473,6 +581,8 @@ namespace OpenVTT.UiDesigner
                 return builder.ToString();
             }
         }
+
+        //----------------------------------------------------------------------------------------------------------------------------
 
         //Interprete & run Code
         private List<string> CleanUpCode(string code)
@@ -547,7 +657,7 @@ namespace OpenVTT.UiDesigner
                 ret.RemoveAll(n => n.Contains(name));
             }
 
-            ret.RemoveAll(n => n.Contains("//") || n.Contains("SuspendLayout();") || n.Contains("ResumeLayout(false);"));
+            ret.RemoveAll(n => n.Contains("//") || n.Contains("SuspendLayout();") || n.Contains("ResumeLayout(false);") || n.Contains("|"));
 
             return ret;
         }
@@ -568,8 +678,35 @@ namespace OpenVTT.UiDesigner
             for (int i = 0; i < componentNameWithType.Count; i++)
             {
                 statementList.Add($"var {componentNameWithType[i].Name} = ({componentNameWithType[i].Type})host.CreateComponent(typeof({componentNameWithType[i].Type}), \"{componentNameWithType[i].Name}\");");
-                var componentLines = initComponents.Where(n => n.Contains($"{componentNameWithType[i].Name}.")).ToList();
+
+                //Sometimes lines are incomplete! we must complete them to get no error!
+                var component = componentNameWithType[i].Name;
+                var componentLines = initComponents.Where(n => n.Contains($"{component}.")).ToList();
+                if (componentLines.Any(n => !n.Contains(";")))
+                {
+                    var incompleteLines = componentLines.Where(n => !n.Contains(";")).ToList();
+                    foreach (var incompleteLine in incompleteLines)
+                    {
+                        var index = initComponents.IndexOf(incompleteLine);
+                        var neededLines = new List<string>();
+                        var hasFoundEnd = false;
+                        while (hasFoundEnd == false)
+                        {
+                            index += 1;
+                            neededLines.Add(initComponents[index]);
+                            if (initComponents[index].Contains(";"))
+                                hasFoundEnd = true;
+                        }
+
+                        var newValue = incompleteLine + string.Join("", neededLines);
+
+                        var componentLineListIndex = componentLines.IndexOf(incompleteLine);
+                        componentLines[componentLineListIndex] = newValue;
+                    }
+                }
+
                 statementList.AddRange(componentLines);
+
                 statementList.Add($"root.Controls.Add({componentNameWithType[i].Name});");
             }
 
@@ -586,7 +723,7 @@ namespace OpenVTT.UiDesigner
             //Put all the files in!
             var designFiles = new List<string>();
             designFiles.AddRange(Directory.GetFiles(LoadPath));
-            designFiles.RemoveAll(n => n.Contains("ScriptConfig.xml") || n.Contains("StreamDeck.cs"));
+            designFiles.RemoveAll(n => n.Contains("ScriptConfig.xml") || n.Contains("StreamDeck") || n.Contains("Implementation"));
 
             foreach (var file in designFiles)
                 script += File.ReadAllText(file) + Environment.NewLine;

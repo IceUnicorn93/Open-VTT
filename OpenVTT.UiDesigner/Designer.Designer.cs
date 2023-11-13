@@ -58,6 +58,7 @@
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Visible = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnFromTemplate

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace OpenVTT.Scripting
 {
-    internal class UiScriptHost
+    public class UiScriptHost
     {
         public IDesignerHost host;
         public UserControl root;

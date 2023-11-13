@@ -44,9 +44,9 @@ namespace OpenVTT.Scripting
         };
 
 
-        internal static void Save(string path)
+        internal static void SaveDefault(string path)
         {
-            Logger.Log("Class: ScriptConfig | Save");
+            Logger.Log("Class: ScriptConfig | Static Save");
 
             var config = new ScriptConfig();
 
@@ -75,6 +75,17 @@ namespace OpenVTT.Scripting
             using (var sw = new StreamWriter(path))
             {
                 x.Serialize(sw, config);
+            }
+        }
+
+        internal void Save(string path)
+        {
+            Logger.Log("Class: ScriptConfig | Static Save");
+
+            var x = new XmlSerializer(typeof(ScriptConfig));
+            using (var sw = new StreamWriter(path))
+            {
+                x.Serialize(sw, this);
             }
         }
 

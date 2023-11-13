@@ -44,7 +44,7 @@ namespace OpenVTT.Scripting
                 Directory.CreateDirectory(Path.Combine(appStartPath, "Scripts", "_Sample Script"));
 
                 File.WriteAllText(Path.Combine(appStartPath, "Scripts", "_Sample Script", "Main.cs"), GetDefaultScript());
-                ScriptConfig.Save(Path.Combine(appStartPath, "Scripts", "_Sample Script", "ScriptConfig.xml"));
+                ScriptConfig.SaveDefault(Path.Combine(appStartPath, "Scripts", "_Sample Script", "ScriptConfig.xml"));
             }
 
             CreateDocumentation();
