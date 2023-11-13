@@ -2,9 +2,9 @@
 <ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isUI>true</isUI>
   <isActive>true</isActive>
-  <Name>Init Tracker Test</Name>
-  <Author>Your Name here</Author>
-  <Description>Your Description here</Description>
+  <Name>Init Tracker</Name>
+  <Author>Dustin/IceUnicorn93</Author>
+  <Description>Easy and Simple Initiative Tracker</Description>
   <Version>1.0</Version>
   <File_References>
     <string>ConfigValues.cs</string>
