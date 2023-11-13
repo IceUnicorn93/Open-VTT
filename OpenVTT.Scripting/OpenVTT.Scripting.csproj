@@ -67,6 +67,7 @@
     <Compile Include="ScriptEngine.cs" />
     <Compile Include="ScriptHost.cs" />
     <Compile Include="UiScriptHost.cs" />
+    <Compile Include="VolatileClassForMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">

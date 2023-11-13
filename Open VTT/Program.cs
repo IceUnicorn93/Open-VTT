@@ -1,5 +1,6 @@
 ﻿using Open_VTT.Forms;
 using OpenVTT.Logging;
+using OpenVTT.Scripting;
 using System;
 using System.Windows.Forms;
 
@@ -14,6 +15,8 @@ namespace Open_VTT
         static void Main()
         {
             _ = new Logger(Application.StartupPath);
+
+            var a = new VolatileClassForMetaData();
 
             try
             {
