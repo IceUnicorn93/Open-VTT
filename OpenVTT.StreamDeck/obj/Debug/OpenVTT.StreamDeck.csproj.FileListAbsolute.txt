@@ -25,3 +25,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.dl
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Logging.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.csproj.GenerateResource.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\obj\Debug\OpenVTT.StreamDeck.StreamDeckConfig.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.StreamDeck\bin\Debug\Newtonsoft.Json.dll

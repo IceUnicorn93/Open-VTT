@@ -298,11 +298,14 @@ namespace Open_VTT.Forms.Popups
 
             foreach (var item in ScriptEngine.CalculatedHosts)
             {
-                if (item.Config.isUI && item.hasSuccessfullyRun) tabControl1.TabPages.Add(item.Page);
+                if (item.Config.isUI && item.hasSuccessfullyRun && !tabControl1.TabPages.ContainsKey(item.Config.Name))
+                    tabControl1.TabPages.Add(item.Page);
             }
 
             tabControl1.Update();
             this.Update();
+
+            StreamDeckStatics.LoadConfig();
 
             StreamDeckStatics.SwitchDeckState();
         }

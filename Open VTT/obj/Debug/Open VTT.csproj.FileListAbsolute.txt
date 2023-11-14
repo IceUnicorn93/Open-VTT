@@ -58,7 +58,6 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Collections.Immutable.dl
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Reflection.Metadata.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Drawing.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Memory.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -86,7 +85,6 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenMacroBoard.SDK.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.CodeAnalysis.CSharp.pdb
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\de\Microsoft.CodeAnalysis.Scripting.resources.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\es\Microsoft.CodeAnalysis.Scripting.resources.dll
@@ -161,3 +159,5 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.UiDesigner.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\AxInterop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Interop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.UiDesigner.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb

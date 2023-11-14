@@ -38,6 +38,8 @@ namespace Open_VTT
                 }
 
                 Logger.Log(message);
+
+                throw ex;
             }
         }
     }

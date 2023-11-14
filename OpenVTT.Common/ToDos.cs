@@ -14,7 +14,6 @@
 
         //Maybe?:
         //-> Display Memory Usage
-        //-> Scene Templates for Scenes the Players visit frequently
 
 
         //--------------------------------------------------------------------
@@ -23,14 +22,10 @@
 
         //Actively under work:
         /*
-         * -> StreamDeck Layout Configurable in Config Menu
-         *      Thats pretty neat, no need to stick to my ideals
          * -> Animated Map Support
          *      For what ever reason they want it
          * -> [x] Add Designer for Notes and new Scipts (OpenVTT.UiDesigner)
-         *      Custom designs for new Plugins/Scripts and for the Notes
-         * -> Re-Run failed Scripts
-         *      No need to reload a story. that would be nice
+         *      Custom designs for the Notes
          * -> Finetuning for Grid-Values
          *      Sometimes Grids can be slightly rectangluar (specially on ultra wide Monitors)
          */
@@ -42,6 +37,8 @@
          * 
          * Grid will only be displayed if some kind of Fog of War is in the Layer
          *  Should be changed to always display
+         * 
+         * Grid works only in 1" squares if the base Image has the same resolution as the Display
          */
 
         // Needs Testing:

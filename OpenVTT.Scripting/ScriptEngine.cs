@@ -337,7 +337,7 @@ Page.Controls.Add(tbDescription);";
                     HostsCalculated();
         }
 
-        static private void RunScript(string path)
+        static internal ScriptHost RunScript(string path, bool isRerun = false)
         {
             Logger.Log("Class: ScriptEngine | RunScript");
 
@@ -350,7 +350,7 @@ Page.Controls.Add(tbDescription);";
             Logger.Log("Class: ScriptEngine | RunScript | Load Config");
             var config = ScriptConfig.Load(Path.Combine(path, "ScriptConfig.xml"));
 
-            if(config.isActive == false) return; // No need to load the Script if it's not active
+            if(config.isActive == false) return null; // No need to load the Script if it's not active
 
             //Adding Usings & Common used Types (Settings, Session & StreamDeck Access)
             Logger.Log("Class: ScriptEngine | RunScript | Add Using References");
@@ -432,13 +432,16 @@ Page.Controls.Add(tbDescription);";
             script += "null";
 
             Logger.Log("Class: ScriptEngine | RunScript | Create ScriptHost");
-            var host = new ScriptHost { Config = config };
-            CalculatedHosts.Add(host);
+            var host = new ScriptHost { Config = config, path = Path.Combine(path) };
+            if (isRerun == false)
+                CalculatedHosts.Add(host);
+
             try
             {
                 var r = CSharpScript.EvaluateAsync<object>(code: script, globals: host, options: so).Result;
 
                 host.hasSuccessfullyRun = true;
+                host.exception = null;
             }
             catch (Exception ex)
             {
@@ -459,10 +462,14 @@ Page.Controls.Add(tbDescription);";
                 File.WriteAllText(Path.Combine(path, "_Error.txt"), errMessage);
                 File.WriteAllText(Path.Combine(path, "_Script.txt"), script);
             }
+
+            return host;
         }
 
-        static internal T RunUiScript<T>(string code, UiScriptHost host)
+        static internal async Task<T> RunUiScript<T>(string code, UiScriptHost host)
         {
+            Logger.Log("Class: ScriptEngine | RunUiScript<T>");
+
             var script = "";
 
             var so = ScriptOptions.Default.AddImports("System",
@@ -470,21 +477,39 @@ Page.Controls.Add(tbDescription);";
                 "System.ComponentModel",
                 "System.Windows.Forms");
 
-            var dlls = Directory.GetFileSystemEntries(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\", "System*.dll", SearchOption.TopDirectoryOnly).ToList();
+            Logger.Log("Class: ScriptEngine | Added Usings");
+
+            List<string> dlls = new List<string>();
+            if (Directory.Exists(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\"))
+                dlls = Directory.GetFileSystemEntries(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\", "System*.dll", SearchOption.TopDirectoryOnly).ToList();
+            else
+            {
+                Logger.Log("Class: ScriptEngine | Missing .net 4.7.2");
+
+                var dirs = Directory.GetDirectories(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\");
+                var versions = dirs.Select(n => n.Replace(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\v", "").Replace(".","")).ToList();
+                versions.RemoveAll(n => !int.TryParse(n, out _));
+                var maxVersion = versions.Max().ToString().Cast<char>();
+                var stringVersion = string.Join(".", maxVersion);
+                dlls = Directory.GetFileSystemEntries(@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\v" + stringVersion + @"\", "System*.dll", SearchOption.TopDirectoryOnly).ToList();
+            }
             dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Wrapper.dll"));
             dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Thunk.dll"));
 
             foreach (var dll in dlls) script += $"#r \"{dll}\"" + Environment.NewLine;
+
+            Logger.Log("Class: ScriptEngine | Added References");
 
             script += Environment.NewLine;
 
             script += code;
             script = script.Replace("Submission#0.", "");
 
+            Logger.Log($"Class: ScriptEngine | Run Script with host = {host != null}");
             if (host == null)
-                return CSharpScript.EvaluateAsync<T>(code: script, options: so).Result;
+                return await CSharpScript.EvaluateAsync<T>(code: script, options: so);
             else
-                return CSharpScript.EvaluateAsync<T>(code: script, globals: host, options: so).Result;
+                return await CSharpScript.EvaluateAsync<T>(code: script, globals: host, options: so);
         }
     }
 }

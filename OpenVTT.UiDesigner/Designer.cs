@@ -14,6 +14,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using OpenVTT.Scripting;
+using System.Threading.Tasks;
+using OpenVTT.Logging;
 
 namespace OpenVTT.UiDesigner
 {
@@ -52,6 +54,8 @@ namespace OpenVTT.UiDesigner
 
         private void Designer_Load(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | Designer_Load");
+
             if (string.IsNullOrEmpty(LoadPath) || string.IsNullOrWhiteSpace(LoadPath)) return;
             if (!Directory.Exists(LoadPath))
                 Directory.CreateDirectory(LoadPath);
@@ -97,6 +101,8 @@ namespace OpenVTT.UiDesigner
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | btnNew_Click");
+
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
 
@@ -112,6 +118,8 @@ namespace OpenVTT.UiDesigner
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | btnLoad_Click");
+
             //Choose file to load, if non is choosen, don't continue
             var path = "";
             using (var ofd = new OpenFileDialog())
@@ -128,6 +136,8 @@ namespace OpenVTT.UiDesigner
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | btnSave_Click");
+
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
 
@@ -164,12 +174,12 @@ namespace OpenVTT.UiDesigner
             sc.Using_References = sc.Using_References.Distinct().ToList();
 
             sc.Save(Path.Combine(LoadPath, "ScriptConfig.xml"));
-
-            Console.Beep();
         }
 
         private void btnFromTemplate_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | btnFromTemplate_Click");
+
             var types = new List<string>
             {
                 "Text",
@@ -209,11 +219,82 @@ namespace OpenVTT.UiDesigner
 
         private void btnStreanDeck_Click(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | btnStreanDeck_Click");
 
+            List<Button> getButtons(List<Control> controlList)
+            {
+                var ret = new List<Button>();
+                foreach (var ctrl in controlList)
+                {
+                    if(ctrl is Button) ret.Add(ctrl as Button);
+                    else ret.AddRange(getButtons(ctrl.Controls.Cast<Control>().ToList()));
+                }
+                return ret;
+            }
+
+            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+            var root = (UserControl)host.RootComponent;
+
+            var controls = root.Controls.Cast<Control>().ToList();
+
+            var buttons = getButtons(controls);
+
+            var uiDesignStreamDeckConfigurator = new UiDesignStreamDeckConfigurator();
+            uiDesignStreamDeckConfigurator.buttons = buttons;
+            uiDesignStreamDeckConfigurator.ShowDialog();
+            var selectedButtons = uiDesignStreamDeckConfigurator.selectedButtons;
+
+
+            //Update ScriptConfig
+            var sc = ScriptConfig.Load(Path.Combine(LoadPath, "ScriptConfig.xml"));
+            sc.File_References.Insert(0, "aaStreamDeck.cs");
+            sc.File_References.Add("zzStreamDeck.cs");
+            sc.File_References = sc.File_References.Distinct().ToList();
+            sc.Save(Path.Combine(LoadPath, "ScriptConfig.xml"));
+
+            var pluginName = sc.Name;
+
+            //First Part, Create the Static StreamDeck class for all Button-Actions and easy DescriptionAdding
+            var buttonActions = new List<string>();
+            buttonActions.Add("// Don't modify this code, please :>");
+            buttonActions.Add("static class StreamDeck");
+            buttonActions.Add("{");
+            buttonActions.Add("\tpublic static (string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) Description;");
+            buttonActions.Add("\t");
+            for (int i = 0; i < selectedButtons.Count; i++)
+                buttonActions.Add($"\tpublic static Action {selectedButtons[i].Name}Action;");
+            buttonActions.Add("\t");
+            buttonActions.Add("\tpublic static void AddPageingAction((string Name, Action action) data) => Description.PageingActions.Add(data);");
+            buttonActions.Add("}");
+            buttonActions.Add("");
+
+            buttonActions.Add(
+                $"(string State, string[,] ActionDescription, List<(string Name, Action action)> PageingActions) description = StreamDeckStatics.CreateDescription(\"{pluginName}\");");
+            buttonActions.Add("StreamDeck.Description = description;");
+            buttonActions.Add("");
+            File.WriteAllText(Path.Combine(LoadPath, "aaStreamDeck.cs"), string.Join(Environment.NewLine, buttonActions));
+
+            //Second Part, Add Actions to the StreamDeckStatics-Class and easy Copy-Paste Stuff for ease of use
+            buttonActions.Clear();
+            buttonActions.Add("// Feel free to modify this code! :)");
+            for (int i = 0; i < selectedButtons.Count; i++)
+                buttonActions.Add($"StreamDeckStatics.ActionList.Add((\"DisplayText{i}\", \"{pluginName}.Action{i}\", StreamDeck.{selectedButtons[i].Name}Action));");
+            buttonActions.Add("");
+            buttonActions.Add("//Example of how to map Static Functions");
+            buttonActions.Add($"//description.ActionDescription[0,0] = \"{pluginName}.Action0\";");
+            buttonActions.Add("");
+            buttonActions.Add("// Add this Code to the Implementation-Main.cs");
+            buttonActions.Add("/*");
+            for (int i = 0; i < selectedButtons.Count; i++)
+                buttonActions.Add($"StreamDeck.{selectedButtons[i].Name}Action = new Action(async () => " + "{ this.Invoke((MethodInvoker) delegate {" + $"{selectedButtons[i].Name}.PerformClick();" + "}); });");
+            buttonActions.Add("*/");
+            File.WriteAllText(Path.Combine(LoadPath, "zzStreamDeck.cs"), string.Join(Environment.NewLine, buttonActions));
         }
 
         private void lbControls_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Logger.Log("Class: Designer | lbControls_SelectedIndexChanged");
+
             if (!(lbControls.SelectedItem is listBoxItem)) return;
 
             var item = (listBoxItem)lbControls.SelectedItem;
@@ -224,6 +305,8 @@ namespace OpenVTT.UiDesigner
 
         private void FillItembox()
         {
+            Logger.Log("Class: Designer | FillItembox");
+
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
 
@@ -414,8 +497,7 @@ namespace OpenVTT.UiDesigner
 
                         var sh = new UiScriptHost { host = host, root = root };
 
-                        var obj = runScript<UserControl>(componentCode, sh);
-                        return obj;
+                        return runScript<UserControl>(componentCode, sh).Result;
                     })
                 };
 
@@ -430,6 +512,8 @@ namespace OpenVTT.UiDesigner
 
         private void LoadDesign(string path)
         {
+            Logger.Log("Class: Designer | LoadDesign");
+
             this.Text = "Designer - Working on: " + path;
 
             var code = File.ReadAllText(path);
@@ -462,34 +546,42 @@ namespace OpenVTT.UiDesigner
             FillItembox();
 
             //Set Counters to highest Number
+            Logger.Log("Class: Designer | Cast to Control and Clean up");
             var lst = root.Controls.Cast<Control>().ToList();
             lbControls.Items.Remove("----------");
+
             foreach (listBoxItem item in lbControls.Items)
             {
+                Logger.Log("Class: Designer | For each Item");
                 var t = item.ItemType;
                 var sameType = lst.Where(n => n.GetType().ToString() == t.ToString()).ToList();
                 if (sameType.Any())
                 {
+                    Logger.Log("Class: Designer | SameType Any");
                     var max = sameType.Max(n =>
                     {
                         var componentNameWithOnlyDigits = n.Name.ToCharArray().Where(m => char.IsDigit(m)).ToList();
 
                         if (componentNameWithOnlyDigits.Any())
-                            return int.Parse(string.Join("", componentNameWithOnlyDigits));
+                            return int.Parse(string.Join("", componentNameWithOnlyDigits)) + 1;
                         else
                             return 0;
                     });
                     item.countPressed = max;
+                    Logger.Log("Class: Designer | Set Max");
                 }
                 else
                     item.countPressed = 0;
             }
 
+            Logger.Log("Class: Designer | Done");
             GC.Collect(Bottom);
         }
 
         private void CreateImplementationFiles()
         {
+            Logger.Log("Class: Designer | CreateImplementationFiles");
+
             var designFiles = Directory.GetFiles(LoadPath, "Design-*.cs");
             foreach (var file in designFiles)
             {
@@ -554,6 +646,8 @@ namespace OpenVTT.UiDesigner
 
         string GenerateCSFromDesigner(DesignSurface designSurface)
         {
+            Logger.Log("Class: Designer | GenerateCSFromDesigner");
+
             CodeTypeDeclaration type;
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = host.RootComponent;
@@ -587,6 +681,8 @@ namespace OpenVTT.UiDesigner
         //Interprete & run Code
         private List<string> CleanUpCode(string code)
         {
+            Logger.Log("Class: Designer | CleanUpCode");
+
             return code
                 .Replace("this.", "") //Replace this. (won't be needed later)
                 .Trim() //Remove spaces
@@ -595,6 +691,8 @@ namespace OpenVTT.UiDesigner
         }
         private (List<string> componentDeclarations, List<string> initComponents) ProcessLines(List<string> lines)
         {
+            Logger.Log("Class: Designer | ProcessLines");
+
             var state = "WaitForTypes";
 
             var componentDeclarations = new List<string>(); //Contains for example: private Open_VTT_Logo_Color_Test.userCtrl uc1;
@@ -636,6 +734,8 @@ namespace OpenVTT.UiDesigner
         }
         private List<(string Name, string Type)> TransformComponents(List<string> componentDeclarations)
         {
+            Logger.Log("Class: Designer | TransformComponents");
+
             var componentNameWithType = new List<(string Name, string Type)>();
             componentDeclarations.ForEach(n =>
             {
@@ -647,6 +747,8 @@ namespace OpenVTT.UiDesigner
         }
         private List<string> RemoveUsedLinesFromInit(List<(string Name, string Type)> componentNameWithType, List<string> initComponents)
         {
+            Logger.Log("Class: Designer | RemoveUsedLinesFromInit");
+
             var ret = new List<string>();
             ret.AddRange(initComponents.ToList());
 
@@ -663,16 +765,19 @@ namespace OpenVTT.UiDesigner
         }
         private void ProcessMainControl(List<string> mainControlInit, UiScriptHost sh)
         {
+            Logger.Log("Class: Designer | ProcessMainControl");
+
             var statementList = new List<string>();
             foreach (var mci in mainControlInit)
                 statementList.Add($"root.{mci.Trim()}");
             statementList.Add(null);
 
             var code = string.Join(Environment.NewLine, statementList);
-            runScript<object>(code, sh);
+            var o = runScript<object>(code, sh).Result;
         }
         private void ProcessComponents(List<(string Name, string Type)> componentNameWithType, List<string> initComponents, UiScriptHost sh)
         {
+            Logger.Log("Class: Designer | ProcessComponents");
 
             var statementList = new List<string>();
             for (int i = 0; i < componentNameWithType.Count; i++)
@@ -712,32 +817,38 @@ namespace OpenVTT.UiDesigner
 
             statementList.Add("null");
             var componentCode = string.Join(Environment.NewLine, statementList);
-            runScript<object>(componentCode, sh);
+            var o = runScript<object>(componentCode, sh);
         }
 
         //Code Execution
-        private T runScript<T>(string code, UiScriptHost host = null)
+        private async Task<T> runScript<T>(string code, UiScriptHost host = null)
         {
+            Logger.Log("Class: Designer | runScript<T>");
+
             var script = "";
 
             //Put all the files in!
             var designFiles = new List<string>();
-            designFiles.AddRange(Directory.GetFiles(LoadPath));
-            designFiles.RemoveAll(n => n.Contains("ScriptConfig.xml") || n.Contains("StreamDeck") || n.Contains("Implementation"));
+            designFiles.AddRange(Directory.GetFiles(LoadPath, "Design-*.cs"));
 
             foreach (var file in designFiles)
                 script += File.ReadAllText(file) + Environment.NewLine;
+
+            Logger.Log("Class: Designer | Read all files");
 
             script += Environment.NewLine;
 
             script += code;
             script = script.Replace("Submission#0.", "");
 
-            return ScriptEngine.RunUiScript<T>(script, host);
+            Logger.Log("Class: Designer | Run in Script Engine");
+            return await ScriptEngine.RunUiScript<T>(script, host);
         }
 
         private void CreateItem(listBoxItem item, string Name, string Text)
         {
+            Logger.Log("Class: Designer | CreateItem");
+
             var ctrl = item.GetControl();
             item.countPressed++;
             if (Text != "")

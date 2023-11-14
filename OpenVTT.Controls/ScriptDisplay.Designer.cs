@@ -30,6 +30,7 @@
         {
             this.lblName = new System.Windows.Forms.Label();
             this.pnlState = new System.Windows.Forms.Panel();
+            this.btnRerun = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -44,16 +45,27 @@
             // pnlState
             // 
             this.pnlState.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlState.Location = new System.Drawing.Point(293, 3);
+            this.pnlState.Location = new System.Drawing.Point(228, 3);
             this.pnlState.Name = "pnlState";
             this.pnlState.Size = new System.Drawing.Size(89, 19);
             this.pnlState.TabIndex = 1;
             this.pnlState.Click += new System.EventHandler(this.pnlState_Click);
             // 
+            // btnRerun
+            // 
+            this.btnRerun.Location = new System.Drawing.Point(323, 3);
+            this.btnRerun.Name = "btnRerun";
+            this.btnRerun.Size = new System.Drawing.Size(59, 19);
+            this.btnRerun.TabIndex = 2;
+            this.btnRerun.Text = "Rerun";
+            this.btnRerun.UseVisualStyleBackColor = true;
+            this.btnRerun.Click += new System.EventHandler(this.btnRerun_Click);
+            // 
             // ScriptDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRerun);
             this.Controls.Add(this.pnlState);
             this.Controls.Add(this.lblName);
             this.Name = "ScriptDisplay";
@@ -67,5 +79,6 @@
 
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel pnlState;
+        private System.Windows.Forms.Button btnRerun;
     }
 }

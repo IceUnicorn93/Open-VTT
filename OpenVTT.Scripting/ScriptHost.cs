@@ -3,7 +3,6 @@ using OpenVTT.Common;
 using System;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace OpenVTT.Scripting
 {
@@ -12,6 +11,7 @@ namespace OpenVTT.Scripting
     {
         internal bool hasSuccessfullyRun = false;
         internal Exception exception;
+        internal string path;
 
         [Documentation("This Object will be added to the SceneControl", IsField =true, DataType = "TabPage", Name = "Page")]
         public TabPage Page = new TabPage();

@@ -3,6 +3,7 @@ using OpenVTT.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace OpenVTT.Scripting
@@ -100,6 +101,11 @@ namespace OpenVTT.Scripting
             {
                 ret = (ScriptConfig)x.Deserialize(sr);
             }
+
+            ret.DLL_References = ret.DLL_References.Distinct().ToList();
+            ret.Using_References = ret.Using_References.Distinct().ToList();
+            ret.File_References = ret.File_References.Distinct().ToList();
+
             return ret;
         }
     }

@@ -13,7 +13,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.NetworkMessage.
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Grid.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\StreamDeckSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenMacroBoard.SDK.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Client.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Common.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Editor.Controls.pdb
@@ -28,7 +27,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.NetworkMessage.
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.Grid.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\StreamDeckSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenMacroBoard.SDK.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj.AssemblyReference.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.MapControl.resources
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.RecentlyOpenedControl.resources
@@ -123,3 +121,5 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Displa
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Forms.ScriptDesigner.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\HidSharp.pdb

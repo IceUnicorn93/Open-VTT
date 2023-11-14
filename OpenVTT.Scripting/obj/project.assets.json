@@ -597,6 +597,7 @@
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "HidSharp": "2.1.0",
+          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
@@ -1209,6 +1210,7 @@
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "HidSharp": "2.1.0",
+          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
@@ -1821,6 +1823,7 @@
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "HidSharp": "2.1.0",
+          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
@@ -2433,6 +2436,7 @@
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "HidSharp": "2.1.0",
+          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
@@ -3045,6 +3049,7 @@
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "HidSharp": "2.1.0",
+          "Newtonsoft.Json": "13.0.3",
           "OpenVTT.Common": "1.0.0",
           "OpenVTT.FogOfWar": "1.0.0",
           "OpenVTT.Logging": "1.0.0",

@@ -50,12 +50,12 @@ namespace OpenVTT.Controls
 
             if (StreamDeckStatics.IsInitialized)
             {
-                StreamDeckStatics.ActionList.Add(("Layer  Up", "Layer Up", new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Layer  Down", "Layer Down", new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Layer  Up", "Scene.LayerUp", new Action(() => Invoke(new Action(() => btnLayerUp_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Layer  Down", "Scene.LayerDown", new Action(() => Invoke(new Action(() => btnLayerDown_Click(null, null))))));
 
-                StreamDeckStatics.ActionList.Add(("Reveal All", "Reveal All", new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Cover  All", "Cover All", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
-                StreamDeckStatics.ActionList.Add(("Set    Active", "Set Active", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Reveal All", "Scene.RevealAll", new Action(() => Invoke(new Action(() => btnRevealAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Cover  All", "Scene.CoverAll", new Action(() => Invoke(new Action(() => btnCoverAll_Click(null, null))))));
+                StreamDeckStatics.ActionList.Add(("Set    Active", "Fog.SetActive", new Action(() => Invoke(new Action(() => btnSetActive_Click(null, null))))));
 
                 if (StreamDeckStatics.IsInitialized)
                 {

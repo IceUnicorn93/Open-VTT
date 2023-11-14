@@ -88,6 +88,12 @@
     <Compile Include="StructureDesigner.Designer.cs">
       <DependentUpon>StructureDesigner.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiDesignStreamDeckConfigurator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesignStreamDeckConfigurator.Designer.cs">
+      <DependentUpon>UiDesignStreamDeckConfigurator.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Designer.resx">
@@ -102,8 +108,15 @@
     <EmbeddedResource Include="StructureDesigner.resx">
       <DependentUpon>StructureDesigner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UiDesignStreamDeckConfigurator.resx">
+      <DependentUpon>UiDesignStreamDeckConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
+      <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
+      <Name>OpenVTT.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Scripting\OpenVTT.Scripting.csproj">
       <Project>{b56784f1-969b-48c7-b18f-1c7471c69ddc}</Project>
       <Name>OpenVTT.Scripting</Name>

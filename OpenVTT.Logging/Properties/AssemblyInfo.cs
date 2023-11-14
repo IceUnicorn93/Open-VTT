@@ -50,3 +50,4 @@ using System.Runtime.InteropServices;
 [assembly: InternalsVisibleTo("OpenVTT.Session")]
 [assembly: InternalsVisibleTo("OpenVTT.Settings")]
 [assembly: InternalsVisibleTo("OpenVTT.StreamDeck")]
+[assembly: InternalsVisibleTo("OpenVTT.UiDesigner")]

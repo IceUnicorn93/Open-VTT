@@ -61,6 +61,8 @@ namespace Open_VTT.Forms.Popups
             this.tpScripting = new System.Windows.Forms.TabPage();
             this.btnOpenDesigner = new System.Windows.Forms.Button();
             this.flpScripts = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbStreamDeck = new System.Windows.Forms.TabPage();
+            this.streamDeckConfig1 = new OpenVTT.StreamDeck.StreamDeckConfig();
             this.tabCtrlPages.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -71,17 +73,19 @@ namespace Open_VTT.Forms.Popups
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).BeginInit();
             this.tpScripting.SuspendLayout();
+            this.tbStreamDeck.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCtrlPages
             // 
             this.tabCtrlPages.Controls.Add(this.tpGeneral);
             this.tabCtrlPages.Controls.Add(this.tpScripting);
+            this.tabCtrlPages.Controls.Add(this.tbStreamDeck);
             this.tabCtrlPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabCtrlPages.Location = new System.Drawing.Point(0, 0);
             this.tabCtrlPages.Name = "tabCtrlPages";
             this.tabCtrlPages.SelectedIndex = 0;
-            this.tabCtrlPages.Size = new System.Drawing.Size(795, 519);
+            this.tabCtrlPages.Size = new System.Drawing.Size(843, 519);
             this.tabCtrlPages.TabIndex = 5;
             // 
             // tpGeneral
@@ -94,7 +98,7 @@ namespace Open_VTT.Forms.Popups
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(787, 493);
+            this.tpGeneral.Size = new System.Drawing.Size(835, 493);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -369,14 +373,14 @@ namespace Open_VTT.Forms.Popups
             this.tpScripting.Location = new System.Drawing.Point(4, 22);
             this.tpScripting.Name = "tpScripting";
             this.tpScripting.Padding = new System.Windows.Forms.Padding(3);
-            this.tpScripting.Size = new System.Drawing.Size(787, 493);
+            this.tpScripting.Size = new System.Drawing.Size(835, 493);
             this.tpScripting.TabIndex = 1;
             this.tpScripting.Text = "Scripting";
             this.tpScripting.UseVisualStyleBackColor = true;
             // 
             // btnOpenDesigner
             // 
-            this.btnOpenDesigner.Location = new System.Drawing.Point(688, 6);
+            this.btnOpenDesigner.Location = new System.Drawing.Point(8, 6);
             this.btnOpenDesigner.Name = "btnOpenDesigner";
             this.btnOpenDesigner.Size = new System.Drawing.Size(91, 23);
             this.btnOpenDesigner.TabIndex = 1;
@@ -392,14 +396,33 @@ namespace Open_VTT.Forms.Popups
             this.flpScripts.AutoScroll = true;
             this.flpScripts.Location = new System.Drawing.Point(6, 35);
             this.flpScripts.Name = "flpScripts";
-            this.flpScripts.Size = new System.Drawing.Size(775, 452);
+            this.flpScripts.Size = new System.Drawing.Size(821, 452);
             this.flpScripts.TabIndex = 0;
+            // 
+            // tbStreamDeck
+            // 
+            this.tbStreamDeck.Controls.Add(this.streamDeckConfig1);
+            this.tbStreamDeck.Location = new System.Drawing.Point(4, 22);
+            this.tbStreamDeck.Name = "tbStreamDeck";
+            this.tbStreamDeck.Padding = new System.Windows.Forms.Padding(3);
+            this.tbStreamDeck.Size = new System.Drawing.Size(835, 493);
+            this.tbStreamDeck.TabIndex = 2;
+            this.tbStreamDeck.Text = "StreamDeck";
+            this.tbStreamDeck.UseVisualStyleBackColor = true;
+            // 
+            // streamDeckConfig1
+            // 
+            this.streamDeckConfig1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.streamDeckConfig1.Location = new System.Drawing.Point(3, 3);
+            this.streamDeckConfig1.Name = "streamDeckConfig1";
+            this.streamDeckConfig1.Size = new System.Drawing.Size(829, 487);
+            this.streamDeckConfig1.TabIndex = 0;
             // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 519);
+            this.ClientSize = new System.Drawing.Size(843, 519);
             this.Controls.Add(this.tabCtrlPages);
             this.Name = "Config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -418,6 +441,7 @@ namespace Open_VTT.Forms.Popups
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerSize)).EndInit();
             this.tpScripting.ResumeLayout(false);
+            this.tbStreamDeck.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -454,5 +478,7 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.TabPage tpScripting;
         private System.Windows.Forms.FlowLayoutPanel flpScripts;
         private System.Windows.Forms.Button btnOpenDesigner;
+        private System.Windows.Forms.TabPage tbStreamDeck;
+        private OpenVTT.StreamDeck.StreamDeckConfig streamDeckConfig1;
     }
 }
