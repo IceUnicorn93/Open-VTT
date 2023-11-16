@@ -48,40 +48,9 @@ namespace Open_VTT.Forms.Popups
                         DrawSize = new Size(100, 100),
                         state = FogState.Add
                     };
-
-                    if (treeViewDisplay1.currentInformationItem == null) return;
-                    var path = Path.Combine(treeViewDisplay1.currentInformationItem.GetLocation(".png").ToArray());
-                    if (File.Exists(path))
-                    {
-                        pbPoint.DrawCircle(drawPbArtworkDM.Image);
-                        pbPoint.DrawCircle(drawPbArtworkPlayer.Image);
-                        drawPbArtworkPlayer.Image = drawPbArtworkPlayer.Image;
-                    }
                 }
                 else
                 {
-                    if (treeViewDisplay1.currentInformationItem == null) return;
-                    var path = Path.Combine(treeViewDisplay1.currentInformationItem.GetLocation(".png").ToArray());
-                    if (File.Exists(path))
-                    {
-                        drawPbArtworkDM.BackgroundImageLayout = ImageLayout.Zoom;
-                        drawPbArtworkPlayer.BackgroundImageLayout = ImageLayout.Zoom;
-
-                        drawPbArtworkDM.BackgroundImage = (Image)drawPbMap.Image.Clone();
-                        //drawPbArtworkPlayer.BackgroundImage = (Image)drawPbArtworkPlayer.Image.Clone();
-
-                        drawPbArtworkDM.Image = null;
-                        drawPbArtworkPlayer.Image = null;
-
-                        drawPbArtworkDM.Image = Image.FromFile(path);
-                        drawPbArtworkPlayer.Image = Image.FromFile(path);
-
-                        drawPbArtworkDM.BackgroundImage = null;
-                        drawPbArtworkPlayer.BackgroundImage = null;
-
-                        GC.Collect();
-                    }
-
                     canPingArtwork = true;
                 }
             };
@@ -223,16 +192,6 @@ namespace Open_VTT.Forms.Popups
                     Session.Save(true);
             };
 
-            treeViewDisplay1.GenerateNewDisplayItem += () =>
-            {
-                using (var dialog = new DisplayItemGenerator())
-                    dialog.ShowDialog();
-            };
-            treeViewDisplay1.GetDmDisplay += () => WindowInstaces.InformationDisplayDM;
-            treeViewDisplay1.GetPlayerDisplay += () => WindowInstaces.InformationDisplayPlayer;
-            treeViewDisplay1.GetDmPictureBox += () => WindowInstaces.InformationDisplayDM.GetPictureBox();
-            treeViewDisplay1.GetPlayerPictureBox += () => WindowInstaces.InformationDisplayPlayer.GetPictureBox();
-
             FormClosed += FormClosedEvent;
 
             Init();
@@ -284,10 +243,9 @@ namespace Open_VTT.Forms.Popups
             mapControl1.Init();
             mapControl1.UpdatePrePlaceFogOfWarList += UpdatePrePlaceFogOfWarList;
 
-            treeViewDisplay1.Editor = editor1;
-            treeViewDisplay1.Init();
-
             mapControl1.LoadScene(Session.Values.ActiveScene, 0);
+
+            treeViewDisplay2.PageControl = panel2;
 
             UpdatePrePlaceFogOfWarList();
         }
@@ -378,7 +336,6 @@ namespace Open_VTT.Forms.Popups
                 flowLayoutPanel1.Controls.Add(btn);
             }
         }
-
 
         private void btnSave_Click(object sender, EventArgs e)
         {

@@ -28,6 +28,13 @@
          *      Custom designs for the Notes
          * -> Finetuning for Grid-Values
          *      Sometimes Grids can be slightly rectangluar (specially on ultra wide Monitors)
+         *      
+         * Second Control Window BUT for dedicated Plugins and Artwork Display, selectable in Config?
+         * following Tabs:
+         * -> Plugin 1
+         * -> Plugin 2
+         * -> Plugin X
+         * -> ArtworkDisplayGM
          */
 
         // Bugs:

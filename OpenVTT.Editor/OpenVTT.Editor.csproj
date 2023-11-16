@@ -62,29 +62,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControlData.cs" />
-    <Compile Include="Editor.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="AddNode.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editor.Designer.cs">
-      <DependentUpon>Editor.cs</DependentUpon>
+    <Compile Include="AddNode.Designer.cs">
+      <DependentUpon>AddNode.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TreeViewDisplayItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenVTT.Common\OpenVTT.Common.csproj">
       <Project>{bc0bf261-3ec5-4bed-b78a-16631b6c3fda}</Project>
       <Name>OpenVTT.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OpenVTT.Editor.Controls\OpenVTT.Editor.Controls.csproj">
-      <Project>{6a39d188-1289-49ac-a533-ff7dd53e0e4a}</Project>
-      <Name>OpenVTT.Editor.Controls</Name>
+    <ProjectReference Include="..\OpenVTT.Forms\OpenVTT.Forms.csproj">
+      <Project>{75af342f-95e1-4c5b-8356-0ce5eea95d90}</Project>
+      <Name>OpenVTT.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">
       <Project>{c1a6188e-7224-4ce3-8413-9184177e9901}</Project>
       <Name>OpenVTT.Logging</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddNode.resx">
+      <DependentUpon>AddNode.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

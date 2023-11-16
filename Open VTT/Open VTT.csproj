@@ -94,12 +94,6 @@
     <Compile Include="Forms\Popups\Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Popups\DisplayItemGenerator.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Popups\DisplayItemGenerator.Designer.cs">
-      <DependentUpon>DisplayItemGenerator.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Popups\PrePlaceFogOfWar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Popups\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Popups\DisplayItemGenerator.resx">
-      <DependentUpon>DisplayItemGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Popups\PrePlaceFogOfWar.resx">
       <DependentUpon>PrePlaceFogOfWar.cs</DependentUpon>
@@ -172,10 +163,6 @@
     <ProjectReference Include="..\OpenVTT.Controls\OpenVTT.Controls.csproj">
       <Project>{547b2f8c-d067-4583-aad7-1378142c803b}</Project>
       <Name>OpenVTT.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenVTT.Editor.Controls\OpenVTT.Editor.Controls.csproj">
-      <Project>{6a39d188-1289-49ac-a533-ff7dd53e0e4a}</Project>
-      <Name>OpenVTT.Editor.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Editor\OpenVTT.Editor.csproj">
       <Project>{88a88fcd-315d-49e4-a396-5c19123473c7}</Project>

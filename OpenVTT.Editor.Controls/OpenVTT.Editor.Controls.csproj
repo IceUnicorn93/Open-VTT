@@ -62,24 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResizableLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ResizableLabel.Designer.cs">
-      <DependentUpon>ResizableLabel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResizablePictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ResizablePictureBox.Designer.cs">
-      <DependentUpon>ResizablePictureBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResizableTextbox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ResizableTextbox.Designer.cs">
-      <DependentUpon>ResizableTextbox.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenVTT.Logging\OpenVTT.Logging.csproj">

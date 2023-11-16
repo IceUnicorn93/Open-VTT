@@ -505,7 +505,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Forms": "1.0.0",
           "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
@@ -513,18 +513,6 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
-        }
-      },
-      "OpenVTT.Editor.Controls/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         }
       },
       "OpenVTT.FogOfWar/1.0.0": {
@@ -540,6 +528,18 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Forms/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
         }
       },
       "OpenVTT.Grid/1.0.0": {
@@ -1118,7 +1118,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Forms": "1.0.0",
           "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
@@ -1126,18 +1126,6 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
-        }
-      },
-      "OpenVTT.Editor.Controls/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         }
       },
       "OpenVTT.FogOfWar/1.0.0": {
@@ -1153,6 +1141,18 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Forms/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
         }
       },
       "OpenVTT.Grid/1.0.0": {
@@ -1731,7 +1731,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Forms": "1.0.0",
           "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
@@ -1739,18 +1739,6 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
-        }
-      },
-      "OpenVTT.Editor.Controls/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         }
       },
       "OpenVTT.FogOfWar/1.0.0": {
@@ -1766,6 +1754,18 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Forms/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
         }
       },
       "OpenVTT.Grid/1.0.0": {
@@ -2344,7 +2344,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Forms": "1.0.0",
           "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
@@ -2352,18 +2352,6 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
-        }
-      },
-      "OpenVTT.Editor.Controls/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         }
       },
       "OpenVTT.FogOfWar/1.0.0": {
@@ -2379,6 +2367,18 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Forms/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
         }
       },
       "OpenVTT.Grid/1.0.0": {
@@ -2957,7 +2957,7 @@
         "type": "project",
         "dependencies": {
           "OpenVTT.Common": "1.0.0",
-          "OpenVTT.Editor.Controls": "1.0.0",
+          "OpenVTT.Forms": "1.0.0",
           "OpenVTT.Logging": "1.0.0"
         },
         "compile": {
@@ -2965,18 +2965,6 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.Editor.dll": {}
-        }
-      },
-      "OpenVTT.Editor.Controls/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "OpenVTT.Logging": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OpenVTT.Editor.Controls.dll": {}
         }
       },
       "OpenVTT.FogOfWar/1.0.0": {
@@ -2992,6 +2980,18 @@
         },
         "runtime": {
           "bin/placeholder/OpenVTT.FogOfWar.dll": {}
+        }
+      },
+      "OpenVTT.Forms/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "OpenVTT.Logging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OpenVTT.Forms.dll": {}
         }
       },
       "OpenVTT.Grid/1.0.0": {
@@ -4366,15 +4366,15 @@
       "path": "../OpenVTT.Editor/OpenVTT.Editor.csproj",
       "msbuildProject": "../OpenVTT.Editor/OpenVTT.Editor.csproj"
     },
-    "OpenVTT.Editor.Controls/1.0.0": {
-      "type": "project",
-      "path": "../OpenVTT.Editor.Controls/OpenVTT.Editor.Controls.csproj",
-      "msbuildProject": "../OpenVTT.Editor.Controls/OpenVTT.Editor.Controls.csproj"
-    },
     "OpenVTT.FogOfWar/1.0.0": {
       "type": "project",
       "path": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj",
       "msbuildProject": "../OpenVTT.FogOfWar/OpenVTT.FogOfWar.csproj"
+    },
+    "OpenVTT.Forms/1.0.0": {
+      "type": "project",
+      "path": "../OpenVTT.Forms/OpenVTT.Forms.csproj",
+      "msbuildProject": "../OpenVTT.Forms/OpenVTT.Forms.csproj"
     },
     "OpenVTT.Grid/1.0.0": {
       "type": "project",
