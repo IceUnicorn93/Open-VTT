@@ -16,6 +16,8 @@ using System.Windows.Forms;
 using OpenVTT.Scripting;
 using System.Threading.Tasks;
 using OpenVTT.Logging;
+using System.Text.Json;
+using System.Xml;
 
 namespace OpenVTT.UiDesigner
 {
@@ -43,6 +45,8 @@ namespace OpenVTT.UiDesigner
             }
         }
 
+        public string NoteName = "Template";
+
         public Designer()
         {
             InitializeComponent();
@@ -64,8 +68,11 @@ namespace OpenVTT.UiDesigner
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
 
-            var sd = (ScriptDescription)host.CreateComponent(typeof(ScriptDescription));
-            root.Controls.Add(sd);
+            if (isNotesDesigner == false)
+            {
+                var sd = (ScriptDescription)host.CreateComponent(typeof(ScriptDescription));
+                root.Controls.Add(sd); 
+            }
 
             var selectionService = (ISelectionService)host.GetService(typeof(ISelectionService));
             selectionService.SelectionChanged += (o, args) => { pgControl.SelectedObject = ((ISelectionService)o).PrimarySelection; };
@@ -92,11 +99,20 @@ namespace OpenVTT.UiDesigner
             pnlDesigner.Controls.Add(view);
 
             FillItembox();
+            lbControls.Enabled = !isNotesDesigner;
 
-
-            //if Main-Design-File exists, load it
-            if (File.Exists(Path.Combine(LoadPath, "Design-Main.cs")))
-                LoadDesign(Path.Combine(LoadPath, "Design-Main.cs"));
+            if (IsNotesDesigner)
+            {
+                //if Template-Design-File exists, load it
+                if (File.Exists(Path.Combine(LoadPath, $"_{NoteName}-Design.cs")))
+                    LoadDesign(Path.Combine(LoadPath, $"_{NoteName}-Design.cs"));
+            }
+            else
+            {
+                //if Main-Design-File exists, load it
+                if (File.Exists(Path.Combine(LoadPath, "Design-Main.cs")))
+                    LoadDesign(Path.Combine(LoadPath, "Design-Main.cs"));
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -143,37 +159,64 @@ namespace OpenVTT.UiDesigner
 
             var code = GenerateCSFromDesigner(designSurface);
 
-            File.WriteAllText(Path.Combine(LoadPath, $"Design-{root.Name}.cs"), code);
+            if (isNotesDesigner)
+                File.WriteAllText(Path.Combine(LoadPath, $"_{NoteName}-Design.cs"), code);
+            else
+                File.WriteAllText(Path.Combine(LoadPath, $"Design-{root.Name}.cs"), code);
 
-            ScriptConfig sc;
-            if (File.Exists(Path.Combine(LoadPath, "ScriptConfig.xml"))) //File exists
-            { 
-                sc = ScriptConfig.Load(Path.Combine(LoadPath, "ScriptConfig.xml"));
-            }
-            else //New file
+            if (isNotesDesigner == false)
             {
-                sc = new ScriptConfig();
+                ScriptConfig sc;
+                if (File.Exists(Path.Combine(LoadPath, "ScriptConfig.xml"))) //File exists
+                {
+                    sc = ScriptConfig.Load(Path.Combine(LoadPath, "ScriptConfig.xml"));
+                }
+                else //New file
+                {
+                    sc = new ScriptConfig();
 
-                sc.isActive = true;
-                sc.isUI = true;
+                    sc.isActive = true;
+                    sc.isUI = true;
 
-                sc.Name = LoadPath.Split(Path.DirectorySeparatorChar).Last();
-                sc.Author = "Your Name here";
-                sc.Description = "Your Description here";
-                sc.Version = "1.0";
+                    sc.Name = LoadPath.Split(Path.DirectorySeparatorChar).Last();
+                    sc.Author = "Your Name here";
+                    sc.Description = "Your Description here";
+                    sc.Version = "1.0";
 
-                sc.File_References = new List<string>();
-                sc.DLL_References = new List<string>();
+                    sc.File_References = new List<string>();
+                    sc.DLL_References = new List<string>();
+                }
+
+                sc.File_References.Clear();
+                sc.File_References.AddRange(Directory.GetFiles(LoadPath, "*.cs").Select(n => Path.GetFileName(n)));
+
+                sc.Using_References = sc.Using_References.Distinct().ToList();
+
+                sc.Save(Path.Combine(LoadPath, "ScriptConfig.xml"));
             }
 
-            CreateImplementationFiles();
+            if (isNotesDesigner)
+            { 
+                CreateNotesImplementationFiles();
 
-            sc.File_References.Clear();
-            sc.File_References.AddRange(Directory.GetFiles(LoadPath, "*.cs").Select(n => Path.GetFileName(n)));
+                //Read files for Data
+                var templateFile = File.ReadAllText(Path.Combine(LoadPath, $"_{NoteName}.cs"));
 
-            sc.Using_References = sc.Using_References.Distinct().ToList();
+                var completeFileText = templateFile + Environment.NewLine;
 
-            sc.Save(Path.Combine(LoadPath, "ScriptConfig.xml"));
+                var lines = new List<string>();
+                lines.Add($"var tj = new {NoteName}();");
+                lines.Add("var data = JsonSerializer.Serialize(tj);");
+                lines.Add("using (var sw = new StreamWriter(@\"" + Path.Combine(LoadPath, $"_{NoteName}.json") + "\"))");
+                lines.Add("sw.WriteLine(data);");
+                lines.Add("null");
+                completeFileText += string.Join(Environment.NewLine, lines);
+
+                //Run Script!
+                var n = ScriptEngine.RunUiScript<object>(completeFileText, null).Result;
+            }
+            else
+                CreateImplementationFiles();
         }
 
         private void btnFromTemplate_Click(object sender, EventArgs e)
@@ -183,37 +226,65 @@ namespace OpenVTT.UiDesigner
             var types = new List<string>
             {
                 "Text",
-                "Number",
-                "Decimal Number"
+                //"Number",
+                //"Decimal Number"
             };
 
             var designFiles = new List<string>();
             designFiles.AddRange(Directory.GetFiles(LoadPath));
             designFiles.RemoveAll(n => n.Contains("Design-Main.cs"));
+            designFiles.RemoveAll(n => n.Contains($"_{NoteName}*"));
             types.AddRange(designFiles.Select(n => Path.GetFileName(n).Replace("Design-", "").Replace(".cs", "")));
 
             var structDesigner = new StructureDesigner();
             structDesigner.Types = types.ToArray();
 
+            //Load already selected Scturctures into the designer
+            if(isNotesDesigner & File.Exists(Path.Combine(LoadPath, $"_{NoteName}-JSON.json")))
+            {
+                var list = JsonSerializer.Deserialize<List<structureBase>>(File.ReadAllBytes(Path.Combine(LoadPath, $"_{NoteName}-JSON.json")));
+                var structureList = new List<Structure>();
+                foreach (var item in list)
+                {
+                    var st = new Structure();
+                    ((IStructureBase)st).Name = item.Name;
+                    ((IStructureBase)st).Type = item.Type;
+                    ((IStructureBase)st).SingleValue = item.SingleValue;
+                    structureList.Add(st);
+                }
+                structDesigner.Structure = structureList.ToArray();
+            }
+
             structDesigner.ShowDialog();
 
+            //Create Items based on Selection in the Designer
             var localMyItems = lbControls.Items.OfType<listBoxItem>().ToList();
-            foreach (var type in structDesigner.Structure)
+            foreach (IStructureBase type in structDesigner.Structure)
             {
-                if (type.Type == "Text" || type.Type == "Number" || type.Type == "Decimal Number")
+                if ((type.Type == "Text" || type.Type == "Number" || type.Type == "Decimal Number") && type.SingleValue)
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}");
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Textbox")), $"tb{type.Name}", "");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Textbox")), $"tb{type.Name}", "", $"{type.Name}");
                 }
                 else if (type.SingleValue)
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains(type.Type)), $"uc{type.Name}", "");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains(type.Type)), $"uc{type.Name}", "", $"{type.Name}");
                 }
                 else
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}");
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("FlowLayoutPanel")), $"flp{type.Name}", "");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("FlowLayoutPanel")), $"flp{type.Name}", "", $"{type.Name}");
                 }
+            }
+
+            //Create the safe-file with the Current Selection
+            if (isNotesDesigner)
+            {
+                var data = JsonSerializer.Serialize(structDesigner.Structure as IStructureBase[]);
+                using (var sw = new StreamWriter(Path.Combine(LoadPath, $"_{NoteName}-JSON.json")))
+                    sw.WriteLine(data);
+
+                CreateTemplateCs();
             }
         }
 
@@ -298,7 +369,7 @@ namespace OpenVTT.UiDesigner
             if (!(lbControls.SelectedItem is listBoxItem)) return;
 
             var item = (listBoxItem)lbControls.SelectedItem;
-            CreateItem(item, $"{item.DefaultName}{item.countPressed}", "");
+            CreateItem(item, $"{item.DefaultName}{item.countPressed}", "", "");
         }
 
         //----------------------------------------------------------------------------------------------------------------------------
@@ -597,7 +668,7 @@ namespace OpenVTT.UiDesigner
                     var buttonNames = new List<string>();
                     designFileContent.ForEach(n =>
                     {
-                        if(n.Contains("private System.Windows.Forms.Button "))
+                        if (n.Contains("private System.Windows.Forms.Button "))
                         {
                             var buttonLine = n;
                             buttonLine = buttonLine.Trim();
@@ -630,7 +701,7 @@ namespace OpenVTT.UiDesigner
                 }
             }
 
-            if(!File.Exists(Path.Combine(LoadPath, "Implementation.cs")))
+            if (!File.Exists(Path.Combine(LoadPath, "Implementation.cs")))
             {
                 var fileContent = "";
 
@@ -642,6 +713,86 @@ namespace OpenVTT.UiDesigner
 
                 File.WriteAllText(Path.Combine(LoadPath, "Implementation.cs"), fileContent);
             }
+        }
+
+        private void CreateNotesImplementationFiles()
+        {
+            Logger.Log("Class: Designer | CreateNotesImplementationFiles");
+
+            var file = Path.Combine(LoadPath, $"_{NoteName}-Implementation.cs");
+
+            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+            var root = (UserControl)host.RootComponent;
+            var textBoxes = root.Controls.Cast<Control>().Where(n => n is TextBox).ToList();
+
+            var fileCode = "";
+            fileCode += $"public partial class {root.Name} : System.Windows.Forms.UserControl" + Environment.NewLine;
+            fileCode += "{" + Environment.NewLine;
+            fileCode += $"\tpublic {root.Name}({NoteName} tj)" + Environment.NewLine;
+            fileCode += "\t{" + Environment.NewLine;
+            fileCode += $"\t\tthis.InitializeComponent();" + Environment.NewLine;
+            fileCode += $"\t\t" + Environment.NewLine;
+
+            foreach (var tb in textBoxes)
+            {
+                fileCode += $"\t\t{tb.Name}.DataBindings.Add(nameof({tb.Name}.Text), tj, nameof(tj.{tb.Tag}));" + Environment.NewLine;
+                fileCode += $"" + Environment.NewLine;
+            }
+
+            fileCode += "\t}" + Environment.NewLine;
+            fileCode += "}" + Environment.NewLine;
+
+            File.WriteAllText(file, fileCode);
+
+
+            ////Create Implementation Code 
+            //if (!File.Exists(Path.Combine(LoadPath, "Implementation.cs")))
+            //{
+            //    var fileContent = "";
+
+            //    fileContent += $"Page.Text = Config.Name;{Environment.NewLine}";
+            //    fileContent += $"{Environment.NewLine}";
+            //    fileContent += $"var main = new Main(null);{Environment.NewLine}";
+            //    fileContent += $"main.Dock = DockStyle.Fill;{Environment.NewLine}";
+            //    fileContent += $"Page.Controls.Add(main);{Environment.NewLine}";
+
+            //    File.WriteAllText(Path.Combine(LoadPath, "Implementation.cs"), fileContent);
+            //}
+        }
+
+        private void CreateTemplateCs()
+        {
+            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+            var root = (UserControl)host.RootComponent;
+            var textBoxes = root.Controls.Cast<Control>().Where(n => n is TextBox).ToList();
+
+            var path = Path.Combine(LoadPath, $"_{NoteName}.cs");
+
+            var lines = new List<string>();
+            lines.Add($"public class {NoteName} : INotifyPropertyChanged");
+            lines.Add("{");
+            lines.Add("\tpublic event PropertyChangedEventHandler PropertyChanged;");
+            lines.Add("");
+            lines.Add("\tprivate void NotifyPropertyChanged([CallerMemberName] String propertyName = \"\")");
+            lines.Add("\t{");
+            lines.Add("\t\tvar data = JsonSerializer.Serialize(this);");
+            lines.Add($"\t\tusing (var sw = new StreamWriter(@\"E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\bin\\Debug\\Notes\\ABC\\_{NoteName}.json\"))");
+            lines.Add("\t\t\tsw.WriteLine(data);");
+            lines.Add("\t\t");
+            lines.Add("\t\tif (PropertyChanged == null) return;");
+            lines.Add("\t\tPropertyChanged(this, new PropertyChangedEventArgs(propertyName));");
+            lines.Add("\t}");
+            lines.Add("\t");
+            foreach (var item in textBoxes)
+            {
+
+                lines.Add($"\tprivate string _{item.Tag};");
+                lines.Add("\tpublic string " + item.Tag + " { get => _" + item.Tag + "; set { _" + item.Tag + " = value; NotifyPropertyChanged(); } }");
+                lines.Add("\t");
+            }
+            lines.Add("}");
+
+            File.WriteAllText(path, string.Join(Environment.NewLine, lines.ToArray()));
         }
 
         string GenerateCSFromDesigner(DesignSurface designSurface)
@@ -845,11 +996,20 @@ namespace OpenVTT.UiDesigner
             return await ScriptEngine.RunUiScript<T>(script, host);
         }
 
-        private void CreateItem(listBoxItem item, string Name, string Text)
+        private void CreateItem(listBoxItem item, string Name, string Text, string Tag)
         {
             Logger.Log("Class: Designer | CreateItem");
 
+            var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+            var root = (UserControl)host.RootComponent;
+
+            if (root.Controls.Cast<Control>().Count(n => n.Name == Name) > 0) return;
+
             var ctrl = item.GetControl();
+
+            if (IsNotesDesigner)
+                ctrl.Tag = Tag;
+
             item.countPressed++;
             if (Text != "")
                 ctrl.Text = Text;

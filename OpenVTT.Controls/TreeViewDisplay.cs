@@ -1,6 +1,7 @@
 ﻿using OpenVTT.Controls.Forms;
 using OpenVTT.Editor;
 using OpenVTT.Logging;
+using OpenVTT.Scripting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -106,23 +107,15 @@ namespace OpenVTT.Controls
             //Lets design Stuff
 
             /*
-             * check if selected Node.Tag->isLeaf == false
-             * if yes: Open Designer as Notes Designer
-             *      save design as
-             *          selectedNode.Tag->FilePath + _Design-Template.cs +
-             *          selectedNode.Tag->FilePath + _Implementation-Template.cs + 
-             *              -> Constructor needs the JsonClass-Object as parameter
-             *              -> during Constructor Phase for each Textbox:
-             *                  -> tb.DataBindings.Add("Text", jsonObj, nameof(jsonObj.PutNameHere));
-             *          AppStartupPath + Notes + _Config + selectedNode.Tag->Name.json
-             * if  no: Show popup, selection can't be a leaf
+            
+            General Structure for Directorys:
+            -> _Template-Design.cs          | Contains Design from Design UI
+            -> _Template-Implementation.cs  | Contains Implementation for Databinding with JSON-Class
+            -> _Template-JSON.json          | Contains Json-Description ala string : name | string : otherText and so on
+            -> _Template.cs                 | Is generated Class by description of Template-JSON
+            -> _Template.json               | Contains actual Data visible in the UI
+            
              */
-
-            if ((tvItems.SelectedNode.Tag as NodeInformation).isIsLeaf)
-            {
-                MessageBox.Show("The Designer can only be opened on Nodes");
-                return;
-            }
 
             var designer = new ScriptDesigner();
             designer.LoadPath = (tvItems.SelectedNode.Tag as NodeInformation).FilePath;
@@ -150,10 +143,10 @@ namespace OpenVTT.Controls
 
             //Get all Files
             var files = Directory.GetFiles(Path.Combine(Application.StartupPath, "Notes"), "*", SearchOption.AllDirectories).ToList();
+            files.RemoveAll(n => n.Contains("_Template.cs") || n.Contains("_Template-Design.cs") || n.Contains("_Template-Implementation.cs") || n.Contains("_Template-JSON.json") || n.Contains("_Template.json"));
             InitTreeViewFromList(files, true, nodeList);
 
             //Pre select the Notes-Node
-            tvItems.SelectedNode = nodeList.First();
             nodeList.First().ExpandAll();
         }
 
@@ -194,6 +187,51 @@ namespace OpenVTT.Controls
             }
 
             nodeList.Add(node);
+        }
+
+        private void tvItems_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            btnShowDesigner.Enabled = !(tvItems.SelectedNode.Tag as NodeInformation).isIsLeaf;
+
+            //Clear Panel for new Content
+            PageControl.Controls.Clear();
+            GC.Collect();
+            var path = "";
+            if ((tvItems.SelectedNode.Tag as NodeInformation).isIsLeaf)
+                path = (tvItems.SelectedNode.Tag as NodeInformation).FilePath;
+            else
+                path = Path.Combine((tvItems.SelectedNode.Tag as NodeInformation).FilePath, "_Template.json");
+
+            var directory = Directory.GetParent(path).FullName;
+
+            //Check if new Content can be loaded
+            if (!(File.Exists(Path.Combine(directory, "_Template-Design.cs")) && File.Exists(Path.Combine(directory, "_Template-Implementation.cs")) && File.Exists(Path.Combine(directory, "_Template.cs")))) return;
+
+            //Read files for Data
+            var designFile = File.ReadAllText(Path.Combine(directory, "_Template-Design.cs"));
+            var implementationFile = File.ReadAllText(Path.Combine(directory, "_Template-Implementation.cs"));
+            var templateFile = File.ReadAllText(Path.Combine(directory, "_Template.cs"));
+
+            var completeFileText = designFile + Environment.NewLine + implementationFile + Environment.NewLine + templateFile + Environment.NewLine;
+
+            
+
+            //Create Dummy init
+            var lines = new List<string>();
+            lines.Add("var tj = new Template();");
+            lines.Add("");
+            lines.Add("tj = JsonSerializer.Deserialize<Template>(File.ReadAllBytes(@\"" + path + "\"));");
+            lines.Add("var main = new Main(tj);");
+            lines.Add("main");
+
+            completeFileText += string.Join(Environment.NewLine, lines);
+
+            //Run Script!
+            var ctrl = ScriptEngine.RunUiScript<Control>(completeFileText, null).Result;
+            ctrl.Dock = DockStyle.Fill;
+
+            //Add to Panel
+            PageControl.Controls.Add(ctrl);
         }
     }
 }

@@ -158,3 +158,7 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Interop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.UiDesigner.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Text.Json.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.ValueTuple.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\System.Text.Encodings.Web.dll
+E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll

@@ -26,8 +26,7 @@
          *      For what ever reason they want it
          * -> [x] Add Designer for Notes and new Scipts (OpenVTT.UiDesigner)
          *      Custom designs for the Notes
-         * -> Finetuning for Grid-Values
-         *      Sometimes Grids can be slightly rectangluar (specially on ultra wide Monitors)
+         *      -> Custom designs for the Scripts 
          *      
          * Second Control Window BUT for dedicated Plugins and Artwork Display, selectable in Config?
          * following Tabs:
@@ -35,6 +34,8 @@
          * -> Plugin 2
          * -> Plugin X
          * -> ArtworkDisplayGM
+         * Maybe make it configurable? Like Select Moitor and what to display on it?
+         * Would be good for people with fewer Monitors!
          */
 
         // Bugs:
@@ -46,6 +47,9 @@
          *  Should be changed to always display
          * 
          * Grid works only in 1" squares if the base Image has the same resolution as the Display
+         *  Calculate if Image hits Bottom and Top or Side hits Left and right
+         *  -> If Top and Bottom -> ImageHeight = HeightInches, reclaculate width
+         *  -> If Left and Right -> ImageWidth = WidthInces, recalculate height
          */
 
         // Needs Testing:

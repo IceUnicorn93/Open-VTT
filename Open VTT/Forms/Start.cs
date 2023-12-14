@@ -8,6 +8,7 @@ using OpenVTT.StreamDeck;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Open_VTT.Forms
@@ -17,6 +18,11 @@ namespace Open_VTT.Forms
         public Start()
         {
             Logger.Log("Class: Start | Constructor");
+
+            Task.Run(() =>
+            {
+                var i = ScriptEngine.RunUiScript<int>("1+1", null).Result;
+            });
 
             InitializeComponent();
 

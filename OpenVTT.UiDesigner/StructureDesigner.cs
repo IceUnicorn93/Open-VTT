@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpenVTT.UiDesigner
@@ -14,7 +9,14 @@ namespace OpenVTT.UiDesigner
     {
         public string[] Types { get; set; }
 
-        public Structure[] Structure { get => flowLayoutPanel1.Controls.Cast<Structure>().ToArray(); }
+        public Structure[] Structure
+        {
+            get => flowLayoutPanel1.Controls.Cast<Structure>().ToArray();
+            set
+            {
+                foreach (var t in value) { t.RemoveAction += () => flowLayoutPanel1.Controls.Remove(t); flowLayoutPanel1.Controls.Add(t); }
+            }
+        }
 
 
         public StructureDesigner()

@@ -82,6 +82,8 @@
     <Compile Include="Structure.Designer.cs">
       <DependentUpon>Structure.cs</DependentUpon>
     </Compile>
+    <Compile Include="IStructureBase.cs" />
+    <Compile Include="structureBase.cs" />
     <Compile Include="StructureDesigner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +123,11 @@
       <Project>{b56784f1-969b-48c7-b18f-1c7471c69ddc}</Project>
       <Name>OpenVTT.Scripting</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json">
+      <Version>8.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

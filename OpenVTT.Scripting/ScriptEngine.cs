@@ -475,6 +475,9 @@ Page.Controls.Add(tbDescription);";
             var so = ScriptOptions.Default.AddImports("System",
                 "System.Drawing",
                 "System.ComponentModel",
+                "System.IO",
+                "System.Runtime.CompilerServices",
+                "System.Text.Json",
                 "System.Windows.Forms");
 
             Logger.Log("Class: ScriptEngine | Added Usings");
@@ -495,6 +498,8 @@ Page.Controls.Add(tbDescription);";
             }
             dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Wrapper.dll"));
             dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Thunk.dll"));
+
+            dlls.Add(Path.Combine(Application.StartupPath, "System.Text.Json.dll"));
 
             foreach (var dll in dlls) script += $"#r \"{dll}\"" + Environment.NewLine;
 

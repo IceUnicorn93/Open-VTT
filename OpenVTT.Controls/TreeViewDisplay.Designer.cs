@@ -69,6 +69,7 @@
             this.tvItems.Name = "tvItems";
             this.tvItems.Size = new System.Drawing.Size(271, 281);
             this.tvItems.TabIndex = 10;
+            this.tvItems.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvItems_AfterSelect);
             // 
             // btnRemove
             // 
@@ -111,6 +112,7 @@
             // 
             // btnShowDesigner
             // 
+            this.btnShowDesigner.Enabled = false;
             this.btnShowDesigner.Location = new System.Drawing.Point(189, 29);
             this.btnShowDesigner.Name = "btnShowDesigner";
             this.btnShowDesigner.Size = new System.Drawing.Size(87, 20);
