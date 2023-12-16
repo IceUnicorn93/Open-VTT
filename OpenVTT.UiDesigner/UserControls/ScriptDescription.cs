@@ -1,7 +1,7 @@
 ﻿using OpenVTT.Scripting;
 using System.Windows.Forms;
 
-namespace OpenVTT.UiDesigner
+namespace OpenVTT.UiDesigner.UserControls
 {
     public partial class ScriptDescription : UserControl
     {

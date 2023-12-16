@@ -1,11 +1,12 @@
-﻿using System;
+﻿using OpenVTT.UiDesigner.Interfaces;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace OpenVTT.UiDesigner
+namespace OpenVTT.UiDesigner.UserControls
 {
-    public partial class Structure : UserControl, IStructureBase
+    public partial class OpenVttFileStructure : UserControl, IStructureBase
     {
         public string[] Types
         {
@@ -19,7 +20,7 @@ namespace OpenVTT.UiDesigner
 
         public Action RemoveAction;
 
-        public Structure()
+        public OpenVttFileStructure()
         {
             InitializeComponent();
         }

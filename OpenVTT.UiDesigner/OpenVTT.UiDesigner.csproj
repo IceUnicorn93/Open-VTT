@@ -62,55 +62,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Designer.cs">
+    <Compile Include="UserControls\Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designer.Designer.cs">
+    <Compile Include="UserControls\Designer.Designer.cs">
       <DependentUpon>Designer.cs</DependentUpon>
     </Compile>
-    <Compile Include="listBoxItem.cs" />
+    <Compile Include="Classes\listBoxItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScriptDescription.cs">
+    <Compile Include="UserControls\ScriptDescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ScriptDescription.Designer.cs">
+    <Compile Include="UserControls\ScriptDescription.Designer.cs">
       <DependentUpon>ScriptDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="Structure.cs">
+    <Compile Include="UserControls\Structure.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Structure.Designer.cs">
+    <Compile Include="UserControls\Structure.Designer.cs">
       <DependentUpon>Structure.cs</DependentUpon>
     </Compile>
-    <Compile Include="IStructureBase.cs" />
-    <Compile Include="structureBase.cs" />
-    <Compile Include="StructureDesigner.cs">
+    <Compile Include="Interfaces\IStructureBase.cs" />
+    <Compile Include="Classes\structureBase.cs" />
+    <Compile Include="Forms\StructureDesigner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StructureDesigner.Designer.cs">
+    <Compile Include="Forms\StructureDesigner.Designer.cs">
       <DependentUpon>StructureDesigner.cs</DependentUpon>
     </Compile>
-    <Compile Include="UiDesignStreamDeckConfigurator.cs">
+    <Compile Include="Forms\UiDesignStreamDeckConfigurator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UiDesignStreamDeckConfigurator.Designer.cs">
+    <Compile Include="Forms\UiDesignStreamDeckConfigurator.Designer.cs">
       <DependentUpon>UiDesignStreamDeckConfigurator.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Designer.resx">
+    <EmbeddedResource Include="UserControls\Designer.resx">
       <DependentUpon>Designer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScriptDescription.resx">
+    <EmbeddedResource Include="UserControls\ScriptDescription.resx">
       <DependentUpon>ScriptDescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Structure.resx">
+    <EmbeddedResource Include="UserControls\Structure.resx">
       <DependentUpon>Structure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StructureDesigner.resx">
+    <EmbeddedResource Include="Forms\StructureDesigner.resx">
       <DependentUpon>StructureDesigner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UiDesignStreamDeckConfigurator.resx">
+    <EmbeddedResource Include="Forms\UiDesignStreamDeckConfigurator.resx">
       <DependentUpon>UiDesignStreamDeckConfigurator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

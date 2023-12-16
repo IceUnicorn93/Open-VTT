@@ -70,18 +70,20 @@ namespace OpenVTT.Controls
 
             var list = new List<TreeNode>();
             var nodeName = addNode.NodeName;
-            var isNode = addNode.IsNode;
+            var isLeaf = !addNode.IsNode;
             var selNF = tvItems.SelectedNode.Tag as NodeInformation;
 
-            CreateTreeNodeForView(Path.Combine(selNF.FilePath, nodeName), isNode, list);
+            if (!isLeaf)
+                Directory.CreateDirectory(Path.Combine(selNF.FilePath, nodeName));
+            else
+                File.WriteAllText(Path.Combine(selNF.FilePath, nodeName + ".json"), "{}");
+
+            CreateTreeNodeForView(Path.Combine(selNF.FilePath, isLeaf ?  nodeName + ".json" : nodeName), isLeaf, list);
 
             var node = list.First();
             tvItems.SelectedNode.Nodes.Add(node);
 
-            if (isNode)
-                Directory.CreateDirectory((node.Tag as NodeInformation).FilePath);
-            else
-                File.Create((node.Tag as NodeInformation).FilePath + ".json");
+            tvItems.Nodes[0].ExpandAll();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -160,7 +162,11 @@ namespace OpenVTT.Controls
         private void CreateTreeNodeForView(string path, bool isLeaf, List<TreeNode> nodeList)
         {
             var nName = "";
-            if(isLeaf) nName = new FileInfo(path).Name;
+            if (isLeaf)
+            {
+                var info = new FileInfo(path);
+                nName = info.Name.Replace(info.Extension, "");
+            }
             else nName = new DirectoryInfo(path).Name;
 
             var parent = Directory.GetParent(path);
@@ -221,6 +227,7 @@ namespace OpenVTT.Controls
             lines.Add("var tj = new Template();");
             lines.Add("");
             lines.Add("tj = JsonSerializer.Deserialize<Template>(File.ReadAllBytes(@\"" + path + "\"));");
+            lines.Add($"tj.path = @\"{path}\";");
             lines.Add("var main = new Main(tj);");
             lines.Add("main");
 

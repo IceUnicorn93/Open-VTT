@@ -1,4 +1,4 @@
-﻿namespace OpenVTT.UiDesigner
+﻿namespace OpenVTT.UiDesigner.Forms
 {
     partial class UiDesignStreamDeckConfigurator
     {

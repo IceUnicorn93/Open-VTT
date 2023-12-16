@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace OpenVTT.UiDesigner
+namespace OpenVTT.UiDesigner.Classes
 {
     internal class listBoxItem
     {

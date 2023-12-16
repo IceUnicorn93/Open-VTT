@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OpenVTT.UiDesigner
+namespace OpenVTT.UiDesigner.Forms
 {
     public partial class UiDesignStreamDeckConfigurator : Form
     {

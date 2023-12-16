@@ -4,7 +4,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\bin\Debug\OpenVTT.Server.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\bin\Debug\OpenVTT.NetworkMessage.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\bin\Debug\OpenVTT.NetworkMessage.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\obj\Debug\OpenVTT.Server.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\obj\Debug\OpenVTT.Server.csproj.SuggestedBindingRedirects.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\obj\Debug\OpenVTT.Server.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\obj\Debug\OpenVTT.Server.csproj.CopyComplete
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Server\obj\Debug\OpenVTT.Server.exe

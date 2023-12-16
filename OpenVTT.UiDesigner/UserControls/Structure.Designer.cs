@@ -1,6 +1,6 @@
-﻿namespace OpenVTT.UiDesigner
+﻿namespace OpenVTT.UiDesigner.UserControls
 {
-    partial class Structure
+    partial class OpenVttFileStructure
     {
         /// <summary> 
         /// Erforderliche Designervariable.

@@ -17,9 +17,11 @@ using OpenVTT.Scripting;
 using System.Threading.Tasks;
 using OpenVTT.Logging;
 using System.Text.Json;
-using System.Xml;
+using OpenVTT.UiDesigner.Interfaces;
+using OpenVTT.UiDesigner.Classes;
+using OpenVTT.UiDesigner.Forms;
 
-namespace OpenVTT.UiDesigner
+namespace OpenVTT.UiDesigner.UserControls
 {
     public partial class Designer : UserControl
     {
@@ -243,10 +245,10 @@ namespace OpenVTT.UiDesigner
             if(isNotesDesigner & File.Exists(Path.Combine(LoadPath, $"_{NoteName}-JSON.json")))
             {
                 var list = JsonSerializer.Deserialize<List<structureBase>>(File.ReadAllBytes(Path.Combine(LoadPath, $"_{NoteName}-JSON.json")));
-                var structureList = new List<Structure>();
+                var structureList = new List<OpenVttFileStructure>();
                 foreach (var item in list)
                 {
-                    var st = new Structure();
+                    var st = new OpenVttFileStructure();
                     ((IStructureBase)st).Name = item.Name;
                     ((IStructureBase)st).Type = item.Type;
                     ((IStructureBase)st).SingleValue = item.SingleValue;
@@ -263,17 +265,17 @@ namespace OpenVTT.UiDesigner
             {
                 if ((type.Type == "Text" || type.Type == "Number" || type.Type == "Decimal Number") && type.SingleValue)
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}", $"{type.Name}");
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Textbox")), $"tb{type.Name}", "", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name.Replace(" ", "")}", $"{type.Name}", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Textbox")), $"tb{type.Name.Replace(" ", "")}", "", $"{type.Name}");
                 }
                 else if (type.SingleValue)
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains(type.Type)), $"uc{type.Name}", "", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains(type.Type)), $"uc{type.Name.Replace(" ", "")}", "", $"{type.Name}");
                 }
                 else
                 {
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name}", $"{type.Name}", $"{type.Name}");
-                    CreateItem(localMyItems.Single(n => n.Text.Contains("FlowLayoutPanel")), $"flp{type.Name}", "", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name.Replace(" ", "")}", $"{type.Name}", $"{type.Name}");
+                    CreateItem(localMyItems.Single(n => n.Text.Contains("FlowLayoutPanel")), $"flp{type.Name.Replace(" ", "")}", "", $"{type.Name}");
                 }
             }
 
@@ -772,11 +774,13 @@ namespace OpenVTT.UiDesigner
             lines.Add($"public class {NoteName} : INotifyPropertyChanged");
             lines.Add("{");
             lines.Add("\tpublic event PropertyChangedEventHandler PropertyChanged;");
+            lines.Add("\tpublic string path = \"\";");
             lines.Add("");
             lines.Add("\tprivate void NotifyPropertyChanged([CallerMemberName] String propertyName = \"\")");
             lines.Add("\t{");
+            lines.Add("\t\tif(path == \"\") return;");
             lines.Add("\t\tvar data = JsonSerializer.Serialize(this);");
-            lines.Add($"\t\tusing (var sw = new StreamWriter(@\"E:\\C# Repos\\Open VTT\\Open-VTT\\Open VTT\\bin\\Debug\\Notes\\ABC\\_{NoteName}.json\"))");
+            lines.Add($"\t\tusing (var sw = new StreamWriter(path))");
             lines.Add("\t\t\tsw.WriteLine(data);");
             lines.Add("\t\t");
             lines.Add("\t\tif (PropertyChanged == null) return;");

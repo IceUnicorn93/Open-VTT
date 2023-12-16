@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.designer1 = new OpenVTT.UiDesigner.Designer();
+            this.designer1 = new OpenVTT.UiDesigner.UserControls.Designer();
             this.SuspendLayout();
             // 
             // designer1
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private UiDesigner.Designer designer1;
+        private UiDesigner.UserControls.Designer designer1;
     }
 }
