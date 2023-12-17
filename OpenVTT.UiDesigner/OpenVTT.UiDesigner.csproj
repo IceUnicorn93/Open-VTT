@@ -62,6 +62,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ArtInfo.cs" />
+    <Compile Include="UserControls\ArtworkInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ArtworkInformation.Designer.cs">
+      <DependentUpon>ArtworkInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,11 +83,11 @@
     <Compile Include="UserControls\ScriptDescription.Designer.cs">
       <DependentUpon>ScriptDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Structure.cs">
+    <Compile Include="UserControls\OpenVttFileStructure.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Structure.Designer.cs">
-      <DependentUpon>Structure.cs</DependentUpon>
+    <Compile Include="UserControls\OpenVttFileStructure.Designer.cs">
+      <DependentUpon>OpenVttFileStructure.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IStructureBase.cs" />
     <Compile Include="Classes\structureBase.cs" />
@@ -98,14 +105,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserControls\ArtworkInformation.resx">
+      <DependentUpon>ArtworkInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Designer.resx">
       <DependentUpon>Designer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ScriptDescription.resx">
       <DependentUpon>ScriptDescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Structure.resx">
-      <DependentUpon>Structure.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\OpenVttFileStructure.resx">
+      <DependentUpon>OpenVttFileStructure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StructureDesigner.resx">
       <DependentUpon>StructureDesigner.cs</DependentUpon>

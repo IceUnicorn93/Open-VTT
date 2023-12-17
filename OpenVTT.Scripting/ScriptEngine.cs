@@ -500,6 +500,7 @@ Page.Controls.Add(tbDescription);";
             dlls.RemoveAll(n => n.EndsWith("System.EnterpriseServices.Thunk.dll"));
 
             dlls.Add(Path.Combine(Application.StartupPath, "System.Text.Json.dll"));
+            dlls.Add(Path.Combine(Application.StartupPath, "OpenVTT.UiDesigner.dll"));
 
             foreach (var dll in dlls) script += $"#r \"{dll}\"" + Environment.NewLine;
 

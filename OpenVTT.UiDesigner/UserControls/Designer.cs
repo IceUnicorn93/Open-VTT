@@ -268,6 +268,26 @@ namespace OpenVTT.UiDesigner.UserControls
                     CreateItem(localMyItems.Single(n => n.Text.Contains("Label")), $"lbl{type.Name.Replace(" ", "")}", $"{type.Name}", $"{type.Name}");
                     CreateItem(localMyItems.Single(n => n.Text.Contains("Textbox")), $"tb{type.Name.Replace(" ", "")}", "", $"{type.Name}");
                 }
+                else if (type.Type == "ArtworkInformation")
+                {
+                    var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
+                    var root = (UserControl)host.RootComponent;
+
+                    var lI = new listBoxItem
+                    {
+                        countPressed = 0,
+                        DefaultName = "ArtworkInformation",
+                        ItemType = typeof(ArtworkInformation),
+                        Text = ""
+                    };
+                    lI.GetControl += () =>
+                    {
+                        var artInfo = (ArtworkInformation)host.CreateComponent(typeof(ArtworkInformation), "ArtworkInformation");
+                        root.Controls.Add(artInfo);
+                        return artInfo;
+                    };
+                    CreateItem(lI, "ArtworkInformation", "", "Artwork");
+                }
                 else if (type.SingleValue)
                 {
                     CreateItem(localMyItems.Single(n => n.Text.Contains(type.Type)), $"uc{type.Name.Replace(" ", "")}", "", $"{type.Name}");
@@ -726,6 +746,7 @@ namespace OpenVTT.UiDesigner.UserControls
             var host = (IDesignerHost)designSurface.GetService(typeof(IDesignerHost));
             var root = (UserControl)host.RootComponent;
             var textBoxes = root.Controls.Cast<Control>().Where(n => n is TextBox).ToList();
+            var artInfo = root.Controls.Cast<Control>().Where(n => n is ArtworkInformation).ToList().SingleOrDefault();
 
             var fileCode = "";
             fileCode += $"public partial class {root.Name} : System.Windows.Forms.UserControl" + Environment.NewLine;
@@ -738,6 +759,12 @@ namespace OpenVTT.UiDesigner.UserControls
             foreach (var tb in textBoxes)
             {
                 fileCode += $"\t\t{tb.Name}.DataBindings.Add(nameof({tb.Name}.Text), tj, nameof(tj.{tb.Tag}));" + Environment.NewLine;
+                fileCode += $"" + Environment.NewLine;
+            }
+
+            if(artInfo != null)
+            {
+                fileCode += $"\t\t{artInfo.Name}.DataBindings.Add(nameof({artInfo.Name}.data), tj, nameof(tj.artInfo));" + Environment.NewLine;
                 fileCode += $"" + Environment.NewLine;
             }
 
@@ -774,7 +801,10 @@ namespace OpenVTT.UiDesigner.UserControls
             lines.Add($"public class {NoteName} : INotifyPropertyChanged");
             lines.Add("{");
             lines.Add("\tpublic event PropertyChangedEventHandler PropertyChanged;");
-            lines.Add("\tpublic string path = \"\";");
+            lines.Add("\tprivate string _path = \"\";");
+            lines.Add("\tpublic string path { get => _path; set { _path = value; _artInfo.Path = _path; }}");
+            lines.Add("\tprivate OpenVTT.UiDesigner.Classes.ArtInfo _artInfo = new OpenVTT.UiDesigner.Classes.ArtInfo();");
+            lines.Add("\tpublic OpenVTT.UiDesigner.Classes.ArtInfo artInfo { get => _artInfo; set { _artInfo = value; _artInfo.Path = path; _artInfo.pChange += () => NotifyPropertyChanged(\"\"); } }");
             lines.Add("");
             lines.Add("\tprivate void NotifyPropertyChanged([CallerMemberName] String propertyName = \"\")");
             lines.Add("\t{");

@@ -145,7 +145,8 @@ namespace OpenVTT.Controls
 
             //Get all Files
             var files = Directory.GetFiles(Path.Combine(Application.StartupPath, "Notes"), "*", SearchOption.AllDirectories).ToList();
-            files.RemoveAll(n => n.Contains("_Template.cs") || n.Contains("_Template-Design.cs") || n.Contains("_Template-Implementation.cs") || n.Contains("_Template-JSON.json") || n.Contains("_Template.json"));
+            files.RemoveAll(n => n.Contains("Template"));
+            files.RemoveAll(n => n.Contains(".png"));
             InitTreeViewFromList(files, true, nodeList);
 
             //Pre select the Notes-Node
@@ -219,8 +220,6 @@ namespace OpenVTT.Controls
             var templateFile = File.ReadAllText(Path.Combine(directory, "_Template.cs"));
 
             var completeFileText = designFile + Environment.NewLine + implementationFile + Environment.NewLine + templateFile + Environment.NewLine;
-
-            
 
             //Create Dummy init
             var lines = new List<string>();

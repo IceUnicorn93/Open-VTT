@@ -31,6 +31,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddArtwork = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -65,11 +66,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(653, 397);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // btnAddArtwork
+            // 
+            this.btnAddArtwork.Location = new System.Drawing.Point(93, 12);
+            this.btnAddArtwork.Name = "btnAddArtwork";
+            this.btnAddArtwork.Size = new System.Drawing.Size(83, 23);
+            this.btnAddArtwork.TabIndex = 3;
+            this.btnAddArtwork.Text = "Add Artwork";
+            this.btnAddArtwork.UseVisualStyleBackColor = true;
+            this.btnAddArtwork.Click += new System.EventHandler(this.btnAddArtwork_Click);
+            // 
             // StructureDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 450);
+            this.Controls.Add(this.btnAddArtwork);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnAdd);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnAddArtwork;
     }
 }
