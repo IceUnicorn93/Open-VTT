@@ -186,6 +186,9 @@
     <EmbeddedResource Include="Displayer\AnimatedMapDisplayer.resx">
       <DependentUpon>AnimatedMapDisplayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Displayer\InformationDisplayPlayer.resx">
+      <DependentUpon>InformationDisplayPlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScriptDesigner.resx">
       <DependentUpon>ScriptDesigner.cs</DependentUpon>
     </EmbeddedResource>

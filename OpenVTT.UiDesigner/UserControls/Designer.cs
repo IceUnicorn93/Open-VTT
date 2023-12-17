@@ -772,21 +772,6 @@ namespace OpenVTT.UiDesigner.UserControls
             fileCode += "}" + Environment.NewLine;
 
             File.WriteAllText(file, fileCode);
-
-
-            ////Create Implementation Code 
-            //if (!File.Exists(Path.Combine(LoadPath, "Implementation.cs")))
-            //{
-            //    var fileContent = "";
-
-            //    fileContent += $"Page.Text = Config.Name;{Environment.NewLine}";
-            //    fileContent += $"{Environment.NewLine}";
-            //    fileContent += $"var main = new Main(null);{Environment.NewLine}";
-            //    fileContent += $"main.Dock = DockStyle.Fill;{Environment.NewLine}";
-            //    fileContent += $"Page.Controls.Add(main);{Environment.NewLine}";
-
-            //    File.WriteAllText(Path.Combine(LoadPath, "Implementation.cs"), fileContent);
-            //}
         }
 
         private void CreateTemplateCs()

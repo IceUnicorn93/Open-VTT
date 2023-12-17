@@ -1,9 +1,12 @@
-﻿using OpenVTT.Controls.Forms;
+﻿using OpenVTT.Controls.Displayer;
+using OpenVTT.Controls.Forms;
 using OpenVTT.Editor;
 using OpenVTT.Logging;
 using OpenVTT.Scripting;
+using OpenVTT.UiDesigner.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -42,25 +45,38 @@ namespace OpenVTT.Controls
 
         private void btnOpenViewer_Click(object sender, EventArgs e)
         {
-            //Disabled by now!
-
-            /*
-             * Uff. Lets think about this later!
-             */
+            WindowInstaces.InformationDisplayPlayer.Show();
+            //WindowInstaces.InformationDisplayDM.Show();
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            //Disabled by now!
+            GC.Collect();
 
-            /*
-             * Idea:
-             * Check if PageControl has controls added
-             * if yes: have a recursive method that searches for an Picturebox
-             *      once found: store image of PictureBox in class field.
-             *      
-             * From there: More Rework! See ToDo
-             */
+            var ctrls = PageControl.Controls.Cast<Control>().ToList();
+            var main = ctrls.FirstOrDefault();
+
+            if (main == null) return;
+
+            var mainCtrls = main.Controls.Cast<Control>().ToList();
+            if(mainCtrls.Any(n => n.GetType() == typeof(ArtworkInformation)))
+            { 
+                var artInfo = mainCtrls.First(n => n.GetType() == typeof(ArtworkInformation)) as ArtworkInformation;
+                var data = artInfo.data;
+                WindowInstaces.InformationDisplayPlayer.SetDisplayText(data.Name);
+
+                if (WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image != null) WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image.Dispose();
+                WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = null;
+
+                var fi = new FileInfo(data.Path);
+                var fileNameWithoutExtension = fi.FullName.Replace(fi.Extension, "");
+                var fileNameWithPng = fileNameWithoutExtension + ".png";
+
+                if (!File.Exists(fileNameWithPng)) return;
+
+                var image = Image.FromFile(fileNameWithPng);
+                WindowInstaces.InformationDisplayPlayer.GetPictureBox().Image = image;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -200,8 +216,13 @@ namespace OpenVTT.Controls
         {
             btnShowDesigner.Enabled = !(tvItems.SelectedNode.Tag as NodeInformation).isIsLeaf;
 
-            //Clear Panel for new Content
+            //Clear Panel for new Content //Dispose each and every object
+            var ctrls = PageControl.Controls.Cast<Control>().ToList();
             PageControl.Controls.Clear();
+
+            ctrls.ForEach(n => n.Dispose());
+            ctrls.Clear();
+
             GC.Collect();
             var path = "";
             if ((tvItems.SelectedNode.Tag as NodeInformation).isIsLeaf)

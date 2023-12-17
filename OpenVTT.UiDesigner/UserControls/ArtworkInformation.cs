@@ -41,6 +41,17 @@ namespace OpenVTT.UiDesigner.UserControls
             InitializeComponent();
         }
 
+        ~ArtworkInformation()
+        {
+            if (image != null)
+            {
+                image.Dispose();
+                image = null;
+
+                GC.Collect();
+            }
+        }
+
         private void btnChooseImage_Click(object sender, EventArgs e)
         {
             using (var ofd = new OpenFileDialog())

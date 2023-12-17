@@ -51,7 +51,6 @@
             // btnDisplay
             // 
             this.btnDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDisplay.Enabled = false;
             this.btnDisplay.Location = new System.Drawing.Point(96, 3);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(87, 20);
@@ -93,7 +92,6 @@
             // 
             // btnOpenViewer
             // 
-            this.btnOpenViewer.Enabled = false;
             this.btnOpenViewer.Location = new System.Drawing.Point(3, 3);
             this.btnOpenViewer.Name = "btnOpenViewer";
             this.btnOpenViewer.Size = new System.Drawing.Size(87, 20);

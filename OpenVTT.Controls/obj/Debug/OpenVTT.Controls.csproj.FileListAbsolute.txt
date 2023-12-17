@@ -125,3 +125,4 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.Text.Json.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.ValueTuple.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.Text.Encodings.Web.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Displayer.InformationDisplayPlayer.resources
