@@ -229,8 +229,6 @@ namespace OpenVTT.UiDesigner.UserControls
             {
                 "Text",
                 "ArtworkInformation"
-                //"Number",
-                //"Decimal Number"
             };
 
             var designFiles = new List<string>();

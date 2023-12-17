@@ -6,6 +6,7 @@ using OpenVTT.Session;
 using OpenVTT.Settings;
 using OpenVTT.StreamDeck;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,10 +20,16 @@ namespace Open_VTT.Forms
         {
             Logger.Log("Class: Start | Constructor");
 
+            //Some pre Setup stuff
+            //Run a script so subsequent calls run faster
             Task.Run(() =>
             {
                 var i = ScriptEngine.RunUiScript<int>("1+1", null).Result;
             });
+            //Set Action for ScriptHost to Display Text and Images in Scripts
+            ScriptHost.DisplayArtworkText = new Action<string>((text) => WindowInstaces.InformationDisplayPlayer.SetDisplayText(text));
+            ScriptHost.DisplayArtworkImage = new Action<Image>((img) => { var pb = WindowInstaces.InformationDisplayPlayer.GetPictureBox(); pb.Image?.Dispose(); pb.Image = null; pb.Image = img; });
+
 
             InitializeComponent();
 

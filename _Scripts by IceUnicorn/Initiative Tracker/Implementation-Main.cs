@@ -44,6 +44,8 @@ public partial class Main : System.Windows.Forms.UserControl
 			if(current != null) current.Location = new Point(current.Location.X - 20, current.Location.Y);
 			current = list[pos];
 			current.Location = new Point(current.Location.X + 20, current.Location.Y);
+			DisplayArtworkText(current.CreatureName);
+			DisplayArtworkImage(null);
 		};
 		btnAdd.Click += (s, e) =>
 		{

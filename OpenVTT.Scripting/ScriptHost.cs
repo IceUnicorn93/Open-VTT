@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using OpenVTT.Common;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -12,6 +13,11 @@ namespace OpenVTT.Scripting
         internal bool hasSuccessfullyRun = false;
         internal Exception exception;
         internal string path;
+
+        [Documentation("Action to set the Text in the Artwork Display", IsField = true, DataType = "Action<string>", Name = "DisplayArtworkText", IsStatic =true)]
+        public static Action<string> DisplayArtworkText;
+        [Documentation("Action to set the Image in the Artwork Display", IsField = true, DataType = "Action<Image>", Name = "DisplayArtworkImage", IsStatic = true)]
+        public static Action<Image> DisplayArtworkImage;
 
         [Documentation("This Object will be added to the SceneControl", IsField =true, DataType = "TabPage", Name = "Page")]
         public TabPage Page = new TabPage();

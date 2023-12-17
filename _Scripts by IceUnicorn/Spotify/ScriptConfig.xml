@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <isUI>true</isUI>
+  <isActive>false</isActive>
+  <Name>Spotify</Name>
+  <Author>Dustin/IceUnicorn93</Author>
+  <Description>Spotify Controller using Spotify Web API</Description>
+  <Version>1.0.0.0</Version>
+  <File_References>
+    <string>aaStreamDeck.cs</string>
+    <string>ConfigValues.cs</string>
+    <string>Design-Main.cs</string>
+    <string>Implementation-Main.cs</string>
+    <string>Implementation.cs</string>
+    <string>SpotifyConfig.cs</string>
+    <string>SpotifyDefaultPlaylistData.cs</string>
+    <string>SpotifyPlaylist.cs</string>
+    <string>ScriptData.cs</string>
+    <string>zzStreamDeck.cs</string>
+  </File_References>
+  <DLL_References>
+    <string>DLLs\SpotifyAPI.dll</string>
+  </DLL_References>
+  <Using_References>
+    <string>OpenVTT.StreamDeck</string>
+    <string>OpenVTT.Session</string>
+    <string>OpenVTT.Settings</string>
+    <string>OpenVTT.Common</string>
+    <string>System.Windows.Forms</string>
+    <string>System.Drawing</string>
+    <string>System</string>
+    <string>System.Collections.Generic</string>
+    <string>System.Linq</string>
+    <string>System.Xml.Serialization</string>
+    <string>System.IO</string>
+    <string>Spotify</string>
+  </Using_References>
+</ScriptConfig>

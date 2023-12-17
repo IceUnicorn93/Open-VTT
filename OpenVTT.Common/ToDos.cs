@@ -61,7 +61,6 @@
         // Digital Monster Library
 
         //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
-        //--------> Include Editor for Layout
 
         //--------------------------------------------------------------------
         // Planned ToDos
