@@ -228,6 +228,7 @@ namespace OpenVTT.UiDesigner.UserControls
             var types = new List<string>
             {
                 "Text",
+                "ArtworkInformation"
                 //"Number",
                 //"Decimal Number"
             };
@@ -235,8 +236,9 @@ namespace OpenVTT.UiDesigner.UserControls
             var designFiles = new List<string>();
             designFiles.AddRange(Directory.GetFiles(LoadPath));
             designFiles.RemoveAll(n => n.Contains("Design-Main.cs"));
-            designFiles.RemoveAll(n => n.Contains($"_{NoteName}*"));
-            types.AddRange(designFiles.Select(n => Path.GetFileName(n).Replace("Design-", "").Replace(".cs", "")));
+            designFiles.RemoveAll(n => n.Contains($"{NoteName}"));
+            designFiles.RemoveAll(n => n.Contains($".json"));
+            //types.AddRange(designFiles.Select(n => Path.GetFileName(n).Replace("Design-", "").Replace(".cs", "")));
 
             var structDesigner = new StructureDesigner();
             structDesigner.Types = types.ToArray();
@@ -249,6 +251,7 @@ namespace OpenVTT.UiDesigner.UserControls
                 foreach (var item in list)
                 {
                     var st = new OpenVttFileStructure();
+                    st.Types = types.ToArray();
                     ((IStructureBase)st).Name = item.Name;
                     ((IStructureBase)st).Type = item.Type;
                     ((IStructureBase)st).SingleValue = item.SingleValue;

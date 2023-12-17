@@ -24,9 +24,7 @@
         /*
          * -> Animated Map Support
          *      For what ever reason they want it
-         * -> [x] Add Designer for Notes and new Scipts (OpenVTT.UiDesigner)
-         *      Custom designs for the Notes
-         *      -> Custom designs for the Scripts 
+         * -> Custom objects for notes 
          *      
          * Second Control Window BUT for dedicated Plugins and Artwork Display, selectable in Config?
          * following Tabs:
