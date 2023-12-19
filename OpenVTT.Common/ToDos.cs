@@ -6,7 +6,6 @@
         // Priority: 0 -> Nice to Have | 1 -> Priority | 2 -> Less Priority .. | 10 -> No priority
 
         //Communicated Feautes:
-        //-> Rework of the Notes Section(it works but te code is ugly)
         //-> bring a copy of the 5e tools monster libary to my Notes Section
         //-> Rework the "Centroid" finding for the PrePlaced Fog of War(yes it works, but there are cases where it just breaks xD)
         //-> Make OpenVTT fully usable on Linux (Sometimes Problems with Updating FOW, Scripting has Problems with DLL references)
