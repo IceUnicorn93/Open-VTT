@@ -130,7 +130,11 @@ namespace OpenVTT.Session
 
             var oldSessionPath = layer.RootPath;
             var oldImagePath = layer.ImagePath;
-            var absolutImagePath = oldImagePath.Replace(oldSessionPath, "").Remove(0, 1);
+            var absolutImagePath = oldImagePath.Replace(oldSessionPath, "");
+
+            if (absolutImagePath[0] != 'I')
+                absolutImagePath = absolutImagePath.Remove(0, 1);
+
             var newPath = Path.Combine(Values.SessionFolder, absolutImagePath);
             return UpdatePath(newPath, layer.DirectorySeperator);
         }

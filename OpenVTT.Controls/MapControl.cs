@@ -134,6 +134,17 @@ namespace OpenVTT.Controls
                 var action = new Action<Image, Color>((Image img, Color color) =>
                 {
                     if (layer.FogOfWar.Count == 0) return;
+                        //layer.FogOfWar.Add(new FogOfWar.FogOfWar
+                        //{
+                        //    BoxSize = new Size(1,1),
+                        //    DrawSize = new Size(1, 1),
+                        //    IsHidden = false,
+                        //    IsToggleFog = false,
+                        //    Name = "",
+                        //    PoligonData = null,
+                        //    Position = new Point(0, 0),
+                        //    state = FogState.Remove
+                        //});
 
                     if (img == dmImage)
                         dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, false);

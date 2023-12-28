@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="FogOfWar.cs" />
     <Compile Include="PictureboxHelper.cs" />
+    <Compile Include="Polygon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

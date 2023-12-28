@@ -19,7 +19,7 @@ namespace OpenVTT.Session
         public char DirectorySeperator;
 
         [Documentation("List of FogOfWar-Objects", Name = "FogOfWar", IsField = true, DataType = "List<FogOfWar>")]
-        public List<FogOfWar.FogOfWar> FogOfWar;
+        public List<FogOfWar.FogOfWar> FogOfWar = new List<FogOfWar.FogOfWar>();
 
         [Documentation("Constructor", Name = "Layer", IsMethod = true, ReturnType = "Layer")]
         public Layer()

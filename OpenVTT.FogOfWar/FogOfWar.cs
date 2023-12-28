@@ -273,6 +273,13 @@ namespace OpenVTT.FogOfWar
         {
             Logger.Log("Class: FogOfWar | GetCentroid(List<Point> points, FogOfWar fog, Size img)");
 
+            //if(points.Count == 0) return new Point(0,0);
+            //var p = new Polygon();
+            //var pointf = points.Select(n => new PointF(n.X, n.Y)).ToArray();
+            //p.Points = pointf;
+            //var c = p.FindCentroid();
+            //return new Point((int)c.X, (int)c.Y);
+
             Point GetMiddle(List<Point> pointList)
             {
                 var minX = pointList.Select(n => n.X).Min();

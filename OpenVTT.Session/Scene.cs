@@ -11,7 +11,7 @@ namespace OpenVTT.Session
         [Documentation("Name of the Scene", Name = "Name", IsField = true, DataType = "string")]
         public string Name;
         [Documentation("List of Layer-Objects", Name = "Layers", IsField = true, DataType = "List<Layer>")]
-        public List<Layer> Layers;
+        public List<Layer> Layers = new List<Layer>();
 
         [Documentation("Constructor", Name = "Scene", IsMethod = true, ReturnType = "Scene")]
         public Scene()
