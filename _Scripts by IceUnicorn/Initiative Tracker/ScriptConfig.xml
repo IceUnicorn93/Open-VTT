@@ -21,8 +21,10 @@
     <string>OpenVTT.Common</string>
     <string>System.Windows.Forms</string>
     <string>System.Drawing</string>
-	<string>System</string>
+    <string>System</string>
     <string>System.Collections.Generic</string>
     <string>System.Linq</string>
+    <string>System.ComponentModel</string>
+    <string>System.Runtime.CompilerServices</string>
   </Using_References>
 </ScriptConfig>

@@ -1,3 +1,55 @@
+class RoundEvent : UserControl, INotifyPropertyChanged
+{
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+	{
+		if (PropertyChanged == null) return;
+		PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+	}
+	
+	public RoundEvent()
+	{
+		Size = new Size(424, 26);
+		BackColor = System.Drawing.SystemColors.Control;
+		
+		var tbName = new TextBox();
+		tbName.Name = "tbName";
+		tbName.Location = new Point(100, 3);
+		tbName.Size = new Size(324, 20);
+		tbName.DataBindings.Add(nameof(tbName.Text), this, nameof(EventName));
+		
+		Controls.Add(tbName);
+		
+		var tbRounds = new TextBox();
+		tbRounds.Name = "tbRounds";
+		tbRounds.Location = new Point(3, 3);
+		tbRounds.Size = new Size(94, 20);
+		tbRounds.DataBindings.Add(nameof(tbName.Text), this, nameof(Rounds));
+		
+		Controls.Add(tbRounds);
+	}
+	
+	private string _EventName;
+	public string EventName { get => _EventName; set { _EventName = value; NotifyPropertyChanged(); } }
+	
+	private int _Rounds;
+	public int Rounds { get => _Rounds; set { _Rounds = value; NotifyPropertyChanged();} }
+	
+	public override string ToString() => $"{Rounds} - {EventName}";
+	public bool NewRound()
+	{
+		Rounds--;
+		if(Rounds == 0)
+		{
+			MessageBox.Show(EventName);
+			return true;
+		}
+		else
+			return false;
+	}
+}
+
 public partial class Main : System.Windows.Forms.UserControl
 {
 	public Main(object o)
@@ -41,11 +93,20 @@ public partial class Main : System.Windows.Forms.UserControl
 		{
 			pos++;
 			if(pos >= list.Count) pos = 0;
+			
+			if(pos == 0)
+			{
+				//Event Mechanic
+				var events = flpEvent.Controls.Cast<RoundEvent>().ToList();
+				for (int i = 0; i < events.Count; i++)
+					if(events[i].NewRound()) flpEvent.Controls.Remove(events[i]);
+			}
+			
 			if(current != null) current.Location = new Point(current.Location.X - 20, current.Location.Y);
 			current = list[pos];
 			current.Location = new Point(current.Location.X + 20, current.Location.Y);
 			DisplayArtworkText(current.CreatureName);
-			DisplayArtworkImage(null);
+			//DisplayArtworkImage(null);
 		};
 		btnAdd.Click += (s, e) =>
 		{
@@ -76,6 +137,7 @@ public partial class Main : System.Windows.Forms.UserControl
 				list[p].Location = new Point(20, p * 60 + 60);
 			
 			pos = -1;
+			current = null;
 			
 			tbName.Focus();
 		};
@@ -128,6 +190,18 @@ public partial class Main : System.Windows.Forms.UserControl
 				listPreset[p].Location = new Point(620, p * 60 + 60);
 			
 			tbNamePreset.Focus();
+		};
+		
+		btnAddEvent.Click += (s, e) =>
+		{
+			var roundEvent = new RoundEvent
+			{
+				EventName = tbEvent.Text,
+				Rounds = int.Parse(tbEventRounds.Text),
+			};
+			flpEvent.Controls.Add(roundEvent);
+			tbEvent.Text = "";
+			tbEventRounds.Text = "1";
 		};
 		
 		var customData = Session.Values.CustomData.SingleOrDefault(n => n.ScriptName == ConfigValues.Name);

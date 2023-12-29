@@ -19,6 +19,13 @@ public partial class Main : System.Windows.Forms.UserControl
     private System.Windows.Forms.TextBox tbHPPreset;
     private System.Windows.Forms.TextBox tbACPreset;
     private System.Windows.Forms.Button btnAddPreset;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.TextBox tbEventRounds;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.TextBox tbEvent;
+    private System.Windows.Forms.Button btnAddEvent;
+    private System.Windows.Forms.FlowLayoutPanel flpEvent;
     public Main()
     {
         this.InitializeComponent();
@@ -44,6 +51,13 @@ public partial class Main : System.Windows.Forms.UserControl
         this.tbHPPreset = new System.Windows.Forms.TextBox();
         this.tbACPreset = new System.Windows.Forms.TextBox();
         this.btnAddPreset = new System.Windows.Forms.Button();
+        this.label3 = new System.Windows.Forms.Label();
+        this.label1 = new System.Windows.Forms.Label();
+        this.tbEventRounds = new System.Windows.Forms.TextBox();
+        this.label2 = new System.Windows.Forms.Label();
+        this.tbEvent = new System.Windows.Forms.TextBox();
+        this.btnAddEvent = new System.Windows.Forms.Button();
+        this.flpEvent = new System.Windows.Forms.FlowLayoutPanel();
         this.SuspendLayout();
         // 
         // lblName
@@ -209,6 +223,72 @@ public partial class Main : System.Windows.Forms.UserControl
         this.btnAddPreset.TabIndex = 18;
         this.btnAddPreset.Text = "+";
         // 
+        // label3
+        // 
+        this.label3.AutoSize = true;
+        this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.label3.Location = new System.Drawing.Point(1210, 4);
+        this.label3.Name = "label3";
+        this.label3.Size = new System.Drawing.Size(96, 20);
+        this.label3.TabIndex = 26;
+        this.label3.Text = "Event Name";
+        // 
+        // label1
+        // 
+        this.label1.AutoSize = true;
+        this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.label1.Location = new System.Drawing.Point(1405, 56);
+        this.label1.Name = "label1";
+        this.label1.Size = new System.Drawing.Size(65, 20);
+        this.label1.TabIndex = 24;
+        this.label1.Text = "Rounds";
+        // 
+        // tbEventRounds
+        // 
+        this.tbEventRounds.Location = new System.Drawing.Point(1343, 58);
+        this.tbEventRounds.Name = "tbEventRounds";
+        this.tbEventRounds.Size = new System.Drawing.Size(56, 20);
+        this.tbEventRounds.TabIndex = 27;
+        this.tbEventRounds.Text = "1";
+        // 
+        // label2
+        // 
+        this.label2.AutoSize = true;
+        this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.label2.Location = new System.Drawing.Point(1210, 56);
+        this.label2.Name = "label2";
+        this.label2.Size = new System.Drawing.Size(127, 20);
+        this.label2.TabIndex = 25;
+        this.label2.Text = "Event Triggers in";
+        // 
+        // tbEvent
+        // 
+        this.tbEvent.Location = new System.Drawing.Point(1210, 33);
+        this.tbEvent.Name = "tbEvent";
+        this.tbEvent.Size = new System.Drawing.Size(260, 20);
+        this.tbEvent.TabIndex = 28;
+        // 
+        // btnAddEvent
+        // 
+        this.btnAddEvent.BackColor = System.Drawing.SystemColors.Control;
+        this.btnAddEvent.Location = new System.Drawing.Point(1395, 4);
+        this.btnAddEvent.Name = "btnAddEvent";
+        this.btnAddEvent.Size = new System.Drawing.Size(75, 23);
+        this.btnAddEvent.TabIndex = 23;
+        this.btnAddEvent.Text = "Add Event";
+        this.btnAddEvent.UseVisualStyleBackColor = false;
+        // 
+        // flpEvent
+        // 
+        this.flpEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+                    | System.Windows.Forms.AnchorStyles.Left)));
+        this.flpEvent.AutoScroll = true;
+        this.flpEvent.BackColor = System.Drawing.SystemColors.ControlLight;
+        this.flpEvent.Location = new System.Drawing.Point(1210, 104);
+        this.flpEvent.Name = "flpEvent";
+        this.flpEvent.Size = new System.Drawing.Size(430, 82);
+        this.flpEvent.TabIndex = 29;
+        // 
         // Main
         // 
         this.Controls.Add(this.lblName);
@@ -230,8 +310,15 @@ public partial class Main : System.Windows.Forms.UserControl
         this.Controls.Add(this.tbHPPreset);
         this.Controls.Add(this.tbACPreset);
         this.Controls.Add(this.btnAddPreset);
+        this.Controls.Add(this.label3);
+        this.Controls.Add(this.label1);
+        this.Controls.Add(this.tbEventRounds);
+        this.Controls.Add(this.label2);
+        this.Controls.Add(this.tbEvent);
+        this.Controls.Add(this.btnAddEvent);
+        this.Controls.Add(this.flpEvent);
         this.Name = "Main";
-        this.Size = new System.Drawing.Size(1143, 189);
+        this.Size = new System.Drawing.Size(1643, 189);
         this.ResumeLayout(false);
         this.PerformLayout();
     }
