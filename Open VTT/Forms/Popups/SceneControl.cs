@@ -80,8 +80,6 @@ namespace Open_VTT.Forms.Popups
                 }
                 else
                 {
-                    drawPbMap.Image = null;
-                    WindowInstaces.AnimatedMapDisplayer.SetFogOfWarImage(null);
 
                     if (Session.Values.ActiveLayer.IsImageLayer)
                     {

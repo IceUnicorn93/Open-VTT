@@ -9,7 +9,6 @@
         //-> bring a copy of the 5e tools monster libary to my Notes Section
         //-> Rework the "Centroid" finding for the PrePlaced Fog of War(yes it works, but there are cases where it just breaks xD)
         //-> Make OpenVTT fully usable on Linux (Sometimes Problems with Updating FOW, Scripting has Problems with DLL references)
-        //-> Make Version with Video Support (Using axWindowsMediaPlayer)
 
         //Maybe?:
         //-> Display Memory Usage
@@ -21,8 +20,6 @@
 
         //Actively under work:
         /*
-         * -> Animated Map Support
-         *      For what ever reason they want it
          * -> Custom objects for notes 
          *      
          * Second Control Window BUT for dedicated Plugins and Artwork Display, selectable in Config?
@@ -40,10 +37,6 @@
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
          *  Specially: {Random Buttons} layer switching, Cover all
          * 
-         * Grid works only in 1" squares if the base Image has the same resolution as the Display
-         *  Calculate if Image hits Bottom and Top or Side hits Left and right
-         *  -> If Top and Bottom -> ImageHeight = HeightInches, reclaculate width
-         *  -> If Left and Right -> ImageWidth = WidthInces, recalculate height
          */
 
         // Needs Testing:

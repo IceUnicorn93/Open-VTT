@@ -48,7 +48,7 @@ namespace OpenVTT.AnimatedMap
         {
             //DO NOT DISPOSE THE OVERLAY BACKGROUND IMAGE!
             //overlay.BackgroundImage?.Dispose();
-            //overlay.BackgroundImage = null;
+            overlay.BackgroundImage = null;
             overlay.BackgroundImage = img;
         }
 
