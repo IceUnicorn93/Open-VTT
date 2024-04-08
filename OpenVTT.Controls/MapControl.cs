@@ -133,23 +133,10 @@ namespace OpenVTT.Controls
             {
                 var action = new Action<Image, Color>((Image img, Color color) =>
                 {
-                    if (layer.FogOfWar.Count == 0) return;
-                        //layer.FogOfWar.Add(new FogOfWar.FogOfWar
-                        //{
-                        //    BoxSize = new Size(1,1),
-                        //    DrawSize = new Size(1, 1),
-                        //    IsHidden = false,
-                        //    IsToggleFog = false,
-                        //    Name = "",
-                        //    PoligonData = null,
-                        //    Position = new Point(0, 0),
-                        //    state = FogState.Remove
-                        //});
-
                     if (img == dmImage)
-                        dmImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, false);
+                        dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, false);
                     else
-                        playerImage = layer.FogOfWar.FirstOrDefault()?.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, true);
+                        playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, true);
                 });
 
                 action(dmImage, Color.FromArgb(150, 0, 0, 0));
@@ -247,13 +234,23 @@ namespace OpenVTT.Controls
 
                     File.Copy(openFileDialog.FileName, newFileName, true);
 
-                    LoadImages(newFileName);
-                    ShowImages(false);
-
                     var layer = Session.Session.Values.ActiveLayer;
                     layer.RootPath = Session.Session.Values.SessionFolder;
                     layer.ImagePath = newFileName;
                     layer.IsImageLayer = isImage;
+
+                    if(isImage == false)
+                    {
+                        // Load new File
+                        // Take a Screenshot
+                        // AHA!
+                        // Save Screenshot?
+                        // 
+                    }
+
+                    //Update so it works with Animated Maps
+                    LoadImages(newFileName);
+                    ShowImages(false);
 
                     if (Settings.Settings.Values.AutoSaveAction)
                         Session.Session.Save(true);
@@ -299,8 +296,8 @@ namespace OpenVTT.Controls
             Session.Session.Values.ActiveLayer.FogOfWar.Add(fog);
             var layer = Session.Session.Values.ActiveLayer;
 
-            dmImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-            playerImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -334,8 +331,8 @@ namespace OpenVTT.Controls
             Session.Session.Values.ActiveLayer.FogOfWar.Clear();
             var layer = Session.Session.Values.ActiveLayer;
 
-            dmImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-            playerImage = fog.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
 
             ShowImages(false);
 

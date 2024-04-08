@@ -610,6 +610,8 @@ namespace OpenVTT.UiDesigner.UserControls
 
             this.Text = "Designer - Working on: " + path;
 
+            if (File.Exists(path) == false) return;
+
             var code = File.ReadAllText(path);
 
             var lines = CleanUpCode(code); //Remove unneccessary stuff like "this."
@@ -815,7 +817,7 @@ namespace OpenVTT.UiDesigner.UserControls
             File.WriteAllText(path, string.Join(Environment.NewLine, lines.ToArray()));
         }
 
-        string GenerateCSFromDesigner(DesignSurface designSurface)
+        private string GenerateCSFromDesigner(DesignSurface designSurface)
         {
             Logger.Log("Class: Designer | GenerateCSFromDesigner");
 

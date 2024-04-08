@@ -115,7 +115,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\AxInterop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\Interop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\AxInterop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.csproj.ResolveComReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Displayer.AnimatedMapDisplayer.resources
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.UiDesigner.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Forms.ScriptDesigner.resources
@@ -126,3 +125,6 @@ E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.ValueTuple.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.Text.Encodings.Web.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\obj\Debug\OpenVTT.Controls.Displayer.InformationDisplayPlayer.resources
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\System.Drawing.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.AnimatedMap.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Controls\bin\Debug\OpenVTT.AnimatedMap.pdb

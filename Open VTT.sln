@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.Logging", "OpenVTT.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.UiDesigner", "OpenVTT.UiDesigner\OpenVTT.UiDesigner.csproj", "{67894BD5-AB56-4270-ADB1-BD582F26C900}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVTT.AnimatedMap", "OpenVTT.AnimatedMap\OpenVTT.AnimatedMap.csproj", "{2EADE660-2483-4DC8-98DB-0ED0594420CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,14 @@ Global
 		{67894BD5-AB56-4270-ADB1-BD582F26C900}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67894BD5-AB56-4270-ADB1-BD582F26C900}.Release|x64.ActiveCfg = Release|x64
 		{67894BD5-AB56-4270-ADB1-BD582F26C900}.Release|x64.Build.0 = Release|x64
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{2EADE660-2483-4DC8-98DB-0ED0594420CC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

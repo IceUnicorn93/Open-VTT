@@ -34,9 +34,11 @@ namespace OpenVTT.FogOfWar
         [Documentation("Name of the Fog of War, just fill, if it's Pre Placed FogOfWar", Name = "Name", IsField = true, DataType = "string")]
         public string Name = "";
 
-        internal Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)
+        static internal Image DrawFogOfWarComplete(string imagePath, List<FogOfWar> fogs, Color fogColor, bool IsPlayer)
         {
             Logger.Log("Class: FogOfWar | DrawFogOfWarComplete");
+
+            if(imagePath == "") return null;
 
             var img = Image.FromFile(imagePath);
 
@@ -110,11 +112,11 @@ namespace OpenVTT.FogOfWar
             return img;
         }
 
-        private void DrawFogOfWar(Image image, Color drawColor, FogOfWar fog = null)
+        private static void DrawFogOfWar(Image image, Color drawColor, FogOfWar fog = null)
         {
             Logger.Log("Class: FogOfWar | DrawFogOfWar");
 
-            var ret = PictureBoxHelper.Transform(fog ?? this, new Size(image.Width, image.Height));
+            var ret = PictureBoxHelper.Transform(fog, new Size(image.Width, image.Height));
             var action = (Action)(() =>
             {
                 if (image != null)
@@ -127,11 +129,11 @@ namespace OpenVTT.FogOfWar
             action();
         }
 
-        private void RemoveFogOfWar(Image image, string originalImage, FogOfWar fog = null)
+        private static void RemoveFogOfWar(Image image, string originalImage, FogOfWar fog = null)
         {
             Logger.Log("Class: FogOfWar | RemoveFogOfWar");
 
-            var ret = PictureBoxHelper.Transform(fog ?? this, new Size(image.Width, image.Height));
+            var ret = PictureBoxHelper.Transform(fog, new Size(image.Width, image.Height));
             var action = (Action)(() =>
             {
                 if (image != null)
@@ -146,20 +148,20 @@ namespace OpenVTT.FogOfWar
             action();
         }
 
-        private void DrawFogOfWarPoligon(Image image, Color drawColor, FogOfWar fog = null)
+        private static void DrawFogOfWarPoligon(Image image, Color drawColor, FogOfWar fog = null)
         {
             Logger.Log("Class: FogOfWar | DrawFogOfWarPoligon");
 
-            Rectangle outRect = new Rectangle(0, 0, image.Width, image.Height);
+            //Rectangle outRect = new Rectangle(0, 0, image.Width, image.Height);
 
             var newPoints = new List<Point>();
-            foreach (var p in fog == null ? PoligonData : fog.PoligonData)
+            foreach (var p in fog.PoligonData)
             {
                 var f = new FogOfWar
                 {
                     Position = new Point(p.X, p.Y),
-                    BoxSize = BoxSize,
-                    DrawSize = DrawSize
+                    BoxSize = fog.BoxSize,
+                    DrawSize = fog.DrawSize
                 };
                 var (PositionX, PositionY, _, _) = PictureBoxHelper.Transform(f, new Size(image.Width, image.Height));
                 newPoints.Add(new Point(PositionX, PositionY));
@@ -185,14 +187,14 @@ namespace OpenVTT.FogOfWar
             action();
         }
 
-        private void RemoveFogOfWarPoligon(Image image, string originalImage, FogOfWar fog = null)
+        private static void RemoveFogOfWarPoligon(Image image, string originalImage, FogOfWar fog = null)
         {
             Logger.Log("Class: FogOfWar | RemoveFogOfWarPoligon");
 
             Rectangle outRect = new Rectangle(0, 0, image.Width, image.Height);
 
             var newPoints = new List<Point>();
-            foreach (var p in fog == null ? PoligonData : fog.PoligonData)
+            foreach (var p in fog.PoligonData)
             {
                 var f = new FogOfWar
                 {
@@ -258,7 +260,7 @@ namespace OpenVTT.FogOfWar
             action();
         }
 
-        private Point GetCentroid(FogOfWar fog, Size img)
+        private static Point GetCentroid(FogOfWar fog, Size img)
         {
             Logger.Log("Class: FogOfWar | GetCentroid(FogOfWar fog, Size img)");
 
@@ -269,7 +271,7 @@ namespace OpenVTT.FogOfWar
             return GetCentroid(points, fog, img);
         }
 
-        private Point GetCentroid(List<Point> points, FogOfWar fog, Size img)
+        private static Point GetCentroid(List<Point> points, FogOfWar fog, Size img)
         {
             Logger.Log("Class: FogOfWar | GetCentroid(List<Point> points, FogOfWar fog, Size img)");
 
@@ -336,7 +338,7 @@ namespace OpenVTT.FogOfWar
             return middle;
         }
 
-        private Point[] FogToPolygonData(FogOfWar fog)
+        private static Point[] FogToPolygonData(FogOfWar fog)
         {
             Logger.Log("Class: FogOfWar | FogToPolygonData");
 
@@ -358,7 +360,7 @@ namespace OpenVTT.FogOfWar
             return points;
         }
 
-        private Point[] TransformPolygonData(Point[] points, FogOfWar fog, Size img)
+        private static Point[] TransformPolygonData(Point[] points, FogOfWar fog, Size img)
         {
             Logger.Log("Class: FogOfWar | TransformPolygonData");
 

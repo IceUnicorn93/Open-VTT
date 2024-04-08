@@ -61,12 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Displayer\AnimatedMapDisplayer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Displayer\AnimatedMapDisplayer.Designer.cs">
-      <DependentUpon>AnimatedMapDisplayer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Displayer\InformationDisplayDM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +131,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OpenVTT.AnimatedMap\OpenVTT.AnimatedMap.csproj">
+      <Project>{2eade660-2483-4dc8-98db-0ed0594420cc}</Project>
+      <Name>OpenVTT.AnimatedMap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenVTT.Client\OpenVTT.Client.csproj">
       <Project>{b3f2d6b2-62ed-4666-b394-775fd7c05024}</Project>
       <Name>OpenVTT.Client</Name>
@@ -183,9 +181,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Displayer\AnimatedMapDisplayer.resx">
-      <DependentUpon>AnimatedMapDisplayer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Displayer\InformationDisplayPlayer.resx">
       <DependentUpon>InformationDisplayPlayer.cs</DependentUpon>
     </EmbeddedResource>

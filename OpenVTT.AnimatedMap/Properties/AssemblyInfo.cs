@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("OpenVTT.Logging")]
+[assembly: AssemblyTitle("OpenVTT.AnimatedMap")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenVTT.Logging")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyProduct("OpenVTT.AnimatedMap")]
+[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("c1a6188e-7224-4ce3-8413-9184177e9901")]
+[assembly: Guid("2eade660-2483-4dc8-98db-0ed0594420cc")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
@@ -34,21 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: InternalsVisibleTo("Open VTT")]
-[assembly: InternalsVisibleTo("OpenVTT.AnimatedMap")]
-[assembly: InternalsVisibleTo("OpenVTT.Client")]
-[assembly: InternalsVisibleTo("OpenVTT.Common")]
-[assembly: InternalsVisibleTo("OpenVTT.Controls")]
-[assembly: InternalsVisibleTo("OpenVTT.Editor")]
-[assembly: InternalsVisibleTo("OpenVTT.Editor.Controls")]
-[assembly: InternalsVisibleTo("OpenVTT.FogOfWar")]
-[assembly: InternalsVisibleTo("OpenVTT.Forms")]
-[assembly: InternalsVisibleTo("OpenVTT.Grid")]
-[assembly: InternalsVisibleTo("OpenVTT.NetworkMessage")]
-[assembly: InternalsVisibleTo("OpenVTT.Scripting")]
-[assembly: InternalsVisibleTo("OpenVTT.Server")]
-[assembly: InternalsVisibleTo("OpenVTT.Session")]
-[assembly: InternalsVisibleTo("OpenVTT.Settings")]
-[assembly: InternalsVisibleTo("OpenVTT.StreamDeck")]
-[assembly: InternalsVisibleTo("OpenVTT.UiDesigner")]

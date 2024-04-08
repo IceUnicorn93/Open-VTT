@@ -153,8 +153,6 @@ E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Logging.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.Logging.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Newtonsoft.Json.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.UiDesigner.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\AxInterop.WMPLib.dll
-E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\Interop.WMPLib.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\OpenVTT.UiDesigner.pdb
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.dll
 E:\C# Repos\Open VTT\Open-VTT\Open VTT\bin\Debug\HidSharp.pdb

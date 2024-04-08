@@ -1,4 +1,4 @@
-﻿namespace OpenVTT.Controls.Displayer
+﻿namespace OpenVTT.AnimatedMap
 {
     partial class AnimatedMapDisplayer
     {
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnimatedMapDisplayer));
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,20 +42,24 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(727, 454);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1339, 644);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AnimatedMapDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 454);
+            this.ClientSize = new System.Drawing.Size(1339, 644);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnimatedMapDisplayer";
             this.Text = "AnimatedMapDisplayer";
-            this.LocationChanged += new System.EventHandler(this.AnimatedMapDisplayer_LocationChanged);
-            this.SizeChanged += new System.EventHandler(this.AnimatedMapDisplayer_SizeChanged);
+            this.Load += new System.EventHandler(this.AnimatedMapDisplayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
@@ -62,5 +68,6 @@
         #endregion
 
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

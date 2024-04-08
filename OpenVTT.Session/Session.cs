@@ -128,6 +128,8 @@ namespace OpenVTT.Session
         {
             Logger.Log("Class: Session | UpdatePath(Layer layer)");
 
+            if (layer.RootPath == "" || layer.ImagePath == "") return "";
+
             var oldSessionPath = layer.RootPath;
             var oldImagePath = layer.ImagePath;
             var absolutImagePath = oldImagePath.Replace(oldSessionPath, "");

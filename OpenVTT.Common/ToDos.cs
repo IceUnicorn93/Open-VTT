@@ -59,8 +59,6 @@
         // Memory Activity
         // Digital Monster Library
 
-        //Idea: {H0} Digital Monster Library (Stats, Attacks, Artwork)
-
         //--------------------------------------------------------------------
         // Planned ToDos
         //--------------------------------------------------------------------
