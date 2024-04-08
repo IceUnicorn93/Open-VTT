@@ -155,6 +155,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
@@ -357,6 +358,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
@@ -559,6 +561,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
@@ -761,6 +764,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },
@@ -963,6 +967,7 @@
       "OpenVTT.Grid/1.0.0": {
         "type": "project",
         "dependencies": {
+          "OpenVTT.Common": "1.0.0",
           "OpenVTT.Logging": "1.0.0",
           "OpenVTT.Settings": "1.0.0"
         },

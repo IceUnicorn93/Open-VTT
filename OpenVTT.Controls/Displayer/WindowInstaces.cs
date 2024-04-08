@@ -1,9 +1,5 @@
-﻿using OpenVTT.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenVTT.AnimatedMap;
+using OpenVTT.Logging;
 
 namespace OpenVTT.Controls.Displayer
 {
@@ -11,7 +7,7 @@ namespace OpenVTT.Controls.Displayer
     {
         internal static InformationDisplayDM InformationDisplayDM;
         internal static InformationDisplayPlayer InformationDisplayPlayer;
-        internal static MapPlayer Player;
+        internal static AnimatedMapDisplayer AnimatedMapDisplayer;
 
         static WindowInstaces()
         {
@@ -26,7 +22,7 @@ namespace OpenVTT.Controls.Displayer
 
             InformationDisplayDM = new InformationDisplayDM();
             InformationDisplayPlayer = new InformationDisplayPlayer();
-            Player = new MapPlayer();
+            AnimatedMapDisplayer = new AnimatedMapDisplayer();
         }
     }
 }

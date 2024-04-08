@@ -12,19 +12,38 @@ namespace OpenVTT.AnimatedMap
     {
         public Action FilePlaying;
 
-        public AnimatedMapScreenshotter()
+        public AnimatedMapScreenshotter(bool hideControls = true)
         {
             InitializeComponent();
 
-            var playerScreen = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == DisplayType.Player);
             var primary = Screen.PrimaryScreen;
+
+            var playerScreen = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == DisplayType.Player);
+            if(playerScreen == null)
+            {
+                playerScreen = new Settings.ScreenInformation()
+                {
+                    Display = DisplayType.Player,
+                    Height = primary.Bounds.Height,
+                    Width = primary.Bounds.Width,
+                    PositionX = primary.Bounds.X,
+                    PositionY = primary.Bounds.Y,
+                };
+            }
 
             this.StartPosition = FormStartPosition.Manual;
             this.Size = new Size(playerScreen.Width / 2, playerScreen.Height / 2);
             this.Location = new Point(primary.Bounds.Width / 2 - this.Width / 2, primary.Bounds.Height / 2 - this.Height / 2);
 
-            axWindowsMediaPlayer1.uiMode = "none";
-            axWindowsMediaPlayer1.enableContextMenu = false;
+            if (hideControls)
+            {
+                axWindowsMediaPlayer1.uiMode = "none";
+                axWindowsMediaPlayer1.enableContextMenu = false; 
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.FixedSingle;
+            }
 
             axWindowsMediaPlayer1.PlayStateChange += PlayStateChange;
         }
@@ -38,7 +57,7 @@ namespace OpenVTT.AnimatedMap
             }
             else if((WMPPlayState)e.newState == WMPPlayState.wmppsPlaying)
             {
-                FilePlaying();
+                FilePlaying?.Invoke();
             }
         }
 

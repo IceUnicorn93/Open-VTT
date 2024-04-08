@@ -1,9 +1,9 @@
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Debug\OpenVTT.Common.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Debug\OpenVTT.Common.pdb
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.csproj.AssemblyReference.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.csproj.CoreCompileInputs.cache
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.dll
-E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.pdb
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Debug\OpenVTT.Logging.dll
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\bin\Debug\OpenVTT.Logging.pdb
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.csproj.AssemblyReference.cache
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.csproj.CoreCompileInputs.cache
 E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.csproj.CopyComplete
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.dll
+E:\C# Repos\Open VTT\Open-VTT\OpenVTT.Common\obj\Debug\OpenVTT.Common.pdb

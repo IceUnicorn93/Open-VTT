@@ -1,4 +1,5 @@
-﻿using OpenVTT.Controls;
+﻿using OpenVTT.AnimatedMap;
+using OpenVTT.Controls;
 using OpenVTT.Controls.Forms;
 using OpenVTT.Logging;
 using OpenVTT.Scripting;
@@ -162,6 +163,19 @@ namespace Open_VTT.Forms.Popups
                         sd.LoadPath = fbd.SelectedPath;
                         sd.ShowDialog();
                     }
+                }
+            }
+        }
+
+        private void btnTestAnimatedMap_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    var animatedMap = new AnimatedMapScreenshotter(false);
+                    animatedMap.SetPath(ofd.FileName);
+                    animatedMap.ShowDialog();
                 }
             }
         }

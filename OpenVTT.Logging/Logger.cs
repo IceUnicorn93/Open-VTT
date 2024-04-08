@@ -26,7 +26,7 @@ namespace OpenVTT.Logging
             if (string.IsNullOrWhiteSpace(appPath)) return;
             if (default(DateTime) == startupTime) return;
 
-            lines.Add($"{DateTime.Now:HH:mm:ss} {message}{Environment.NewLine}");
+            lines.Add($"{Environment.NewLine}{DateTime.Now:HH:mm:ss} {message}");
 
             if(lines.Count == 10 || message.ToLower().Contains("exception"))
             {

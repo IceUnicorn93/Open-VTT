@@ -63,6 +63,7 @@ namespace Open_VTT.Forms.Popups
             this.flpScripts = new System.Windows.Forms.FlowLayoutPanel();
             this.tbStreamDeck = new System.Windows.Forms.TabPage();
             this.streamDeckConfig1 = new OpenVTT.StreamDeck.StreamDeckConfig();
+            this.btnTestAnimatedMap = new System.Windows.Forms.Button();
             this.tabCtrlPages.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -90,6 +91,7 @@ namespace Open_VTT.Forms.Popups
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.btnTestAnimatedMap);
             this.tpGeneral.Controls.Add(this.groupBox5);
             this.tpGeneral.Controls.Add(this.groupBox4);
             this.tpGeneral.Controls.Add(this.groupBox3);
@@ -418,6 +420,16 @@ namespace Open_VTT.Forms.Popups
             this.streamDeckConfig1.Size = new System.Drawing.Size(829, 487);
             this.streamDeckConfig1.TabIndex = 0;
             // 
+            // btnTestAnimatedMap
+            // 
+            this.btnTestAnimatedMap.Location = new System.Drawing.Point(554, 71);
+            this.btnTestAnimatedMap.Name = "btnTestAnimatedMap";
+            this.btnTestAnimatedMap.Size = new System.Drawing.Size(218, 23);
+            this.btnTestAnimatedMap.TabIndex = 10;
+            this.btnTestAnimatedMap.Text = "Test Animated Map!";
+            this.btnTestAnimatedMap.UseVisualStyleBackColor = true;
+            this.btnTestAnimatedMap.Click += new System.EventHandler(this.btnTestAnimatedMap_Click);
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,5 +492,6 @@ namespace Open_VTT.Forms.Popups
         private System.Windows.Forms.Button btnOpenDesigner;
         private System.Windows.Forms.TabPage tbStreamDeck;
         private OpenVTT.StreamDeck.StreamDeckConfig streamDeckConfig1;
+        private System.Windows.Forms.Button btnTestAnimatedMap;
     }
 }

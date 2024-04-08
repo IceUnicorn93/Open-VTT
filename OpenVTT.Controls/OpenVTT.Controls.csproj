@@ -73,12 +73,6 @@
     <Compile Include="Displayer\InformationDisplayPlayer.Designer.cs">
       <DependentUpon>InformationDisplayPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Displayer\MapPlayer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Displayer\MapPlayer.Designer.cs">
-      <DependentUpon>MapPlayer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Displayer\WindowInstaces.cs" />
     <Compile Include="DrawingPictureBox.cs">
       <SubType>Component</SubType>

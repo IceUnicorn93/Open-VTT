@@ -16,8 +16,11 @@ namespace OpenVTT.AnimatedMap
             get => _DisplayItemURL;
             set
             {
-                _DisplayItemURL = value;
-                axWindowsMediaPlayer1.URL = value;
+                if(_DisplayItemURL != value)
+                { 
+                    _DisplayItemURL = value;
+                    axWindowsMediaPlayer1.URL = value;
+                }
             }
         }
         private string _DisplayItemURL;
@@ -25,13 +28,28 @@ namespace OpenVTT.AnimatedMap
         private Form overlay = new Form();
         private Color TransparentKey = Color.FromArgb(0, 255, 66);
 
+        public AnimatedMapDisplayer()
+        {
+            InitializeComponent();
+
+            //Keep the Fog of War Overlay always at the Location and Size of the Windows Media Player
+            Move += FitOverlay;
+            Resize += FitOverlay;
+
+            FormClosing += (s, e) =>
+            {
+                overlay.Close();
+            };
+        }
+
+        public Image GetImage() => overlay.BackgroundImage;
+
         public void SetFogOfWarImage(Image img)
         {
-            overlay.BackgroundImage.Dispose();
-            overlay.BackgroundImage = null;
+            //DO NOT DISPOSE THE OVERLAY BACKGROUND IMAGE!
+            //overlay.BackgroundImage?.Dispose();
+            //overlay.BackgroundImage = null;
             overlay.BackgroundImage = img;
-
-            GC.Collect();
         }
 
         private void prepareOverlay()
@@ -45,6 +63,8 @@ namespace OpenVTT.AnimatedMap
             overlay.Text = "";
             overlay.FormBorderStyle = FormBorderStyle.None;
             overlay.Size = Size.Empty;
+
+            overlay.BackgroundImageLayout = ImageLayout.Zoom;
 
             overlay.Show();
 
@@ -63,14 +83,6 @@ namespace OpenVTT.AnimatedMap
             overlay.TransparencyKey = TransparentKey;
         }
 
-        public AnimatedMapDisplayer()
-        {
-            InitializeComponent();
-
-            //Keep the Fog of War Overlay always at the Location and Size of the Windows Media Player
-            Move += FitOverlay;
-            Resize += FitOverlay;
-        }
 
         private void FitOverlay(object sender, EventArgs e)
         {
@@ -80,6 +92,8 @@ namespace OpenVTT.AnimatedMap
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            FitOverlay(sender, e);
+
             if (axWindowsMediaPlayer1.Ctlcontrols.currentItem == null) return;
 
             if (IsDisplayingImage)
@@ -99,7 +113,6 @@ namespace OpenVTT.AnimatedMap
 
                 GC.Collect();
 
-                //axWindowsMediaPlayer1.settings.mute = true; // only for DM Side, player Side should play the sound!
                 axWindowsMediaPlayer1.Ctlcontrols.play();
             }
         }

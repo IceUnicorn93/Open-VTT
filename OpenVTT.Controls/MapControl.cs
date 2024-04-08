@@ -22,10 +22,9 @@ namespace OpenVTT.Controls
         internal Image dmImage;
         internal Image playerImage;
 
-        MapPlayer playerWindow;
+        AnimatedMapDisplayer playerWindow;
 
         public DrawingPictureBox DmPictureBox;
-        DrawingPictureBox PlayerPictureBox;
 
         internal bool PrePlaceFogOfWar = false;
 
@@ -42,14 +41,13 @@ namespace OpenVTT.Controls
         {
             Logger.Log("Class: MapControl | Init");
 
-            playerWindow = WindowInstaces.Player;
-            PlayerPictureBox = playerWindow.GetPictureBox();
+            playerWindow = WindowInstaces.AnimatedMapDisplayer;
             DmPictureBox.DrawMode = PictureBoxMode.Rectangle;
 
             if (DmPictureBox == null)
                 throw new ArgumentNullException(nameof(DmPictureBox));
-            if (PlayerPictureBox == null)
-                throw new ArgumentNullException(nameof(PlayerPictureBox));
+            if (playerWindow == null)
+                throw new ArgumentNullException(nameof(playerWindow));
 
             if (StreamDeckStatics.IsInitialized)
             {
@@ -129,10 +127,12 @@ namespace OpenVTT.Controls
                 }
 
                 dmImage = Image.FromFile(filePathDM);
-                if(Session.Session.Values.ActiveLayer.IsImageLayer)
+                if (Session.Session.Values.ActiveLayer.IsImageLayer)
                     playerImage = Image.FromFile(filePathPlayer);
                 else
-                { } //TODO: Set URL for Animated Map
+                { 
+                    //playerWindow.DisplayItemURL = Session.Session.Values.ActiveLayer.ImagePath;
+                }
             }
             else
             {
@@ -164,7 +164,7 @@ namespace OpenVTT.Controls
                         if(layer.IsImageLayer)
                             playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, true);
                         else
-                        { } //TODO: Load Greenscreen File for FOW drawing
+                            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Path.Combine(Application.StartupPath, "Greenscreen.png"), layer.FogOfWar, color, true);
                     }
                 });
 
@@ -217,7 +217,9 @@ namespace OpenVTT.Controls
 
                 if (showPlayer || Settings.Settings.Values.DisplayChangesInstantly)
                 {
-                    PlayerPictureBox.Image = player;
+                    playerWindow.IsDisplayingImage = Session.Session.Values.ActiveLayer.IsImageLayer;
+                    playerWindow.DisplayItemURL = Session.Session.Values.ActiveLayer.ImagePath;
+                    playerWindow.SetFogOfWarImage(player);
                 }
             }
             catch (Exception ex)
@@ -328,10 +330,10 @@ namespace OpenVTT.Controls
         {
             Logger.Log("Class: MapControl | btnSetActive_Click");
 
-            WindowInstaces.Player.Show();
+            if(Application.OpenForms.OfType<AnimatedMapDisplayer>().Count() == 0)
+                WindowInstaces.AnimatedMapDisplayer.Show();
             ShowImages(true);
 
-            WindowInstaces.Player.Size = new Size(this.ParentForm.Size.Width, this.ParentForm.Size.Height);
 
             //MessageBox.Show(
             //    $"{WindowInstaces.Player.Size.Width} - {WindowInstaces.Player.Size.Height}{Environment.NewLine}" +
@@ -370,7 +372,7 @@ namespace OpenVTT.Controls
             else
             {
                 dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-                //ToDo: Load Greenscreen File for FOW drawing
+                playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Path.Combine(Application.StartupPath, "Greenscreen.png"), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
             }
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
@@ -378,7 +380,7 @@ namespace OpenVTT.Controls
 
             ShowImages(false);
 
-            PlayerPictureBox.SetPingPoint(new Point(-1, -1));
+            //PlayerPictureBox.SetPingPoint(new Point(-1, -1));
 
             if (Settings.Settings.Values.AutoSaveAction)
                 Session.Session.Save(true);
@@ -413,12 +415,12 @@ namespace OpenVTT.Controls
             else
             {
                 dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-                //ToDo: Load Greenscreen File for FOW drawing
+                playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Path.Combine(Application.StartupPath, "Greenscreen.png"), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
             }
 
             ShowImages(false);
 
-            PlayerPictureBox.SetPingPoint(new Point(-1, -1));
+            //PlayerPictureBox.SetPingPoint(new Point(-1, -1));
 
             if (Settings.Settings.Values.AutoSaveAction)
                 Session.Session.Save(true);

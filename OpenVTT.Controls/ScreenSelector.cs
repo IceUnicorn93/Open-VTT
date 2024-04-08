@@ -2,14 +2,10 @@
 using OpenVTT.Logging;
 using OpenVTT.Settings;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpenVTT.Controls
@@ -88,6 +84,17 @@ namespace OpenVTT.Controls
                         var selectedType = (DisplayType)Enum.Parse(typeof(DisplayType), cbType.Text);
                         screenInfo.Display = selectedType;
 
+                        //Create Greenscreen for Working with animated maps
+                        if(selectedType == DisplayType.Player)
+                        {
+                            var bmp = new Bitmap(screenInfo.Width, screenInfo.Height);
+                            using(var g = Graphics.FromImage(bmp))
+                            {
+                                g.FillRectangle(new SolidBrush(Color.FromArgb(0, 255, 66)), new Rectangle(0, 0, bmp.Width, bmp.Height));
+                            }
+                            var path = Path.Combine(Application.StartupPath, "Greenscreen.png");
+                            bmp.Save(path);
+                        }
 
                         var s = Settings.Settings.Values.Screens.SingleOrDefault(n => n.Display == selectedType);
                         if (s == null)

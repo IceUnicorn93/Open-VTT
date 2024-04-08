@@ -103,6 +103,9 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
+              "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj": {
+                "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Common\\OpenVTT.Common.csproj"
+              },
               "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj": {
                 "projectPath": "E:\\C# Repos\\Open VTT\\Open-VTT\\OpenVTT.Logging\\OpenVTT.Logging.csproj"
               },

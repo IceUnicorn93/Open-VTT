@@ -112,8 +112,8 @@ namespace Open_VTT.Forms
             }
 
             // Close Player Window and Dispose it 
-            if (!WindowInstaces.Player.IsDisposed)
-                WindowInstaces.Player.Close();
+            if (!WindowInstaces.AnimatedMapDisplayer.IsDisposed)
+                WindowInstaces.AnimatedMapDisplayer.Close();
 
             // Close Information Display for Player Window and Dispose it 
             if (!WindowInstaces.InformationDisplayPlayer.IsDisposed)
