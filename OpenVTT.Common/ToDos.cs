@@ -40,9 +40,6 @@
          * Pressing Buttons like Crazy on the StreamDeck can cause a crash
          *  Specially: {Random Buttons} layer switching, Cover all
          * 
-         * Grid will only be displayed if some kind of Fog of War is in the Layer
-         *  Should be changed to always display
-         * 
          * Grid works only in 1" squares if the base Image has the same resolution as the Display
          *  Calculate if Image hits Bottom and Top or Side hits Left and right
          *  -> If Top and Bottom -> ImageHeight = HeightInches, reclaculate width

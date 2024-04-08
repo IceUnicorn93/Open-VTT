@@ -9,13 +9,14 @@ namespace OpenVTT.Grid
         {
             Logger.Log("Class: Grid | DrawGrid");
 
-            var con = (Settings.Settings.Values.DisplayGrid && Settings.Settings.Values.DisplayGridForDM && IsDM)
+            var condition =
+                    (Settings.Settings.Values.DisplayGrid && Settings.Settings.Values.DisplayGridForDM && IsDM)
                         ||
-                      (Settings.Settings.Values.DisplayGrid && IsDM == false);
+                    (Settings.Settings.Values.DisplayGrid && IsDM == false);
 
             if (img == null) return img;
 
-            if (!con)
+            if (!condition)
                 return img;
 
             if(Settings.Settings.Values.PlayerScreenSize == 0) return img;

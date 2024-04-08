@@ -1,4 +1,5 @@
-﻿using OpenVTT.Common;
+﻿using OpenVTT.AnimatedMap;
+using OpenVTT.Common;
 using OpenVTT.Controls.Displayer;
 using OpenVTT.FogOfWar;
 using OpenVTT.Forms;
@@ -10,6 +11,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpenVTT.Controls
@@ -112,8 +115,24 @@ namespace OpenVTT.Controls
             // Load new Background-Image
             if (SceneToLoad.Layers.Count > 0 && Session.Session.Values.ActiveLayer.ImagePath != string.Empty)
             {
-                dmImage = Image.FromFile(Session.Session.UpdatePath());
-                playerImage = Image.FromFile(Session.Session.UpdatePath());
+                var filePathDM = "";
+                var filePathPlayer = "";
+                if (Session.Session.Values.ActiveLayer.IsImageLayer)
+                { 
+                    filePathDM = Session.Session.UpdatePath();
+                    filePathPlayer = Session.Session.UpdatePath();
+                }
+                else
+                {
+                    filePathDM = Session.Session.UpdateVideoPath(Session.Session.Values.ActiveLayer, true);
+                    filePathPlayer = Session.Session.UpdateVideoPath(Session.Session.Values.ActiveLayer, false);
+                }
+
+                dmImage = Image.FromFile(filePathDM);
+                if(Session.Session.Values.ActiveLayer.IsImageLayer)
+                    playerImage = Image.FromFile(filePathPlayer);
+                else
+                { } //TODO: Set URL for Animated Map
             }
             else
             {
@@ -134,9 +153,19 @@ namespace OpenVTT.Controls
                 var action = new Action<Image, Color>((Image img, Color color) =>
                 {
                     if (img == dmImage)
-                        dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, false);
+                    {
+                        if(layer.IsImageLayer)
+                            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, false);
+                        else
+                            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdateVideoPath(layer, true), layer.FogOfWar, color, false);
+                    }
                     else
-                        playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, true);
+                    {
+                        if(layer.IsImageLayer)
+                            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, color, true);
+                        else
+                        { } //TODO: Load Greenscreen File for FOW drawing
+                    }
                 });
 
                 action(dmImage, Color.FromArgb(150, 0, 0, 0));
@@ -163,10 +192,12 @@ namespace OpenVTT.Controls
 
             dmImage?.Dispose();
             dmImage = null;
+
             dmImage = Image.FromFile(Path);
             playerImage?.Dispose();
             playerImage = null;
-            playerImage = Image.FromFile(Path);
+            if(Session.Session.Values.ActiveLayer.IsImageLayer)
+                playerImage = Image.FromFile(Path);
         }
 
         public void ShowImages(bool showPlayer)
@@ -242,15 +273,50 @@ namespace OpenVTT.Controls
                     if(isImage == false)
                     {
                         // Load new File
-                        // Take a Screenshot
-                        // AHA!
-                        // Save Screenshot?
-                        // 
-                    }
+                        var screenshotter = new AnimatedMapScreenshotter();
+                        screenshotter.SetPath(layer.ImagePath);
+                        screenshotter.FilePlaying += () =>
+                        {
+                            // AHA!
+                            // Take & Save Screenshot
 
-                    //Update so it works with Animated Maps
-                    LoadImages(newFileName);
-                    ShowImages(false);
+                            Task.Delay(10); // needed so we get the first frames!
+
+                            var fileName = Path.GetFileName(openFileDialog.FileName);
+
+                            Bitmap bmpScreenshot = new Bitmap(screenshotter.Width, screenshotter.Height);
+                            using (Graphics g = Graphics.FromImage(bmpScreenshot))
+                            { 
+                                g.CopyFromScreen(
+                                    screenshotter.Location.X, screenshotter.Location.Y,
+                                    0, 0,
+                                    screenshotter.Size);
+
+                                
+                                var fi = new FileInfo(fileName);
+                                var extension = fi.Extension;
+                                fileName = fileName.Replace(extension, ".png");
+                                bmpScreenshot.Save(Session.Session.GetSubDirectoryPathForFile("Thumbnails", fileName));
+                            }
+
+                            //Dispose the Window to get Memory back!
+                            screenshotter.Close();
+                            screenshotter.Dispose();
+                            screenshotter = null;
+                            GC.Collect();
+
+                            Task.Delay(10);
+
+                            LoadImages(Session.Session.GetSubDirectoryPathForFile("Thumbnails", fileName));
+                            ShowImages(false);
+                        };
+                        screenshotter.Show();
+                    }
+                    else
+                    {
+                        LoadImages(newFileName);
+                        ShowImages(false); 
+                    }
 
                     if (Settings.Settings.Values.AutoSaveAction)
                         Session.Session.Save(true);
@@ -296,8 +362,16 @@ namespace OpenVTT.Controls
             Session.Session.Values.ActiveLayer.FogOfWar.Add(fog);
             var layer = Session.Session.Values.ActiveLayer;
 
-            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            if(layer.IsImageLayer)
+            { 
+                dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+                playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            }
+            else
+            {
+                dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+                //ToDo: Load Greenscreen File for FOW drawing
+            }
 
             //fog.DrawFogOfWar(dmImage, Color.FromArgb(150, 0, 0, 0));
             //fog.DrawFogOfWar(playerImage, Color.FromArgb(255, 0, 0, 0));
@@ -331,8 +405,16 @@ namespace OpenVTT.Controls
             Session.Session.Values.ActiveLayer.FogOfWar.Clear();
             var layer = Session.Session.Values.ActiveLayer;
 
-            dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
-            playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            if(layer.IsImageLayer)
+            {
+                dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+                playerImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdatePath(), layer.FogOfWar, Settings.Settings.Values.PlayerColor, true);
+            }
+            else
+            {
+                dmImage = FogOfWar.FogOfWar.DrawFogOfWarComplete(Session.Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Settings.Values.DmColor, false);
+                //ToDo: Load Greenscreen File for FOW drawing
+            }
 
             ShowImages(false);
 

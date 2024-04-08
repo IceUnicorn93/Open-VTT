@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,20 +83,23 @@ namespace Open_VTT.Forms.Popups
                     drawPbMap.BackgroundImageLayout = ImageLayout.Zoom;
                     WindowInstaces.Player.GetPictureBox().BackgroundImageLayout = ImageLayout.Zoom;
 
-                    drawPbMap.BackgroundImage = (Image)drawPbMap.Image.Clone();
-                    if(WindowInstaces.Player.GetPictureBox().Image != null)
-                        WindowInstaces.Player.GetPictureBox().BackgroundImage = (Image)WindowInstaces.Player.GetPictureBox().Image.Clone();
-
                     drawPbMap.Image = null;
                     WindowInstaces.Player.GetPictureBox().Image = null;
 
-                    mapControl1.ShowImages(
-                    FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false),
-                    FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.PlayerColor, true),
-                    true);
-
-                    drawPbMap.BackgroundImage = null;
-                    WindowInstaces.Player.GetPictureBox().BackgroundImage = null;
+                    if (Session.Values.ActiveLayer.IsImageLayer)
+                    {
+                        mapControl1.ShowImages(
+                                    FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false),
+                                    FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.PlayerColor, true),
+                                    true); 
+                    }
+                    else
+                    {
+                        mapControl1.ShowImages(
+                                    FogOfWar.DrawFogOfWarComplete(Session.UpdateVideoPath(Session.Values.ActiveLayer, true), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false),
+                                    null, //ToDo: Load Greenscreen FOW
+                                    true);
+                    }
 
                     GC.Collect();
 
@@ -132,8 +136,16 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
-                    mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                    if(layer.IsImageLayer)
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+                        mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                    }
+                    else
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Values.DmColor, false);
+                        //ToDo: Loa Greenscreen File for FOW
+                    }
 
                     Thread.Sleep(100);
 
@@ -175,8 +187,16 @@ namespace Open_VTT.Forms.Popups
 
                 new Task(() =>
                 {
-                    mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
-                    mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                    if (layer.IsImageLayer)
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+                        mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true); 
+                    }
+                    else
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Values.DmColor, false);
+                        //ToDo: Load Greenscreen File for FOW drawing
+                    }
 
                     Thread.Sleep(100);
 
@@ -286,8 +306,16 @@ namespace Open_VTT.Forms.Popups
 
                                     var layer = Session.Values.ActiveLayer;
 
-                                    mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
-                                    mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true);
+                                    if (layer.IsImageLayer)
+                                    {
+                                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.DmColor, false);
+                                        mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), layer.FogOfWar, Settings.Values.PlayerColor, true); 
+                                    }
+                                    else
+                                    {
+                                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdateVideoPath(layer, true), layer.FogOfWar, Settings.Values.DmColor, false);
+                                        //ToDo: Load Greenscreen File for FOW drawing
+                                    }
 
                                     Thread.Sleep(100);
 
@@ -318,8 +346,16 @@ namespace Open_VTT.Forms.Popups
                     var fog = ((Button)sender).Tag as FogOfWar;
                     fog.IsHidden = !fog.IsHidden;
 
-                    mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayerNumber).FogOfWar, Settings.Values.DmColor, false);
-                    mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveScene.GetLayer(Session.Values.ActiveLayerNumber).FogOfWar, Settings.Values.PlayerColor, true);
+                    if (Session.Values.ActiveLayer.IsImageLayer)
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false);
+                        mapControl1.playerImage = FogOfWar.DrawFogOfWarComplete(Session.UpdatePath(), Session.Values.ActiveLayer.FogOfWar, Settings.Values.PlayerColor, true); 
+                    }
+                    else
+                    {
+                        mapControl1.dmImage = FogOfWar.DrawFogOfWarComplete(Session.UpdateVideoPath(Session.Values.ActiveLayer, true), Session.Values.ActiveLayer.FogOfWar, Settings.Values.DmColor, false);
+                        //ToDo: Load Greenscreen File for FOW drawing
+                    }
 
                     Thread.Sleep(100);
 

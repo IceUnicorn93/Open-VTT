@@ -141,6 +141,31 @@ namespace OpenVTT.Session
             return UpdatePath(newPath, layer.DirectorySeperator);
         }
 
+        public static string UpdateVideoPath(Layer layer, bool Thumbnail)
+        {
+            Logger.Log("Class: Session | UpdatePath(Layer layer)");
+
+            if (layer.RootPath == "" || layer.ImagePath == "") return "";
+
+            var extension = new FileInfo(layer.ImagePath).Extension;
+
+            var oldSessionPath = layer.RootPath;
+            var oldImagePath = layer.ImagePath;
+
+            if (Thumbnail)
+            {
+                oldImagePath = oldImagePath.Replace("Videos", "Thumbnails").Replace(extension, ".png");
+            }
+
+            var absolutImagePath = oldImagePath.Replace(oldSessionPath, "");
+
+            if (absolutImagePath[0] == layer.DirectorySeperator)
+                absolutImagePath = absolutImagePath.Remove(0, 1);
+
+            var newPath = Path.Combine(Values.SessionFolder, absolutImagePath);
+            return UpdatePath(newPath, layer.DirectorySeperator);
+        }
+
         private static string UpdatePath(string path, char replacement)
         {
             Logger.Log("Class: Session | UpdatePath(string path, char replacement)");

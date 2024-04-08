@@ -49,11 +49,20 @@
     <Compile Include="AnimatedMapDisplayer.Designer.cs">
       <DependentUpon>AnimatedMapDisplayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnimatedMapScreenshotter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimatedMapScreenshotter.Designer.cs">
+      <DependentUpon>AnimatedMapScreenshotter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AnimatedMapDisplayer.resx">
       <DependentUpon>AnimatedMapDisplayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimatedMapScreenshotter.resx">
+      <DependentUpon>AnimatedMapScreenshotter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
