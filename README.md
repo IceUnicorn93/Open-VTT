@@ -31,14 +31,14 @@ We have tested Open VTT on Raspberry Pi 4's and it worked! (You need to install 
 
 - [ ] Pressing like Crazy on StreamDeck Buttons causes a Crash (Specially with Set Active)
 - [ ] Sometimes Cross-Platform Storys are buggy (Windows to Linux)
-- [ ] Ping on Big Images causes a flicker
-- [ ] Ping on Big Images is to small
-- [ ] Artwork for a Note Child can't be changed once Set
+- [ ] Ping on Big Images causes a flicker (known w here, but not why)
+- [ ] Ping on Big Images is to small (needs testing)
+- [ ] Artwork for a Note Child can't be changed once Set (known why, but not how fo fix)
 - [ ] Scripting runs synchon, due to File Access Problems on Linux
 
 # Needs Testing
 
-- Scripting API on Linux
+- Scripting API on Linux (especially linked dlls)
 - StreamDeck Implementation with a StreamDeck Mini
 
 # Getting Started
@@ -64,4 +64,4 @@ These Include (and are not limited to):
 # Wiki
 
 I put the Instructions in the wiki [HERE](https://github.com/IceUnicorn93/Open-VTT/wiki)
-Also a fea other links are there, over the time I will work on the wiki so keep an eye on that!
+Also a few other links are there, over the time I will work on the wiki so keep an eye on that!
